@@ -1,0 +1,697 @@
+#!/usr/bin/env python3
+"""Phase 2 v4: 同路径往返 + 逐点位置匹配法 (Method D / 文档方法).
+
+与 v3 的关键区别:
+  - 每次 MIT 发送时, 用 Pinocchio 计算当前关节角下的重力力矩 τ_g(q)
+  - 将 τ_g(q) 作为 tau_ff 前馈 → 电机不需要用位置误差对抗重力
+  - 跟踪误差大幅减小 → 摩擦力矩估算更干净
+  - 重力变化不再污染 fc/fv 拟合
+  - 改为同路径往返扫摆: HOME→+D→HOME (每个速度大小)
+  - 使用逐点位置匹配消重力: [τ_out(q) - τ_ret(q)] / 2
+  - 同时记录 tau_fb (电机反馈力矩) 用于对比
+  - 输出两种方法: D(逐点匹配) + A(原版 tau_est)
+
+用法:
+  python3 run_phase2_gravity_ff.py [--joint N] [--dry-run]
+"""
+
+import argparse, json, time, sys, threading
+from collections import deque
+from pathlib import Path
+import numpy as np
+
+_this_dir = Path(__file__).resolve().parent
+sys.path.insert(0, str(_this_dir / "mujoco_id"))
+sys.path.insert(0, "/home/a12/reBotArm_control_py-1")
+
+from trajectory import RS_LIMITS
+from reBotArm_control_py.dynamics import compute_generalized_gravity
+from reBotArm_control_py.kinematics.robot_model import load_robot_model
+
+HOME = np.array([0.0, 1.2, 1.0, 0.0, 0.0, 0.0])
+FOLDED = np.array([0.0, 0.0, 0.0, 0.0, 0.0, 0.0])
+RATE = 100; DT = 1.0 / RATE
+
+KP_MIT = {1: 80, 2: 150, 3: 150, 4: 25, 5: 12, 6: 25}
+KD_MIT = {1: 5,  2: 10,  3: 10,  4: 1.5, 5: 0.8, 6: 1.5}
+MOTOR_MODELS = ["rs-06", "rs-06", "rs-06", "rs-00", "rs-00", "rs-00"]
+JOINT_NAMES = ["底座旋转", "肩部", "肘部", "腕部横滚", "腕部俯仰", "腕部旋转"]
+
+VEL_ABS = [0.06, 0.08, 0.10, 0.12, 0.15]  # 只取速度大小, 往返配对
+T_RAMP = 1.0; D_SWEEP = 0.35; T_RET = 1.2
+OUT_DIR = _this_dir / "realrobot_data"
+
+
+# ── 数学工具 ──
+def _quintic(t):
+    t = np.clip(t, 0, 1)
+    return 6*t**5 - 15*t**4 + 10*t**3
+
+def _d_quintic(t):
+    t = np.clip(t, 0, 1)
+    return 30*t**4 - 60*t**3 + 30*t**2
+
+def _quintic_vel_up(t, T, tv):
+    s = np.clip(t/T, 0, 1)
+    v = tv * (6*s**5 - 15*s**4 + 10*s**3)
+    dq = tv * T * (s**6 - 3*s**5 + 2.5*s**4)
+    return v, dq
+
+def _quintic_vel_down(t, T, tv):
+    s = np.clip(t/T, 0, 1)
+    v = tv * (1 - 6*s**5 + 15*s**4 - 10*s**3)
+    dq = tv * T * (s - s**6 + 3*s**5 - 2.5*s**4)
+    return v, dq
+
+def _quintic_pos_vel(t, T, start, delta):
+    s = np.clip(t/T, 0, 1)
+    pos = start + delta * (6*s**5 - 15*s**4 + 10*s**3)
+    vel = (delta / T) * (30*s**4 - 60*s**3 + 30*s**2)
+    return pos, vel
+
+
+# ── Pinocchio 重力计算 ──
+_pin_model = None
+_pin_data = None
+
+def get_pinocchio_gravity(q_arm):
+    """计算当前 6 轴关节角下的重力力矩 [Nm]."""
+    global _pin_model, _pin_data
+    if _pin_model is None:
+        _pin_model = load_robot_model()
+        _pin_data = _pin_model.createData()
+    q_full = np.zeros(_pin_model.nq)
+    q_full[:6] = np.asarray(q_arm, dtype=np.float64)
+    tau_g = compute_generalized_gravity(_pin_model, q_full, _pin_data)
+    return np.array(tau_g[:6], dtype=np.float64)
+
+
+# ── 电机组 (线程安全) ──
+class MotorGroup:
+    def __init__(self, motors, ctrl):
+        self.motors = motors
+        self.ctrl = ctrl
+        self.lock = threading.Lock()
+        self.fail_count = [0] * 6
+        self.max_fail = 10
+
+    def send_all_mit(self, q_ref, qd_ref, tau_ff=None):
+        with self.lock:
+            for j, m in enumerate(self.motors):
+                try:
+                    ff = float(tau_ff[j]) if tau_ff is not None else 0.0
+                    m.send_mit(float(q_ref[j]), float(qd_ref[j]),
+                               KP_MIT[j+1], KD_MIT[j+1], ff)
+                    self.fail_count[j] = 0
+                except Exception:
+                    self.fail_count[j] += 1
+                    if self.fail_count[j] >= self.max_fail:
+                        raise RuntimeError(f"motor{j+1} send_mit连续失败!")
+
+    def send_all_mit_safe(self, q_ref, qd_ref, tau_ff=None):
+        with self.lock:
+            for j, m in enumerate(self.motors):
+                try:
+                    ff = float(tau_ff[j]) if tau_ff is not None else 0.0
+                    m.send_mit(float(q_ref[j]), float(qd_ref[j]),
+                               KP_MIT[j+1], KD_MIT[j+1], ff)
+                except Exception:
+                    pass
+
+    def read_position(self, j):
+        return self.motors[j].robstride_get_param_f32(0x7019)
+
+    def read_all_positions(self):
+        q = np.zeros(6)
+        for j in range(6):
+            try: q[j] = self.read_position(j)
+            except: pass
+        return q
+
+    def poll_and_get_state(self, j):
+        self.ctrl.poll_feedback_once()
+        return self.motors[j].get_state()
+
+    def poll_and_get_state_safe(self, j):
+        with self.lock:
+            self.ctrl.poll_feedback_once()
+            return self.motors[j].get_state()
+
+
+# ── 采集线程 ──
+class DataCollector:
+    def __init__(self, mg, jidx):
+        self.mg = mg; self.jidx = jidx
+        self.records = []; self.running = False; self.thread = None
+
+    def start(self):
+        self.records.clear(); self.running = True
+        self.thread = threading.Thread(target=self._run, daemon=True)
+        self.thread.start()
+
+    def stop(self):
+        self.running = False
+        if self.thread: self.thread.join(timeout=2.0)
+
+    def _run(self):
+        while self.running:
+            # 恢复 poll_feedback_once 以排空主动上报的 CAN 帧
+            # 但必须通过 MotorGroup 持锁访问, 避免与 send_all_mit 并发争抢
+            st = self.mg.poll_and_get_state_safe(self.jidx)
+            t = time.perf_counter()
+            if st is not None:
+                self.records.append((t, float(st.pos), float(st.vel), float(st.torq)))
+            time.sleep(0.005)
+
+
+class ControlRecorder:
+    def __init__(self):
+        self.records = []
+    def record(self, t, q_ref_j, qd_ref_j):
+        self.records.append((t, float(q_ref_j), float(qd_ref_j)))
+    def clear(self):
+        self.records.clear()
+
+
+# ── 运动原语 ──
+def quintic_ramp(mg, q_start, q_target, duration):
+    n = int(duration * RATE); dq = q_target - q_start
+    t0 = time.perf_counter()
+    for i in range(n):
+        tn = (i+1)/n; a = _quintic(tn); da = _d_quintic(tn)
+        q_ref = q_start + a*dq; qd_ref = (da/duration)*dq
+        tau_g = get_pinocchio_gravity(q_ref)
+        mg.send_all_mit(q_ref, qd_ref, tau_g)
+        target_t = t0 + (i+1)*DT
+        if (sl := target_t - time.perf_counter()) > 0: time.sleep(sl)
+
+def quintic_ramp_safe(mg, q_start, q_target, duration):
+    n = int(duration * RATE); dq = q_target - q_start
+    t0 = time.perf_counter()
+    for i in range(n):
+        tn = (i+1)/n; a = _quintic(tn); da = _d_quintic(tn)
+        q_ref = q_start + a*dq; qd_ref = (da/duration)*dq
+        tau_g = get_pinocchio_gravity(q_ref)
+        mg.send_all_mit_safe(q_ref, qd_ref, tau_g)
+        target_t = t0 + (i+1)*DT
+        if (sl := target_t - time.perf_counter()) > 0: time.sleep(sl)
+
+def hold_home_mit(mg, duration):
+    n = int(duration * RATE)
+    tau_g = get_pinocchio_gravity(HOME)
+    t0 = time.perf_counter()
+    for i in range(n):
+        mg.send_all_mit(HOME, np.zeros(6), tau_g)
+        target_t = t0 + (i+1)*DT
+        if (sl := target_t - time.perf_counter()) > 0: time.sleep(sl)
+
+def smooth_return_to_home(mg, q_start, duration=1.5):
+    """平滑 quintic 从当前位姿回到 HOME, 避免冲击."""
+    n = int(duration * RATE)
+    dq = HOME - q_start
+    t0 = time.perf_counter()
+    for i in range(n):
+        tn = (i+1)/n; a = _quintic(tn); da = _d_quintic(tn)
+        q_ref = q_start + a*dq
+        qd_ref = (da/duration)*dq
+        tau_g = get_pinocchio_gravity(q_ref)
+        mg.send_all_mit(q_ref, qd_ref, tau_g)
+        target_t = t0 + (i+1)*DT
+        if (sl := target_t - time.perf_counter()) > 0: time.sleep(sl)
+
+
+# ── 同路径往返扫摆 (逐点位置匹配法) ──
+def sweep_one_joint_roundtrip(mg, jidx, motors):
+    """同路径往返:
+       - 对每个 |v|: outbound HOME→+D (+|v|) → return +D→HOME (-|v|)
+       - 恒速段逐点记录 (pos, vel, tau_fb, tau_est)
+       - 逐点位置匹配消重力: [τ_out(q) - τ_ret(q)] / 2
+       - 同时保留原版 tau_est 数据用于对比
+    """
+    jname = JOINT_NAMES[jidx]
+    kp = KP_MIT[jidx+1]; kd = KD_MIT[jidx+1]
+    q_home = HOME.copy()
+
+    collector = DataCollector(mg, jidx)
+    recorder = ControlRecorder()
+
+    # 方法D: 逐点匹配数据
+    v_list_D = []; tau_list_D = []
+    # 方法A: 原版数据 (tau_est)
+    v_list_A = []; tau_list_A = []
+    # 方法C: tau_fb - tau_g 数据
+    v_list_C = []; tau_list_C = []
+    # 全部原始数据
+    all_v = []; all_tau_est = []; all_tau_fb = []; all_q = []
+
+    switch_log = []
+
+    for abs_v in VEL_ABS:
+        # ── 计算距离 ──
+        d_ramp_out = abs_v * T_RAMP * 0.5
+        d_hold = abs_v * (D_SWEEP / abs_v)  # = D_SWEEP
+        d_ret_out = abs_v * T_RET * 0.5
+        total_out = d_ramp_out + d_hold + d_ret_out
+
+        T_MEAS = abs(d_hold / abs_v)
+        n_total = int((T_RAMP + T_MEAS + T_RET) * RATE)
+        meas_start = int(T_RAMP * RATE)
+        meas_end = int((T_RAMP + T_MEAS) * RATE)
+
+        # ============================================================
+        # Outbound: HOME → +D  at +abs_v
+        # ============================================================
+        print(f"    out +{abs_v:.2f} ...", end="", flush=True)
+        collector.start()
+        recorder.clear()
+        tau_est_samples_out = []; tau_fb_samples_out = []
+
+        t0 = time.perf_counter()
+        for step in range(n_total):
+            t_elapsed = (step+1) * DT
+
+            if step < int(T_RAMP * RATE):
+                v_j, dq_j = _quintic_vel_up((step+1)*DT, T_RAMP, +abs_v)
+                q_ref = q_home.copy(); qd_ref = np.zeros(6)
+                q_ref[jidx] = q_home[jidx] + dq_j
+                qd_ref[jidx] = v_j
+            elif step < int((T_RAMP + T_MEAS) * RATE):
+                t_i = (step+1)*DT - T_RAMP
+                q_ref = q_home.copy(); qd_ref = np.zeros(6)
+                q_ref[jidx] = q_home[jidx] + d_ramp_out + abs_v * t_i
+                qd_ref[jidx] = +abs_v
+            elif step < n_total:
+                t_i = (step+1)*DT - T_RAMP - T_MEAS
+                v_j, dq_j = _quintic_vel_down(t_i, T_RET, +abs_v)
+                q_ref = q_home.copy(); qd_ref = np.zeros(6)
+                q_ref[jidx] = q_home[jidx] + d_ramp_out + d_hold + dq_j
+                qd_ref[jidx] = v_j
+            else:
+                q_ref = q_home.copy(); qd_ref = np.zeros(6)
+
+            tau_g = get_pinocchio_gravity(q_ref)
+            mg.send_all_mit(q_ref, qd_ref, tau_g)
+
+            st = mg.poll_and_get_state(jidx)
+            if st is not None:
+                act_pos, act_vel, act_torq = float(st.pos), float(st.vel), float(st.torq)
+            else:
+                act_pos = act_vel = act_torq = np.nan
+
+            tau_est = kp*(q_ref[jidx] - act_pos) + kd*(qd_ref[jidx] - act_vel)
+            tau_est_samples_out.append(tau_est)
+            tau_fb_samples_out.append(act_torq)
+            recorder.record(time.perf_counter(), q_ref[jidx], qd_ref[jidx])
+
+            target_t = t0 + (step+1)*DT
+            if (sl := target_t - time.perf_counter()) > 0:
+                time.sleep(sl)
+
+        collector.stop()
+
+        # 提取 outbound 恒速段逐点数据
+        if collector.records:
+            ct = np.array([r[0] for r in collector.records])
+            cp = np.array([r[1] for r in collector.records])
+            cv = np.array([r[2] for r in collector.records])
+            cf = np.array([r[3] for r in collector.records])
+            if len(ct) > 1 and not np.all(np.diff(ct) > 0):
+                mask = np.concatenate([[True], np.diff(ct) > 0])
+                ct=ct[mask]; cp=cp[mask]; cv=cv[mask]; cf=cf[mask]
+            # 对齐到控制时间
+            pos_out, vel_out, tf_out, te_out = [], [], [], []
+            for i in range(meas_start, min(meas_end, len(tau_est_samples_out))):
+                t_target = t0 + (i+1)*DT
+                if len(ct) > 1:
+                    pos_out.append(float(np.interp(t_target, ct, cp)))
+                    vel_out.append(float(np.interp(t_target, ct, cv)))
+                    tf_out.append(float(np.interp(t_target, ct, cf)))
+                te_out.append(float(tau_est_samples_out[i]))
+                # tau_g at midpoint
+                # tg not needed for point-match method
+            pos_out = np.array(pos_out); vel_out = np.array(vel_out)
+            tf_out = np.array(tf_out); te_out = np.array(te_out)
+            n_out = len(pos_out)
+        else:
+            pos_out = vel_out = tf_out = te_out = np.array([])
+            n_out = 0
+
+        v_out_mean = float(np.mean(vel_out)) if n_out > 0 else float(abs_v)
+        print(f" v={v_out_mean:+.4f} te={np.mean(te_out):+.4f} tf={np.mean(tf_out):+.4f} N={n_out}")
+
+        # ── 在 +D 位置保持 ──
+        q_at_d = q_home.copy()
+        q_at_d[jidx] = q_home[jidx] + total_out
+        tau_g_d = get_pinocchio_gravity(q_at_d)
+        hold_n = int(0.3 * RATE)
+        t0_hold = time.perf_counter()
+        for i in range(hold_n):
+            mg.send_all_mit(q_at_d, np.zeros(6), tau_g_d)
+            target_t = t0_hold + (i+1)*DT
+            if (sl := target_t - time.perf_counter()) > 0:
+                time.sleep(sl)
+
+        # ============================================================
+        # Return: +D → HOME  at -abs_v
+        # ============================================================
+        print(f"    ret -{abs_v:.2f} ...", end="", flush=True)
+        collector.start()
+        recorder.clear()
+        tau_est_samples_ret = []; tau_fb_samples_ret = []
+
+        # Return sweep: start from q_at_d, sweep at -abs_v
+        d_ramp_ret = (-abs_v) * T_RAMP * 0.5
+        d_hold_ret = (-abs_v) * (D_SWEEP / abs_v)  # = -D_SWEEP
+        d_ret_ret = (-abs_v) * T_RET * 0.5
+
+        t0 = time.perf_counter()
+        for step in range(n_total):
+            t_elapsed = (step+1) * DT
+
+            if step < int(T_RAMP * RATE):
+                v_j, dq_j = _quintic_vel_up((step+1)*DT, T_RAMP, -abs_v)
+                q_ref = q_home.copy(); qd_ref = np.zeros(6)
+                q_ref[jidx] = q_at_d[jidx] + dq_j
+                qd_ref[jidx] = v_j
+            elif step < int((T_RAMP + T_MEAS) * RATE):
+                t_i = (step+1)*DT - T_RAMP
+                q_ref = q_home.copy(); qd_ref = np.zeros(6)
+                q_ref[jidx] = q_at_d[jidx] + d_ramp_ret + (-abs_v) * t_i
+                qd_ref[jidx] = -abs_v
+            elif step < n_total:
+                t_i = (step+1)*DT - T_RAMP - T_MEAS
+                v_j, dq_j = _quintic_vel_down(t_i, T_RET, -abs_v)
+                q_ref = q_home.copy(); qd_ref = np.zeros(6)
+                q_ref[jidx] = q_at_d[jidx] + d_ramp_ret + d_hold_ret + dq_j
+                qd_ref[jidx] = v_j
+            else:
+                q_ref = q_home.copy(); qd_ref = np.zeros(6)
+
+            tau_g = get_pinocchio_gravity(q_ref)
+            mg.send_all_mit(q_ref, qd_ref, tau_g)
+
+            st = mg.poll_and_get_state(jidx)
+            if st is not None:
+                act_pos, act_vel, act_torq = float(st.pos), float(st.vel), float(st.torq)
+            else:
+                act_pos = act_vel = act_torq = np.nan
+
+            tau_est = kp*(q_ref[jidx] - act_pos) + kd*(qd_ref[jidx] - act_vel)
+            tau_est_samples_ret.append(tau_est)
+            tau_fb_samples_ret.append(act_torq)
+            recorder.record(time.perf_counter(), q_ref[jidx], qd_ref[jidx])
+
+            target_t = t0 + (step+1)*DT
+            if (sl := target_t - time.perf_counter()) > 0:
+                time.sleep(sl)
+
+        collector.stop()
+
+        # 提取 return 恒速段逐点数据
+        if collector.records:
+            ct = np.array([r[0] for r in collector.records])
+            cp = np.array([r[1] for r in collector.records])
+            cv = np.array([r[2] for r in collector.records])
+            cf = np.array([r[3] for r in collector.records])
+            if len(ct) > 1 and not np.all(np.diff(ct) > 0):
+                mask = np.concatenate([[True], np.diff(ct) > 0])
+                ct=ct[mask]; cp=cp[mask]; cv=cv[mask]; cf=cf[mask]
+            pos_ret, vel_ret, tf_ret, te_ret = [], [], [], []
+            for i in range(meas_start, min(meas_end, len(tau_est_samples_ret))):
+                t_target = t0 + (i+1)*DT
+                if len(ct) > 1:
+                    pos_ret.append(float(np.interp(t_target, ct, cp)))
+                    vel_ret.append(float(np.interp(t_target, ct, cv)))
+                    tf_ret.append(float(np.interp(t_target, ct, cf)))
+                te_ret.append(float(tau_est_samples_ret[i]))
+            pos_ret = np.array(pos_ret); vel_ret = np.array(vel_ret)
+            tf_ret = np.array(tf_ret); te_ret = np.array(te_ret)
+            n_ret = len(pos_ret)
+        else:
+            pos_ret = vel_ret = tf_ret = te_ret = np.array([])
+            n_ret = 0
+
+        v_ret_mean = float(np.mean(np.abs(vel_ret))) if n_ret > 0 else float(abs_v)
+        print(f" v=-{v_ret_mean:.4f} te={np.mean(te_ret):+.4f} tf={np.mean(tf_ret):+.4f} N={n_ret}")
+
+        # ============================================================
+        # 逐点位置匹配消重力
+        # ============================================================
+        if n_out > 20 and n_ret > 20:
+            # 找位置重叠区间
+            q_min = max(pos_out.min(), pos_ret.min())
+            q_max = min(pos_out.max(), pos_ret.max())
+
+            if q_max > q_min:
+                n_pts = min(200, n_out//5, n_ret//5, 100)
+                q_samples = np.linspace(q_min, q_max, n_pts)
+
+                # return 位置通常是递减的, flip 后做 interp
+                if pos_ret[-1] < pos_ret[0]:  # 递减
+                    tf_r_at_q = np.interp(q_samples, pos_ret[::-1], tf_ret[::-1])
+                    v_r_at_q = np.interp(q_samples, pos_ret[::-1], np.abs(vel_ret)[::-1])
+                else:
+                    tf_r_at_q = np.interp(q_samples, pos_ret, tf_ret)
+                    v_r_at_q = np.interp(q_samples, pos_ret, np.abs(vel_ret))
+
+                tf_o_at_q = np.interp(q_samples, pos_out, tf_out)
+                v_o_at_q = np.interp(q_samples, pos_out, np.abs(vel_out))
+
+                # 逐点力矩差
+                tau_diff = (tf_o_at_q - tf_r_at_q) / 2.0
+                v_avg = (v_o_at_q + v_r_at_q) / 2.0
+
+                v_list_D.append(float(np.mean(v_avg)))
+                tau_list_D.append(float(np.mean(tau_diff)))
+
+                print(f"    D_match: v_avg={np.mean(v_avg):.4f} τ_diff={np.mean(tau_diff):+.4f} "
+                      f"overlap=[{q_min:.3f},{q_max:.3f}] {n_pts}pts")
+
+        # ── 方法A 数据 (tau_est, 段平均) ──
+        if n_out > 20:
+            v_list_A.append(float(np.mean(vel_out)))
+            tau_list_A.append(float(np.mean(te_out)))
+            all_v.append(float(np.mean(vel_out)))
+            all_tau_est.append(float(np.mean(te_out)))
+            all_tau_fb.append(float(np.mean(tf_out)))
+            all_q.append(float(np.mean(pos_out)))
+        if n_ret > 20:
+            v_list_A.append(float(np.mean(vel_ret)))
+            tau_list_A.append(float(np.mean(te_ret)))
+            all_v.append(float(np.mean(vel_ret)))
+            all_tau_est.append(float(np.mean(te_ret)))
+            all_tau_fb.append(float(np.mean(tf_ret)))
+            all_q.append(float(np.mean(pos_ret)))
+
+        # ── 方法C 数据 (tau_fb - tau_g, 段平均) ──
+        # tg at center of sweep ≈ get_pinocchio_gravity(HOME_with_jidx_offset)
+        if n_out > 20:
+            q_mid = q_home.copy(); q_mid[jidx] = np.mean(pos_out)
+            tg_mid = float(get_pinocchio_gravity(q_mid)[jidx])
+            v_list_C.append(float(np.mean(vel_out)))
+            tau_list_C.append(float(np.mean(tf_out)) - tg_mid)
+        if n_ret > 20:
+            q_mid = q_home.copy(); q_mid[jidx] = np.mean(pos_ret)
+            tg_mid = float(get_pinocchio_gravity(q_mid)[jidx])
+            v_list_C.append(float(np.mean(vel_ret)))
+            tau_list_C.append(float(np.mean(tf_ret)) - tg_mid)
+
+        # ── 平滑回 HOME ──
+        q_now = mg.read_all_positions()
+        smooth_return_to_home(mg, q_now, 1.5)
+        hold_home_mit(mg, 0.2)
+
+    return (v_list_D, tau_list_D, v_list_A, tau_list_A, v_list_C, tau_list_C,
+            all_v, all_tau_est, all_tau_fb, all_q, switch_log)
+
+
+
+
+# ── 主入口 ──
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--joint", type=int, default=0, help="关节编号 1-6 (0=全部)")
+    ap.add_argument("--dry-run", action="store_true")
+    args = ap.parse_args()
+
+    # 预热 Pinocchio
+    print("=" * 60)
+    print("  Phase 2 v3: 重力前馈 + 轨迹连续 + 力矩估算")
+    print("=" * 60)
+    _ = get_pinocchio_gravity(HOME)
+    tau_grav_home = get_pinocchio_gravity(HOME)
+    print(f"  τ_grav(HOME): {np.round(tau_grav_home, 2)}")
+    print(f"  KP: {[KP_MIT[i+1] for i in range(6)]}")
+    print(f"  KD: {[KD_MIT[i+1] for i in range(6)]}")
+
+    if args.dry_run:
+        print("\n[Dry-Run] 无硬件, 仅验证 Pinocchio")
+        q_test = np.array([0.0, 1.55, 1.35, 0.0, 0.0, 0.0])
+        tau_test = get_pinocchio_gravity(q_test)
+        delta = tau_test - tau_grav_home
+        print(f"  HOME→sweep 重力变化: {np.round(delta, 2)} Nm")
+        print(f"  J2 重力变化: {delta[1]:.3f} Nm (这之前被错误分配给 fc)")
+        return
+
+    from motorbridge import Controller, Mode
+    ctrl = Controller("can0")
+    motors = [ctrl.add_robstride_motor(mid, 0xFD, mdl)
+              for mid, mdl in zip(range(1, 7), MOTOR_MODELS)]
+    mg = MotorGroup(motors, ctrl)
+
+    # [1] 读取位置
+    print("\n[1/5] 读取断电位置...")
+    folded = mg.read_all_positions()
+    print(f"  断电: {np.round(folded, 3)}")
+
+    # [2] 初始化
+    print("\n[2/5] 初始化 MIT + 主动上报...")
+    for m in motors: m.clear_error(); time.sleep(0.03)
+    for m in motors: m.ensure_mode(Mode.MIT, 2000)
+    for m in motors: m.enable()
+    tau_g_folded = get_pinocchio_gravity(folded)
+    t_init = time.perf_counter()
+    for i in range(int(0.3*RATE)):
+        mg.send_all_mit(folded, np.zeros(6), tau_g_folded)
+        target_t = t_init + (i+1)*DT
+        if (sl := target_t - time.perf_counter()) > 0: time.sleep(sl)
+    folded = mg.read_all_positions()
+    print(f"  FOLDED(使能后): {np.round(folded, 3)}")
+    t_hold = time.perf_counter()
+    tau_g_folded2 = get_pinocchio_gravity(folded)
+    for i in range(int(0.5*RATE)):
+        mg.send_all_mit(folded, np.zeros(6), tau_g_folded2)
+        target_t = t_hold + (i+1)*DT
+        if (sl := target_t - time.perf_counter()) > 0: time.sleep(sl)
+    for m in motors:
+        try: m.robstride_set_active_report(True)
+        except: pass
+    print("  主动上报已开启")
+    all_ok = True
+    for j in range(6):
+        try:
+            q_test = mg.read_position(j)
+            print(f"    ✓ motor{j+1} ({JOINT_NAMES[j]}) pos={q_test:+.3f}")
+        except Exception as e:
+            print(f"    ✗ motor{j+1} 通信失败: {e}")
+            all_ok = False
+    if not all_ok:
+        print("  ❌ 通信校验失败")
+        for m in motors:
+            try: m.disable(); m.close()
+            except: pass
+        ctrl.close(); sys.exit(1)
+    print("  全部使能 ✓")
+
+    # [3] 展开到 HOME (带重力前馈)
+    print("\n[3/5] 展开到 HOME (重力前馈)...")
+    try:
+        quintic_ramp(mg, folded, HOME, 3.0)
+        hold_home_mit(mg, 0.5)
+    except RuntimeError as e:
+        print(f"\n  ❌ 展开失败: {e}")
+        quintic_ramp_safe(mg, mg.read_all_positions(), folded, 3.0)
+        for m in motors:
+            try: m.disable(); m.close()
+            except: pass
+        ctrl.close(); sys.exit(1)
+    q_check = mg.read_all_positions()
+    for j in range(6):
+        err = abs(q_check[j]-HOME[j])
+        print(f"    {'✓' if err<0.2 else '✗'} joint{j+1}: {q_check[j]:+.3f} (err={err:.3f})")
+    print("  到达 HOME")
+
+    jlist = [args.joint-1] if args.joint>0 else range(6)
+
+    # [4] 双线程扫摆 (重力前馈)
+    all_data = {}; all_switch_logs = {}
+    try:
+        print(f"\n[4/5] 双线程扫摆 (Pinocchio 重力前馈, {len(jlist)} 关节)...")
+        for jidx in jlist:
+            g0 = tau_grav_home[jidx]
+            print(f"\n  ── Joint{jidx+1}: {JOINT_NAMES[jidx]} (τ_grav_HOME={g0:+.3f}Nm) ──")
+            (v_D, tau_D, v_A, tau_A, v_C, tau_C,
+             all_v, all_tau_est, all_tau_fb, all_q, switch_log) = \
+                sweep_one_joint_roundtrip(mg, jidx, motors)
+
+            all_switch_logs[f"joint{jidx+1}"] = switch_log
+            for sl in switch_log:
+                print(f"    切换 tv={sl['tv']:+.2f}: BC跳变={sl['q_jump_BC']:.5f} (应为0)")
+
+            # ── 方法D拟合: 逐点匹配 → τ_diff = fc + fv·v ──
+            fc_D = fv_D = rmse_D = 0.0
+            if len(v_D) >= 2:
+                B = np.column_stack([np.ones_like(v_D), v_D])
+                beta, _, _, _ = np.linalg.lstsq(B, tau_D, rcond=None)
+                fc_D, fv_D = float(beta[0]), float(beta[1])
+                rmse_D = float(np.sqrt(np.mean((tau_D - B@beta)**2)))
+
+            # ── 方法A拟合: 原版 tau_est + bias ──
+            fc_A = fv_A = bias_A = rmse_A = 0.0
+            if len(v_A) >= 4:
+                A_mat = np.column_stack([np.ones_like(v_A), np.sign(v_A), v_A])
+                beta, _, _, _ = np.linalg.lstsq(A_mat, tau_A, rcond=None)
+                bias_A, fc_A, fv_A = float(beta[0]), float(beta[1]), float(beta[2])
+                rmse_A = float(np.sqrt(np.mean((tau_A - A_mat@beta)**2)))
+
+            # ── 方法C拟合: tau_fb - tau_g + bias ──
+            fc_C = fv_C = bias_C = rmse_C = 0.0
+            if len(v_C) >= 4:
+                A_mat = np.column_stack([np.ones_like(v_C), np.sign(v_C), v_C])
+                beta, _, _, _ = np.linalg.lstsq(A_mat, tau_C, rcond=None)
+                bias_C, fc_C, fv_C = float(beta[0]), float(beta[1]), float(beta[2])
+                rmse_C = float(np.sqrt(np.mean((tau_C - A_mat@beta)**2)))
+
+            print(f"    [D 逐点匹配] fc={fc_D:.4f}  fv={fv_D:.4f}  rmse={rmse_D:.4f}")
+            print(f"    [A 原版tau_est] fc={fc_A:.4f}  fv={fv_A:.4f}  bias={bias_A:+.4f}  rmse={rmse_A:.4f}")
+            print(f"    [C tau_fb-tau_g] fc={fc_C:.4f}  fv={fv_C:.4f}  bias={bias_C:+.4f}  rmse={rmse_C:.4f}")
+
+            all_data[f"joint{jidx+1}"] = {
+                "fc_D": fc_D, "fv_D": fv_D, "rmse_D": rmse_D,
+                "fc_A": fc_A, "fv_A": fv_A, "bias_A": bias_A, "rmse_A": rmse_A,
+                "fc_C": fc_C, "fv_C": fv_C, "bias_C": bias_C, "rmse_C": rmse_C,
+                "v_D": v_D, "tau_D": tau_D,
+                "v_A": v_A, "tau_A": tau_A,
+                "v_C": v_C, "tau_C": tau_C,
+                "all_v": all_v, "all_tau_est": all_tau_est, "all_tau_fb": all_tau_fb, "all_q": all_q,
+            }
+
+    except RuntimeError as e:
+        print(f"\n  ❌ 扫摆异常: {e}")
+    except KeyboardInterrupt:
+        print("\n  用户中断")
+    finally:
+        print(f"\n[5/5] 安全折叠回零...")
+        try:
+            q_now = mg.read_all_positions()
+            quintic_ramp_safe(mg, q_now, folded, 3.0)
+            print("  已折叠")
+        except:
+            print("  回零异常")
+            for _ in range(int(2.0*RATE)):
+                for j, m in enumerate(motors):
+                    try: m.send_mit(float(folded[j]), 0.0, KP_MIT[j+1], KD_MIT[j+1], 0.0)
+                    except: pass
+                time.sleep(DT)
+        for m in motors:
+            try: m.disable(); m.close()
+            except: pass
+        ctrl.close()
+        print("  完成")
+        OUT_DIR.mkdir(exist_ok=True)
+        ts = time.strftime("%Y%m%d_%H%M%S")
+        # 展平 all_data 用于 NPZ 保存
+        npz_data = {}
+        for key, val in all_data.items():
+            if isinstance(val, dict):
+                for k, v in val.items():
+                    npz_data[f"{key}_{k}"] = v
+        npz_data['kp'] = [KP_MIT[i+1] for i in range(6)]
+        npz_data['kd'] = [KD_MIT[i+1] for i in range(6)]
+        npz_data['gravity_home'] = tau_grav_home.tolist()
+        np.savez(OUT_DIR / f"phase2_pointmatch_{ts}.npz", **npz_data)
+        print(f"  已保存: phase2_pointmatch_{ts}.npz")
+
+
+if __name__ == "__main__":
+    main()
