@@ -106,8 +106,8 @@ def test_C_identification_audit():
     """审计辨识数据: v_list 是参考速度还是实际速度?"""
     npz_path = _this_dir / "realrobot_data" / "phase2_gravity_ff_20261013_150324.npz"
     if not npz_path.exists():
-        print("⚠ 测试C: NPZ 文件不存在, 跳过")
-        return
+        import pytest
+        pytest.skip("Legacy audit dataset is absent; new raw-event pipeline is tested separately")
 
     d = np.load(npz_path, allow_pickle=True)
     data = d['data'].item()

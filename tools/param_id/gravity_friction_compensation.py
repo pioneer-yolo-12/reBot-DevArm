@@ -1,314 +1,342 @@
-"""GravityFrictionCompensation — MIT 重力 + 摩擦力前馈控制器。
+"""RS compliant hold with validated friction parameters and bounded feedforward.
 
-继承 GravityCompensation 的全部行为（柔顺重力补偿、增益过渡、安全归零），
-额外加入 Coulomb + viscous 摩擦力前馈。
-
-控制律（MIT 模式）：
-    arm 组: 位置闭环 + g(q)×tau_scale + fc·sign(qd) + fv·qd
-    gripper 组: MIT 保持当前位置
-
-速度来源：连续两次 q 的差分（不依赖 get_velocities，避免 RS 固件读数问题）。
-
-使用示例::
-
-    import sys; sys.path.insert(0, '/home/a12/reBot-DevArm/tools/param_id')
-    sys.path.insert(0, '/home/a12/reBotArm_control_py-1')
-    from gravity_friction_compensation import GravityFrictionCompensation
-    from reBotArm_control_py.actuator import RebotArm
-
-    rebotarm = RebotArm()
-    ctrl = GravityFrictionCompensation(
-        rebotarm,
-        fc=[0.2389, 0.2896, 0.4457, 0.3376, 0.3363, 0.1276],
-        fv=[0.2078, 3.8434, 2.5550, 1.1819, 0.1501, 0.3618],  # Method A, phase2_pointmatch 2026-10-14
-    )
-    ctrl.start()
-    ctrl.end()
+A receive-only SocketCAN observer supplies fresh state. Parameter files must
+pass independent validation; no historical Method E constants are embedded.
 """
-
 from __future__ import annotations
 
 import time
-from typing import Sequence
-
 import numpy as np
 
-from reBotArm_control_py.actuator import RebotArm
-from reBotArm_control_py.dynamics import compute_generalized_gravity
-from reBotArm_control_py.kinematics.robot_model import load_robot_model
+from friction_id.analysis import read_parameters
+from friction_id.common import EFFORT, HOME, ZERO_TOLERANCE, Gravity, check_position, ramp, vector
+from friction_id.hardware import FeedbackReceiver, fold_before_disable
+
+
+class Feedforward:
+    """Pure torque computation; state filtering and command limits live outside."""
+    def __init__(self, gravity, fc, fv, speed_ranges, gravity_scale, friction_scale,
+                 direction, offset, smoothing=.02):
+        self.gravity=gravity
+        self.fc,self.fv=np.asarray(fc),np.asarray(fv)
+        self.ranges=np.asarray(speed_ranges)
+        self.gravity_scale,self.friction_scale=gravity_scale,friction_scale
+        self.direction,self.offset=direction,offset
+        self.smoothing=smoothing
+
+    def components(self,q,qd,kd):
+        g=self.direction*self.gravity(self.direction*(q-self.offset))*self.gravity_scale
+        # Smooth activation only inside the independently validated speed envelope.
+        speed=np.abs(qd)
+        width=np.minimum(.02,np.maximum((self.ranges[:,1]-self.ranges[:,0])/4,1e-6))
+        envelope=np.clip((speed-self.ranges[:,0])/width,0,1)*np.clip((self.ranges[:,1]-speed)/width,0,1)
+        envelope=envelope*envelope*(3-2*envelope)
+        scaled_fc=self.fc*self.friction_scale
+        # Limit the ENABLED viscous gain against the kd actually sent this cycle.
+        scaled_fv=np.minimum(self.fv*self.friction_scale,.8*kd)
+        f=(scaled_fc*np.tanh(qd/self.smoothing)+scaled_fv*qd)*envelope
+        return g,f
 
 
 class GravityFrictionCompensation:
-    """MIT 位置闭环 + 重力前馈 + 摩擦力前馈。"""
-
-    def __init__(
-        self,
-        rebotarm: RebotArm,
-        *,
-        kp: float = 2.0,
-        kd: float = 1.0,
-        fc: float | Sequence[float] = 0.0,
-        fv: float | Sequence[float] = 0.0,
-        enabled_joints: Sequence[str] | None = None,
-        log_every: int = 0,
-        tau_scale: float | Sequence[float] = 1.0,
-        transition_duration: float = 0.5,
-        joint_direction: float | Sequence[float] = 1.0,
-        hold_kp: float | Sequence[float] | None = None,
-        hold_kd: float | Sequence[float] | None = None,
-    ) -> None:
-        self.rebotarm = rebotarm
-        self._kp = float(kp)
-        self._kd = float(kd)
-        self._enabled_joints = list(enabled_joints) if enabled_joints else []
-        self._log_every = int(log_every)
-        self._counter = 0
-        self._running = False
-        self._last_tau_total = np.zeros(0, dtype=np.float64)
-
-        self._tau_scale_raw = tau_scale
-        self._joint_direction_raw = joint_direction
-        self._transition_duration = float(transition_duration)
-        self._hold_kp_raw = hold_kp
-        self._hold_kd_raw = hold_kd
-        self._fc_raw = fc
-        self._fv_raw = fv
-
-        self._tau_scale: np.ndarray | None = None
-        self._joint_direction: np.ndarray | None = None
-        self._fc: np.ndarray | None = None
-        self._fv: np.ndarray | None = None
-        self._compliant_kp: np.ndarray | None = None
-        self._compliant_kd: np.ndarray | None = None
-        self._hold_kp: np.ndarray | None = None
-        self._hold_kd: np.ndarray | None = None
-        self._transition_q_hold: np.ndarray | None = None
-        self._transition_started_at: float | None = None
-        self._q_frozen: np.ndarray | None = None
-        self._q_prev: np.ndarray | None = None
-        self._t_prev: float | None = None
-        self._gc_model = None
-        self._gc_data = None
+    def __init__(self,rebotarm,*,kp=15.,kd=2.5,parameter_files=(),load_id=None,
+                 gravity_scale=1.,friction_scale=0.,tau_scale=None,
+                 transition_duration=1.,joint_direction=1.,joint_offset=0.,
+                 hold_kp=None,hold_kd=None,enabled_joints=None,log_every=0,
+                 max_torque=None,max_torque_rate=20.,velocity_time_constant=.10,
+                 feedback_source=None,gravity=None,reference_source=None,rate=100.,stop_requested=None,fc=0.,fv=0.):
+        if np.any(np.asarray(fc)!=0) or np.any(np.asarray(fv)!=0):
+            raise ValueError('Raw Fc/Fv are not deployable: use independently validated parameter_files')
+        self.rebotarm=rebotarm
+        self.kp_raw,self.kd_raw,self.hold_kp_raw,self.hold_kd_raw=kp,kd,hold_kp,hold_kd
+        self.gravity_scale_raw=gravity_scale if tau_scale is None else tau_scale
+        self.friction_scale_raw=friction_scale
+        self.direction_raw,self.offset_raw=joint_direction,joint_offset
+        self.parameter_files,self.load_id=list(parameter_files),load_id
+        self.enabled_joints=list(enabled_joints or [])
+        self.transition_duration=float(transition_duration)
+        self.max_torque=vector(EFFORT*.5 if max_torque is None else max_torque,'max_torque',minimum=0)
+        self.max_torque_rate=vector(max_torque_rate,'max_torque_rate',minimum=0)
+        self.velocity_time_constant=float(velocity_time_constant)
+        if not np.isfinite([self.transition_duration,self.velocity_time_constant]).all() or min(self.transition_duration,self.velocity_time_constant)<=0:
+            raise ValueError('Transition and velocity time constants must be positive')
+        self.receiver=feedback_source
+        self.gravity=gravity
+        self.log_every=log_every
+        self.failure=None
+        self._running=False
+        self._connected=False
+        self._enabled=False
+        self._closed=False
+        self._returning=False
+        self._startup=True
+        self._last_tau_total=np.zeros(6)
+        self.last_components={}
+        self._gripper=[]
+        self.journal=None
+        self._command_id=0
+        self.reference_source=reference_source
+        self.finished=False
+        self.stop_requested=stop_requested or (lambda:False)
+        self.rate=float(rate)
+        if not 50<=self.rate<=200: raise ValueError('Control rate must be within [50,200] Hz')
 
     @property
-    def last_tau(self) -> np.ndarray:
+    def last_tau(self):
         return self._last_tau_total.copy()
 
-    def start(self) -> None:
-        if self._running:
-            raise RuntimeError("已在运行，请先调用 end()")
+    def _resolve_params(self):
+        robot=self.rebotarm
+        if robot.arm.joint_names != [f'joint{i}' for i in range(1,7)]:
+            raise ValueError('Controller supports the six-axis RS joint order only')
+        self.kp=vector(self.kp_raw,'kp',minimum=0)
+        self.kd=vector(self.kd_raw,'kd',minimum=0)
+        self.hold_kp=vector(robot.arm._mit_kp if self.hold_kp_raw is None else self.hold_kp_raw,'hold_kp',minimum=0)
+        self.hold_kd=vector(robot.arm._mit_kd if self.hold_kd_raw is None else self.hold_kd_raw,'hold_kd',minimum=0)
+        self.direction=vector(self.direction_raw,'direction')
+        if not np.all(np.abs(self.direction)==1): raise ValueError('Direction must be +/-1')
+        self.offset=vector(self.offset_raw,'offset')
+        self.gravity=self.gravity or Gravity()
+        fc,fv=np.zeros(6),np.zeros(6)
+        ranges=np.zeros((6,2))
+        self.temperature_ranges=np.tile([0.,65.],(6,1))
+        used=set()
+        for path in self.parameter_files:
+            p=read_parameters(path,'validated');j=p['joint']-1
+            if j not in range(6) or j in used: raise ValueError('Duplicate/invalid parameter axis')
+            if p['method']!='D' or p['units']!='N*m' or not p.get('eligible'):
+                raise ValueError('Only calibrated, validated Method D parameters can be enabled')
+            if not p.get('validation_run_ids') or not p.get('validation_sha256'):
+                raise ValueError('Independent validation provenance missing')
+            if p['conditions']['model_hash']!=self.gravity.model_hash or p['conditions']['load_id']!=self.load_id:
+                raise ValueError('Parameter model/load differs from runtime configuration')
+            if np.any(self.direction!=1) or np.any(self.offset!=0):
+                raise ValueError('These parameters were validated in direct drive coordinates')
+            fc[j],fv[j]=p['fc'],p['fv'];ranges[j]=p['speed_range'];used.add(j)
+            self.temperature_ranges[j]=p['temperature_range']
+            if not np.isfinite(ranges[j]).all() or not 0 < ranges[j,0] < ranges[j,1]:
+                raise ValueError('Invalid validated speed range')
+            if not np.isfinite(self.temperature_ranges[j]).all(): raise ValueError('Invalid temperature range')
+        vector(fc,'fc',minimum=0);vector(fv,'fv',minimum=0)
+        scale=vector(self.friction_scale_raw,'friction_scale',minimum=0)
+        if np.any(scale>1): raise ValueError('friction_scale must be within [0,1]')
+        if np.any(scale) and not used: raise ValueError('Friction requires validated parameter files')
+        self.ff=Feedforward(self.gravity,fc,fv,ranges,vector(self.gravity_scale_raw,'gravity_scale',minimum=0),
+                            scale,self.direction,self.offset)
+        if self.journal:
+            self.journal.metadata['conditions']=dict(model_hash=self.gravity.model_hash,load_id=self.load_id,
+                kp=self.kp.tolist(),kd=self.kd.tolist(),direction=self.direction.tolist(),offset=self.offset.tolist())
+            self.journal.append('annotation',dict(kind='metadata',value=self.journal.metadata.copy()))
 
-        robot = self.rebotarm
-        robot.connect()
+    def _snapshot(self):
+        return self.receiver.snapshot()
 
-        n = robot.arm.num_joints
-        self._resolve_params(n)
+    def _send(self,q,qd,kp,kd,tau):
+        q=check_position(q,ZERO_TOLERANCE if self._startup or self._returning else 0.)
+        if not all(np.isfinite(x).all() for x in (qd,kp,kd,tau)):
+            raise RuntimeError('Nonfinite MIT command')
+        for i,name in enumerate(self.rebotarm.arm.joint_names):
+            started=time.monotonic();ok=False
+            try:
+                self.rebotarm._motor_map[name].send_mit(float(q[i]),float(qd[i]),float(kp[i]),float(kd[i]),float(tau[i]))
+                ok=True
+            finally:
+                if self.journal:
+                    self.journal.append('command',dict(tx_start=started,tx_end=time.monotonic(),joint=i+1,
+                        command_id=self._command_id,segment=-1,repeat=-1,speed_id=-1,direction=0,
+                        phase=getattr(self,'_phase','compensation'),
+                        q_ref=float(q[i]),qd_ref=float(qd[i]),kp=float(kp[i]),kd=float(kd[i]),tau_ff=float(tau[i]),ok=ok))
+        self._command_id+=1
+        for motor,pos,kp_g,kd_g in self._gripper:
+            motor.send_mit(pos,0.,kp_g,kd_g,0.)
 
-        q_hold = robot.arm.get_positions().copy()
-
-        robot.arm.mode_mit()
-        if robot.has_gripper:
-            robot.gripper.mode_mit()
-        robot.disable_all()
-        time.sleep(0.1)
-
-        if self._enabled_joints:
-            for name in self._enabled_joints:
-                if name in robot._motor_map:
-                    robot._motor_map[name].enable()
-            print(f"[安全模式] 仅使能: {self._enabled_joints}")
-        else:
-            robot.enable_all()
-            print("[使能] 全部电机已使能")
-
-        self._q_prev = q_hold.copy()
-        self._t_prev = time.perf_counter()
-        self._qd_filt = np.zeros(robot.arm.num_joints)
-
-        self._transition_q_hold = q_hold.copy()
-        self._q_frozen = None
-        self._transition_started_at = time.perf_counter()
-        self._running = True
-        robot.start_control_loop(self._loop_cb)
-        print(f"[控制循环] 启动 @ {robot.rate} Hz")
-        # 启动诊断: 确认重力补偿非零
-        time.sleep(0.3)
-        q_test = robot.arm.get_positions()
-        tau_test = self._total_torque(q_test)
-        print(f"[诊断] 当前位置: {np.round(q_test, 3)}")
-        print(f"[诊断] 重力+摩擦力矩: {np.round(tau_test, 3)} N·m")
-        print(f"[诊断] 重力缩放: {np.round(self._tau_scale, 3)}")
-        print(f"[诊断] 摩擦 fc: {np.round(self._fc, 3)}  fv: {np.round(self._fv, 3)}")
-
-    def end(self) -> None:
-        if not self._running:
-            return
-        self.rebotarm.stop_control_loop()
-        self._running = False
-
-    def __enter__(self) -> GravityFrictionCompensation:
-        self.start()
-        return self
-
-    def __exit__(self, *args) -> None:
-        self.end()
-
-    def _total_torque(self, q: np.ndarray) -> np.ndarray:
-        n = len(q)
-
-        q_model = np.zeros(self._gc_model.nq)
-        q_model[:n] = q
-        tau_model = compute_generalized_gravity(
-            self._gc_model, q_model, self._gc_data
-        )[:n]
-        tau_g = tau_model * self._joint_direction * self._tau_scale
-
-        now = time.perf_counter()
-        if self._q_prev is not None and self._t_prev is not None:
-            dt_actual = max(now - self._t_prev, 1e-4)
-            qd_est = (q - self._q_prev) / dt_actual
-        else:
-            dt_actual = 0.01  # 默认 100Hz
-            qd_est = np.zeros(n)
-
-        self._q_prev = q.copy()
-        self._t_prev = now
-
-        # 低通滤波速度估计 (消除 500Hz 差分噪声, 截止 ~3Hz)
-        _alpha = min(dt_actual / 0.05, 1.0)
-        self._qd_filt = self._qd_filt + _alpha * (qd_est - self._qd_filt)
-
-        _deadzone = 0.02  # 滤波后噪声已消除, 恢复正常阈值
-        tau_fric = (self._fc * np.tanh(self._qd_filt / _deadzone) + self._fv * self._qd_filt) * self._tau_scale
-        return tau_g + tau_fric
-
-    def _loop_cb(self, robot: RebotArm, dt: float) -> None:
-        del dt
-        q = robot.arm.get_positions()
-        n = robot.arm.num_joints
-
-        tau = self._total_torque(q)
-        self._last_tau_total = np.asarray(tau, dtype=np.float64)
-
-        transition_started_at = self._transition_started_at
-        elapsed = (
-            self._transition_duration
-            if transition_started_at is None
-            else max(0.0, time.perf_counter() - transition_started_at)
-        )
-        blend = self._transition_blend(elapsed)
-        kp = self._hold_kp + blend * (self._compliant_kp - self._hold_kp)
-        kd = self._hold_kd + blend * (self._compliant_kd - self._hold_kd)
-        q_hold = self._transition_q_hold
-        q_target = (
-            q.copy()
-            if q_hold is None
-            else q_hold + blend * (q - q_hold)
-        )
-        if blend >= 1.0:
-            if self._q_frozen is None:
-                self._q_frozen = q.copy()
-                print(f"[冻结] 初始锁定 @ {np.round(self._q_frozen, 3)}")
-            # 连续追踪: 冻结点持续缓慢跟随实际位置
-            # 速度噪声通过低通滤波消除, kd=2 抑制振荡
-            _track_alpha = 0.015  # τ ~ 0.13s (500Hz)
-            # 微小位移不追踪 (避免编码器噪声导致漂移)
-            _dq = np.linalg.norm(q - self._q_frozen)
-            if _dq > 0.005:
-                self._q_frozen = self._q_frozen + _track_alpha * (q - self._q_frozen)
-            q_target = self._q_frozen
-            self._transition_q_hold = None
-
-        robot.arm.send_mit(
-            pos=q_target,
-            vel=np.zeros(n),
-            kp=kp,
-            kd=kd,
-            tau=self._last_tau_total,
-        )
-        if robot.has_gripper:
-            robot.gripper.send_mit(robot.gripper.get_positions())
-
-        self._counter += 1
-        if self._log_every > 0 and self._counter % self._log_every == 0:
-            print(
-                f"[{self._counter:4d}] "
-                f"tau = " + "  ".join(f"{t:+.3f}" for t in self._last_tau_total) + "  N·m"
-            )
-
-    def safe_home(
-        self,
-        max_vel: float = 0.5,
-        send_freq: float = 50.0,
-        settle: float = 0.5,
-        timeout: float = 15.0,
-    ) -> None:
-        if self._hold_kp is None:
-            raise RuntimeError("safe_home() 需先调用 start()")
-        robot = self.rebotarm
-        q_hold = robot.arm.get_positions().copy()
-        n = robot.arm.num_joints
-        home = np.zeros(n)
-        kp = self._hold_kp
-        kd = self._hold_kd
-
-        tau_hold = self._total_torque(q_hold)
-        robot.arm.send_mit(q_hold, vel=np.zeros(n), kp=kp, kd=kd, tau=tau_hold)
-        if robot.has_gripper:
-            robot.gripper.send_mit(robot.gripper.get_positions())
-        time.sleep(0.3)
-
-        q_err = np.abs(home - q_hold)
-        max_err = float(np.max(q_err))
-        if max_err < 0.01:
-            return
-
-        t_ramp = max_err / max_vel
-        t_total = t_ramp * 2.0
-        dt_send = 1.0 / send_freq
-        num_steps = max(2, int(t_total / dt_send))
-        interval = t_total / num_steps
-
-        deadline = time.monotonic() + timeout
-        print(f"[safe_home] 归零: {num_steps}步 @ {send_freq:.0f}Hz, {t_total:.1f}s")
-        for i in range(num_steps):
-            if time.monotonic() > deadline:
-                print("[safe_home] 超时")
-                break
-            s = (i + 1) / num_steps
-            q_traj = q_hold + (home - q_hold) * (
-                10.0 * s ** 3 - 15.0 * s ** 4 + 6.0 * s ** 5
-            )
-            tau_traj = self._total_torque(q_traj)
-            robot.arm.send_mit(q_traj, vel=np.zeros(n), kp=kp, kd=kd, tau=tau_traj)
+    def start(self):
+        if self._running: raise RuntimeError('Already running')
+        if self._closed: raise RuntimeError('Closed controller cannot restart; create a new instance')
+        robot=self.rebotarm
+        try:
+            robot.connect();self._connected=True
+            self._resolve_params()
+            self.receiver=self.receiver or FeedbackReceiver(robot._channel,self.journal)
+            self.receiver.start()
+            names=robot.arm.joint_names
+            q=check_position([robot._motor_map[name].robstride_get_param_f32(0x7019) for name in names],ZERO_TOLERANCE)
+            if np.max(np.abs(q))>.05:
+                raise RuntimeError('Start must be folded; refusing mode changes outside folded pose')
+            self.receiver.lower_position_tolerance=ZERO_TOLERANCE.copy()
+            if not robot.arm.mode_mit(): raise RuntimeError('Arm MIT mode initialization failed')
             if robot.has_gripper:
-                robot.gripper.send_mit(robot.gripper.get_positions())
-            time.sleep(interval)
+                if not robot.gripper.mode_mit(): raise RuntimeError('Gripper MIT mode initialization failed')
+                for i,name in enumerate(robot.gripper.joint_names):
+                    m=robot._motor_map[name]
+                    p=float(m.robstride_get_param_f32(0x7019))
+                    if not np.isfinite(p): raise RuntimeError('Invalid gripper position')
+                    self._gripper.append((m,p,float(robot.gripper._mit_kp[i]),float(robot.gripper._mit_kd[i])))
+            for name in names: robot._motor_map[name].robstride_set_active_report(True)
+            deadline=time.monotonic()+2.
+            while True:
+                try: rows=self._snapshot();break
+                except RuntimeError:
+                    if time.monotonic()>deadline: raise
+                    time.sleep(.01)
+            allowed=set(robot.joint_names)
+            if any(n not in allowed for n in self.enabled_joints): raise ValueError('Unknown enabled joint')
+            if self.stop_requested(): raise KeyboardInterrupt
+            q=np.array([r['q'] for r in rows])
+            self._send(q,np.zeros(6),self.hold_kp,self.hold_kd,np.zeros(6))
+            self._enabled=True  # partial enable failure also requires fold confirmation
+            if self.enabled_joints:
+                for name in self.enabled_joints: robot._motor_map[name].enable()
+            else: robot.enable_all()
+            rows=self._snapshot()
+            self._q_prev=np.array([r['q'] for r in rows]);self._t_prev=np.array([r['t'] for r in rows])
+            self._seq_prev=np.array([r['seq'] for r in rows]);self._qd_filt=np.zeros(6)
+            self._q_frozen=q.copy();self._started=time.monotonic();self._loop_t=self._started
+            self._initial_q=q.copy();self.finished=False
+            self._last_tau_total=np.zeros(6);self.failure=None;self._counter=0;self._running=True
+            robot.start_control_loop(self._loop_cb,rate=self.rate)
+        except BaseException:
+            self.close()
+            raise
 
-        robot.arm.send_mit(home, vel=np.zeros(n), kp=kp, kd=kd, tau=np.zeros(n))
-        time.sleep(settle)
+    def _update_velocity(self,rows):
+        for j,row in enumerate(rows):
+            if row['seq']==self._seq_prev[j]: continue
+            dt=row['t']-self._t_prev[j]
+            if not .0001<=dt<=.1: raise RuntimeError('Invalid fresh-feedback interval')
+            v=(row['q']-self._q_prev[j])/dt
+            alpha=1-np.exp(-dt/self.velocity_time_constant)
+            self._qd_filt[j]+=alpha*(v-self._qd_filt[j])
+            self._q_prev[j],self._t_prev[j],self._seq_prev[j]=row['q'],row['t'],row['seq']
 
-    def _resolve_params(self, n: int) -> None:
-        self._tau_scale = np.ones(n) * self._tau_scale_raw
-        self._joint_direction = np.ones(n) * self._joint_direction_raw
-        self._fc = np.ones(n) * self._fc_raw
-        self._fv = np.ones(n) * self._fv_raw
-        self._compliant_kp = np.full(n, self._kp)
-        self._compliant_kd = np.full(n, self._kd)
+    def _bounded_torque(self,g,f,dt,blend=1.):
+        requested=(g+f)*blend
+        target=np.clip(requested,-self.max_torque,self.max_torque)
+        tau=self._last_tau_total+np.clip(target-self._last_tau_total,-self.max_torque_rate*dt,self.max_torque_rate*dt)
+        self.last_components=dict(gravity=g.copy(),friction=f.copy(),requested=requested.copy(),sent=tau.copy(),
+                                  limited=bool(np.any(np.abs(tau-requested)>1e-9)))
+        self._last_tau_total=tau
+        return tau
 
-        if self._hold_kp_raw is None:
-            self._hold_kp = self.rebotarm.arm._mit_kp
-        else:
-            self._hold_kp = np.ones(n) * self._hold_kp_raw
-        if self._hold_kd_raw is None:
-            self._hold_kd = self.rebotarm.arm._mit_kd
-        else:
-            self._hold_kd = np.ones(n) * self._hold_kd_raw
+    def _loop_cb(self,robot,dt):
+        try:
+            now=time.monotonic();actual_dt=now-self._loop_t;self._loop_t=now
+            if not 0<actual_dt<=.1: raise RuntimeError('Control loop timing invalid')
+            rows=self._snapshot();q=np.array([r['q'] for r in rows])
+            if np.any(np.abs([r['tau'] for r in rows])>EFFORT*.9): raise RuntimeError('Effort threshold exceeded')
+            self._update_velocity(rows)
+            ratio=np.clip((now-self._started)/self.transition_duration,0,1)
+            blend=ratio*ratio*(3-2*ratio)
+            kp=self.hold_kp+blend*(self.kp-self.hold_kp)
+            kd=self.hold_kd+blend*(self.kd-self.hold_kd)
+            qd_target=np.zeros(6)
+            if self.reference_source:
+                target,qd_target,self.finished=self.reference_source(now-self._started,self._initial_q)
+                if np.max(np.abs(target-q))>.15 or np.max(np.abs(qd_target))>.6:
+                    raise RuntimeError('Comparison trajectory tracking/velocity bound exceeded')
+            else:
+                if np.linalg.norm(q-self._q_frozen)>.005:
+                    self._q_frozen+=(1-np.exp(-actual_dt/.13))*(q-self._q_frozen)
+                target=self._q_frozen
+            g,f=self.ff.components(q,qd_target if self.reference_source else self._qd_filt,kd)
+            temps=np.array([r['temperature'] for r in rows])
+            f=np.where((temps>=self.temperature_ranges[:,0]-5)&(temps<=self.temperature_ranges[:,1]+5),f,0.)
+            tau=self._bounded_torque(g,f,actual_dt,blend)
+            estimate=kp*(target-q)+kd*(qd_target-np.array([r['qd'] for r in rows]))+tau
+            if np.any(np.abs(estimate)>EFFORT*.8): raise RuntimeError('Estimated MIT effort exceeds experiment bound')
+            self._send(target,qd_target,kp,kd,tau)
+            self._counter+=1
+            if self.log_every and self._counter%self.log_every==0:
+                print(f'tau={np.round(tau,3)} limited={self.last_components["limited"]}')
+            if self.journal and self._counter%50==0:
+                self.journal.append('annotation',dict(kind='feedforward',t=now,
+                    gravity=g.tolist(),friction=f.tolist(),sent=tau.tolist(),limited=self.last_components['limited']))
+            if self.journal and self._counter%1000==0:
+                if self.journal.error: raise RuntimeError(f'Runtime logger failed: {self.journal.error}')
+                self.journal.request_checkpoint()
+        except Exception as exc:
+            self.failure=exc
+            # Main thread observes failure and closes; do not attempt blind homing.
+            raise
 
-        self._gc_model = load_robot_model()
-        self._gc_data = self._gc_model.createData()
+    def end(self):
+        if self._connected: self.rebotarm.stop_control_loop()
+        self._running=False
 
-    def _transition_blend(self, elapsed: float) -> float:
-        ratio = float(np.clip(
-            elapsed / max(self._transition_duration, 1e-6), 0.0, 1.0))
-        return ratio * ratio * (3.0 - 2.0 * ratio)
+    def safe_home(self,max_vel=.3,send_freq=50.,settle=.5,timeout=20.):
+        if self._running: raise RuntimeError('Stop the control loop before homing')
+        if not np.isfinite([max_vel,send_freq,settle,timeout]).all() or min(max_vel,send_freq,timeout)<=0 or settle<0:
+            raise ValueError('Invalid homing limits')
+        rows=self._snapshot();q0=np.array([r['q'] for r in rows])
+        duration=max(1.,1.875*np.max(np.abs(HOME-q0))/max_vel)
+        if duration+settle>timeout: raise TimeoutError('Insufficient timeout for bounded HOME trajectory')
+        started=time.monotonic();last=started
+        while True:
+            now=time.monotonic()
+            if now-started>timeout: raise TimeoutError('HOME timeout')
+            rows=self._snapshot();actual=np.array([r['q'] for r in rows])
+            q,qd=ramp(min(now-started,duration),duration,q0,HOME)
+            if np.max(np.abs(q-actual))>.15: raise RuntimeError('HOME tracking failed')
+            g,_=self.ff.components(actual,np.zeros(6),self.hold_kd)
+            tau=self._bounded_torque(g,np.zeros(6),max(now-last,1e-4));last=now
+            self._send(q,qd,self.hold_kp,self.hold_kd,tau)
+            if now-started>=duration+settle: break
+            time.sleep(1/send_freq)
+        if np.max(np.abs(np.array([r['q'] for r in self._snapshot()])-HOME))>.05:
+            raise RuntimeError('HOME final position not reached')
+
+    def close(self,return_home=None):
+        # return_home remains a compatibility argument; folding is mandatory.
+        if self._closed: return
+        try:
+            self.end()
+            if self._enabled:
+                self._returning=True
+                last=time.monotonic()
+                def send_fold(q,qd,phase):
+                    nonlocal last
+                    rows=self._snapshot();actual=np.array([r['q'] for r in rows])
+                    if np.any(np.abs([r['tau'] for r in rows])>EFFORT*.9):
+                        raise RuntimeError('Fold effort threshold exceeded')
+                    g,_=self.ff.components(actual,np.zeros(6),self.hold_kd)
+                    now=time.monotonic()
+                    tau=self._bounded_torque(g,np.zeros(6),min(max(now-last,1e-4),.1));last=now
+                    estimate=self.hold_kp*(q-actual)+self.hold_kd*(qd-np.array([r['qd'] for r in rows]))+tau
+                    if np.any(np.abs(estimate)>EFFORT*.8):
+                        raise RuntimeError('Fold estimated effort exceeds bound')
+                    self._phase=phase
+                    self._send(q,qd,self.hold_kp,self.hold_kd,tau)
+                fold_before_disable(self.receiver,send_fold,self.journal,rate=self.rate)
+                # Do not call disconnect/shutdown: they also disable implicitly.
+                # All explicit disable commands are below the fold confirmation.
+                errors=[]
+                for name,motor in self.rebotarm._motor_map.items():
+                    try: motor.disable()
+                    except Exception as exc: errors.append(f'{name}: {exc}')
+                if errors: raise RuntimeError(f'Fold verified but disable failed: {errors}')
+                self._enabled=False
+                if self.journal:
+                    self.journal.append('annotation',dict(kind='disabled_after_fold',t=time.monotonic()))
+        except BaseException as exc:
+            if self.journal:
+                self.journal.append('annotation',dict(kind='cleanup_failed',error=str(exc),
+                    policy='No automatic disable without verified folded pose'))
+            print(f'退出失败：{exc}。未确认折叠到位时不发送失能；连接将关闭，需现场处理。',flush=True)
+            raise
+        finally:
+            self._closed=True
+            try:
+                # Covers partially opened connections without implicit disable.
+                for controller in getattr(self.rebotarm,'_ctrl_map',{}).values():
+                    try: controller.close_bus()
+                    finally: controller.close()
+                self._connected=False
+                if hasattr(self.rebotarm,'_connected'): self.rebotarm._connected=False
+            finally:
+                if self.receiver: self.receiver.stop()
+
+    def __enter__(self):
+        self.start();return self
+
+    def __exit__(self,*args):
+        self.close()

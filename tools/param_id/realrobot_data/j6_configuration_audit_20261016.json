@@ -1,0 +1,242 @@
+{
+  "axes": [
+    {
+      "joint": 1,
+      "expected_model": "rs-06",
+      "q": 0.021347900852560997,
+      "run_mode": 0
+    },
+    {
+      "joint": 2,
+      "expected_model": "rs-06",
+      "q": -0.006604644935578108,
+      "run_mode": 0
+    },
+    {
+      "joint": 3,
+      "expected_model": "rs-06",
+      "q": 0.0006817447138018906,
+      "run_mode": 0
+    },
+    {
+      "joint": 4,
+      "expected_model": "rs-00",
+      "q": -0.0014956474769860506,
+      "run_mode": 0
+    },
+    {
+      "joint": 5,
+      "expected_model": "rs-00",
+      "q": 0.01300048828125,
+      "run_mode": 0
+    },
+    {
+      "joint": 6,
+      "expected_model": "rs-00",
+      "q": -0.04199271276593208,
+      "run_mode": 0
+    }
+  ],
+  "j6_parameters": [
+    {
+      "address": "0x2022",
+      "name": "protocol",
+      "type": "u8",
+      "value": 0,
+      "ok": true
+    },
+    {
+      "address": "0x200a",
+      "name": "CAN_ID",
+      "type": "u8",
+      "value": 0,
+      "ok": true
+    },
+    {
+      "address": "0x200b",
+      "name": "host_ID",
+      "type": "u8",
+      "value": 0,
+      "ok": true
+    },
+    {
+      "address": "0x2005",
+      "name": "mechOffset",
+      "type": "f32",
+      "value": 0.0,
+      "ok": true
+    },
+    {
+      "address": "0x7010",
+      "name": "current_kp",
+      "type": "f32",
+      "value": 0.125,
+      "ok": true
+    },
+    {
+      "address": "0x7011",
+      "name": "current_ki",
+      "type": "f32",
+      "value": 0.015799999237060547,
+      "ok": true
+    },
+    {
+      "address": "0x7014",
+      "name": "current_filter_gain",
+      "type": "f32",
+      "value": 0.10000000149011612,
+      "ok": true
+    },
+    {
+      "address": "0x701f",
+      "name": "speed_kp",
+      "type": "f32",
+      "value": 5.0,
+      "ok": true
+    },
+    {
+      "address": "0x7020",
+      "name": "speed_ki",
+      "type": "f32",
+      "value": 0.019999999552965164,
+      "ok": true
+    },
+    {
+      "address": "0x7021",
+      "name": "speed_filter_gain",
+      "type": "f32",
+      "value": 0.05000000074505806,
+      "ok": true
+    },
+    {
+      "address": "0x702b",
+      "name": "zero_offset",
+      "type": "f32",
+      "value": 0.0,
+      "ok": true
+    },
+    {
+      "address": "0x702c",
+      "name": "cogging_compensation_switch",
+      "type": "u8",
+      "value": 0,
+      "ok": true
+    },
+    {
+      "address": "0x702d",
+      "name": "initial_calibration_switch",
+      "type": "u8",
+      "value": 0,
+      "ok": true
+    },
+    {
+      "address": "0x3031",
+      "name": "zero_fault",
+      "type": "u8",
+      "value": 0,
+      "ok": true
+    },
+    {
+      "address": "0x3041",
+      "name": "Kt_register",
+      "type": "f32",
+      "value": 0.0,
+      "ok": true
+    },
+    {
+      "address": "0x3042",
+      "name": "torque_calculation_type",
+      "type": "u8",
+      "value": 0,
+      "ok": true
+    },
+    {
+      "address": "0x701c",
+      "name": "bus_voltage",
+      "type": "f32",
+      "value": 47.89675521850586,
+      "ok": true
+    },
+    {
+      "address": "0x302c",
+      "name": "torque_feedback_register",
+      "type": "f32",
+      "value": 0.0,
+      "ok": true
+    }
+  ],
+  "feedback": [
+    {
+      "joint": 1,
+      "q": 0.02147638643769932,
+      "tau": 0.0,
+      "status": 0,
+      "temperature": 31.0,
+      "drive_state": 0
+    },
+    {
+      "joint": 2,
+      "q": -0.006519617311444437,
+      "tau": 0.0,
+      "status": 0,
+      "temperature": 31.0,
+      "drive_state": 0
+    },
+    {
+      "joint": 3,
+      "q": 0.0007670138013464044,
+      "tau": 0.0,
+      "status": 0,
+      "temperature": 30.0,
+      "drive_state": 0
+    },
+    {
+      "joint": 4,
+      "q": -0.0015340276026928087,
+      "tau": 0.0,
+      "status": 0,
+      "temperature": 30.0,
+      "drive_state": 0
+    },
+    {
+      "joint": 5,
+      "q": 0.013039234622888874,
+      "tau": 0.0,
+      "status": 0,
+      "temperature": 29.0,
+      "drive_state": 0
+    },
+    {
+      "joint": 6,
+      "q": -0.04180225217338043,
+      "tau": 0.0,
+      "status": 0,
+      "temperature": 29.0,
+      "drive_state": 0
+    }
+  ],
+  "audit_policy": {
+    "motion_commands_sent": false,
+    "parameter_writes_sent": false,
+    "reporting_subscription_enabled": true,
+    "note": "Active-report subscription only; no clear_error, enable, disable, zeroing, mode change, calibration or persistent save."
+  },
+  "nominal_rs00_spec": {
+    "manufacturer_source": "https://github.com/RobStride/Product_Information/blob/384cc561e1ff079c22f68b19908526094430febd/Product%20Literature/CAN2.0/RS00/RS00User%20Manual260713.pdf",
+    "poles": 28,
+    "pole_pairs": 14,
+    "reduction_ratio": 10,
+    "electrical_cycle_at_output_rad": 0.04487989505128276,
+    "electrical_cycle_at_output_deg": 2.5714285714285716,
+    "source_verified": true,
+    "installed_device_model_readback_verified": false
+  },
+  "interpretation": {
+    "cogging_switch_0x702c": "Observed 0: cogging compensation switch off; does not establish whether a usable calibration table exists.",
+    "calibration_switch_0x702d": "Observed 0: precise initialization switch off; not a calibration-complete flag.",
+    "legacy_debug_registers": "CAN_ID register returned 0 although node 6 replied. Treat zero values in legacy/debug addresses (including Kt=0) as unverified, not physical findings.",
+    "firmware_version": "Not read: documented version request uses communication type 4 (also the stop-command type), omitted from this read-only audit.",
+    "cogging_calibration": "Manufacturer requires no-load calibration and restart; no such operation performed on assembled arm.",
+    "observed_period": "Agreement with one electrical cycle is a diagnostic clue; it does not prove cogging torque or identify a faulty component."
+  }
+}

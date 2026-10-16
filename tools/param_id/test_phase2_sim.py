@@ -16,6 +16,7 @@ sys.path.insert(0, "/home/a12/reBotArm_control_py-1")
 import mujoco
 from mujoco import viewer as mujoco_viewer
 from mujoco_id.mujoco_env import ReBotMjEnv, ARM_JOINTS, N_ARM
+from friction_id.common import Sweep
 from reBotArm_control_py.kinematics.robot_model import load_robot_model
 from pinocchio import computeGeneralizedGravity
 
@@ -97,12 +98,12 @@ def quintic_ramp_home(mg, q_start, q_target, duration):
 
 def collect_const_vel_raw(mg, jidx, tv, q_start_pos, kp, kd, q_home):
     """采集恒速段逐点原始数据: (positions, velocities, tau_est, tau_fb, tau_grav)."""
-    d_ramp_total = abs(tv) * T_RAMP * 0.5
-    d_hold_total = abs(tv) * (D_SWEEP / abs(tv)) if abs(tv) > 1e-6 else 0.0
-    T_MEAS = abs(d_hold_total / tv) if abs(tv) > 1e-6 else 1.0
-    n_total = int((T_RAMP + T_MEAS + T_RET) * RATE)
+    # Same signed trajectory implementation as real acquisition; fixed B/C continuity.
+    endpoint = q_start_pos + np.sign(tv) * (D_SWEEP + abs(tv)*(T_RAMP+T_RET)/2)
+    sweep = Sweep(q_start_pos, endpoint, abs(tv), T_RAMP, T_RET)
+    n_total = int(np.ceil(sweep.duration * RATE))
     i_meas_start = int(T_RAMP * RATE)
-    i_meas_end = int((T_RAMP + T_MEAS) * RATE)
+    i_meas_end = int((T_RAMP + sweep.constant_time) * RATE)
 
     pos_list, vel_list, te_list, tf_list, tg_list = [], [], [], [], []
 
@@ -110,23 +111,8 @@ def collect_const_vel_raw(mg, jidx, tv, q_start_pos, kp, kd, q_home):
     for step in range(n_total):
         t_elapsed = (step+1) * DT
 
-        if step < int(T_RAMP * RATE):
-            v_j, dq_j = _quintic_vel_up((step+1)*DT, T_RAMP, tv)
-            q_ref = q_home.copy(); qd_ref = np.zeros(6)
-            q_ref[jidx] = q_start_pos + dq_j; qd_ref[jidx] = v_j
-        elif step < int((T_RAMP + T_MEAS) * RATE):
-            t_i = (step+1)*DT - T_RAMP
-            d_ramp_this = tv * T_RAMP * 0.5
-            q_ref = q_home.copy(); qd_ref = np.zeros(6)
-            q_ref[jidx] = q_start_pos + d_ramp_this + tv * t_i; qd_ref[jidx] = tv
-        elif step < n_total:
-            t_i = (step+1)*DT - T_RAMP - T_MEAS
-            v_j, dq_j = _quintic_vel_down(t_i, T_RET, tv)
-            q_ref = q_home.copy(); qd_ref = np.zeros(6)
-            q_ref[jidx] = q_start_pos + d_ramp_this + d_hold_total + dq_j
-            qd_ref[jidx] = v_j
-        else:
-            q_ref = q_home.copy(); qd_ref = np.zeros(6)
+        q_ref = q_home.copy(); qd_ref = np.zeros(6)
+        q_ref[jidx], qd_ref[jidx], phase = sweep.evaluate((step+1)*DT)
 
         tau_g = _gravity(q_ref)
         mg.send_all_mit(q_ref, qd_ref, tau_g)
@@ -290,6 +276,7 @@ def main():
 
     XML = "/home/a12/ReBot_Arm_DigitalTwin_RS/rebotarm_ros2_RS/src/rebotarm_mujoco_rs/models/rs_arm_with_scene.xml"
     env = ReBotMjEnv(XML)
+    env.model.opt.timestep = DT
 
     for j in range(N_ARM):
         dof = env._dof_addr[j]
