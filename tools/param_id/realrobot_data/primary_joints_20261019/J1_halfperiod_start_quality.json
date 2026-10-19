@@ -1,0 +1,100 @@
+{
+  "joint": 1,
+  "file": "J1_halfperiod_start/friction_20261019_151437_31449c94.npz",
+  "kp": [
+    80.0,
+    150.0,
+    150.0,
+    25.0,
+    12.0,
+    25.0
+  ],
+  "kd": [
+    10.0,
+    10.0,
+    10.0,
+    1.5,
+    0.8,
+    1.5
+  ],
+  "segments": [
+    {
+      "segment": 0,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": 1,
+      "status": "invalid",
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "samples": 356,
+      "steady_fraction": 0.48567530695770805,
+      "velocity_cv": 0.11594739189455643,
+      "longest_steady_s": 0.23028909403365105
+    },
+    {
+      "segment": 1,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": -1,
+      "status": "invalid",
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "samples": 371,
+      "steady_fraction": 0.5089163237311386,
+      "velocity_cv": 0.11345941363031756,
+      "longest_steady_s": 0.2784535849932581
+    }
+  ],
+  "fold": {
+    "kind": "fold_verified",
+    "position_velocity": [
+      -0.00020822578737518535,
+      -1.8180994146855828e-12,
+      -0.0008711249129455045,
+      0.0011106226958680669,
+      -6.24594014235724e-05,
+      -5.552586055882943e-05
+    ],
+    "q": [
+      0.002684548304712415,
+      0.002301041404039213,
+      0.009204165616156851,
+      0.008437151814810447,
+      0.0030680552053856175,
+      0.0015340276026928087
+    ],
+    "qd": [
+      0.09460737937558861,
+      0.03967406231879522,
+      -0.04882961516159412,
+      0.02417065950498909,
+      -0.010071108127078787,
+      0.04934842982268606
+    ],
+    "settle": 0.5,
+    "t": 272733.885612568
+  },
+  "disabled": {
+    "kind": "disabled_after_fold",
+    "t": 272733.975718257
+  },
+  "peak_temperature": [
+    32.0,
+    36.0,
+    55.0,
+    38.0,
+    32.0,
+    32.0
+  ],
+  "peak_axis_torque": 0.8119144260994302,
+  "units": {
+    "q": "rad",
+    "qd": "rad/s",
+    "tau": "protocol_nm_unverified",
+    "time": "monotonic seconds"
+  }
+}

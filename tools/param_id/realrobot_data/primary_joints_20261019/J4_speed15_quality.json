@@ -1,0 +1,100 @@
+{
+  "joint": 4,
+  "file": "J4_speed15/friction_20261019_145343_e11768f9.npz",
+  "kp": [
+    80.0,
+    150.0,
+    150.0,
+    50.0,
+    12.0,
+    25.0
+  ],
+  "kd": [
+    5.0,
+    10.0,
+    10.0,
+    5.0,
+    0.8,
+    1.5
+  ],
+  "segments": [
+    {
+      "segment": 0,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": 1,
+      "status": "invalid",
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "samples": 85,
+      "steady_fraction": 0.19767441860465115,
+      "velocity_cv": 0.0950287862089921,
+      "longest_steady_s": 0.0404814489884302
+    },
+    {
+      "segment": 1,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": -1,
+      "status": "invalid",
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "samples": 41,
+      "steady_fraction": 0.09468822170900693,
+      "velocity_cv": 0.126581303695251,
+      "longest_steady_s": 0.04245918401284143
+    }
+  ],
+  "fold": {
+    "kind": "fold_verified",
+    "position_velocity": [
+      6.944722847982794e-05,
+      5.206347491858579e-05,
+      -0.0003817694544701606,
+      6.593790870250551e-05,
+      2.8282929503263004e-13,
+      -0.00011800320105295226
+    ],
+    "q": [
+      0.002684548304712415,
+      0.002301041404039213,
+      0.009971179417503256,
+      0.005752603510098033,
+      0.002684548304712415,
+      0.002684548304712415
+    ],
+    "qd": [
+      -0.03357036042359596,
+      0.074770348216191,
+      0.018311105685597795,
+      0.011078218939786666,
+      -0.03927732169560727,
+      0.01712088381603394
+    ],
+    "settle": 0.5,
+    "t": 271475.10125776
+  },
+  "disabled": {
+    "kind": "disabled_after_fold",
+    "t": 271475.146537522
+  },
+  "peak_temperature": [
+    31.0,
+    34.0,
+    53.0,
+    38.0,
+    32.0,
+    32.0
+  ],
+  "peak_axis_torque": 2.6331980346079895,
+  "units": {
+    "q": "rad",
+    "qd": "rad/s",
+    "tau": "protocol_nm_unverified",
+    "time": "monotonic seconds"
+  }
+}

@@ -22,6 +22,15 @@ def main(argv=None):
         else: p.add_argument('--candidate',type=Path,required=True)
     p=sub.add_parser('recover');p.add_argument('journal',type=Path);p.add_argument('--output',type=Path,required=True)
     p=sub.add_parser('compare');p.add_argument('baseline',type=Path);p.add_argument('trial',type=Path);p.add_argument('--output',type=Path,required=True)
+    p=sub.add_parser('torque-audit',help='J2 receive timing, frame-specific spectra and frozen hold-lag diagnostics')
+    p.add_argument('input',type=Path);p.add_argument('--output',type=Path,required=True);p.add_argument('--plot',action='store_true')
+    p=sub.add_parser('paired-dynamic-fit',help='Matched-position dynamics diagnostics; no hardware or gravity import')
+    p.add_argument('inputs',type=Path,nargs='+');p.add_argument('--output',type=Path,required=True)
+    p.add_argument('--window',type=float,default=.20)
+    p.add_argument('--motion-scope',choices=['constant','full'],default='constant')
+    p=sub.add_parser('paired-dynamic-validate',help='Frozen matched-position prediction on an independent run')
+    p.add_argument('input',type=Path);p.add_argument('--model',type=Path,required=True)
+    p.add_argument('--output',type=Path,required=True)
     p=sub.add_parser('dynamic-fit',help='Single-axis nonuniform-motion diagnostics; never deployable')
     p.add_argument('input',type=Path);p.add_argument('--output',type=Path,required=True)
     p.add_argument('--window',type=float,default=.20)
@@ -38,6 +47,23 @@ def main(argv=None):
         recover(args.journal,args.output); print(args.output);return
     if args.action=='compare':
         compare_compensation(args.baseline,args.trial,args.output);print(args.output);return
+    if args.action=='torque-audit':
+        from friction_id.torque_audit import analyze_torque,plot_audit
+        report=analyze_torque(args.input,args.output)
+        if args.plot:plot_audit(args.output)
+        print(json.dumps(dict(payload_decode_max_error=report['payload_decode_max_error'],
+            sections=len(report['sections']),frozen_hold_lag_checks=report['frozen_hold_lag_checks'],compensation_allowed=False),indent=2));return
+    if args.action=='paired-dynamic-fit':
+        from friction_id.paired_dynamic import Options,fit_paired
+        target=fit_paired(args.inputs,args.output,Options(window=args.window,motion_scope=args.motion_scope))
+        report=json.loads(target.read_text())
+        print(json.dumps(dict(model=str(target),excitation_issues=report['excitation_issues'],
+            models=[dict(kind=m['kind'],names=m['names'],coefficients=m['coefficients'],issues=m['issues'],
+                metrics=m['training_metrics']) for m in report['models']],compensation_allowed=False),indent=2));return
+    if args.action=='paired-dynamic-validate':
+        from friction_id.paired_dynamic import validate_paired
+        report=validate_paired(args.model,args.input,args.output)
+        print(json.dumps(dict(results=report['results'],compensation_allowed=False),indent=2));return
     if args.action=='changed-start':
         from friction_id.shifted import compare_shift,plot_shift
         report=compare_shift(args.model,args.reference,args.trial,args.output,Gravity())

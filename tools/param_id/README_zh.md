@@ -1,6 +1,28 @@
 # B601-RS 六轴摩擦辨识与补偿
 
+当前主线优先 J1～J4，按用户要求暂缓 J6 专项排查。J5/J6 在其他轴实验中继续保持姿态，不单独辨识或加载摩擦补偿。逐轴运动验收、训练与独立运行状态见 [四轴工作记录](primary_joints_plan_20261019.md)。摩擦辨识和重力模型校验分开进行；未标定协议力矩不得直接形成可部署 N*m 参数。
+
+J2 反馈力矩链路可用 `python3 analyze_friction.py torque-audit RAW.npz --output /tmp/torque_audit --plot` 离线检查：原始载荷重算、主机接收/读取时间、分帧类型频谱及保持段的冻结延迟关联。它不估计真实电机采样延迟或修改时间戳。采集入口的 `--hold-time 3` 可延长 HOME/每次往返端点的诊断保持；默认仍为 .5 s，启动及折叠后失能流程不变。详见[力矩通道与重复性报告](torque_chain_review_20261019.md)。
+
+## 同位置配对动态诊断（J1～J4）
+
+新增 `paired-dynamic-fit` / `paired-dynamic-validate`，全程离线，无需 Motorbridge、CAN 或 Pinocchio。用于非匀速日志的模型诊断，不改变原 Method D 门限。正反向插值至相同实际角度，其他轴位置差要求≤.003 rad；保留完整时间、反馈新鲜度、局部拟合与故障检查。
+
+```bash
+# 以下命令从 tools/param_id 执行；可合并多个相同增益/载荷/模型的训练运行。
+python3 analyze_friction.py paired-dynamic-fit realrobot_data/TRAIN.npz --output /tmp/paired_train
+python3 analyze_friction.py paired-dynamic-validate realrobot_data/HELDOUT.npz --model /tmp/paired_train/paired_dynamic_model.json --output /tmp/paired_validation
+```
+
+力矩半差拟合 `Fc*Δtanh(v/.02)/2 + Fv*Δv/2 + J_eff*Δa/2 + 可选方向奇位置项`，力矩半和使用同一运动系数，另加三次角度趋势和可选方向偶位置项。半差尽量消去共同重力；半和趋势只是描述量，不是重力标定。未减去任何 Nm 制模型重力。默认仅取恒速指令区间；新日志可用 `paired-dynamic-fit --motion-scope full` 纳入完整运动段。此模式要求元数据含 `trajectory` 和 `dynamic_range`，不猜测旧日志的斜坡参数；验证沿用训练的模式。
+
+非对称轨迹使用 `--ramp-time .8 --ramp-down-time 2`；正反两个方向均按相同的先加速、后减速时长执行，互换时长构成另一组独立运行。默认减速时长仍等于加速时长，原实验行为不变。NPZ 保存加减速时长、逐档持续时间和参考加速度峰值，启动/退出回位流程不变。可用 `python3 preview_dynamic_excitation.py --joint 2 --output /tmp/j2_excitation_preview` 生成无硬件预览；详见[非对称激励试采报告](asymmetric_excitation_review_20261019.md)。
+
+输出含三种嵌套模型、条件数、负系数、按整次往返删除的系数稳定性及独立预测；空间周期只从训练数据选择。验证冻结全部系数和周期，校验源码/模型完整性、原始数据独立性及实验条件，拒绝训练速度范围外的预测。所有模型均 `compensation_allowed=false`，不能加载成 `validated` 参数；bin 数不是独立试验数。详见[四轴配对动态分析](primary_joints_dynamic_review_20261019.md)。
+
 ## 多速度周期诊断与离线动态分支
+
+以下是此前 J6 的单轴直接回归分支。未标定力矩时其中的常数偏置只能描述近似恒定重力；J2/J3 随姿态变化的重力不能直接用此偏置替代，当前四轴优先使用上面的配对分支。
 
 当真实速度存在周期波动时，原 Method D 的匀速门限保持不变；额外使用 `dynamic-fit` / `dynamic-validate` 分析非匀速样本。该分支是固定其他关节时的单轴等效模型，不是完整六轴惯性辨识，不输出可部署补偿参数。
 
@@ -92,7 +114,7 @@ python3 analyze_friction.py recover realrobot_data/friction_XXX.jsonl --output /
 
 恢复数据标为 recovered，不能成为可部署参数。最后一条被截断的 JSON 行允许丢弃，日志中间损坏会报错。
 
-## 第二阶段：J6 → J4/J5 单轴调试
+## 第二阶段：J1～J4 单轴运动质量验收
 
 所有入口默认预览，不打开 CAN；`--execute` 才连接和运动。`--dry-run` 始终覆盖执行选项。
 
@@ -103,6 +125,14 @@ python3 run_phase2_pointmatch.py --joint 6 --mode tracking --speeds 0.10 --load-
 ```
 
 每次只改一个增益。例如 `--kp 25` 或 `--kd 1.5` 仅影响被调试轴，其余轴使用已有辨识增益。工具不自动提高增益；增益上限为原辨识基线的两倍，仍不是经过实机认证的安全规格。
+
+原驱动腕部 PD 对照需显式加 `--gain-policy driver-reference`，仅允许 tracking 模式的 J4/J5/J6；只将所选轴的覆盖上限设为已核查原驱动值（J4=50/5、J5=50/4、J6=50/4），不会自动修改实际增益或其他轴。默认策略保持不变。策略和覆盖上限写入原始日志；原驱动值只是实验对照来源，不代表已认证稳定性。比如 J6 三组依次指定 `--kp 25 --kd 2`、`--kp 25 --kd 4`、`--kp 50 --kd 4`，共同保持 0.10 rad/s、100 Hz、相同行程及载荷；每组先做一次往返并确认回位，再判断是否进入下一组。所有力矩、速度、跟踪误差和折叠退出保护继续有效。
+
+已完成的三组实机对照及 C/A 独立复测见 [2026-10-19 J6 PD 报告](realrobot_data/j6_pd_comparison_20261019/summary.md)。J6=50/4 在该速度下改善可重复；默认增益未自动修改，跨日旧强纹波的变化尚未定因。
+
+测量链路诊断可显式加 `--position-probe`（仅 tracking）：独立 SocketCAN 线程以 50 Hz 只读所选轴 `0x7019` 浮点位置，一次只保留一个待响应请求。请求起止、原始回复、内核接收时间和读取时间保存为 JSONL/NPZ 的 annotation `position_probe_sample`，不参与控制或替换默认验收数据。无回复、溢出或时间戳异常会中止采集并进入既有回位流程；探针关闭在运动清理后执行。它是内部高精度通道，仍可能与状态帧共享编码器，不能称为外部角度真值。`0x701B` 为速度，`0x701A` 为 Iq 电流。
+
+同步位置通道与固定 kp 的阻尼对照见 [2026-10-19 内部测量链路报告](realrobot_data/measurement_chain_20261019/summary.md)。浮点位置中仍有相近波动，降低 kd 后波动增大；尚未完成外部真实轴角验证。
 
 往返使用固定起终点，默认总行程 0.55 rad、两端各 1 秒平滑变速。对所有速度使用共同的测量位置区间。开始前检查关节限位；进入 HOME 后逐轴误差需小于 0.05 rad。
 

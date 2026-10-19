@@ -1,0 +1,153 @@
+{
+  "file": "tools/param_id/realrobot_data/primary_joints_20261019/asymmetric_pilot/J2_up08_down20/friction_20261019_153501_7e0e6240.npz",
+  "pairing": {
+    "identity": {
+      "path": "tools/param_id/realrobot_data/primary_joints_20261019/asymmetric_pilot/J2_up08_down20/friction_20261019_153501_7e0e6240.npz",
+      "run_id": "7e0e6240-373c-45f2-abab-8d52c9e04d81",
+      "sha256": "9d60f5013e3eeeb51323e891ee27d8a3578501ab9d835913b2ed21bda02e6e5a",
+      "raw_sha256": "dde51f10656fc4d9a56766392e7e1ffe597f528d8e5b73dc7bbb120764a63f49"
+    },
+    "conditions": {
+      "joint": 2,
+      "kp": [
+        80.0,
+        150.0,
+        150.0,
+        25.0,
+        12.0,
+        25.0
+      ],
+      "kd": [
+        5.0,
+        20.0,
+        10.0,
+        1.5,
+        0.8,
+        1.5
+      ],
+      "home": [
+        0.0,
+        1.2,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_hash": "3838ca8f9d586be22a89b33c7cbdd4abd43d4a92a2de377b294eef4c5bd7654d",
+      "load_id": "unloaded_wrist_fixed_setup_20261019_user_reported",
+      "calibration": {
+        "calibration_id": "unverified",
+        "offset": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "units": "protocol_nm_unverified",
+        "verified": false
+      },
+      "rate": 100.0
+    },
+    "pair_reports": [
+      {
+        "repeat": 0,
+        "speed_id": 0,
+        "speed": 0.1,
+        "bins": 265,
+        "coverage": 1.0,
+        "accepted": true
+      }
+    ],
+    "bounds": [
+      1.21,
+      1.74
+    ],
+    "motion_scope": "full",
+    "trajectory": {
+      "directions_use_same_chronological_ramps": true,
+      "passes": [
+        {
+          "constant_duration": 4.1,
+          "pass_duration": 6.8999999999999995,
+          "peak_reference_acceleration": 0.234375,
+          "speed": 0.1
+        }
+      ],
+      "profile": "quintic_velocity_sweep_v1",
+      "ramp_down_time": 2.0,
+      "ramp_up_time": 0.8
+    },
+    "temperature_range": [
+      31.0,
+      47.0
+    ]
+  },
+  "features": {
+    "rank": 5,
+    "columns": 5,
+    "scaled_condition": 24.1155966303244,
+    "acceleration_difference_rms": 0.09190895416117774,
+    "independent_acceleration_rms": 0.05566665898453292,
+    "independent_fraction": 0.6056717704230657,
+    "reference_design_supported": true,
+    "criteria": {
+      "rank": 5,
+      "max_scaled_condition": 100,
+      "min_independent_acceleration_rms": 0.01
+    }
+  },
+  "reference_da_rms": 0.013536979773444091,
+  "actual_da_rms": 0.09190895416117774,
+  "actual_reference_da_correlation": 0.15197614050460762,
+  "fold": {
+    "kind": "fold_verified",
+    "position_velocity": [
+      -2.4242172755391824e-12,
+      6.94114436227635e-05,
+      -0.001030785542542069,
+      0.0018290309050837592,
+      -4.242379336869644e-12,
+      -1.8181632387427466e-12
+    ],
+    "q": [
+      0.0015340276026928087,
+      0.002301041404039213,
+      0.009204165616156851,
+      0.008437151814810447,
+      0.002684548304712415,
+      0.0011505207020196064
+    ],
+    "qd": [
+      0.10528885769218732,
+      0.07019257179479155,
+      -0.1174962614825914,
+      -0.029206213568528483,
+      0.010071108127078787,
+      -0.009063997314370908
+    ],
+    "settle": 0.5,
+    "t": 273957.937593166
+  },
+  "disabled": {
+    "kind": "disabled_after_fold",
+    "t": 273957.963712494
+  },
+  "peak_temperature": [
+    32.0,
+    36.0,
+    47.0,
+    34.0,
+    32.0,
+    32.0
+  ]
+}

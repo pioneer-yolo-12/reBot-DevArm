@@ -1,0 +1,104 @@
+{
+  "method": "Actual loaded SDK; LD_PRELOAD replaces every AF_CAN socket with a local eventfd; special mock-only interface; all CAN writes captured and discarded; no hardware socket or motion",
+  "requested": {
+    "q": 0.2,
+    "v": 0.1,
+    "ff": 0.1,
+    "gains": [
+      [
+        80,
+        5
+      ],
+      [
+        150,
+        10
+      ],
+      [
+        150,
+        10
+      ],
+      [
+        25,
+        1.5
+      ],
+      [
+        12,
+        0.8
+      ],
+      [
+        25,
+        2
+      ]
+    ]
+  },
+  "decoded": [
+    {
+      "joint": 1,
+      "comm_type": 1,
+      "payload": "8208804004180ccc",
+      "q": 0.19980709525074392,
+      "v": 0.09918515579698806,
+      "kp": 79.95727473868925,
+      "kd": 4.998855573357748,
+      "ff": 0.09997863704336396
+    },
+    {
+      "joint": 2,
+      "comm_type": 1,
+      "payload": "8208804007ae1999",
+      "q": 0.19980709525074392,
+      "v": 0.09918515579698806,
+      "kp": 149.99618524452583,
+      "kd": 9.999237048905165,
+      "ff": 0.09997863704336396
+    },
+    {
+      "joint": 3,
+      "comm_type": 1,
+      "payload": "8208804007ae1999",
+      "q": 0.19980709525074392,
+      "v": 0.09918515579698806,
+      "kp": 149.99618524452583,
+      "kd": 9.999237048905165,
+      "ff": 0.09997863704336396
+    },
+    {
+      "joint": 4,
+      "comm_type": 1,
+      "payload": "820880620ccc4ccc",
+      "q": 0.19980709525074392,
+      "v": 0.09970397045808,
+      "kp": 24.99427786678874,
+      "kd": 1.4999618524452583,
+      "ff": 0.09997863704336707
+    },
+    {
+      "joint": 5,
+      "comm_type": 1,
+      "payload": "82088062062428f5",
+      "q": 0.19980709525074392,
+      "v": 0.09970397045808,
+      "kp": 11.993591210803388,
+      "kd": 0.7999542229343098,
+      "ff": 0.09997863704336707
+    },
+    {
+      "joint": 6,
+      "comm_type": 1,
+      "payload": "820880620ccc6666",
+      "q": 0.19980709525074392,
+      "v": 0.09970397045808,
+      "kp": 24.99427786678874,
+      "kd": 2.0,
+      "ff": 0.09997863704336707
+    }
+  ],
+  "source_sha256": {
+    "/home/a12/reBot-DevArm/tools/param_id/friction_id/common.py": "97af8017a1fa1df7142551473ac9237c9fa37353e4e15c7bbc1d82a2a25f049f",
+    "/home/a12/reBot-DevArm/tools/param_id/friction_id/hardware.py": "ea301c77d6a175e13214dda52edde5dd5b5017ff4c16885dd034cd726646dd3f",
+    "/home/a12/reBot-DevArm/tools/param_id/run_phase2_pointmatch.py": "56f1ceb24f5d3108f263e994a33381743a2679e52518b0271e943f514b00da09",
+    "/home/a12/.local/lib/python3.10/site-packages/motorbridge/lib/libmotor_abi.so": "e0e2e826c9904880e5b299b15b75cab0792bd7fdec470c92082c4767d4065b7a",
+    "/home/a12/reBotArm_control_py/.motorbridge/linux/motorbridge-0.5.6/motor_vendors/robstride/src/motor.rs": "881600160cc7628916a13f46fefb08669553ab7c3736d9b8f59cc2d9c751c268",
+    "/home/a12/reBotArm_control_py/.motorbridge/linux/motorbridge-0.5.6/motor_vendors/robstride/src/protocol.rs": "245f58457c0b7e7b25475563e0611bd0e94046239926e8261033bbbd4e3e48de"
+  }
+}

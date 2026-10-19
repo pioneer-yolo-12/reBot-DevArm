@@ -1,0 +1,735 @@
+[
+  {
+    "joint": "J1",
+    "excitation": [
+      "insufficient_commanded_speed_coverage",
+      "insufficient_independent_roundtrips_per_speed"
+    ],
+    "models": [
+      {
+        "kind": "velocity",
+        "period": null,
+        "coefficients": {
+          "smooth_fc": 0.13098242590378278,
+          "fv": 0.41236198027598275
+        },
+        "issues": [],
+        "condition": 9.589056467531142,
+        "training": {
+          "difference_rmse": 0.08399021267224502,
+          "common_rmse": 0.17575046401671224,
+          "reconstructed_torque_rmse": 0.19478855568749057,
+          "groups": [
+            {
+              "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:0",
+              "speed": 0.07,
+              "bins": 185,
+              "difference_rmse": 0.06732846584779582,
+              "common_rmse": 0.18877896716845033
+            },
+            {
+              "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:1",
+              "speed": 0.12,
+              "bins": 182,
+              "difference_rmse": 0.1005204595945193,
+              "common_rmse": 0.15575344107472186
+            },
+            {
+              "group": "fd2b7122-3d1a-4ea2-a56e-9ee250c4a400:0:0",
+              "speed": 0.1,
+              "bins": 185,
+              "difference_rmse": 0.0807810767672457,
+              "common_rmse": 0.18101945739192038
+            }
+          ]
+        },
+        "validation": {
+          "difference_rmse": 0.08000584094743247,
+          "common_rmse": 0.17644581159814576,
+          "reconstructed_torque_rmse": 0.19373708735354264,
+          "groups": [
+            {
+              "group": "31449c94-7992-4fe1-b20e-177ad3085039:0:0",
+              "speed": 0.1,
+              "bins": 177,
+              "difference_rmse": 0.08000584094743247,
+              "common_rmse": 0.17644581159814576
+            }
+          ]
+        }
+      },
+      {
+        "kind": "inertia",
+        "period": null,
+        "coefficients": {
+          "smooth_fc": 0.16458559518141125,
+          "fv": 0.08111786007887889,
+          "effective_inertia": 0.3583289113303581
+        },
+        "issues": [],
+        "condition": 9.678816368252697,
+        "training": {
+          "difference_rmse": 0.0666267576817457,
+          "common_rmse": 0.15804282773120792,
+          "reconstructed_torque_rmse": 0.1715128573502824,
+          "groups": [
+            {
+              "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:0",
+              "speed": 0.07,
+              "bins": 185,
+              "difference_rmse": 0.06467713547912035,
+              "common_rmse": 0.16569703798274368
+            },
+            {
+              "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:1",
+              "speed": 0.12,
+              "bins": 182,
+              "difference_rmse": 0.06998896416374537,
+              "common_rmse": 0.14725223832358098
+            },
+            {
+              "group": "fd2b7122-3d1a-4ea2-a56e-9ee250c4a400:0:0",
+              "speed": 0.1,
+              "bins": 185,
+              "difference_rmse": 0.0650829283226228,
+              "common_rmse": 0.16060472005600987
+            }
+          ]
+        },
+        "validation": {
+          "difference_rmse": 0.06804737670129545,
+          "common_rmse": 0.1574122848118265,
+          "reconstructed_torque_rmse": 0.17149073702567025,
+          "groups": [
+            {
+              "group": "31449c94-7992-4fe1-b20e-177ad3085039:0:0",
+              "speed": 0.1,
+              "bins": 177,
+              "difference_rmse": 0.06804737670129545,
+              "common_rmse": 0.1574122848118265
+            }
+          ]
+        }
+      },
+      {
+        "kind": "spatial",
+        "period": 0.049875,
+        "coefficients": {
+          "smooth_fc": 0.16039205966241327,
+          "fv": 0.12541097243245147,
+          "effective_inertia": 0.46839947315658714,
+          "odd_position_sin": 0.024806090237223792,
+          "odd_position_cos": 0.0012761964007574793
+        },
+        "issues": [],
+        "condition": 9.804096458776263,
+        "training": {
+          "difference_rmse": 0.0662611947793183,
+          "common_rmse": 0.06746298576618544,
+          "reconstructed_torque_rmse": 0.0945610933844956,
+          "groups": [
+            {
+              "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:0",
+              "speed": 0.07,
+              "bins": 185,
+              "difference_rmse": 0.06409191554003758,
+              "common_rmse": 0.0628995631999481
+            },
+            {
+              "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:1",
+              "speed": 0.12,
+              "bins": 182,
+              "difference_rmse": 0.06915441518555211,
+              "common_rmse": 0.06726262997311716
+            },
+            {
+              "group": "fd2b7122-3d1a-4ea2-a56e-9ee250c4a400:0:0",
+              "speed": 0.1,
+              "bins": 185,
+              "difference_rmse": 0.06543340907748306,
+              "common_rmse": 0.07192459178765542
+            }
+          ]
+        },
+        "validation": {
+          "difference_rmse": 0.06838925298648367,
+          "common_rmse": 0.07237327268424293,
+          "reconstructed_torque_rmse": 0.09957399521500103,
+          "groups": [
+            {
+              "group": "31449c94-7992-4fe1-b20e-177ad3085039:0:0",
+              "speed": 0.1,
+              "bins": 177,
+              "difference_rmse": 0.06838925298648367,
+              "common_rmse": 0.07237327268424293
+            }
+          ]
+        }
+      }
+    ],
+    "validation_error": null
+  },
+  {
+    "joint": "J2",
+    "excitation": [
+      "insufficient_independent_roundtrips_per_speed"
+    ],
+    "models": [
+      {
+        "kind": "velocity",
+        "period": null,
+        "coefficients": {
+          "smooth_fc": 0.29653522481694883,
+          "fv": 0.5195827017119955
+        },
+        "issues": [],
+        "condition": 7.191611379405344,
+        "training": {
+          "difference_rmse": 0.26299865398720107,
+          "common_rmse": 0.32181463764136126,
+          "reconstructed_torque_rmse": 0.4156115409842707,
+          "groups": [
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:0",
+              "speed": 0.06,
+              "bins": 185,
+              "difference_rmse": 0.24569468110743659,
+              "common_rmse": 0.311586186560219
+            },
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:1",
+              "speed": 0.08,
+              "bins": 185,
+              "difference_rmse": 0.2778319943093005,
+              "common_rmse": 0.3247811592005244
+            },
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:2",
+              "speed": 0.12,
+              "bins": 182,
+              "difference_rmse": 0.26447756542071843,
+              "common_rmse": 0.32882401064086836
+            }
+          ]
+        },
+        "validation": {
+          "difference_rmse": 0.25517153784480445,
+          "common_rmse": 0.2854196129303419,
+          "reconstructed_torque_rmse": 0.38285358712096285,
+          "groups": [
+            {
+              "group": "0aa61226-8215-48d4-91be-236d1264d830:0:0",
+              "speed": 0.1,
+              "bins": 185,
+              "difference_rmse": 0.25517153784480445,
+              "common_rmse": 0.2854196129303419
+            }
+          ]
+        }
+      },
+      {
+        "kind": "inertia",
+        "period": null,
+        "coefficients": {
+          "smooth_fc": 0.3132511285479766,
+          "fv": 0.31860198591378114,
+          "effective_inertia": 1.019407032525054
+        },
+        "issues": [],
+        "condition": 7.201815848823033,
+        "training": {
+          "difference_rmse": 0.24443341871294624,
+          "common_rmse": 0.3037381020002733,
+          "reconstructed_torque_rmse": 0.38987758436517855,
+          "groups": [
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:0",
+              "speed": 0.06,
+              "bins": 185,
+              "difference_rmse": 0.22802522577520434,
+              "common_rmse": 0.29034891035618765
+            },
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:1",
+              "speed": 0.08,
+              "bins": 185,
+              "difference_rmse": 0.25633331689949534,
+              "common_rmse": 0.3010973161262176
+            },
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:2",
+              "speed": 0.12,
+              "bins": 182,
+              "difference_rmse": 0.24807421391302537,
+              "common_rmse": 0.31907431782697326
+            }
+          ]
+        },
+        "validation": {
+          "difference_rmse": 0.24609046623302028,
+          "common_rmse": 0.2732970411880201,
+          "reconstructed_torque_rmse": 0.3677659449879932,
+          "groups": [
+            {
+              "group": "0aa61226-8215-48d4-91be-236d1264d830:0:0",
+              "speed": 0.1,
+              "bins": 185,
+              "difference_rmse": 0.24609046623302028,
+              "common_rmse": 0.2732970411880201
+            }
+          ]
+        }
+      },
+      {
+        "kind": "spatial",
+        "period": 0.050125,
+        "coefficients": {
+          "smooth_fc": 0.29805438027774045,
+          "fv": 0.4943653177234833,
+          "effective_inertia": 1.5853278905787775,
+          "odd_position_sin": -0.07059254298881339,
+          "odd_position_cos": -0.06721529898206122
+        },
+        "issues": [],
+        "condition": 7.269042197189815,
+        "training": {
+          "difference_rmse": 0.24088389848048872,
+          "common_rmse": 0.24874018414607643,
+          "reconstructed_torque_rmse": 0.34626107456106353,
+          "groups": [
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:0",
+              "speed": 0.06,
+              "bins": 185,
+              "difference_rmse": 0.23052599375869132,
+              "common_rmse": 0.2311036337695345
+            },
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:1",
+              "speed": 0.08,
+              "bins": 185,
+              "difference_rmse": 0.2478442685080622,
+              "common_rmse": 0.24007731111902939
+            },
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:2",
+              "speed": 0.12,
+              "bins": 182,
+              "difference_rmse": 0.24393880874257487,
+              "common_rmse": 0.27307331025101245
+            }
+          ]
+        },
+        "validation": {
+          "difference_rmse": 0.24123301830945595,
+          "common_rmse": 0.23083308600603666,
+          "reconstructed_torque_rmse": 0.33388213896188074,
+          "groups": [
+            {
+              "group": "0aa61226-8215-48d4-91be-236d1264d830:0:0",
+              "speed": 0.1,
+              "bins": 185,
+              "difference_rmse": 0.24123301830945595,
+              "common_rmse": 0.23083308600603666
+            }
+          ]
+        }
+      }
+    ],
+    "validation_error": null
+  },
+  {
+    "joint": "J3",
+    "excitation": [],
+    "models": [
+      {
+        "kind": "velocity",
+        "period": null,
+        "coefficients": {
+          "smooth_fc": 0.5679187181221519,
+          "fv": -0.9088528851565968
+        },
+        "issues": [
+          "negative_fv"
+        ],
+        "condition": 7.480713730593322,
+        "training": {
+          "difference_rmse": 0.22643188613442297,
+          "common_rmse": 0.23202091691379775,
+          "reconstructed_torque_rmse": 0.3241991748044892,
+          "groups": [
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:0",
+              "speed": 0.1,
+              "bins": 145,
+              "difference_rmse": 0.2451159317029657,
+              "common_rmse": 0.2653750749156124
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:1",
+              "speed": 0.15,
+              "bins": 145,
+              "difference_rmse": 0.24101535043275193,
+              "common_rmse": 0.2490281471520724
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:2",
+              "speed": 0.2,
+              "bins": 120,
+              "difference_rmse": 0.21136899480697782,
+              "common_rmse": 0.206186635022415
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:0",
+              "speed": 0.1,
+              "bins": 145,
+              "difference_rmse": 0.2320123409080622,
+              "common_rmse": 0.2336944577396319
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:1",
+              "speed": 0.15,
+              "bins": 144,
+              "difference_rmse": 0.22950652255551765,
+              "common_rmse": 0.19979689971450626
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:2",
+              "speed": 0.2,
+              "bins": 121,
+              "difference_rmse": 0.21021276452734927,
+              "common_rmse": 0.23059325469467382
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:0",
+              "speed": 0.1,
+              "bins": 145,
+              "difference_rmse": 0.21990640577549367,
+              "common_rmse": 0.21982043843001775
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:1",
+              "speed": 0.15,
+              "bins": 145,
+              "difference_rmse": 0.21549764789635478,
+              "common_rmse": 0.24062947785992708
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:2",
+              "speed": 0.2,
+              "bins": 121,
+              "difference_rmse": 0.23044539546632278,
+              "common_rmse": 0.23584476983009217
+            }
+          ]
+        },
+        "validation": {
+          "difference_rmse": 0.25930511198641804,
+          "common_rmse": 0.2905741582975014,
+          "reconstructed_torque_rmse": 0.38945151504723946,
+          "groups": [
+            {
+              "group": "d0cfcc57-896f-474e-aea7-4b09c3ed8376:0:0",
+              "speed": 0.1,
+              "bins": 145,
+              "difference_rmse": 0.25930511198641804,
+              "common_rmse": 0.2905741582975014
+            }
+          ]
+        }
+      },
+      {
+        "kind": "inertia",
+        "period": null,
+        "coefficients": {
+          "smooth_fc": 0.543877961100818,
+          "fv": -0.7613066432087907,
+          "effective_inertia": 0.8182613718859953
+        },
+        "issues": [
+          "negative_fv"
+        ],
+        "condition": 7.50193909860465,
+        "training": {
+          "difference_rmse": 0.20975201477894398,
+          "common_rmse": 0.2365730395343806,
+          "reconstructed_torque_rmse": 0.3161688010199013,
+          "groups": [
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:0",
+              "speed": 0.1,
+              "bins": 145,
+              "difference_rmse": 0.23176128488705297,
+              "common_rmse": 0.26357384796998723
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:1",
+              "speed": 0.15,
+              "bins": 145,
+              "difference_rmse": 0.22872355355377003,
+              "common_rmse": 0.25631887103848217
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:2",
+              "speed": 0.2,
+              "bins": 120,
+              "difference_rmse": 0.19539317292222758,
+              "common_rmse": 0.22072257219701993
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:0",
+              "speed": 0.1,
+              "bins": 145,
+              "difference_rmse": 0.21661794567080564,
+              "common_rmse": 0.2301164166622992
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:1",
+              "speed": 0.15,
+              "bins": 144,
+              "difference_rmse": 0.19885611449324855,
+              "common_rmse": 0.2103823733869814
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:2",
+              "speed": 0.2,
+              "bins": 121,
+              "difference_rmse": 0.19607293412759305,
+              "common_rmse": 0.23140252244685994
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:0",
+              "speed": 0.1,
+              "bins": 145,
+              "difference_rmse": 0.20881592859645076,
+              "common_rmse": 0.21663453622952833
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:1",
+              "speed": 0.15,
+              "bins": 145,
+              "difference_rmse": 0.19010847066154174,
+              "common_rmse": 0.24725026635816374
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:2",
+              "speed": 0.2,
+              "bins": 121,
+              "difference_rmse": 0.21702514457729452,
+              "common_rmse": 0.24695664458287486
+            }
+          ]
+        },
+        "validation": {
+          "difference_rmse": 0.24607656580812928,
+          "common_rmse": 0.2870954471322626,
+          "reconstructed_torque_rmse": 0.3781236200027662,
+          "groups": [
+            {
+              "group": "d0cfcc57-896f-474e-aea7-4b09c3ed8376:0:0",
+              "speed": 0.1,
+              "bins": 145,
+              "difference_rmse": 0.24607656580812928,
+              "common_rmse": 0.2870954471322626
+            }
+          ]
+        }
+      },
+      {
+        "kind": "spatial",
+        "period": 0.04925,
+        "coefficients": {
+          "smooth_fc": 0.5345036409792808,
+          "fv": -0.7021935520210321,
+          "effective_inertia": 1.2105029569482737,
+          "odd_position_sin": 0.004934282739813157,
+          "odd_position_cos": 0.07362718618661164
+        },
+        "issues": [
+          "negative_fv"
+        ],
+        "condition": 7.535640536546337,
+        "training": {
+          "difference_rmse": 0.20721627413895521,
+          "common_rmse": 0.2110474047552543,
+          "reconstructed_torque_rmse": 0.2957694901810509,
+          "groups": [
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:0",
+              "speed": 0.1,
+              "bins": 145,
+              "difference_rmse": 0.23465395142428572,
+              "common_rmse": 0.22787281139187146
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:1",
+              "speed": 0.15,
+              "bins": 145,
+              "difference_rmse": 0.22516694190331277,
+              "common_rmse": 0.21805863349689836
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:2",
+              "speed": 0.2,
+              "bins": 120,
+              "difference_rmse": 0.1901835058135654,
+              "common_rmse": 0.210383993956635
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:0",
+              "speed": 0.1,
+              "bins": 145,
+              "difference_rmse": 0.21214791469772037,
+              "common_rmse": 0.19964052486445635
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:1",
+              "speed": 0.15,
+              "bins": 144,
+              "difference_rmse": 0.19516557595825101,
+              "common_rmse": 0.17950849473375735
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:2",
+              "speed": 0.2,
+              "bins": 121,
+              "difference_rmse": 0.1947416608677955,
+              "common_rmse": 0.21145165486530257
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:0",
+              "speed": 0.1,
+              "bins": 145,
+              "difference_rmse": 0.2064936056738891,
+              "common_rmse": 0.19602257394663233
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:1",
+              "speed": 0.15,
+              "bins": 145,
+              "difference_rmse": 0.18643167138520825,
+              "common_rmse": 0.21271789685560333
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:2",
+              "speed": 0.2,
+              "bins": 121,
+              "difference_rmse": 0.21470405766234602,
+              "common_rmse": 0.2380480170547398
+            }
+          ]
+        },
+        "validation": {
+          "difference_rmse": 0.2453908873223366,
+          "common_rmse": 0.24282488181939169,
+          "reconstructed_torque_rmse": 0.3452254492522897,
+          "groups": [
+            {
+              "group": "d0cfcc57-896f-474e-aea7-4b09c3ed8376:0:0",
+              "speed": 0.1,
+              "bins": 145,
+              "difference_rmse": 0.2453908873223366,
+              "common_rmse": 0.24282488181939169
+            }
+          ]
+        }
+      }
+    ],
+    "validation_error": null
+  },
+  {
+    "joint": "J4",
+    "excitation": [
+      "insufficient_commanded_speed_coverage",
+      "insufficient_independent_roundtrips_per_speed"
+    ],
+    "models": [
+      {
+        "kind": "velocity",
+        "period": null,
+        "coefficients": {
+          "smooth_fc": 0.24766281225262707,
+          "fv": -0.5091127195445475
+        },
+        "issues": [
+          "negative_fv"
+        ],
+        "condition": 23.12441561506529,
+        "training": {
+          "difference_rmse": 0.03854216487113693,
+          "common_rmse": 0.10659088641031911,
+          "reconstructed_torque_rmse": 0.11334511696006781,
+          "groups": [
+            {
+              "group": "8815a91a-30f4-4b69-a8a5-5ae1193c8537:0:0",
+              "speed": 0.1,
+              "bins": 192,
+              "difference_rmse": 0.03854216487113693,
+              "common_rmse": 0.10659088641031911
+            }
+          ]
+        },
+        "validation": null
+      },
+      {
+        "kind": "inertia",
+        "period": null,
+        "coefficients": {
+          "smooth_fc": 0.6489598362511996,
+          "fv": -4.413639743285416,
+          "effective_inertia": 0.22080860431873003
+        },
+        "issues": [
+          "negative_fv"
+        ],
+        "condition": 34.95059539194124,
+        "training": {
+          "difference_rmse": 0.023371283787592085,
+          "common_rmse": 0.034826545210304136,
+          "reconstructed_torque_rmse": 0.04194168758127792,
+          "groups": [
+            {
+              "group": "8815a91a-30f4-4b69-a8a5-5ae1193c8537:0:0",
+              "speed": 0.1,
+              "bins": 192,
+              "difference_rmse": 0.023371283787592085,
+              "common_rmse": 0.034826545210304136
+            }
+          ]
+        },
+        "validation": null
+      },
+      {
+        "kind": "spatial",
+        "period": 0.044125,
+        "coefficients": {
+          "smooth_fc": 0.6556421538279191,
+          "fv": -4.478273936691178,
+          "effective_inertia": 0.22493614206586784,
+          "odd_position_sin": 0.001668249859949824,
+          "odd_position_cos": -0.005184105855956296
+        },
+        "issues": [
+          "negative_fv"
+        ],
+        "condition": 45.02167153562388,
+        "training": {
+          "difference_rmse": 0.023053996974505084,
+          "common_rmse": 0.02167753701173083,
+          "reconstructed_torque_rmse": 0.031644942524761355,
+          "groups": [
+            {
+              "group": "8815a91a-30f4-4b69-a8a5-5ae1193c8537:0:0",
+              "speed": 0.1,
+              "bins": 192,
+              "difference_rmse": 0.023053996974505084,
+              "common_rmse": 0.02167753701173083
+            }
+          ]
+        },
+        "validation": null
+      }
+    ],
+    "validation_error": "Held-out commanded speed outside training range"
+  }
+]

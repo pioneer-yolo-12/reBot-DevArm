@@ -1,0 +1,26 @@
+{
+  "diagnostic_only": true,
+  "no_parameter_fit": true,
+  "rows": [
+    {
+      "sigma_rad": 0.0,
+      "delta_D_rms": 0.31933612051841337,
+      "correlation": 0.03544671049613512
+    },
+    {
+      "sigma_rad": 0.004,
+      "delta_D_rms": 0.12670590540366838,
+      "correlation": 0.07820326241963714
+    },
+    {
+      "sigma_rad": 0.008,
+      "delta_D_rms": 0.09726698949203609,
+      "correlation": 0.06738692196225618
+    },
+    {
+      "sigma_rad": 0.016,
+      "delta_D_rms": 0.07130937638912295,
+      "correlation": 0.03818834387985981
+    }
+  ]
+}

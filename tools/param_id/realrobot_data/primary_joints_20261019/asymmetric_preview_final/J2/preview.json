@@ -1,0 +1,628 @@
+{
+  "kind": "reference_only_excitation_preview",
+  "hardware_opened": false,
+  "joint": 2,
+  "implementation_sha256": {
+    "preview": "98d79c3bf0213a05724dc2d847098752147b3727ca31982fee7f57e2d73c8534",
+    "sweep": "97af8017a1fa1df7142551473ac9237c9fa37353e4e15c7bbc1d82a2a25f049f",
+    "derivative": "a94025a8bb63dfdd3b07fb3818ef4a5896632fc92fee88c358473ddbb5515b0e"
+  },
+  "configs": [
+    {
+      "config": {
+        "joint": 2,
+        "speeds": [
+          0.06,
+          0.09,
+          0.12
+        ],
+        "repeats": 1,
+        "kp": [
+          80.0,
+          150.0,
+          150.0,
+          25.0,
+          12.0,
+          25.0
+        ],
+        "kd": [
+          5.0,
+          20.0,
+          10.0,
+          1.5,
+          0.8,
+          1.5
+        ],
+        "home": [
+          0.0,
+          1.2,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gain_policy": "experiment",
+        "gain_limits": {
+          "kp": [
+            160.0,
+            300.0,
+            300.0,
+            50.0,
+            24.0,
+            50.0
+          ],
+          "kd": [
+            10.0,
+            20.0,
+            20.0,
+            3.0,
+            1.6,
+            3.0
+          ]
+        },
+        "position_probe": false,
+        "start": [
+          0.0,
+          1.2,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "start_offset": 0.0,
+        "end": [
+          0.0,
+          1.75,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "measurement_range": [
+          1.29,
+          1.66
+        ],
+        "dynamic_range": [
+          1.21,
+          1.74
+        ],
+        "trajectory": {
+          "profile": "quintic_velocity_sweep_v1",
+          "ramp_up_time": 1.0,
+          "ramp_down_time": 1.0,
+          "directions_use_same_chronological_ramps": true,
+          "passes": [
+            {
+              "speed": 0.06,
+              "pass_duration": 10.166666666666668,
+              "constant_duration": 8.166666666666668,
+              "peak_reference_acceleration": 0.11249999999999999
+            },
+            {
+              "speed": 0.09,
+              "pass_duration": 7.111111111111112,
+              "constant_duration": 5.111111111111112,
+              "peak_reference_acceleration": 0.16874999999999998
+            },
+            {
+              "speed": 0.12,
+              "pass_duration": 5.583333333333334,
+              "constant_duration": 3.583333333333334,
+              "peak_reference_acceleration": 0.22499999999999998
+            }
+          ]
+        }
+      },
+      "preview_argv": [
+        "--joint",
+        "2",
+        "--speeds",
+        "0.06",
+        "0.09",
+        "0.12",
+        "--kp",
+        "150",
+        "--kd",
+        "20",
+        "--ramp-time",
+        "1.0",
+        "--ramp-down-time",
+        "1.0",
+        "--repeats",
+        "1",
+        "--load-id",
+        "unloaded_wrist_fixed_setup_20261019_user_reported"
+      ]
+    },
+    {
+      "config": {
+        "joint": 2,
+        "speeds": [
+          0.06,
+          0.09,
+          0.12
+        ],
+        "repeats": 1,
+        "kp": [
+          80.0,
+          150.0,
+          150.0,
+          25.0,
+          12.0,
+          25.0
+        ],
+        "kd": [
+          5.0,
+          20.0,
+          10.0,
+          1.5,
+          0.8,
+          1.5
+        ],
+        "home": [
+          0.0,
+          1.2,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gain_policy": "experiment",
+        "gain_limits": {
+          "kp": [
+            160.0,
+            300.0,
+            300.0,
+            50.0,
+            24.0,
+            50.0
+          ],
+          "kd": [
+            10.0,
+            20.0,
+            20.0,
+            3.0,
+            1.6,
+            3.0
+          ]
+        },
+        "position_probe": false,
+        "start": [
+          0.0,
+          1.2,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "start_offset": 0.0,
+        "end": [
+          0.0,
+          1.75,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "measurement_range": [
+          1.3499999999999999,
+          1.6
+        ],
+        "dynamic_range": [
+          1.21,
+          1.74
+        ],
+        "trajectory": {
+          "profile": "quintic_velocity_sweep_v1",
+          "ramp_up_time": 0.8,
+          "ramp_down_time": 2.0,
+          "directions_use_same_chronological_ramps": true,
+          "passes": [
+            {
+              "speed": 0.06,
+              "pass_duration": 10.566666666666666,
+              "constant_duration": 7.7666666666666675,
+              "peak_reference_acceleration": 0.14062499999999997
+            },
+            {
+              "speed": 0.09,
+              "pass_duration": 7.511111111111112,
+              "constant_duration": 4.711111111111112,
+              "peak_reference_acceleration": 0.21093749999999997
+            },
+            {
+              "speed": 0.12,
+              "pass_duration": 5.983333333333334,
+              "constant_duration": 3.183333333333334,
+              "peak_reference_acceleration": 0.28124999999999994
+            }
+          ]
+        }
+      },
+      "preview_argv": [
+        "--joint",
+        "2",
+        "--speeds",
+        "0.06",
+        "0.09",
+        "0.12",
+        "--kp",
+        "150",
+        "--kd",
+        "20",
+        "--ramp-time",
+        "0.8",
+        "--ramp-down-time",
+        "2.0",
+        "--repeats",
+        "1",
+        "--load-id",
+        "unloaded_wrist_fixed_setup_20261019_user_reported"
+      ]
+    },
+    {
+      "config": {
+        "joint": 2,
+        "speeds": [
+          0.06,
+          0.09,
+          0.12
+        ],
+        "repeats": 1,
+        "kp": [
+          80.0,
+          150.0,
+          150.0,
+          25.0,
+          12.0,
+          25.0
+        ],
+        "kd": [
+          5.0,
+          20.0,
+          10.0,
+          1.5,
+          0.8,
+          1.5
+        ],
+        "home": [
+          0.0,
+          1.2,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gain_policy": "experiment",
+        "gain_limits": {
+          "kp": [
+            160.0,
+            300.0,
+            300.0,
+            50.0,
+            24.0,
+            50.0
+          ],
+          "kd": [
+            10.0,
+            20.0,
+            20.0,
+            3.0,
+            1.6,
+            3.0
+          ]
+        },
+        "position_probe": false,
+        "start": [
+          0.0,
+          1.2,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "start_offset": 0.0,
+        "end": [
+          0.0,
+          1.75,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "measurement_range": [
+          1.3499999999999999,
+          1.6
+        ],
+        "dynamic_range": [
+          1.21,
+          1.74
+        ],
+        "trajectory": {
+          "profile": "quintic_velocity_sweep_v1",
+          "ramp_up_time": 2.0,
+          "ramp_down_time": 0.8,
+          "directions_use_same_chronological_ramps": true,
+          "passes": [
+            {
+              "speed": 0.06,
+              "pass_duration": 10.566666666666666,
+              "constant_duration": 7.7666666666666675,
+              "peak_reference_acceleration": 0.14062499999999997
+            },
+            {
+              "speed": 0.09,
+              "pass_duration": 7.511111111111112,
+              "constant_duration": 4.711111111111112,
+              "peak_reference_acceleration": 0.21093749999999997
+            },
+            {
+              "speed": 0.12,
+              "pass_duration": 5.983333333333334,
+              "constant_duration": 3.183333333333334,
+              "peak_reference_acceleration": 0.28124999999999994
+            }
+          ]
+        }
+      },
+      "preview_argv": [
+        "--joint",
+        "2",
+        "--speeds",
+        "0.06",
+        "0.09",
+        "0.12",
+        "--kp",
+        "150",
+        "--kd",
+        "20",
+        "--ramp-time",
+        "2.0",
+        "--ramp-down-time",
+        "0.8",
+        "--repeats",
+        "1",
+        "--load-id",
+        "unloaded_wrist_fixed_setup_20261019_user_reported"
+      ]
+    }
+  ],
+  "individual": [
+    {
+      "ramp_up": 1.0,
+      "ramp_down": 1.0,
+      "scope": "constant",
+      "coverage": [
+        {
+          "speed": 0.06,
+          "bins": 185,
+          "coverage": 1.0
+        },
+        {
+          "speed": 0.09,
+          "bins": 185,
+          "coverage": 1.0
+        },
+        {
+          "speed": 0.12,
+          "bins": 185,
+          "coverage": 1.0
+        }
+      ],
+      "metrics": {
+        "rank": 5,
+        "columns": 5,
+        "scaled_condition": 2003.4745161785652,
+        "acceleration_difference_rms": 4.073444027357973e-14,
+        "independent_acceleration_rms": 4.047133112841952e-14,
+        "independent_fraction": 0.993540867546157,
+        "reference_design_supported": false,
+        "criteria": {
+          "rank": 5,
+          "max_scaled_condition": 100,
+          "min_independent_acceleration_rms": 0.01
+        }
+      }
+    },
+    {
+      "ramp_up": 1.0,
+      "ramp_down": 1.0,
+      "scope": "full",
+      "coverage": [
+        {
+          "speed": 0.06,
+          "bins": 265,
+          "coverage": 1.0
+        },
+        {
+          "speed": 0.09,
+          "bins": 265,
+          "coverage": 1.0
+        },
+        {
+          "speed": 0.12,
+          "bins": 265,
+          "coverage": 1.0
+        }
+      ],
+      "metrics": {
+        "rank": 5,
+        "columns": 5,
+        "scaled_condition": 7.512799693439153,
+        "acceleration_difference_rms": 0.0001602714333374166,
+        "independent_acceleration_rms": 0.00016026054899632026,
+        "independent_fraction": 0.9999320880778958,
+        "reference_design_supported": false,
+        "criteria": {
+          "rank": 5,
+          "max_scaled_condition": 100,
+          "min_independent_acceleration_rms": 0.01
+        }
+      }
+    },
+    {
+      "ramp_up": 0.8,
+      "ramp_down": 2.0,
+      "scope": "constant",
+      "coverage": [
+        {
+          "speed": 0.06,
+          "bins": 125,
+          "coverage": 1.0
+        },
+        {
+          "speed": 0.09,
+          "bins": 125,
+          "coverage": 1.0
+        },
+        {
+          "speed": 0.12,
+          "bins": 125,
+          "coverage": 1.0
+        }
+      ],
+      "metrics": {
+        "rank": 5,
+        "columns": 5,
+        "scaled_condition": 2189.945186213086,
+        "acceleration_difference_rms": 3.721244902360813e-14,
+        "independent_acceleration_rms": 3.6960507794153346e-14,
+        "independent_fraction": 0.9932296520098705,
+        "reference_design_supported": false,
+        "criteria": {
+          "rank": 5,
+          "max_scaled_condition": 100,
+          "min_independent_acceleration_rms": 0.01
+        }
+      }
+    },
+    {
+      "ramp_up": 0.8,
+      "ramp_down": 2.0,
+      "scope": "full",
+      "coverage": [
+        {
+          "speed": 0.06,
+          "bins": 265,
+          "coverage": 1.0
+        },
+        {
+          "speed": 0.09,
+          "bins": 265,
+          "coverage": 1.0
+        },
+        {
+          "speed": 0.12,
+          "bins": 265,
+          "coverage": 1.0
+        }
+      ],
+      "metrics": {
+        "rank": 5,
+        "columns": 5,
+        "scaled_condition": 7.724817630261392,
+        "acceleration_difference_rms": 0.013059048230281242,
+        "independent_acceleration_rms": 0.012569239048866256,
+        "independent_fraction": 0.9624927350923462,
+        "reference_design_supported": true,
+        "criteria": {
+          "rank": 5,
+          "max_scaled_condition": 100,
+          "min_independent_acceleration_rms": 0.01
+        }
+      }
+    },
+    {
+      "ramp_up": 2.0,
+      "ramp_down": 0.8,
+      "scope": "constant",
+      "coverage": [
+        {
+          "speed": 0.06,
+          "bins": 125,
+          "coverage": 1.0
+        },
+        {
+          "speed": 0.09,
+          "bins": 125,
+          "coverage": 1.0
+        },
+        {
+          "speed": 0.12,
+          "bins": 125,
+          "coverage": 1.0
+        }
+      ],
+      "metrics": {
+        "rank": 5,
+        "columns": 5,
+        "scaled_condition": 1937.3759681971703,
+        "acceleration_difference_rms": 4.219181558199757e-14,
+        "independent_acceleration_rms": 4.177892512043559e-14,
+        "independent_fraction": 0.9902139679019133,
+        "reference_design_supported": false,
+        "criteria": {
+          "rank": 5,
+          "max_scaled_condition": 100,
+          "min_independent_acceleration_rms": 0.01
+        }
+      }
+    },
+    {
+      "ramp_up": 2.0,
+      "ramp_down": 0.8,
+      "scope": "full",
+      "coverage": [
+        {
+          "speed": 0.06,
+          "bins": 265,
+          "coverage": 1.0
+        },
+        {
+          "speed": 0.09,
+          "bins": 265,
+          "coverage": 1.0
+        },
+        {
+          "speed": 0.12,
+          "bins": 265,
+          "coverage": 1.0
+        }
+      ],
+      "metrics": {
+        "rank": 5,
+        "columns": 5,
+        "scaled_condition": 7.723486073725449,
+        "acceleration_difference_rms": 0.013106992136447924,
+        "independent_acceleration_rms": 0.012618637920746006,
+        "independent_fraction": 0.9627409392927075,
+        "reference_design_supported": true,
+        "criteria": {
+          "rank": 5,
+          "max_scaled_condition": 100,
+          "min_independent_acceleration_rms": 0.01
+        }
+      }
+    }
+  ],
+  "combined_asymmetric_full": {
+    "rank": 5,
+    "columns": 5,
+    "scaled_condition": 7.466001305861072,
+    "acceleration_difference_rms": 0.0130830421451916,
+    "independent_acceleration_rms": 0.013083039729253815,
+    "independent_fraction": 0.999999815338225,
+    "reference_design_supported": true,
+    "criteria": {
+      "rank": 5,
+      "max_scaled_condition": 100,
+      "min_independent_acceleration_rms": 0.01
+    }
+  },
+  "notes": [
+    "Reference-only design matrix, not real feedback or torque identification.",
+    "Derivative window .20 s; no assumption that tracking or encoder accuracy is ideal on hardware.",
+    "Same chronological up/down durations in both directions; swapping durations produces a separate run.",
+    "Original steady-motion Method D is unchanged; independent acceleration uses full-motion pairing."
+  ]
+}

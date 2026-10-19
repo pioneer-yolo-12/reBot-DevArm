@@ -397,6 +397,27 @@ def test_preview_has_no_hardware_import_or_open():
     with pytest.raises(ValueError):configuration(parser().parse_args(['--excursion','0.01']))
 
 
+@pytest.mark.parametrize('joint,kp,kd',[(4,50,5),(5,50,4),(6,50,4)])
+def test_original_driver_wrist_comparison_is_explicit_and_bounded(joint,kp,kd):
+    argv=['--joint',str(joint),'--kp',str(kp),'--kd',str(kd)]
+    with pytest.raises(ValueError):configuration(parser().parse_args(argv))
+    cfg=configuration(parser().parse_args(argv+['--gain-policy','driver-reference']))
+    other=np.arange(6)!=joint-1
+    assert np.array_equal(np.asarray(cfg['kp'])[other],KP[other])
+    assert np.array_equal(np.asarray(cfg['kd'])[other],KD[other])
+    assert cfg['kp'][joint-1]==kp and cfg['kd'][joint-1]==kd
+    with pytest.raises(ValueError):
+        configuration(parser().parse_args(argv+['--gain-policy','driver-reference','--kd',str(kd+.1)]))
+
+
+@pytest.mark.parametrize('argv',[
+    ['--joint','3','--gain-policy','driver-reference'],
+    ['--mode','identify','--joint','6','--gain-policy','driver-reference'],
+])
+def test_driver_reference_policy_cannot_extend_other_experiments(argv):
+    with pytest.raises(ValueError):configuration(parser().parse_args(argv))
+
+
 @pytest.mark.parametrize('phase',['initialization','startup_hold'])
 def test_interrupt_during_startup_hold_preserves_aborted_log(tmp_path,monkeypatch,phase):
     import friction_id.hardware as hardware

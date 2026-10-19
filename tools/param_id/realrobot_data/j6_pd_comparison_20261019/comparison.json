@@ -1,0 +1,724 @@
+{
+  "status": "pilot_pd_comparison",
+  "compensation_allowed": false,
+  "conditions": {
+    "calibration": {
+      "calibration_id": "unverified",
+      "offset": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "units": "protocol_nm_unverified",
+      "verified": false
+    },
+    "home": [
+      0.0,
+      1.2,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "load_id": "unloaded_wrist_fixed_setup_20261019_user_reported",
+    "measurement_range": [
+      0.08,
+      0.47000000000000003
+    ],
+    "model_hash": "3838ca8f9d586be22a89b33c7cbdd4abd43d4a92a2de377b294eef4c5bd7654d",
+    "temperature_limit_c": 65.0,
+    "other_kp": [
+      80.0,
+      150.0,
+      150.0,
+      25.0,
+      12.0
+    ],
+    "other_kd": [
+      5.0,
+      10.0,
+      10.0,
+      1.5,
+      0.8
+    ],
+    "rate": 100.0,
+    "start": [
+      0.0,
+      1.2,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "end": [
+      0.0,
+      1.2,
+      1.0,
+      0.0,
+      0.0,
+      0.55
+    ],
+    "speeds": [
+      0.1
+    ],
+    "repeats": 1
+  },
+  "metric_policy": "Common measured angle interval; identical local polynomial position derivative window 0.20s; equal weight by direction. Quality gates unchanged. Spatial frequency fit is descriptive, not held-out validation.",
+  "limits": [
+    "One round trip per run, A/B/C followed by independent C/A repeats; order not randomized; no independent physical angle measurement",
+    "Torque is uncalibrated protocol scale",
+    "Changing gains changes controller response; cannot identify a component fault from these runs alone"
+  ],
+  "runs": [
+    {
+      "group": "A",
+      "file": "A/friction_20261019_135128_dd8b0311.npz",
+      "sha256": "fbcc5839ca4eedbdaaf725020d131cf185571652c7a79d37612ea2af92c5f0c7",
+      "kp": 25.0,
+      "kd": 2.0,
+      "run_id": "dd8b0311-3067-4ece-ba81-02c50036c1da",
+      "fold_verified": {
+        "kind": "fold_verified",
+        "position_velocity": [
+          5.239150445766934e-05,
+          -4.669104339728475e-12,
+          -0.0006630121570077084,
+          0.001235990628902766,
+          9.494429464839492e-05,
+          -3.274060479015984e-05
+        ],
+        "q": [
+          0.002684548304712415,
+          0.002684548304712415,
+          0.009204165616156851,
+          0.008437151814810447,
+          0.0030680552053856175,
+          0.002684548304712415
+        ],
+        "qd": [
+          -0.10223700674459324,
+          0.01220740379039853,
+          -0.042725913266394855,
+          -0.04531998657185454,
+          0.00805688650166303,
+          -0.0010071108127078787
+        ],
+        "settle": 0.5,
+        "t": 267743.678017522
+      },
+      "disabled_after_fold": {
+        "kind": "disabled_after_fold",
+        "t": 267743.793543932
+      },
+      "peak_temperature": [
+        26.0,
+        28.0,
+        41.0,
+        29.0,
+        26.0,
+        26.0
+      ],
+      "peak_j6_torque": 0.2678914761803035,
+      "quality": [
+        {
+          "segment": 0,
+          "repeat": 0,
+          "speed_id": 0,
+          "direction": 1,
+          "status": "invalid",
+          "reasons": [
+            "low_steady_fraction",
+            "no_continuous_steady_window"
+          ],
+          "samples": 372,
+          "steady_fraction": 0.4806201550387597,
+          "velocity_cv": 0.06737950409033379,
+          "longest_steady_s": 0.319737364014145
+        },
+        {
+          "segment": 1,
+          "repeat": 0,
+          "speed_id": 0,
+          "direction": -1,
+          "status": "invalid",
+          "reasons": [
+            "low_steady_fraction",
+            "no_continuous_steady_window"
+          ],
+          "samples": 417,
+          "steady_fraction": 0.5373711340206185,
+          "velocity_cv": 0.06629378119424333,
+          "longest_steady_s": 0.4012719150050543
+        }
+      ],
+      "segments": [
+        {
+          "segment": 0,
+          "direction": 1,
+          "samples": 774,
+          "mean_speed": 0.10052944953346844,
+          "velocity_cv": 0.06737950409033379,
+          "tracking_rms_rad": 0.0044395708241725335,
+          "tracking_peak_rad": 0.006254347963052381,
+          "tau_rms": 0.09380068097127356,
+          "torque_spatial_fit": {
+            "period_rad": 0.0433,
+            "amplitude": 0.007171571914415133,
+            "rmse": 0.036260012005878806,
+            "r2": 0.07872652006369463
+          },
+          "tracking_electrical_harmonic": {
+            "period_rad": 0.04487989505128276,
+            "amplitude": 9.781924202823212e-05,
+            "rmse": 0.0006102517487280973,
+            "r2": 0.2906982517739519
+          }
+        },
+        {
+          "segment": 1,
+          "direction": -1,
+          "samples": 779,
+          "mean_speed": -0.09993483275165495,
+          "velocity_cv": 0.06630454825082434,
+          "tracking_rms_rad": 0.005813347132616219,
+          "tracking_peak_rad": 0.0076694886027582065,
+          "tau_rms": 0.1525109305450959,
+          "torque_spatial_fit": {
+            "period_rad": 0.0461,
+            "amplitude": 0.0106160170894716,
+            "rmse": 0.03505652771687502,
+            "r2": 0.04690888547037664
+          },
+          "tracking_electrical_harmonic": {
+            "period_rad": 0.04487989505128276,
+            "amplitude": 0.00017066231462306867,
+            "rmse": 0.0006233504234898429,
+            "r2": 0.03766506987258378
+          }
+        }
+      ],
+      "velocity_cv": 0.06684202617057906,
+      "tracking_rms_rad": 0.005126458978394376,
+      "tracking_peak_rad": 0.006961918282905294
+    },
+    {
+      "group": "B",
+      "file": "B/friction_20261019_135233_f6c967a9.npz",
+      "sha256": "6a8ddf822ae546c595e1d5af9407f401833c74d45262c717aeb6da25d56b9975",
+      "kp": 25.0,
+      "kd": 4.0,
+      "run_id": "f6c967a9-5a37-44db-a36d-6533cd832673",
+      "fold_verified": {
+        "kind": "fold_verified",
+        "position_velocity": [
+          7.632795357983206e-05,
+          -1.4551805374524825e-08,
+          -0.0010027886917614746,
+          0.001738607534335575,
+          3.7164267895345916e-12,
+          3.2518735144170124e-12
+        ],
+        "q": [
+          0.002684548304712415,
+          0.002684548304712415,
+          0.009204165616156851,
+          0.008053644914137245,
+          0.0030680552053856175,
+          0.002684548304712415
+        ],
+        "qd": [
+          -0.05340739158299357,
+          -0.09155552842798897,
+          -0.05798516800439302,
+          -0.018127994628741817,
+          0.029206213568528483,
+          0.028199102755820604
+        ],
+        "settle": 0.5,
+        "t": 267809.226278102
+      },
+      "disabled_after_fold": {
+        "kind": "disabled_after_fold",
+        "t": 267809.251137494
+      },
+      "peak_temperature": [
+        26.0,
+        28.0,
+        43.0,
+        30.0,
+        26.0,
+        26.0
+      ],
+      "peak_j6_torque": 0.2935270241401404,
+      "quality": [
+        {
+          "segment": 0,
+          "repeat": 0,
+          "speed_id": 0,
+          "direction": 1,
+          "status": "invalid",
+          "reasons": [
+            "no_continuous_steady_window"
+          ],
+          "samples": 641,
+          "steady_fraction": 0.8228498074454429,
+          "velocity_cv": 0.03919255937643098,
+          "longest_steady_s": 0.6710276219528168
+        },
+        {
+          "segment": 1,
+          "repeat": 0,
+          "speed_id": 0,
+          "direction": -1,
+          "status": "valid",
+          "reasons": [],
+          "samples": 698,
+          "steady_fraction": 0.8994845360824743,
+          "velocity_cv": 0.033439177754327844,
+          "longest_steady_s": 0.9297948559978977
+        }
+      ],
+      "segments": [
+        {
+          "segment": 0,
+          "direction": 1,
+          "samples": 779,
+          "mean_speed": 0.10014590483867557,
+          "velocity_cv": 0.03919255937643098,
+          "tracking_rms_rad": 0.004177149450521756,
+          "tracking_peak_rad": 0.0055648470081174906,
+          "tau_rms": 0.0912875047718238,
+          "torque_spatial_fit": {
+            "period_rad": 0.0435,
+            "amplitude": 0.01078861216959784,
+            "rmse": 0.03716044539644564,
+            "r2": 0.10020141581845565
+          },
+          "tracking_electrical_harmonic": {
+            "period_rad": 0.04487989505128276,
+            "amplitude": 0.00015402324466219633,
+            "rmse": 0.00048410215198908384,
+            "r2": 0.29403464981707605
+          }
+        },
+        {
+          "segment": 1,
+          "direction": -1,
+          "samples": 777,
+          "mean_speed": -0.10013391001114774,
+          "velocity_cv": 0.03341885991135759,
+          "tracking_rms_rad": 0.005723659463310584,
+          "tracking_peak_rad": 0.006994231720636346,
+          "tau_rms": 0.1516726270457268,
+          "torque_spatial_fit": {
+            "period_rad": 0.039,
+            "amplitude": 0.006882975508093604,
+            "rmse": 0.0369099392980892,
+            "r2": 0.038799535152409415
+          },
+          "tracking_electrical_harmonic": {
+            "period_rad": 0.04487989505128276,
+            "amplitude": 0.00012642328628017293,
+            "rmse": 0.00036231937836697165,
+            "r2": 0.4012891360008398
+          }
+        }
+      ],
+      "velocity_cv": 0.036305709643894284,
+      "tracking_rms_rad": 0.00495040445691617,
+      "tracking_peak_rad": 0.006279539364376918
+    },
+    {
+      "group": "C",
+      "file": "C/friction_20261019_135348_4e030a30.npz",
+      "sha256": "3aff0f637ff7edc7286ee08604ac5353f7bfabd3be49a4868d7616db2d1dd935",
+      "kp": 50.0,
+      "kd": 4.0,
+      "run_id": "4e030a30-642b-4547-ada6-126aa9d803d3",
+      "fold_verified": {
+        "kind": "fold_verified",
+        "position_velocity": [
+          -7.288351861995082e-05,
+          -3.818923104409925e-12,
+          -0.0004373519721490411,
+          0.0014300908602246677,
+          -3.4663994084064404e-05,
+          0.0003401196029082635
+        ],
+        "q": [
+          0.002301041404039213,
+          0.002684548304712415,
+          0.009204165616156851,
+          0.008053644914137245,
+          0.0030680552053856175,
+          0.0015340276026928087
+        ],
+        "qd": [
+          0.07782219916379063,
+          -0.07171849726859136,
+          -0.10071108127079342,
+          -0.02417065950498909,
+          -0.01712088381603394,
+          0.08157597582933818
+        ],
+        "settle": 0.5,
+        "t": 267883.85463413
+      },
+      "disabled_after_fold": {
+        "kind": "disabled_after_fold",
+        "t": 267883.879443072
+      },
+      "peak_temperature": [
+        27.0,
+        29.0,
+        44.0,
+        31.0,
+        27.0,
+        27.0
+      ],
+      "peak_j6_torque": 0.27430036317026274,
+      "quality": [
+        {
+          "segment": 0,
+          "repeat": 0,
+          "speed_id": 0,
+          "direction": 1,
+          "status": "valid",
+          "reasons": [],
+          "samples": 686,
+          "steady_fraction": 0.8817480719794345,
+          "velocity_cv": 0.03257155881077074,
+          "longest_steady_s": 0.9299768999917433
+        },
+        {
+          "segment": 1,
+          "repeat": 0,
+          "speed_id": 0,
+          "direction": -1,
+          "status": "valid",
+          "reasons": [],
+          "samples": 674,
+          "steady_fraction": 0.8663239074550129,
+          "velocity_cv": 0.035152345416472705,
+          "longest_steady_s": 0.919443896971643
+        }
+      ],
+      "segments": [
+        {
+          "segment": 0,
+          "direction": 1,
+          "samples": 778,
+          "mean_speed": 0.10003872860225471,
+          "velocity_cv": 0.03257155881077074,
+          "tracking_rms_rad": 0.0024005192426574595,
+          "tracking_peak_rad": 0.0034109457546939725,
+          "tau_rms": 0.08677825832091109,
+          "torque_spatial_fit": {
+            "period_rad": 0.047099999999999996,
+            "amplitude": 0.010117625925021011,
+            "rmse": 0.03747471690723677,
+            "r2": 0.0722861006666512
+          },
+          "tracking_electrical_harmonic": {
+            "period_rad": 0.04487989505128276,
+            "amplitude": 0.0001097894260213363,
+            "rmse": 0.0004252762799348856,
+            "r2": 0.032441236247885974
+          }
+        },
+        {
+          "segment": 1,
+          "direction": -1,
+          "samples": 778,
+          "mean_speed": -0.10004489880200974,
+          "velocity_cv": 0.035152345416472705,
+          "tracking_rms_rad": 0.002722342483925515,
+          "tracking_peak_rad": 0.0038347462220661432,
+          "tau_rms": 0.14906416694742292,
+          "torque_spatial_fit": {
+            "period_rad": 0.0456,
+            "amplitude": 0.014535005721229665,
+            "rmse": 0.03964665514240065,
+            "r2": 0.08857039801033062
+          },
+          "tracking_electrical_harmonic": {
+            "period_rad": 0.04487989505128276,
+            "amplitude": 0.00018593997507549125,
+            "rmse": 0.0004083471036227416,
+            "r2": 0.25503459641555426
+          }
+        }
+      ],
+      "velocity_cv": 0.033861952113621724,
+      "tracking_rms_rad": 0.0025614308632914873,
+      "tracking_peak_rad": 0.003622845988380058
+    },
+    {
+      "group": "C_repeat",
+      "file": "C_repeat/friction_20261019_135607_307f1eae.npz",
+      "sha256": "24ac5eaafc97f147848dce258540d7caf512a5ffc5c4ec955c074c50eef36f45",
+      "kp": 50.0,
+      "kd": 4.0,
+      "run_id": "307f1eae-a24f-449a-8637-083cf8180bca",
+      "fold_verified": {
+        "kind": "fold_verified",
+        "position_velocity": [
+          0.0001075936604266259,
+          7.070669642513952e-13,
+          -0.000832953253618607,
+          0.0014993139659729964,
+          -4.5108400848074334e-05,
+          5.050466822256847e-13
+        ],
+        "q": [
+          0.0019175345033660108,
+          0.002684548304712415,
+          0.009204165616156851,
+          0.008437151814810447,
+          0.0030680552053856175,
+          0.0019175345033660108
+        ],
+        "qd": [
+          -0.09613330484938842,
+          0.047303689687794304,
+          -0.042725913266394855,
+          0.0,
+          0.003021332438123636,
+          0.027191991943112725
+        ],
+        "settle": 0.5,
+        "t": 268023.416805979
+      },
+      "disabled_after_fold": {
+        "kind": "disabled_after_fold",
+        "t": 268023.442122903
+      },
+      "peak_temperature": [
+        27.0,
+        29.0,
+        44.0,
+        31.0,
+        27.0,
+        27.0
+      ],
+      "peak_j6_torque": 0.32044434949797074,
+      "quality": [
+        {
+          "segment": 0,
+          "repeat": 0,
+          "speed_id": 0,
+          "direction": 1,
+          "status": "valid",
+          "reasons": [],
+          "samples": 683,
+          "steady_fraction": 0.877892030848329,
+          "velocity_cv": 0.03649924074566925,
+          "longest_steady_s": 0.9299193620099686
+        },
+        {
+          "segment": 1,
+          "repeat": 0,
+          "speed_id": 0,
+          "direction": -1,
+          "status": "valid",
+          "reasons": [],
+          "samples": 672,
+          "steady_fraction": 0.8626444159178434,
+          "velocity_cv": 0.03635146021931182,
+          "longest_steady_s": 0.910381865047384
+        }
+      ],
+      "segments": [
+        {
+          "segment": 0,
+          "direction": 1,
+          "samples": 778,
+          "mean_speed": 0.1001637899153276,
+          "velocity_cv": 0.03649924074566925,
+          "tracking_rms_rad": 0.0024692829215898168,
+          "tracking_peak_rad": 0.0037032594957518428,
+          "tau_rms": 0.08869504464092075,
+          "torque_spatial_fit": {
+            "period_rad": 0.0453,
+            "amplitude": 0.01705799634059089,
+            "rmse": 0.03566015827076236,
+            "r2": 0.1561056194024204
+          },
+          "tracking_electrical_harmonic": {
+            "period_rad": 0.04487989505128276,
+            "amplitude": 0.00025993261397139715,
+            "rmse": 0.00036024900281438917,
+            "r2": 0.42359681907662006
+          }
+        },
+        {
+          "segment": 1,
+          "direction": -1,
+          "samples": 779,
+          "mean_speed": -0.10003486933177602,
+          "velocity_cv": 0.03635146021931182,
+          "tracking_rms_rad": 0.0028575551504615134,
+          "tracking_peak_rad": 0.004137874619179416,
+          "tau_rms": 0.15115962746118108,
+          "torque_spatial_fit": {
+            "period_rad": 0.0446,
+            "amplitude": 0.017411050892409245,
+            "rmse": 0.039745674115446605,
+            "r2": 0.11252772192033544
+          },
+          "tracking_electrical_harmonic": {
+            "period_rad": 0.04487989505128276,
+            "amplitude": 0.00023617954595445836,
+            "rmse": 0.0003366254093747908,
+            "r2": 0.36952972287773
+          }
+        }
+      ],
+      "velocity_cv": 0.036425350482490536,
+      "tracking_rms_rad": 0.0026634190360256653,
+      "tracking_peak_rad": 0.003920567057465629
+    },
+    {
+      "group": "A_repeat",
+      "file": "A_repeat/friction_20261019_135719_ff8014c9.npz",
+      "sha256": "fb7a16ea600c83590e266fb7fbc53b033ab35cd3476fd55448ba2d2fc5fc2184",
+      "kp": 25.0,
+      "kd": 2.0,
+      "run_id": "ff8014c9-44b9-4646-9ff1-8c2b71d90f54",
+      "fold_verified": {
+        "kind": "fold_verified",
+        "position_velocity": [
+          2.516349927838268e-12,
+          -5.7324114347560767e-05,
+          -0.0005862189031667803,
+          0.0008824361837854232,
+          -0.00021771595264810995,
+          0.0001293626124402958
+        ],
+        "q": [
+          0.002301041404039213,
+          0.002301041404039213,
+          0.009204165616156851,
+          0.008437151814810447,
+          0.0030680552053856175,
+          0.0030680552053856175
+        ],
+        "qd": [
+          -0.08545182653278971,
+          0.038148136844995406,
+          -0.0564592425305932,
+          0.03122043519394424,
+          0.00805688650166303,
+          -0.05740531632434909
+        ],
+        "settle": 0.5,
+        "t": 268094.530606373
+      },
+      "disabled_after_fold": {
+        "kind": "disabled_after_fold",
+        "t": 268094.57603825
+      },
+      "peak_temperature": [
+        27.0,
+        30.0,
+        46.0,
+        32.0,
+        27.0,
+        27.0
+      ],
+      "peak_j6_torque": 0.23712881862849766,
+      "quality": [
+        {
+          "segment": 0,
+          "repeat": 0,
+          "speed_id": 0,
+          "direction": 1,
+          "status": "invalid",
+          "reasons": [
+            "low_steady_fraction",
+            "no_continuous_steady_window"
+          ],
+          "samples": 378,
+          "steady_fraction": 0.4864864864864865,
+          "velocity_cv": 0.06743002208810346,
+          "longest_steady_s": 0.2301443360047415
+        },
+        {
+          "segment": 1,
+          "repeat": 0,
+          "speed_id": 0,
+          "direction": -1,
+          "status": "invalid",
+          "reasons": [
+            "low_steady_fraction",
+            "no_continuous_steady_window"
+          ],
+          "samples": 418,
+          "steady_fraction": 0.5400516795865633,
+          "velocity_cv": 0.07323629149685042,
+          "longest_steady_s": 0.32983316003810614
+        }
+      ],
+      "segments": [
+        {
+          "segment": 0,
+          "direction": 1,
+          "samples": 777,
+          "mean_speed": 0.10036861973682934,
+          "velocity_cv": 0.06743002208810346,
+          "tracking_rms_rad": 0.0042382175310448295,
+          "tracking_peak_rad": 0.006100802907448938,
+          "tau_rms": 0.0895251270841433,
+          "torque_spatial_fit": {
+            "period_rad": 0.0448,
+            "amplitude": 0.009953273207205082,
+            "rmse": 0.03319836969266082,
+            "r2": 0.08312016354992147
+          },
+          "tracking_electrical_harmonic": {
+            "period_rad": 0.04487989505128276,
+            "amplitude": 0.00032553925242171213,
+            "rmse": 0.0005852195971029523,
+            "r2": 0.3187997127103225
+          }
+        },
+        {
+          "segment": 1,
+          "direction": -1,
+          "samples": 775,
+          "mean_speed": -0.10014271311350739,
+          "velocity_cv": 0.0732289233581431,
+          "tracking_rms_rad": 0.005809636767181733,
+          "tracking_peak_rad": 0.007451042717102008,
+          "tau_rms": 0.1508146406079368,
+          "torque_spatial_fit": {
+            "period_rad": 0.044399999999999995,
+            "amplitude": 0.02551774917558319,
+            "rmse": 0.03166208455430261,
+            "r2": 0.249363367610699
+          },
+          "tracking_electrical_harmonic": {
+            "period_rad": 0.04487989505128276,
+            "amplitude": 0.0005272934659215706,
+            "rmse": 0.0005644391097438498,
+            "r2": 0.3591272313967373
+          }
+        }
+      ],
+      "velocity_cv": 0.07032947272312329,
+      "tracking_rms_rad": 0.005023927149113282,
+      "tracking_peak_rad": 0.006775922812275473
+    }
+  ]
+}

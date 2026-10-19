@@ -1,0 +1,164 @@
+{
+  "phase": "three_step_diagnostic_complete",
+  "compensation_enabled": false,
+  "decision": "Position term supported across speeds and independent run; physical cause unresolved. Do not deploy until torque calibration and feedback/drive checks; viscous estimate is derivative-window sensitive.",
+  "period_by_speed": [
+    {
+      "target_speed": 0.07,
+      "spatial_period_rad": 0.044875,
+      "temporal_frequency_hz": 1.55,
+      "mean_actual_speed": 0.06873698721202623
+    },
+    {
+      "target_speed": 0.1,
+      "spatial_period_rad": 0.044875,
+      "temporal_frequency_hz": 2.225,
+      "mean_actual_speed": 0.09889760108197333
+    },
+    {
+      "target_speed": 0.15,
+      "spatial_period_rad": 0.044875,
+      "temporal_frequency_hz": 3.35,
+      "mean_actual_speed": 0.14911611589687476
+    }
+  ],
+  "validation_metrics": {
+    "baseline": 0.13715880694185686,
+    "spatial": 0.04608531451708418,
+    "temporal": 0.13220534359120398
+  },
+  "independent_position_term_supported": true,
+  "fitted_period_rad": 0.04477639408192329,
+  "derivative_sensitivity": {
+    "primary_window": 0.2,
+    "alternative_windows": [
+      {
+        "window": 0.12,
+        "spatial_period": 0.0447693183172793,
+        "coefficients": {
+          "bias": 0.013370194469785938,
+          "effective_inertia": 0.00644387714294078,
+          "smooth_fc": 0.11498573324583747,
+          "fv": 0.0005137736873723865,
+          "position_sin": -0.06397854164136525,
+          "position_cos": 0.23210562860196235
+        },
+        "physical_issues": [],
+        "heldout_rmse": {
+          "baseline": 0.1352380661509156,
+          "spatial": 0.04723622917150987,
+          "temporal": 0.12980686525373974
+        },
+        "position_term_prediction_supported": true
+      },
+      {
+        "window": 0.28,
+        "spatial_period": 0.044779128099950105,
+        "coefficients": {
+          "bias": 0.012293712693073375,
+          "effective_inertia": 0.009550627333511317,
+          "smooth_fc": 0.10551991587451265,
+          "fv": 0.09626775592534041,
+          "position_sin": -0.0673437928628964,
+          "position_cos": 0.23137337757258664
+        },
+        "physical_issues": [],
+        "heldout_rmse": {
+          "baseline": 0.14199658627067524,
+          "spatial": 0.045610368505472745,
+          "temporal": 0.1373665968314011
+        },
+        "position_term_prediction_supported": true
+      }
+    ],
+    "policy": "Primary model fixed at 0.20 s before held-out evaluation; alternatives are sensitivity checks, not model selection"
+  },
+  "acquisitions": [
+    {
+      "path": "/home/a12/reBot-DevArm/tools/param_id/realrobot_data/friction_20261016_172447_b4729f07.npz",
+      "run_status": "complete",
+      "feedback_frames": 125787,
+      "commands": 62970,
+      "failed_commands": 0,
+      "fault_frames": 0,
+      "peak_temperature": 44.0,
+      "fold_verified": {
+        "kind": "fold_verified",
+        "position_velocity": [
+          0.00022754597584117266,
+          0.0002275582974314044,
+          -0.00026848614020147767,
+          3.3292860787683392e-12,
+          -0.0010641045079771718,
+          -1.7033566670475381e-12
+        ],
+        "q": [
+          0.0019175345033660108,
+          0.011121700119522862,
+          0.009971179417503256,
+          0.016490796728947692,
+          0.016490796728947692,
+          -0.008437151814810447
+        ],
+        "qd": [
+          -0.050355540635393936,
+          0.07934812463759044,
+          -0.08545182653278971,
+          -0.06042664876247272,
+          -0.08862575151829699,
+          0.09768974883266424
+        ],
+        "settle": 0.5,
+        "t": 23592.889232733
+      },
+      "disabled_after_fold": {
+        "kind": "disabled_after_fold",
+        "t": 23592.91424451
+      },
+      "max_fold_command_interval_ms": 13.137849000486312
+    },
+    {
+      "path": "/home/a12/reBot-DevArm/tools/param_id/realrobot_data/friction_20261016_172702_03e23883.npz",
+      "run_status": "complete",
+      "feedback_frames": 125772,
+      "commands": 62958,
+      "failed_commands": 0,
+      "fault_frames": 0,
+      "peak_temperature": 48.0,
+      "fold_verified": {
+        "kind": "fold_verified",
+        "position_velocity": [
+          -2.776793507331996e-05,
+          -6.594567771152803e-05,
+          -0.0003713610043763294,
+          2.5000601774994852e-12,
+          -0.00021518309146679811,
+          -3.123386289476742e-05
+        ],
+        "q": [
+          0.002301041404039213,
+          0.01073819321884966,
+          0.01035468631817646,
+          0.016874303629620894,
+          0.01955885193433331,
+          -0.00882065871548365
+        ],
+        "qd": [
+          -0.030518509475996325,
+          0.08087405011139026,
+          0.0,
+          0.03323465681936,
+          0.02316354869228121,
+          0.021149327066865453
+        ],
+        "settle": 0.5,
+        "t": 23727.574544705
+      },
+      "disabled_after_fold": {
+        "kind": "disabled_after_fold",
+        "t": 23727.599451934
+      },
+      "max_fold_command_interval_ms": 12.823880999349058
+    }
+  ]
+}

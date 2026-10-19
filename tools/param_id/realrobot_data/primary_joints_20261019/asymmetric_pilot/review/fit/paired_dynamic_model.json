@@ -1,0 +1,345 @@
+{
+  "schema": "paired_dynamic_diagnostic_v1",
+  "status": "diagnostic_candidate",
+  "compensation_allowed": false,
+  "options": {
+    "motion_scope": "full",
+    "window": 0.2,
+    "guard": 0.25,
+    "grid_step": 0.002,
+    "max_q_gap": 0.004,
+    "max_other_pose_difference": 0.003,
+    "min_pair_bins": 30,
+    "min_coverage": 0.6,
+    "period_min": 0.03,
+    "period_max": 0.06,
+    "period_steps": 241
+  },
+  "implementation_sha256": {
+    "paired_dynamic": "3804c47b6619e476aa27284d49c68a7795407af4091a18772ce6843f13efbff0",
+    "alignment": "a94025a8bb63dfdd3b07fb3818ef4a5896632fc92fee88c358473ddbb5515b0e"
+  },
+  "conditions": {
+    "joint": 2,
+    "kp": [
+      80.0,
+      150.0,
+      150.0,
+      25.0,
+      12.0,
+      25.0
+    ],
+    "kd": [
+      5.0,
+      20.0,
+      10.0,
+      1.5,
+      0.8,
+      1.5
+    ],
+    "home": [
+      0.0,
+      1.2,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "model_hash": "3838ca8f9d586be22a89b33c7cbdd4abd43d4a92a2de377b294eef4c5bd7654d",
+    "load_id": "unloaded_wrist_fixed_setup_20261019_user_reported",
+    "calibration": {
+      "calibration_id": "unverified",
+      "offset": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "units": "protocol_nm_unverified",
+      "verified": false
+    },
+    "rate": 100.0
+  },
+  "training": [
+    {
+      "identity": {
+        "path": "/home/a12/reBot-DevArm/tools/param_id/realrobot_data/primary_joints_20261019/asymmetric_pilot/J2_up08_down20/friction_20261019_153501_7e0e6240.npz",
+        "run_id": "7e0e6240-373c-45f2-abab-8d52c9e04d81",
+        "sha256": "9d60f5013e3eeeb51323e891ee27d8a3578501ab9d835913b2ed21bda02e6e5a",
+        "raw_sha256": "dde51f10656fc4d9a56766392e7e1ffe597f528d8e5b73dc7bbb120764a63f49"
+      },
+      "conditions": {
+        "joint": 2,
+        "kp": [
+          80.0,
+          150.0,
+          150.0,
+          25.0,
+          12.0,
+          25.0
+        ],
+        "kd": [
+          5.0,
+          20.0,
+          10.0,
+          1.5,
+          0.8,
+          1.5
+        ],
+        "home": [
+          0.0,
+          1.2,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "model_hash": "3838ca8f9d586be22a89b33c7cbdd4abd43d4a92a2de377b294eef4c5bd7654d",
+        "load_id": "unloaded_wrist_fixed_setup_20261019_user_reported",
+        "calibration": {
+          "calibration_id": "unverified",
+          "offset": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "units": "protocol_nm_unverified",
+          "verified": false
+        },
+        "rate": 100.0
+      },
+      "pair_reports": [
+        {
+          "repeat": 0,
+          "speed_id": 0,
+          "speed": 0.1,
+          "bins": 265,
+          "coverage": 1.0,
+          "accepted": true
+        }
+      ],
+      "bounds": [
+        1.21,
+        1.74
+      ],
+      "motion_scope": "full",
+      "trajectory": {
+        "directions_use_same_chronological_ramps": true,
+        "passes": [
+          {
+            "constant_duration": 4.1,
+            "pass_duration": 6.8999999999999995,
+            "peak_reference_acceleration": 0.234375,
+            "speed": 0.1
+          }
+        ],
+        "profile": "quintic_velocity_sweep_v1",
+        "ramp_down_time": 2.0,
+        "ramp_up_time": 0.8
+      },
+      "temperature_range": [
+        31.0,
+        47.0
+      ]
+    }
+  ],
+  "bounds": [
+    1.21,
+    1.74
+  ],
+  "models": [
+    {
+      "kind": "velocity",
+      "period_rad": null,
+      "q_center": 1.4750000000000003,
+      "q_span": 0.5280000000000005,
+      "names": [
+        "smooth_fc",
+        "fv"
+      ],
+      "coefficients": [
+        0.2614477718072655,
+        0.7464977540882182
+      ],
+      "common_coefficients": [
+        -6.428815680505554,
+        -3.791627139478048,
+        0.5779915496385001,
+        0.30902241795632907
+      ],
+      "rank": 2,
+      "columns": 2,
+      "scaled_condition": 21.46036561075885,
+      "common_scaled_condition": 4.791548423674719,
+      "issues": [
+        "no_roundtrip_deletion_stability_check"
+      ],
+      "training_metrics": {
+        "difference_rmse": 0.24939109328904976,
+        "common_rmse": 0.2794363956426107,
+        "reconstructed_torque_rmse": 0.3745405406917136,
+        "groups": [
+          {
+            "group": "7e0e6240-373c-45f2-abab-8d52c9e04d81:0:0",
+            "speed": 0.1,
+            "bins": 265,
+            "difference_rmse": 0.24939109328904976,
+            "common_rmse": 0.2794363956426107
+          }
+        ]
+      },
+      "stability": {
+        "method": "leave_one_roundtrip_out; period frozen; descriptive ranges, not confidence intervals",
+        "fits": [],
+        "coefficient_ranges": {},
+        "issues": [
+          "no_roundtrip_deletion_stability_check"
+        ]
+      }
+    },
+    {
+      "kind": "inertia",
+      "period_rad": null,
+      "q_center": 1.4750000000000003,
+      "q_span": 0.5280000000000005,
+      "names": [
+        "smooth_fc",
+        "fv",
+        "effective_inertia"
+      ],
+      "coefficients": [
+        0.29132882146323225,
+        0.4563063430767024,
+        0.5789693814342778
+      ],
+      "common_coefficients": [
+        -6.431488641351724,
+        -3.8438595081284728,
+        0.6303529631309481,
+        0.9273611255644234
+      ],
+      "rank": 3,
+      "columns": 3,
+      "scaled_condition": 21.496948272731583,
+      "common_scaled_condition": 4.791548423674719,
+      "issues": [
+        "no_roundtrip_deletion_stability_check"
+      ],
+      "training_metrics": {
+        "difference_rmse": 0.2436676900891589,
+        "common_rmse": 0.27203252130060396,
+        "reconstructed_torque_rmse": 0.36520629216724887,
+        "groups": [
+          {
+            "group": "7e0e6240-373c-45f2-abab-8d52c9e04d81:0:0",
+            "speed": 0.1,
+            "bins": 265,
+            "difference_rmse": 0.2436676900891589,
+            "common_rmse": 0.27203252130060396
+          }
+        ]
+      },
+      "stability": {
+        "method": "leave_one_roundtrip_out; period frozen; descriptive ranges, not confidence intervals",
+        "fits": [],
+        "coefficient_ranges": {},
+        "issues": [
+          "no_roundtrip_deletion_stability_check"
+        ]
+      }
+    },
+    {
+      "kind": "spatial",
+      "period_rad": 0.049875,
+      "q_center": 1.4750000000000003,
+      "q_span": 0.5280000000000005,
+      "names": [
+        "smooth_fc",
+        "fv",
+        "effective_inertia",
+        "odd_position_sin",
+        "odd_position_cos"
+      ],
+      "coefficients": [
+        0.14057324799216445,
+        2.005181608795692,
+        0.9099469162234728,
+        -0.0647609748905991,
+        -0.003069270721048078
+      ],
+      "common_coefficients": [
+        -6.4389650776148795,
+        -3.8855124804326624,
+        0.7936163648954331,
+        1.473692601801554,
+        0.052706748022073036,
+        0.19630234764837512
+      ],
+      "rank": 5,
+      "columns": 5,
+      "scaled_condition": 24.11799148914702,
+      "common_scaled_condition": 4.803791601832667,
+      "issues": [
+        "no_roundtrip_deletion_stability_check"
+      ],
+      "training_metrics": {
+        "difference_rmse": 0.24171535443782066,
+        "common_rmse": 0.23593222439265826,
+        "reconstructed_torque_rmse": 0.3377725966946829,
+        "groups": [
+          {
+            "group": "7e0e6240-373c-45f2-abab-8d52c9e04d81:0:0",
+            "speed": 0.1,
+            "bins": 265,
+            "difference_rmse": 0.24171535443782066,
+            "common_rmse": 0.23593222439265826
+          }
+        ]
+      },
+      "stability": {
+        "method": "leave_one_roundtrip_out; period frozen; descriptive ranges, not confidence intervals",
+        "fits": [],
+        "coefficient_ranges": {},
+        "issues": [
+          "no_roundtrip_deletion_stability_check"
+        ]
+      }
+    }
+  ],
+  "excitation_issues": [
+    "insufficient_commanded_speed_coverage",
+    "insufficient_independent_roundtrips_per_speed"
+  ],
+  "independent_roundtrips_per_speed": {
+    "0.1": 1
+  },
+  "limits": [
+    "Effective coefficients are in dataset calibration units, not verified physical parameters.",
+    "Same-position difference cancels common gravity/ripple only for matched full poses.",
+    "Angle cubic is descriptive, not an identified gravity model; other-axis residual motion/coupling is unmodeled.",
+    "Odd/even position terms are phenomenological; they do not identify a physical cause.",
+    "Neighbouring bins/derivatives are correlated; bin count is not independent trial count."
+  ],
+  "checksum": "35e6b0b64ab0190ec16c085d9ca3afe17f844beb4425960bacd328760a3bfaf6"
+}

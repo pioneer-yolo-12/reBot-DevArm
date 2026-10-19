@@ -1,0 +1,898 @@
+{
+  "schema": "paired_dynamic_diagnostic_v1",
+  "status": "diagnostic_candidate",
+  "compensation_allowed": false,
+  "options": {
+    "window": 0.2,
+    "guard": 0.25,
+    "grid_step": 0.002,
+    "max_q_gap": 0.004,
+    "max_other_pose_difference": 0.003,
+    "min_pair_bins": 30,
+    "min_coverage": 0.6,
+    "period_min": 0.03,
+    "period_max": 0.06,
+    "period_steps": 241
+  },
+  "implementation_sha256": {
+    "paired_dynamic": "577b623569371d6b2e0ce8ad3ed0640a6df8b051b224f4aabb086b7fcf61238f",
+    "alignment": "a94025a8bb63dfdd3b07fb3818ef4a5896632fc92fee88c358473ddbb5515b0e"
+  },
+  "conditions": {
+    "joint": 3,
+    "kp": [
+      80.0,
+      150.0,
+      150.0,
+      25.0,
+      12.0,
+      25.0
+    ],
+    "kd": [
+      5.0,
+      10.0,
+      20.0,
+      1.5,
+      0.8,
+      1.5
+    ],
+    "home": [
+      0.0,
+      1.2,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "model_hash": "3838ca8f9d586be22a89b33c7cbdd4abd43d4a92a2de377b294eef4c5bd7654d",
+    "load_id": "unloaded_wrist_fixed_setup_20261019_user_reported",
+    "calibration": {
+      "calibration_id": "unverified",
+      "offset": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "units": "protocol_nm_unverified",
+      "verified": false
+    },
+    "rate": 100.0
+  },
+  "training": [
+    {
+      "identity": {
+        "path": "/home/a12/reBot-DevArm/tools/param_id/realrobot_data/primary_joints_20261019/J3_train/friction_20261019_145455_aabe9fb1.npz",
+        "run_id": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35",
+        "sha256": "2cc966fc6c433e3b12b5542623c2688b9ac0c6baa4a900e2becc6b2c759189b4",
+        "raw_sha256": "a9e5516d685f19d73c277aeccff864c966e0693702213106e96b85718a9f1682"
+      },
+      "conditions": {
+        "joint": 3,
+        "kp": [
+          80.0,
+          150.0,
+          150.0,
+          25.0,
+          12.0,
+          25.0
+        ],
+        "kd": [
+          5.0,
+          10.0,
+          20.0,
+          1.5,
+          0.8,
+          1.5
+        ],
+        "home": [
+          0.0,
+          1.2,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "model_hash": "3838ca8f9d586be22a89b33c7cbdd4abd43d4a92a2de377b294eef4c5bd7654d",
+        "load_id": "unloaded_wrist_fixed_setup_20261019_user_reported",
+        "calibration": {
+          "calibration_id": "unverified",
+          "offset": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "units": "protocol_nm_unverified",
+          "verified": false
+        },
+        "rate": 100.0
+      },
+      "pair_reports": [
+        {
+          "repeat": 0,
+          "speed_id": 0,
+          "speed": 0.1,
+          "bins": 145,
+          "coverage": 1.0,
+          "accepted": true
+        },
+        {
+          "repeat": 0,
+          "speed_id": 1,
+          "speed": 0.15,
+          "bins": 145,
+          "coverage": 1.0,
+          "accepted": true
+        },
+        {
+          "repeat": 0,
+          "speed_id": 2,
+          "speed": 0.2,
+          "bins": 120,
+          "coverage": 0.8275862068965517,
+          "accepted": true
+        },
+        {
+          "repeat": 1,
+          "speed_id": 0,
+          "speed": 0.1,
+          "bins": 145,
+          "coverage": 1.0,
+          "accepted": true
+        },
+        {
+          "repeat": 1,
+          "speed_id": 1,
+          "speed": 0.15,
+          "bins": 144,
+          "coverage": 0.993103448275862,
+          "accepted": true
+        },
+        {
+          "repeat": 1,
+          "speed_id": 2,
+          "speed": 0.2,
+          "bins": 121,
+          "coverage": 0.8344827586206897,
+          "accepted": true
+        },
+        {
+          "repeat": 2,
+          "speed_id": 0,
+          "speed": 0.1,
+          "bins": 145,
+          "coverage": 1.0,
+          "accepted": true
+        },
+        {
+          "repeat": 2,
+          "speed_id": 1,
+          "speed": 0.15,
+          "bins": 145,
+          "coverage": 1.0,
+          "accepted": true
+        },
+        {
+          "repeat": 2,
+          "speed_id": 2,
+          "speed": 0.2,
+          "bins": 121,
+          "coverage": 0.8344827586206897,
+          "accepted": true
+        }
+      ],
+      "bounds": [
+        1.13,
+        1.42
+      ],
+      "temperature_range": [
+        31.0,
+        55.0
+      ]
+    }
+  ],
+  "bounds": [
+    1.13,
+    1.42
+  ],
+  "models": [
+    {
+      "kind": "velocity",
+      "period_rad": null,
+      "q_center": 1.2743923639317627,
+      "q_span": 0.28800000000000026,
+      "names": [
+        "smooth_fc",
+        "fv"
+      ],
+      "coefficients": [
+        0.5679187181221519,
+        -0.9088528851565968
+      ],
+      "common_coefficients": [
+        7.188262030684544,
+        -0.728057361662349,
+        -0.33160837162624285,
+        -1.0428586676801241
+      ],
+      "rank": 2,
+      "columns": 2,
+      "scaled_condition": 7.480713730593322,
+      "common_scaled_condition": 4.528716790528675,
+      "issues": [
+        "negative_fv"
+      ],
+      "training_metrics": {
+        "difference_rmse": 0.22643188613442297,
+        "common_rmse": 0.23202091691379775,
+        "reconstructed_torque_rmse": 0.3241991748044892,
+        "groups": [
+          {
+            "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:0",
+            "speed": 0.1,
+            "bins": 145,
+            "difference_rmse": 0.2451159317029657,
+            "common_rmse": 0.2653750749156124
+          },
+          {
+            "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:1",
+            "speed": 0.15,
+            "bins": 145,
+            "difference_rmse": 0.24101535043275193,
+            "common_rmse": 0.2490281471520724
+          },
+          {
+            "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:2",
+            "speed": 0.2,
+            "bins": 120,
+            "difference_rmse": 0.21136899480697782,
+            "common_rmse": 0.206186635022415
+          },
+          {
+            "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:0",
+            "speed": 0.1,
+            "bins": 145,
+            "difference_rmse": 0.2320123409080622,
+            "common_rmse": 0.2336944577396319
+          },
+          {
+            "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:1",
+            "speed": 0.15,
+            "bins": 144,
+            "difference_rmse": 0.22950652255551765,
+            "common_rmse": 0.19979689971450626
+          },
+          {
+            "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:2",
+            "speed": 0.2,
+            "bins": 121,
+            "difference_rmse": 0.21021276452734927,
+            "common_rmse": 0.23059325469467382
+          },
+          {
+            "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:0",
+            "speed": 0.1,
+            "bins": 145,
+            "difference_rmse": 0.21990640577549367,
+            "common_rmse": 0.21982043843001775
+          },
+          {
+            "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:1",
+            "speed": 0.15,
+            "bins": 145,
+            "difference_rmse": 0.21549764789635478,
+            "common_rmse": 0.24062947785992708
+          },
+          {
+            "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:2",
+            "speed": 0.2,
+            "bins": 121,
+            "difference_rmse": 0.23044539546632278,
+            "common_rmse": 0.23584476983009217
+          }
+        ]
+      },
+      "stability": {
+        "method": "leave_one_roundtrip_out; period frozen; descriptive ranges, not confidence intervals",
+        "fits": [
+          {
+            "omitted": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:0",
+            "coefficients": [
+              0.4985035144417882,
+              -0.5309198549298849
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          },
+          {
+            "omitted": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:1",
+            "coefficients": [
+              0.5622277785594858,
+              -0.8786774419183151
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          },
+          {
+            "omitted": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:2",
+            "coefficients": [
+              0.5752245782705467,
+              -0.9785931361386928
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          },
+          {
+            "omitted": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:0",
+            "coefficients": [
+              0.6071870197395145,
+              -1.1176057194686897
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          },
+          {
+            "omitted": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:1",
+            "coefficients": [
+              0.563623302086714,
+              -0.8758360675730388
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          },
+          {
+            "omitted": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:2",
+            "coefficients": [
+              0.5630403811895439,
+              -0.8743205519198245
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          },
+          {
+            "omitted": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:0",
+            "coefficients": [
+              0.6146962367589713,
+              -1.159651320040409
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          },
+          {
+            "omitted": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:1",
+            "coefficients": [
+              0.564891206032667,
+              -0.8821284059641312
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          },
+          {
+            "omitted": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:2",
+            "coefficients": [
+              0.5701840340483024,
+              -0.9363005970735038
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          }
+        ],
+        "coefficient_ranges": {
+          "smooth_fc": [
+            0.4985035144417882,
+            0.6146962367589713
+          ],
+          "fv": [
+            -1.159651320040409,
+            -0.5309198549298849
+          ]
+        },
+        "issues": []
+      }
+    },
+    {
+      "kind": "inertia",
+      "period_rad": null,
+      "q_center": 1.2743923639317627,
+      "q_span": 0.28800000000000026,
+      "names": [
+        "smooth_fc",
+        "fv",
+        "effective_inertia"
+      ],
+      "coefficients": [
+        0.543877961100818,
+        -0.7613066432087907,
+        0.8182613718859953
+      ],
+      "common_coefficients": [
+        7.189253243588058,
+        -0.7365994194311133,
+        -0.3621146440317673,
+        -0.8669262848405549
+      ],
+      "rank": 3,
+      "columns": 3,
+      "scaled_condition": 7.50193909860465,
+      "common_scaled_condition": 4.528716790528675,
+      "issues": [
+        "negative_fv"
+      ],
+      "training_metrics": {
+        "difference_rmse": 0.20975201477894398,
+        "common_rmse": 0.2365730395343806,
+        "reconstructed_torque_rmse": 0.3161688010199013,
+        "groups": [
+          {
+            "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:0",
+            "speed": 0.1,
+            "bins": 145,
+            "difference_rmse": 0.23176128488705297,
+            "common_rmse": 0.26357384796998723
+          },
+          {
+            "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:1",
+            "speed": 0.15,
+            "bins": 145,
+            "difference_rmse": 0.22872355355377003,
+            "common_rmse": 0.25631887103848217
+          },
+          {
+            "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:2",
+            "speed": 0.2,
+            "bins": 120,
+            "difference_rmse": 0.19539317292222758,
+            "common_rmse": 0.22072257219701993
+          },
+          {
+            "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:0",
+            "speed": 0.1,
+            "bins": 145,
+            "difference_rmse": 0.21661794567080564,
+            "common_rmse": 0.2301164166622992
+          },
+          {
+            "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:1",
+            "speed": 0.15,
+            "bins": 144,
+            "difference_rmse": 0.19885611449324855,
+            "common_rmse": 0.2103823733869814
+          },
+          {
+            "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:2",
+            "speed": 0.2,
+            "bins": 121,
+            "difference_rmse": 0.19607293412759305,
+            "common_rmse": 0.23140252244685994
+          },
+          {
+            "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:0",
+            "speed": 0.1,
+            "bins": 145,
+            "difference_rmse": 0.20881592859645076,
+            "common_rmse": 0.21663453622952833
+          },
+          {
+            "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:1",
+            "speed": 0.15,
+            "bins": 145,
+            "difference_rmse": 0.19010847066154174,
+            "common_rmse": 0.24725026635816374
+          },
+          {
+            "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:2",
+            "speed": 0.2,
+            "bins": 121,
+            "difference_rmse": 0.21702514457729452,
+            "common_rmse": 0.24695664458287486
+          }
+        ]
+      },
+      "stability": {
+        "method": "leave_one_roundtrip_out; period frozen; descriptive ranges, not confidence intervals",
+        "fits": [
+          {
+            "omitted": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:0",
+            "coefficients": [
+              0.47014945070715247,
+              -0.3597188377646285,
+              0.8212292437814476
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          },
+          {
+            "omitted": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:1",
+            "coefficients": [
+              0.5396882578559558,
+              -0.7373695979261726,
+              0.8439924323636031
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          },
+          {
+            "omitted": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:2",
+            "coefficients": [
+              0.552721777496126,
+              -0.8412561057945742,
+              0.8072649417807709
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          },
+          {
+            "omitted": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:0",
+            "coefficients": [
+              0.5792002123418084,
+              -0.9485584229544564,
+              0.8157097441635902
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          },
+          {
+            "omitted": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:1",
+            "coefficients": [
+              0.5423521889952896,
+              -0.7432731204547229,
+              0.7957368734781641
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          },
+          {
+            "omitted": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:2",
+            "coefficients": [
+              0.5398423530658992,
+              -0.7316270604742513,
+              0.8155998995758325
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          },
+          {
+            "omitted": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:0",
+            "coefficients": [
+              0.5861931001346705,
+              -0.9873055646730876,
+              0.8317871086844114
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          },
+          {
+            "omitted": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:1",
+            "coefficients": [
+              0.5429326886673017,
+              -0.7454542336672302,
+              0.8177572901302441
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          },
+          {
+            "omitted": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:2",
+            "coefficients": [
+              0.5472326115808391,
+              -0.7959420432587206,
+              0.8155919608039446
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          }
+        ],
+        "coefficient_ranges": {
+          "smooth_fc": [
+            0.47014945070715247,
+            0.5861931001346705
+          ],
+          "fv": [
+            -0.9873055646730876,
+            -0.3597188377646285
+          ],
+          "effective_inertia": [
+            0.7957368734781641,
+            0.8439924323636031
+          ]
+        },
+        "issues": []
+      }
+    },
+    {
+      "kind": "spatial",
+      "period_rad": 0.04925,
+      "q_center": 1.2743923639317627,
+      "q_span": 0.28800000000000026,
+      "names": [
+        "smooth_fc",
+        "fv",
+        "effective_inertia",
+        "odd_position_sin",
+        "odd_position_cos"
+      ],
+      "coefficients": [
+        0.5345036409792808,
+        -0.7021935520210321,
+        1.2105029569482737,
+        0.004934282739813157,
+        0.07362718618661164
+      ],
+      "common_coefficients": [
+        7.190664328422475,
+        -0.8400685163559545,
+        -0.3938608994332269,
+        0.06563232646145838,
+        0.16396664151253257,
+        0.04757358449137037
+      ],
+      "rank": 5,
+      "columns": 5,
+      "scaled_condition": 7.535640536546337,
+      "common_scaled_condition": 4.58036922211746,
+      "issues": [
+        "negative_fv"
+      ],
+      "training_metrics": {
+        "difference_rmse": 0.20721627413895521,
+        "common_rmse": 0.2110474047552543,
+        "reconstructed_torque_rmse": 0.2957694901810509,
+        "groups": [
+          {
+            "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:0",
+            "speed": 0.1,
+            "bins": 145,
+            "difference_rmse": 0.23465395142428572,
+            "common_rmse": 0.22787281139187146
+          },
+          {
+            "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:1",
+            "speed": 0.15,
+            "bins": 145,
+            "difference_rmse": 0.22516694190331277,
+            "common_rmse": 0.21805863349689836
+          },
+          {
+            "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:2",
+            "speed": 0.2,
+            "bins": 120,
+            "difference_rmse": 0.1901835058135654,
+            "common_rmse": 0.210383993956635
+          },
+          {
+            "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:0",
+            "speed": 0.1,
+            "bins": 145,
+            "difference_rmse": 0.21214791469772037,
+            "common_rmse": 0.19964052486445635
+          },
+          {
+            "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:1",
+            "speed": 0.15,
+            "bins": 144,
+            "difference_rmse": 0.19516557595825101,
+            "common_rmse": 0.17950849473375735
+          },
+          {
+            "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:2",
+            "speed": 0.2,
+            "bins": 121,
+            "difference_rmse": 0.1947416608677955,
+            "common_rmse": 0.21145165486530257
+          },
+          {
+            "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:0",
+            "speed": 0.1,
+            "bins": 145,
+            "difference_rmse": 0.2064936056738891,
+            "common_rmse": 0.19602257394663233
+          },
+          {
+            "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:1",
+            "speed": 0.15,
+            "bins": 145,
+            "difference_rmse": 0.18643167138520825,
+            "common_rmse": 0.21271789685560333
+          },
+          {
+            "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:2",
+            "speed": 0.2,
+            "bins": 121,
+            "difference_rmse": 0.21470405766234602,
+            "common_rmse": 0.2380480170547398
+          }
+        ]
+      },
+      "stability": {
+        "method": "leave_one_roundtrip_out; period frozen; descriptive ranges, not confidence intervals",
+        "fits": [
+          {
+            "omitted": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:0",
+            "coefficients": [
+              0.457808564732108,
+              -0.2840106333199231,
+              1.2917974924357412,
+              0.0037222193663922717,
+              0.08748973726332493
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          },
+          {
+            "omitted": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:1",
+            "coefficients": [
+              0.5310271344553821,
+              -0.6816167907599179,
+              1.2437424415124372,
+              0.0021951648733657884,
+              0.07300606412291627
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          },
+          {
+            "omitted": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:2",
+            "coefficients": [
+              0.5439737335367172,
+              -0.7850629858314571,
+              1.1629445045105702,
+              0.006425425803446502,
+              0.06853272665584519
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          },
+          {
+            "omitted": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:0",
+            "coefficients": [
+              0.5690991140474303,
+              -0.8865837332392779,
+              1.2171318726543214,
+              -0.0011632329165055923,
+              0.07390095969031124
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          },
+          {
+            "omitted": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:1",
+            "coefficients": [
+              0.5338212136551063,
+              -0.6888309143672613,
+              1.1724905016762481,
+              0.006897395241375023,
+              0.06991712300357086
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          },
+          {
+            "omitted": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:2",
+            "coefficients": [
+              0.5303066288959924,
+              -0.6704219175867909,
+              1.2025552130137582,
+              0.006292968364922312,
+              0.07458722279513735
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          },
+          {
+            "omitted": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:0",
+            "coefficients": [
+              0.5759417117470025,
+              -0.9242825935740576,
+              1.2220732694923104,
+              0.006204751336734691,
+              0.0735079708413499
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          },
+          {
+            "omitted": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:1",
+            "coefficients": [
+              0.534189529547698,
+              -0.6896720801025406,
+              1.2173363229732412,
+              0.002686412411180312,
+              0.07292315053729909
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          },
+          {
+            "omitted": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:2",
+            "coefficients": [
+              0.5382237122323132,
+              -0.7384740807222568,
+              1.1750437781533543,
+              0.010797502588451123,
+              0.07005421827003462
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          }
+        ],
+        "coefficient_ranges": {
+          "smooth_fc": [
+            0.457808564732108,
+            0.5759417117470025
+          ],
+          "fv": [
+            -0.9242825935740576,
+            -0.2840106333199231
+          ],
+          "effective_inertia": [
+            1.1629445045105702,
+            1.2917974924357412
+          ]
+        },
+        "issues": []
+      }
+    }
+  ],
+  "excitation_issues": [],
+  "independent_roundtrips_per_speed": {
+    "0.1": 3,
+    "0.15": 3,
+    "0.2": 3
+  },
+  "limits": [
+    "Effective coefficients are in dataset calibration units, not verified physical parameters.",
+    "Same-position difference cancels common gravity/ripple only for matched full poses.",
+    "Angle cubic is descriptive, not an identified gravity model; other-axis residual motion/coupling is unmodeled.",
+    "Odd/even position terms are phenomenological; they do not identify a physical cause.",
+    "Neighbouring bins/derivatives are correlated; bin count is not independent trial count."
+  ],
+  "checksum": "749653611fd69284f8937163e9606e00dfa05756ca986885937289b2cb7b0476"
+}

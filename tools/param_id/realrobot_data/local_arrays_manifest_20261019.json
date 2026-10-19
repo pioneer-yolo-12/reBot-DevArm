@@ -1,0 +1,686 @@
+{
+  "storage": "local_only_not_uploaded",
+  "files": [
+    {
+      "path": "fold_prepare_20261016_170752.jsonl",
+      "bytes": 3500374,
+      "sha256": "4c06cb7481dce234dfd1dcf44b438fe0a562757d498c287c2d11c7af2ae58fc6"
+    },
+    {
+      "path": "fold_prepare_20261016_170752.npz",
+      "bytes": 452356,
+      "sha256": "84b73e15659a884b8b46fab63648e7a857c49d11a397513a5cef5311050bcbb0"
+    },
+    {
+      "path": "foldcheck_20261016_165359.jsonl",
+      "bytes": 1427469,
+      "sha256": "ea2ee4591105cfd4d1f7f8c1a8fdc474ff6265d666d776b836cad4abf421e306"
+    },
+    {
+      "path": "foldcheck_20261016_165359.npz",
+      "bytes": 187920,
+      "sha256": "0b107515fa5901d55452080d776ee7040b8f8c5535041cdf975fc9ac5b376722"
+    },
+    {
+      "path": "friction_20261016_164301_f904d890.jsonl",
+      "bytes": 6195,
+      "sha256": "bd74697770a198158e43363ed655817e0bcf92d2367f01ffa0788cbbf7db6e22"
+    },
+    {
+      "path": "friction_20261016_164301_f904d890.npz",
+      "bytes": 5515,
+      "sha256": "692f990d94d50f6e7ffb0c988d2bfc9896c39e7853c1ce3cd3722f9c020b2621"
+    },
+    {
+      "path": "friction_20261016_165412_90a9238d.jsonl",
+      "bytes": 18558895,
+      "sha256": "3592fb4d1f87d90a9fef651867679f027dcd5dfc5c3b5dbf3da33d542815b8d6"
+    },
+    {
+      "path": "friction_20261016_165412_90a9238d.npz",
+      "bytes": 2482485,
+      "sha256": "3a688c8781e0baf7ce6ae3d33b4579be11b301bf07fa20c50efd9ab530074246"
+    },
+    {
+      "path": "friction_20261016_165412_90a9238d_analysis/aligned.npz",
+      "bytes": 370447,
+      "sha256": "37c7497f8d3e77ff9c1954c091f5374b6f11f7012171cb88cfc458a84f99d758"
+    },
+    {
+      "path": "friction_20261016_165821_b82a9ae8.jsonl",
+      "bytes": 12978308,
+      "sha256": "349c6d57df810d6ccfd5673a94aa9a09ce4061ce897bf529ba5a56b5e042c7b5"
+    },
+    {
+      "path": "friction_20261016_165821_b82a9ae8.npz",
+      "bytes": 1727981,
+      "sha256": "98ba26c169560dda5d518add95de54553e9d4c2c9393f611cb970be74f274b62"
+    },
+    {
+      "path": "friction_20261016_165821_b82a9ae8_analysis/aligned.npz",
+      "bytes": 272577,
+      "sha256": "399f44d867f32c4076cbcd39c0088d8c953b3bb6781908596cdafd70f58224eb"
+    },
+    {
+      "path": "friction_20261016_170804_4efecf13.jsonl",
+      "bytes": 18488691,
+      "sha256": "d316fe8b60f953d880b5a82979ceb34ea75cce1b385a19940554f798734bcb1f"
+    },
+    {
+      "path": "friction_20261016_170804_4efecf13.npz",
+      "bytes": 2489759,
+      "sha256": "e804cb7c2a34307179abcdd13567ce74e097b424ed91b4f3e684e0190f28c101"
+    },
+    {
+      "path": "friction_20261016_170804_4efecf13_analysis/aligned.npz",
+      "bytes": 371105,
+      "sha256": "f60668ff331b3ca3022cc5ccacf4b42f1e112d264ceebc2f9381957979d2d4e6"
+    },
+    {
+      "path": "friction_20261016_170909_c37fc19b.jsonl",
+      "bytes": 18453954,
+      "sha256": "96eabc2f7c3ed5041464f52baca9ac9f4b26a245bfc707762833f317dd22f363"
+    },
+    {
+      "path": "friction_20261016_170909_c37fc19b.npz",
+      "bytes": 2484370,
+      "sha256": "ca7be7264cdf77232c65cfe0e27fbb631b7b7ca895a759c8a759ae0c888ec498"
+    },
+    {
+      "path": "friction_20261016_170909_c37fc19b_analysis/aligned.npz",
+      "bytes": 375047,
+      "sha256": "ca5d7f726ade9d9b474574f69b3afa89dc09b5bced92adffe43dc6ce3dca8c22"
+    },
+    {
+      "path": "friction_20261016_172447_b4729f07.jsonl",
+      "bytes": 58672549,
+      "sha256": "3829f86a365b0153b40eb5ef10d886f1fdfa9f60e1610abbe6ae5e71fc5254fb"
+    },
+    {
+      "path": "friction_20261016_172447_b4729f07.npz",
+      "bytes": 7638358,
+      "sha256": "39e48f25e33a23d15a079b7ea219f1361feee8f33b13f12af10d84f5df595e47"
+    },
+    {
+      "path": "friction_20261016_172702_03e23883.jsonl",
+      "bytes": 58760366,
+      "sha256": "737827e87ab1b13ff17d174e4f68158fd29d44554a774e0f90e860eca15d4e43"
+    },
+    {
+      "path": "friction_20261016_172702_03e23883.npz",
+      "bytes": 7669301,
+      "sha256": "8ceacc7c4c8e32d1cfa8d6cdda61ca67105b18ebceff26e6aa5ee6a8cbeda9a6"
+    },
+    {
+      "path": "friction_20261016_180053_542b5fe6.jsonl",
+      "bytes": 6743,
+      "sha256": "5405080ed43d614adf1719cd6b0f0cc303590d698622b2bd314044d555999cc3"
+    },
+    {
+      "path": "friction_20261016_180053_542b5fe6.npz",
+      "bytes": 5865,
+      "sha256": "cf337a1039978d3d936391d774ccd16e0326b6ddec413e28b9e9ccd254716dfe"
+    },
+    {
+      "path": "j6_driver_multispeed_20261019/holdout/friction_20261019_140442_a4871e3c.jsonl",
+      "bytes": 59064157,
+      "sha256": "bc2d7236de61432f3b89946922bfc9d732529a867f8d1efd83d4227efe451d0d"
+    },
+    {
+      "path": "j6_driver_multispeed_20261019/holdout/friction_20261019_140442_a4871e3c.npz",
+      "bytes": 7330601,
+      "sha256": "4911db183f747b61c0a564661d78eac8bf74ca2a0541c418bddd9d0867404592"
+    },
+    {
+      "path": "j6_driver_multispeed_20261019/train/friction_20261019_140143_3f72829d.jsonl",
+      "bytes": 59018930,
+      "sha256": "c07b3413a30b8188a4988ee4384c3380de8cb9ebafa8e0bab7e291167ca84869"
+    },
+    {
+      "path": "j6_driver_multispeed_20261019/train/friction_20261019_140143_3f72829d.npz",
+      "bytes": 7288035,
+      "sha256": "658ff99882fe2e24ca70f0df6847cfb0281fd1033a7b47641afff80c09737422"
+    },
+    {
+      "path": "j6_driver_multispeed_20261019/validation_curves.npz",
+      "bytes": 561400,
+      "sha256": "1948a8803c0143ac76367ca5a1dad043c8869e027d6041c2c714d28d29117293"
+    },
+    {
+      "path": "j6_multispeed_20261016/train/training_aligned.npz",
+      "bytes": 792527,
+      "sha256": "ccd81f65d0fc6e1c9456460f70a579b4bc3f5c02415145ab46f864d37273f363"
+    },
+    {
+      "path": "j6_multispeed_20261016/train_final/training_aligned.npz",
+      "bytes": 792857,
+      "sha256": "108e7224c993e97331dc6657ea40da0eacf4fb8ebb236d4e5769ac1e910e54c8"
+    },
+    {
+      "path": "j6_multispeed_20261016/validation/validation_predictions.npz",
+      "bytes": 1116938,
+      "sha256": "4482d12c24f29e0fa128ce6e264e26a55ed83d24cb8e33177e4c29cd3e12a661"
+    },
+    {
+      "path": "j6_multispeed_20261016/window_12/train/training_aligned.npz",
+      "bytes": 802147,
+      "sha256": "101352818d9f94e375a9db57305b85209e3dad4c335839e9d3cb998a1028283d"
+    },
+    {
+      "path": "j6_multispeed_20261016/window_12/validation/validation_predictions.npz",
+      "bytes": 1126902,
+      "sha256": "57c4955388f5232609ad36a060a9b25b00bd3db4880cfa6d4e572e54a2137b66"
+    },
+    {
+      "path": "j6_multispeed_20261016/window_28/train/training_aligned.npz",
+      "bytes": 764023,
+      "sha256": "6820d42412791c5329301edf6b1cddb1a19eb7f9a116893ece8cd4aacb63d3bf"
+    },
+    {
+      "path": "j6_multispeed_20261016/window_28/validation/validation_predictions.npz",
+      "bytes": 1060206,
+      "sha256": "a668d9efe19f5427db6af5c5ab6921731d88ff3a53840bc7c8adbc58573d76c7"
+    },
+    {
+      "path": "j6_pd_comparison_20261019/A/friction_20261019_135128_dd8b0311.jsonl",
+      "bytes": 18606147,
+      "sha256": "ca738e96763d74603b73136474c5b6581ca093f3b0cfe44e30fbb01d637d9c08"
+    },
+    {
+      "path": "j6_pd_comparison_20261019/A/friction_20261019_135128_dd8b0311.npz",
+      "bytes": 2364643,
+      "sha256": "fbcc5839ca4eedbdaaf725020d131cf185571652c7a79d37612ea2af92c5f0c7"
+    },
+    {
+      "path": "j6_pd_comparison_20261019/A_repeat/friction_20261019_135719_ff8014c9.jsonl",
+      "bytes": 18615078,
+      "sha256": "9c6337e107ca31dc09c98b9d749c13cc0d6f8c225ce9f71d0a07b5526d198add"
+    },
+    {
+      "path": "j6_pd_comparison_20261019/A_repeat/friction_20261019_135719_ff8014c9.npz",
+      "bytes": 2379476,
+      "sha256": "fb7a16ea600c83590e266fb7fbc53b033ab35cd3476fd55448ba2d2fc5fc2184"
+    },
+    {
+      "path": "j6_pd_comparison_20261019/B/friction_20261019_135233_f6c967a9.jsonl",
+      "bytes": 18564080,
+      "sha256": "f158955a60734fab8620fd12a1ae52af9a525700f74d7815a51da790c9773aad"
+    },
+    {
+      "path": "j6_pd_comparison_20261019/B/friction_20261019_135233_f6c967a9.npz",
+      "bytes": 2365025,
+      "sha256": "6a8ddf822ae546c595e1d5af9407f401833c74d45262c717aeb6da25d56b9975"
+    },
+    {
+      "path": "j6_pd_comparison_20261019/C/friction_20261019_135348_4e030a30.jsonl",
+      "bytes": 18594681,
+      "sha256": "aa34c6194d88ffd3ee3424c912ac15cc7d3607d417f201fb8c7ba3f231cc69f8"
+    },
+    {
+      "path": "j6_pd_comparison_20261019/C/friction_20261019_135348_4e030a30.npz",
+      "bytes": 2382968,
+      "sha256": "3aff0f637ff7edc7286ee08604ac5353f7bfabd3be49a4868d7616db2d1dd935"
+    },
+    {
+      "path": "j6_pd_comparison_20261019/C_repeat/friction_20261019_135607_307f1eae.jsonl",
+      "bytes": 18604550,
+      "sha256": "ce52df2bf8cd7a8617d41b712c1bd1c4162352335b5ac7f8d637b27314b94576"
+    },
+    {
+      "path": "j6_pd_comparison_20261019/C_repeat/friction_20261019_135607_307f1eae.npz",
+      "bytes": 2360106,
+      "sha256": "24ac5eaafc97f147848dce258540d7caf512a5ffc5c4ec955c074c50eef36f45"
+    },
+    {
+      "path": "j6_pd_comparison_20261019/comparison_curves.npz",
+      "bytes": 221725,
+      "sha256": "ed984efec9b3416157811a96e942b860e06c51b32cab024c6bca5d1d39745870"
+    },
+    {
+      "path": "measurement_chain_20261019/damping_low/friction_20261019_143320_b53ae77e.jsonl",
+      "bytes": 25073918,
+      "sha256": "7c9b933f1bfe44f38e2aaf4b77474ea66bdc9c7661f605b721c3eed9218b1d5d"
+    },
+    {
+      "path": "measurement_chain_20261019/damping_low/friction_20261019_143320_b53ae77e.npz",
+      "bytes": 3297496,
+      "sha256": "0dec6c9499606648c40c3cced1f839e3eef84b3f8ecf4a916228ff257067e201"
+    },
+    {
+      "path": "measurement_chain_20261019/damping_low_probe_comparison.npz",
+      "bytes": 57624,
+      "sha256": "a8f95f05c7c2ecd517edabdd8a8a7075476328c52f65d86b95aa0e7efea1926a"
+    },
+    {
+      "path": "measurement_chain_20261019/motion/friction_20261019_141822_26f8c754.jsonl",
+      "bytes": 25090806,
+      "sha256": "75ffd51e2e7507261f640cbcd6113299d5151c543d4f3c425ae076e1705f2c89"
+    },
+    {
+      "path": "measurement_chain_20261019/motion/friction_20261019_141822_26f8c754.npz",
+      "bytes": 3335217,
+      "sha256": "b1ed8bd5acf3f0b99232ab00e9e47a66d99bad63d2cc74f4c6bb3f6987e245ae"
+    },
+    {
+      "path": "measurement_chain_20261019/probe_comparison.npz",
+      "bytes": 57730,
+      "sha256": "a13248502ed801b0e329bcdb161c2080b62d6eb855022ed2cce74a8c7cc3be8a"
+    },
+    {
+      "path": "measurement_chain_20261019/static_probe.jsonl",
+      "bytes": 19969,
+      "sha256": "756f44d326db5053d937403030766d1fa9757bdd5b7ef2c450bd63329c7c7bcf"
+    },
+    {
+      "path": "measurement_chain_20261019/static_probe.npz",
+      "bytes": 4382,
+      "sha256": "9503cd48b37e55d13b32d5b11d4b984de0815fd4a0cc82e64370f766d19125fc"
+    },
+    {
+      "path": "measurement_chain_20261019/static_probe2.jsonl",
+      "bytes": 452022,
+      "sha256": "43087133c1a46d93782c7373e3dc50cf34618fe3014a2a93056867c744899ee5"
+    },
+    {
+      "path": "measurement_chain_20261019/static_probe2.npz",
+      "bytes": 55030,
+      "sha256": "63bb129191c0a44f23080fc91c0b684c885ecdc98de691e332bcd87066fe365a"
+    },
+    {
+      "path": "phase2_pointmatch_20261015_094300.npz",
+      "bytes": 894,
+      "sha256": "490ad29f37a06d79948fa5fcc0126da0eebb331f8d3e541240b29f90edaa272a"
+    },
+    {
+      "path": "phase2_pointmatch_20261015_095128.npz",
+      "bytes": 52098,
+      "sha256": "ae0a03f89d460c3f7af8736a5a449b7c57aa82fcbe1b372b1b4c827b2fe8aaef"
+    },
+    {
+      "path": "phase2_pointmatch_20261015_101900.npz",
+      "bytes": 55458,
+      "sha256": "a993b5ac2a479834ec61b737a672cfd40a42de1e91d87656a5fc6158aeaa31f8"
+    },
+    {
+      "path": "primary_joints_20261019/J1_damping/friction_20261019_145052_fd2b7122.jsonl",
+      "bytes": 18627156,
+      "sha256": "74c270b03b99bd9e149b682a2185954755c86eb0e4efe2c211e7788c10d4c76d"
+    },
+    {
+      "path": "primary_joints_20261019/J1_damping/friction_20261019_145052_fd2b7122.npz",
+      "bytes": 2314259,
+      "sha256": "f478267f177ec653e3368d6e611811252b91a9922f481ffc63f1742296ef5f54"
+    },
+    {
+      "path": "primary_joints_20261019/J1_halfperiod_start/friction_20261019_151437_31449c94.jsonl",
+      "bytes": 19182800,
+      "sha256": "2d175e127186efde35c2a8244803e4c8a67c8d889c63ddc82641d14652a3ed05"
+    },
+    {
+      "path": "primary_joints_20261019/J1_halfperiod_start/friction_20261019_151437_31449c94.npz",
+      "bytes": 2383429,
+      "sha256": "d6c346fc727046bc72b7fe4193cd8a9fa50638058a74d232af1d2409261b75cc"
+    },
+    {
+      "path": "primary_joints_20261019/J1_pilot/friction_20261019_144537_e097f106.jsonl",
+      "bytes": 18615503,
+      "sha256": "161c0668a23025c714d3889c07a8d57976c0b2e8c98dbc66b857da69607c2555"
+    },
+    {
+      "path": "primary_joints_20261019/J1_pilot/friction_20261019_144537_e097f106.npz",
+      "bytes": 2337161,
+      "sha256": "5faa33d685544755c8cebf6462eddb845c723a58f8fd1a5b685b3fb2d9df1a1e"
+    },
+    {
+      "path": "primary_joints_20261019/J1_shifted_start/friction_20261019_151325_bf47aec5.jsonl",
+      "bytes": 18899590,
+      "sha256": "8d018c022bdc24ad7155730fbd7ef160118d0cb5eff065d65f91eddddd9bb50e"
+    },
+    {
+      "path": "primary_joints_20261019/J1_shifted_start/friction_20261019_151325_bf47aec5.npz",
+      "bytes": 2378089,
+      "sha256": "0c60f65b558651c776639601d6544cce197ecb1eccdd44014f77edeb4abd9046"
+    },
+    {
+      "path": "primary_joints_20261019/J1_speed_screen/friction_20261019_151143_459c9ca8.jsonl",
+      "bytes": 28075933,
+      "sha256": "3ad9bfe30691a60352a73e3da8393de613e94746069aa2be8adf92b8b4a780e1"
+    },
+    {
+      "path": "primary_joints_20261019/J1_speed_screen/friction_20261019_151143_459c9ca8.npz",
+      "bytes": 3439135,
+      "sha256": "9ffd9a49147e8802a3420dc1afd8aa4bf7788ec32d880ccdba7cb06da99d4411"
+    },
+    {
+      "path": "primary_joints_20261019/J2_damping/friction_20261019_145137_0aa61226.jsonl",
+      "bytes": 18622413,
+      "sha256": "e8b99f5742a82371f864589eb80b830c08513d72512800822260cfffec4f7f0f"
+    },
+    {
+      "path": "primary_joints_20261019/J2_damping/friction_20261019_145137_0aa61226.npz",
+      "bytes": 2384182,
+      "sha256": "148a12b91cb5add08420d536001e7182d602e72946aecc8fffb492bde6f4ea92"
+    },
+    {
+      "path": "primary_joints_20261019/J2_pilot/friction_20261019_144634_29820b7a.jsonl",
+      "bytes": 18637613,
+      "sha256": "1823df4301ddcf6864c8c30c137a53c86fe3c9004a4fa54a79c4f8032a555568"
+    },
+    {
+      "path": "primary_joints_20261019/J2_pilot/friction_20261019_144634_29820b7a.npz",
+      "bytes": 2386147,
+      "sha256": "ca4c6d9ed8ba6595adfde4da2e141a9ea09c7cd7448dfc62bceffe9dfb42e1da"
+    },
+    {
+      "path": "primary_joints_20261019/J2_speed_screen/friction_20261019_150840_0164d3bc.jsonl",
+      "bytes": 38934725,
+      "sha256": "6dc7d981d5fa0428ffd2b3a4f1e070bcddeec6dfb15b77a8f99d40f1cdd74ef4"
+    },
+    {
+      "path": "primary_joints_20261019/J2_speed_screen/friction_20261019_150840_0164d3bc.npz",
+      "bytes": 4898089,
+      "sha256": "a477abf88e201cae7e049e373c9a7fb1a0ccb9a96ff1de3499069018122a0367"
+    },
+    {
+      "path": "primary_joints_20261019/J3_damping/friction_20261019_145255_d0cfcc57.jsonl",
+      "bytes": 18584306,
+      "sha256": "f74609c30273758d90fca2d1d4aa1bab0cd1f1d291cf90e9f0793227d2f33d09"
+    },
+    {
+      "path": "primary_joints_20261019/J3_damping/friction_20261019_145255_d0cfcc57.npz",
+      "bytes": 2378760,
+      "sha256": "b2dccf4d86f75cc91f5297577d80b6288ef5cebe9e3166cb9b65edb401ff8efa"
+    },
+    {
+      "path": "primary_joints_20261019/J3_pilot/friction_20261019_144720_ddf33195.jsonl",
+      "bytes": 18629216,
+      "sha256": "6650e338e9d64917acb99e471f8c9f8d50ed611abe9215632edf4762ba764ac7"
+    },
+    {
+      "path": "primary_joints_20261019/J3_pilot/friction_20261019_144720_ddf33195.npz",
+      "bytes": 2390528,
+      "sha256": "6deb4fde28668643dbd23661c9105ac58607baca1ed38c3f6e571216a5eb98be"
+    },
+    {
+      "path": "primary_joints_20261019/J3_train/friction_20261019_145455_aabe9fb1.jsonl",
+      "bytes": 66049638,
+      "sha256": "487cfd5e7d172cc2296242c01bd9ff5fabda4b525e013fa7b84ee7b4e233b09e"
+    },
+    {
+      "path": "primary_joints_20261019/J3_train/friction_20261019_145455_aabe9fb1.npz",
+      "bytes": 8294457,
+      "sha256": "2cc966fc6c433e3b12b5542623c2688b9ac0c6baa4a900e2becc6b2c759189b4"
+    },
+    {
+      "path": "primary_joints_20261019/J3_train_analysis/aligned.npz",
+      "bytes": 1590011,
+      "sha256": "256c3d71cfbecda89d452f04c23b27f1d566a7ca3cb431705182c72336474924"
+    },
+    {
+      "path": "primary_joints_20261019/J4_pilot/friction_20261019_144836_8815a91a.jsonl",
+      "bytes": 18603796,
+      "sha256": "684106e38624bf53da1962bdb11fdcda92005ec5685a203b791695205abb6481"
+    },
+    {
+      "path": "primary_joints_20261019/J4_pilot/friction_20261019_144836_8815a91a.npz",
+      "bytes": 2384067,
+      "sha256": "3f439d35eee0aa753f06f458e8d61663cc1030250de77e678facf0f3ffca29ad"
+    },
+    {
+      "path": "primary_joints_20261019/J4_speed15/friction_20261019_145343_e11768f9.jsonl",
+      "bytes": 16509289,
+      "sha256": "9d8e3a7f60ccf7cf727602009c7720bca36fe4cadd0a18639b2ed710f5d087a2"
+    },
+    {
+      "path": "primary_joints_20261019/J4_speed15/friction_20261019_145343_e11768f9.npz",
+      "bytes": 2117533,
+      "sha256": "a6fe53dc7fe3f39916be580d12fe13eef49009f485ec068db5ca5b6785c412d7"
+    },
+    {
+      "path": "primary_joints_20261019/asymmetric_pilot/J2_up08_down20/friction_20261019_153501_7e0e6240.jsonl",
+      "bytes": 19083505,
+      "sha256": "313cd1139a468bb71e4442cc23e55df9da3e7ce26ef68618a1c006110b65f624"
+    },
+    {
+      "path": "primary_joints_20261019/asymmetric_pilot/J2_up08_down20/friction_20261019_153501_7e0e6240.npz",
+      "bytes": 2447518,
+      "sha256": "9d60f5013e3eeeb51323e891ee27d8a3578501ab9d835913b2ed21bda02e6e5a"
+    },
+    {
+      "path": "primary_joints_20261019/asymmetric_pilot/J2_up08_down20_pairs.npz",
+      "bytes": 31623,
+      "sha256": "15de3fad1a014adaa4de453a96fa7093ae416f5234052bf4ed02354a28babbf7"
+    },
+    {
+      "path": "primary_joints_20261019/asymmetric_pilot/J2_up20_down08/friction_20261019_153633_e053ffd2.jsonl",
+      "bytes": 19074860,
+      "sha256": "44251c27c98eb17e8e51a8554ddbe19e94a18ba3b33cd3891c9833c5fd8790a5"
+    },
+    {
+      "path": "primary_joints_20261019/asymmetric_pilot/J2_up20_down08/friction_20261019_153633_e053ffd2.npz",
+      "bytes": 2433260,
+      "sha256": "287f89d4915e3ca9dc7cf5b7b84104431187df250e7bfe5bba669c5ef237db22"
+    },
+    {
+      "path": "primary_joints_20261019/asymmetric_pilot/review/J2_up08_down20_pairs.npz",
+      "bytes": 31623,
+      "sha256": "15de3fad1a014adaa4de453a96fa7093ae416f5234052bf4ed02354a28babbf7"
+    },
+    {
+      "path": "primary_joints_20261019/asymmetric_pilot/review/J2_up20_down08_pairs.npz",
+      "bytes": 31913,
+      "sha256": "c2d20230c968dfd0a684318b019a5a4adf73c3791a7c3e4412fb6fa30578b858"
+    },
+    {
+      "path": "primary_joints_20261019/asymmetric_pilot/review/fit/paired_training.npz",
+      "bytes": 29944,
+      "sha256": "f9df5002e9c3868523f0d3cf33a7d2fd29dbc7399af0cf2e0c7a782525ee204d"
+    },
+    {
+      "path": "primary_joints_20261019/asymmetric_pilot/review/validation/paired_predictions.npz",
+      "bytes": 43403,
+      "sha256": "2c42b5bbbc22139cdeace185fa38b70a87db4508eac4fc44eed02c81d9743473"
+    },
+    {
+      "path": "primary_joints_20261019/gain_aba_20261019/A1/friction_20261019_174751_79e23b88.jsonl",
+      "bytes": 23212028,
+      "sha256": "3f6bc9c05e46c02f915acefe58768a3c3269ead2178ad15d5824f8cdd2d364d3"
+    },
+    {
+      "path": "primary_joints_20261019/gain_aba_20261019/A1/friction_20261019_174751_79e23b88.npz",
+      "bytes": 2914832,
+      "sha256": "4be1ba865610a8128ab7cc065f8c500ecf9b2bfc7e4099be0f1f20730b6099b8"
+    },
+    {
+      "path": "primary_joints_20261019/gain_aba_20261019/A1_audit/paired_equation.npz",
+      "bytes": 15387,
+      "sha256": "260ccd94ce3e0c281041c83f1ef4963cf761989c6917ffdabf3180dd7ac25d10"
+    },
+    {
+      "path": "primary_joints_20261019/gain_aba_20261019/A1_audit/torque_audit_signals.npz",
+      "bytes": 139691,
+      "sha256": "4367aaa51bd5cf5d052ed92968a28cd6fd27a89d5636727ef33127c6e258080e"
+    },
+    {
+      "path": "primary_joints_20261019/gain_aba_20261019/A2/friction_20261019_175202_108114a3.jsonl",
+      "bytes": 23145458,
+      "sha256": "0609d83f90305323c0f11c9bca0193df648abcb10166622e58561c3c8dbe4a0c"
+    },
+    {
+      "path": "primary_joints_20261019/gain_aba_20261019/A2/friction_20261019_175202_108114a3.npz",
+      "bytes": 2915280,
+      "sha256": "845f6a5bd4f6595b65729a13af595e4bbe5e9df1edc2ec68a5b7d4f5af407bc4"
+    },
+    {
+      "path": "primary_joints_20261019/gain_aba_20261019/A2_audit/paired_equation.npz",
+      "bytes": 15375,
+      "sha256": "6411cf11dc9184ee7bb27b2908877cc8090e42e00027fee62845fc4459d6ee6d"
+    },
+    {
+      "path": "primary_joints_20261019/gain_aba_20261019/A2_audit/torque_audit_signals.npz",
+      "bytes": 139629,
+      "sha256": "6a094d912720531f826906f0c1345de060d52b85d061d3d104e2794e7035d1fd"
+    },
+    {
+      "path": "primary_joints_20261019/gain_aba_20261019/B/friction_20261019_175029_43cb18f6.jsonl",
+      "bytes": 23263159,
+      "sha256": "df5c53de668e4eae3b8d22a603efe3f5a5aa15a4dcf90f16e03a52725a9d2c67"
+    },
+    {
+      "path": "primary_joints_20261019/gain_aba_20261019/B/friction_20261019_175029_43cb18f6.npz",
+      "bytes": 2918609,
+      "sha256": "ec139770e3ba413be755de5937ac9973716eb20fa85e3843b87dbb5dc9def22a"
+    },
+    {
+      "path": "primary_joints_20261019/gain_aba_20261019/B_audit/paired_equation.npz",
+      "bytes": 15379,
+      "sha256": "04cba886fb3898b7604e27be501a9524a282ecd1faf6c3ad3eb69ff5057f5738"
+    },
+    {
+      "path": "primary_joints_20261019/gain_aba_20261019/B_audit/torque_audit_signals.npz",
+      "bytes": 136834,
+      "sha256": "8c50ac279293b259ec64d702b12abbb05c7ec12025992cf15f23dec3778c944c"
+    },
+    {
+      "path": "primary_joints_20261019/paired_dynamic_final/J1/fit/paired_training.npz",
+      "bytes": 40263,
+      "sha256": "44a4459badfce54d25666f38a6b659d7bff98bbf9ecf0bda1043470c9316d47e"
+    },
+    {
+      "path": "primary_joints_20261019/paired_dynamic_final/J1/validation/paired_predictions.npz",
+      "bytes": 24807,
+      "sha256": "b2f510fcc1f9d533630919fa1ec09be132fd74392419bd74f86225d32de30fac"
+    },
+    {
+      "path": "primary_joints_20261019/paired_dynamic_final/J1_window_0.16/fit/paired_training.npz",
+      "bytes": 40315,
+      "sha256": "d0e0325ae6193f6e6edad59f3646f4faa66083f8fba18fb9f3cea6aab2724a53"
+    },
+    {
+      "path": "primary_joints_20261019/paired_dynamic_final/J1_window_0.16/validation/paired_predictions.npz",
+      "bytes": 24798,
+      "sha256": "ed49014d7cd02b4cc894b28abcc5e919c8ed88283618fdb2989a6e6e7ea748bb"
+    },
+    {
+      "path": "primary_joints_20261019/paired_dynamic_final/J1_window_0.24/fit/paired_training.npz",
+      "bytes": 40215,
+      "sha256": "557ce93f3183ecbf1f58cb4a4ddd06e78e455b5ac7ae0fb44f9f4f8869c7db6e"
+    },
+    {
+      "path": "primary_joints_20261019/paired_dynamic_final/J1_window_0.24/validation/paired_predictions.npz",
+      "bytes": 24775,
+      "sha256": "5916f9a4abe0c8a5403b456b8e5e8d6f1121f6a5dc8dbc6ab65279cc2bedddad"
+    },
+    {
+      "path": "primary_joints_20261019/paired_dynamic_final/J2/fit/paired_training.npz",
+      "bytes": 39971,
+      "sha256": "a8e71f821ae1442c0f5db642fd8e528ba30b434f397363dcad80e8122fec8e18"
+    },
+    {
+      "path": "primary_joints_20261019/paired_dynamic_final/J2/validation/paired_predictions.npz",
+      "bytes": 25463,
+      "sha256": "2ada92eacaf03750fd19a464f787d7fbf29efdcbeffb184f94d85da987ea35f7"
+    },
+    {
+      "path": "primary_joints_20261019/paired_dynamic_final/J2_window_0.16/fit/paired_training.npz",
+      "bytes": 40008,
+      "sha256": "25e0d43593caf3effb91b88f787cee1372d9318826fce7aecfd1906481f2f915"
+    },
+    {
+      "path": "primary_joints_20261019/paired_dynamic_final/J2_window_0.16/validation/paired_predictions.npz",
+      "bytes": 25497,
+      "sha256": "a1fabb0ff29429585258199fd3f27879ce86ca98bb5377bb09fb0cd302e4ed79"
+    },
+    {
+      "path": "primary_joints_20261019/paired_dynamic_final/J2_window_0.24/fit/paired_training.npz",
+      "bytes": 39955,
+      "sha256": "e8edae10ab64fa8006dcd71a13000cc1ae597c83238b09f12e8a68f0d308d089"
+    },
+    {
+      "path": "primary_joints_20261019/paired_dynamic_final/J2_window_0.24/validation/paired_predictions.npz",
+      "bytes": 25474,
+      "sha256": "589447f193290f5548081df27e9286f06e4b247becb49dc85d4bcbe8457a2446"
+    },
+    {
+      "path": "primary_joints_20261019/paired_dynamic_final/J3/fit/paired_training.npz",
+      "bytes": 80994,
+      "sha256": "b34f52134662613c1d9d603f890b21346e1f95a12b8cb9edb4d48c8817d54372"
+    },
+    {
+      "path": "primary_joints_20261019/paired_dynamic_final/J3/validation/paired_predictions.npz",
+      "bytes": 20809,
+      "sha256": "1d48c672a68b3be18af23d2f04980b017e2d0c757cbcf11c40d417da6235becb"
+    },
+    {
+      "path": "primary_joints_20261019/paired_dynamic_final/J4/fit/paired_training.npz",
+      "bytes": 16381,
+      "sha256": "12fdffec5a4ddefdbbd9cffb954af98feb87335f24c9d04d7aed6906085f76aa"
+    },
+    {
+      "path": "primary_joints_20261019/paired_dynamic_v1/J1/fit/paired_training.npz",
+      "bytes": 40263,
+      "sha256": "44a4459badfce54d25666f38a6b659d7bff98bbf9ecf0bda1043470c9316d47e"
+    },
+    {
+      "path": "primary_joints_20261019/paired_dynamic_v1/J1/validation/paired_predictions.npz",
+      "bytes": 24807,
+      "sha256": "b2f510fcc1f9d533630919fa1ec09be132fd74392419bd74f86225d32de30fac"
+    },
+    {
+      "path": "primary_joints_20261019/paired_dynamic_v1/J2/fit/paired_training.npz",
+      "bytes": 39971,
+      "sha256": "a8e71f821ae1442c0f5db642fd8e528ba30b434f397363dcad80e8122fec8e18"
+    },
+    {
+      "path": "primary_joints_20261019/paired_dynamic_v1/J2/validation/paired_predictions.npz",
+      "bytes": 25463,
+      "sha256": "2ada92eacaf03750fd19a464f787d7fbf29efdcbeffb184f94d85da987ea35f7"
+    },
+    {
+      "path": "primary_joints_20261019/paired_dynamic_v1/J3/fit/paired_training.npz",
+      "bytes": 80994,
+      "sha256": "b34f52134662613c1d9d603f890b21346e1f95a12b8cb9edb4d48c8817d54372"
+    },
+    {
+      "path": "primary_joints_20261019/paired_dynamic_v1/J3/validation/paired_predictions.npz",
+      "bytes": 20809,
+      "sha256": "1d48c672a68b3be18af23d2f04980b017e2d0c757cbcf11c40d417da6235becb"
+    },
+    {
+      "path": "primary_joints_20261019/paired_dynamic_v1/J4/fit/paired_training.npz",
+      "bytes": 16381,
+      "sha256": "12fdffec5a4ddefdbbd9cffb954af98feb87335f24c9d04d7aed6906085f76aa"
+    },
+    {
+      "path": "primary_joints_20261019/torque_chain_review/A_existing/torque_audit_signals.npz",
+      "bytes": 70796,
+      "sha256": "f71846e000f9d72cde377b40b6125f9cb1845d1c4c5b2016c69e3d95e3fa5166"
+    },
+    {
+      "path": "primary_joints_20261019/torque_chain_review/B_existing/torque_audit_signals.npz",
+      "bytes": 71057,
+      "sha256": "29855bb6d1852c85c3bb45d2a64d901d888939c08e3069253bfc94531a07d57e"
+    },
+    {
+      "path": "primary_joints_20261019/torque_chain_review/J2_repeated_hold/friction_20261019_154831_17b4ef79.jsonl",
+      "bytes": 34307914,
+      "sha256": "afb78d23dd73f76d7786a7ab2232ad31f1cf8b808881a92c686c18b9732e1cf7"
+    },
+    {
+      "path": "primary_joints_20261019/torque_chain_review/J2_repeated_hold/friction_20261019_154831_17b4ef79.npz",
+      "bytes": 4249255,
+      "sha256": "d90ed4464464c30ba141cac188a154999e326280e6ef70b9ad7a769277709fee"
+    },
+    {
+      "path": "primary_joints_20261019/torque_chain_review/repeat_pairs.npz",
+      "bytes": 55024,
+      "sha256": "4dfc997d13b817b45123032e69a7e970785ffce4de019692717ec72ec50f5cb6"
+    },
+    {
+      "path": "primary_joints_20261019/torque_chain_review/repeated_audit/torque_audit_signals.npz",
+      "bytes": 256000,
+      "sha256": "d494092de53aaebed5aa06aa917aaa9a4c391b5798c26afb79959a3e042aa141"
+    }
+  ],
+  "total_bytes": 1041172070
+}

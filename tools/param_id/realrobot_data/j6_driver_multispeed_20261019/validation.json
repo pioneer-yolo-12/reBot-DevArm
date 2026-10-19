@@ -1,0 +1,939 @@
+{
+  "status": "independent_multispeed_control_validation",
+  "compensation_allowed": false,
+  "conditions": {
+    "conditions": {
+      "calibration": {
+        "calibration_id": "unverified",
+        "offset": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "units": "protocol_nm_unverified",
+        "verified": false
+      },
+      "home": [
+        0.0,
+        1.2,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "kd": [
+        5.0,
+        10.0,
+        10.0,
+        1.5,
+        0.8,
+        4.0
+      ],
+      "kp": [
+        80.0,
+        150.0,
+        150.0,
+        25.0,
+        12.0,
+        50.0
+      ],
+      "load_id": "unloaded_wrist_fixed_setup_20261019_user_reported",
+      "measurement_range": [
+        0.105,
+        0.44500000000000006
+      ],
+      "model_hash": "3838ca8f9d586be22a89b33c7cbdd4abd43d4a92a2de377b294eef4c5bd7654d",
+      "temperature_limit_c": 65.0
+    },
+    "rate": 100.0,
+    "speeds": [
+      0.07,
+      0.1,
+      0.15
+    ],
+    "start": [
+      0.0,
+      1.2,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "end": [
+      0.0,
+      1.2,
+      1.0,
+      0.0,
+      0.0,
+      0.55
+    ],
+    "repeats": 2
+  },
+  "gates": {
+    "max_gap": 0.04,
+    "window": 0.2,
+    "guard": 0.25,
+    "velocity_relative_error": 0.15,
+    "velocity_absolute_error": 0.003,
+    "max_acceleration": 0.15,
+    "max_position_residual": 0.001,
+    "max_tracking_error": 0.05,
+    "min_valid_fraction": 0.7,
+    "max_velocity_cv": 0.15,
+    "min_duration": 0.8,
+    "min_samples": 30,
+    "bin_width": 0.01,
+    "min_bins": 12,
+    "min_position_coverage": 0.6,
+    "max_pose_difference": 0.02,
+    "min_speed_levels": 3,
+    "min_speed_span": 0.06,
+    "min_repeats": 3,
+    "max_fit_rmse": 0.1,
+    "max_relative_rmse": 0.25,
+    "max_scaled_condition": 50.0
+  },
+  "runs": [
+    {
+      "name": "train",
+      "file": "train/friction_20261019_140143_3f72829d.npz",
+      "run_id": "3f72829d-45f8-4f94-8bd9-fd94190b5558",
+      "sha256": "658ff99882fe2e24ca70f0df6847cfb0281fd1033a7b47641afff80c09737422",
+      "seed": 20261020,
+      "segments": [
+        {
+          "segment": 0,
+          "repeat": 0,
+          "speed_id": 0,
+          "direction": 1,
+          "status": "valid",
+          "reasons": [],
+          "samples": 904,
+          "steady_fraction": 0.932920536635707,
+          "velocity_cv": 0.061167684259745454,
+          "longest_steady_s": 1.084390120988246,
+          "speed": 0.07,
+          "eligible_samples": 969,
+          "failure_counts": {
+            "transport": 0,
+            "finite_velocity": 0,
+            "speed": 0,
+            "acceleration": 65,
+            "position_fit": 0,
+            "tracking": 0,
+            "other_axes": 0
+          },
+          "mean_velocity": 0.07005885712958528,
+          "tracking_rms_rad": 0.002373089989022336,
+          "tracking_peak_rad": 0.003798242130860441,
+          "abs_acceleration_p99": 0.19117287944778735
+        },
+        {
+          "segment": 1,
+          "repeat": 0,
+          "speed_id": 0,
+          "direction": -1,
+          "status": "valid",
+          "reasons": [],
+          "samples": 882,
+          "steady_fraction": 0.9111570247933884,
+          "velocity_cv": 0.060192366024449384,
+          "longest_steady_s": 0.9902492180117406,
+          "speed": 0.07,
+          "eligible_samples": 968,
+          "failure_counts": {
+            "transport": 0,
+            "finite_velocity": 0,
+            "speed": 0,
+            "acceleration": 86,
+            "position_fit": 0,
+            "tracking": 0,
+            "other_axes": 0
+          },
+          "mean_velocity": -0.07019970664174466,
+          "tracking_rms_rad": 0.002711158501502777,
+          "tracking_peak_rad": 0.003939503815172329,
+          "abs_acceleration_p99": 0.19106665814141366
+        },
+        {
+          "segment": 2,
+          "repeat": 0,
+          "speed_id": 2,
+          "direction": 1,
+          "status": "invalid",
+          "reasons": [
+            "no_continuous_steady_window"
+          ],
+          "samples": 399,
+          "steady_fraction": 0.9214780600461894,
+          "velocity_cv": 0.013686211723090036,
+          "longest_steady_s": 0.5686583269853145,
+          "speed": 0.15,
+          "eligible_samples": 433,
+          "failure_counts": {
+            "transport": 0,
+            "finite_velocity": 0,
+            "speed": 0,
+            "acceleration": 34,
+            "position_fit": 0,
+            "tracking": 0,
+            "other_axes": 0
+          },
+          "mean_velocity": 0.15012537329001524,
+          "tracking_rms_rad": 0.002702258054502325,
+          "tracking_peak_rad": 0.0037169287078852864,
+          "abs_acceleration_p99": 0.21496510924206688
+        },
+        {
+          "segment": 3,
+          "repeat": 0,
+          "speed_id": 2,
+          "direction": -1,
+          "status": "invalid",
+          "reasons": [
+            "no_continuous_steady_window"
+          ],
+          "samples": 409,
+          "steady_fraction": 0.9445727482678984,
+          "velocity_cv": 0.009338895260668136,
+          "longest_steady_s": 0.7702490460360423,
+          "speed": 0.15,
+          "eligible_samples": 433,
+          "failure_counts": {
+            "transport": 0,
+            "finite_velocity": 0,
+            "speed": 0,
+            "acceleration": 24,
+            "position_fit": 0,
+            "tracking": 0,
+            "other_axes": 0
+          },
+          "mean_velocity": -0.1501617974706474,
+          "tracking_rms_rad": 0.0029910157403196754,
+          "tracking_peak_rad": 0.004059004975472291,
+          "abs_acceleration_p99": 0.18777791290064147
+        },
+        {
+          "segment": 4,
+          "repeat": 0,
+          "speed_id": 1,
+          "direction": 1,
+          "status": "valid",
+          "reasons": [],
+          "samples": 600,
+          "steady_fraction": 0.8902077151335311,
+          "velocity_cv": 0.030510763955031217,
+          "longest_steady_s": 0.8433887220453471,
+          "speed": 0.1,
+          "eligible_samples": 674,
+          "failure_counts": {
+            "transport": 0,
+            "finite_velocity": 0,
+            "speed": 0,
+            "acceleration": 74,
+            "position_fit": 0,
+            "tracking": 0,
+            "other_axes": 0
+          },
+          "mean_velocity": 0.1001043058513049,
+          "tracking_rms_rad": 0.002491152633432454,
+          "tracking_peak_rad": 0.003566217307724995,
+          "abs_acceleration_p99": 0.2101486516578759
+        },
+        {
+          "segment": 5,
+          "repeat": 0,
+          "speed_id": 1,
+          "direction": -1,
+          "status": "valid",
+          "reasons": [],
+          "samples": 636,
+          "steady_fraction": 0.9394387001477105,
+          "velocity_cv": 0.02946156729472755,
+          "longest_steady_s": 1.1523355310200714,
+          "speed": 0.1,
+          "eligible_samples": 677,
+          "failure_counts": {
+            "transport": 0,
+            "finite_velocity": 0,
+            "speed": 0,
+            "acceleration": 41,
+            "position_fit": 0,
+            "tracking": 0,
+            "other_axes": 0
+          },
+          "mean_velocity": -0.10017349882577382,
+          "tracking_rms_rad": 0.0027218006005860934,
+          "tracking_peak_rad": 0.0037518901210609745,
+          "abs_acceleration_p99": 0.19145043171225612
+        },
+        {
+          "segment": 6,
+          "repeat": 1,
+          "speed_id": 2,
+          "direction": 1,
+          "status": "invalid",
+          "reasons": [
+            "no_continuous_steady_window"
+          ],
+          "samples": 399,
+          "steady_fraction": 0.9193548387096774,
+          "velocity_cv": 0.010340891816486774,
+          "longest_steady_s": 0.6870493949973024,
+          "speed": 0.15,
+          "eligible_samples": 434,
+          "failure_counts": {
+            "transport": 0,
+            "finite_velocity": 0,
+            "speed": 0,
+            "acceleration": 35,
+            "position_fit": 0,
+            "tracking": 0,
+            "other_axes": 0
+          },
+          "mean_velocity": 0.15005890883183415,
+          "tracking_rms_rad": 0.0026006744068304295,
+          "tracking_peak_rad": 0.0036498480586980298,
+          "abs_acceleration_p99": 0.20104358231711178
+        },
+        {
+          "segment": 7,
+          "repeat": 1,
+          "speed_id": 2,
+          "direction": -1,
+          "status": "invalid",
+          "reasons": [
+            "no_continuous_steady_window"
+          ],
+          "samples": 359,
+          "steady_fraction": 0.8310185185185185,
+          "velocity_cv": 0.02018026724862141,
+          "longest_steady_s": 0.6811601410154253,
+          "speed": 0.15,
+          "eligible_samples": 432,
+          "failure_counts": {
+            "transport": 0,
+            "finite_velocity": 0,
+            "speed": 0,
+            "acceleration": 73,
+            "position_fit": 0,
+            "tracking": 0,
+            "other_axes": 0
+          },
+          "mean_velocity": -0.1502622335139227,
+          "tracking_rms_rad": 0.003009469377022232,
+          "tracking_peak_rad": 0.0042540654174848536,
+          "abs_acceleration_p99": 0.21451172711134614
+        },
+        {
+          "segment": 8,
+          "repeat": 1,
+          "speed_id": 0,
+          "direction": 1,
+          "status": "valid",
+          "reasons": [],
+          "samples": 875,
+          "steady_fraction": 0.9020618556701031,
+          "velocity_cv": 0.06067872653470915,
+          "longest_steady_s": 1.2409337740391493,
+          "speed": 0.07,
+          "eligible_samples": 970,
+          "failure_counts": {
+            "transport": 0,
+            "finite_velocity": 0,
+            "speed": 0,
+            "acceleration": 95,
+            "position_fit": 0,
+            "tracking": 0,
+            "other_axes": 0
+          },
+          "mean_velocity": 0.0700943825628174,
+          "tracking_rms_rad": 0.002336839392554066,
+          "tracking_peak_rad": 0.0036649352497439835,
+          "abs_acceleration_p99": 0.21729295844877952
+        },
+        {
+          "segment": 9,
+          "repeat": 1,
+          "speed_id": 0,
+          "direction": -1,
+          "status": "valid",
+          "reasons": [],
+          "samples": 893,
+          "steady_fraction": 0.9215686274509803,
+          "velocity_cv": 0.06294143366129752,
+          "longest_steady_s": 0.989488382008858,
+          "speed": 0.07,
+          "eligible_samples": 969,
+          "failure_counts": {
+            "transport": 0,
+            "finite_velocity": 0,
+            "speed": 0,
+            "acceleration": 76,
+            "position_fit": 0,
+            "tracking": 0,
+            "other_axes": 0
+          },
+          "mean_velocity": -0.07010508354185474,
+          "tracking_rms_rad": 0.002683118904963383,
+          "tracking_peak_rad": 0.0036870441374116103,
+          "abs_acceleration_p99": 0.2192687269793306
+        },
+        {
+          "segment": 10,
+          "repeat": 1,
+          "speed_id": 1,
+          "direction": 1,
+          "status": "valid",
+          "reasons": [],
+          "samples": 630,
+          "steady_fraction": 0.9264705882352942,
+          "velocity_cv": 0.031597749043250675,
+          "longest_steady_s": 1.1821292999666184,
+          "speed": 0.1,
+          "eligible_samples": 680,
+          "failure_counts": {
+            "transport": 0,
+            "finite_velocity": 0,
+            "speed": 0,
+            "acceleration": 50,
+            "position_fit": 0,
+            "tracking": 0,
+            "other_axes": 0
+          },
+          "mean_velocity": 0.10005746820840764,
+          "tracking_rms_rad": 0.002345118797403501,
+          "tracking_peak_rad": 0.00348678422237364,
+          "abs_acceleration_p99": 0.20358586175257426
+        },
+        {
+          "segment": 11,
+          "repeat": 1,
+          "speed_id": 1,
+          "direction": -1,
+          "status": "invalid",
+          "reasons": [
+            "no_continuous_steady_window"
+          ],
+          "samples": 601,
+          "steady_fraction": 0.8864306784660767,
+          "velocity_cv": 0.03900775186300608,
+          "longest_steady_s": 0.689478375017643,
+          "speed": 0.1,
+          "eligible_samples": 678,
+          "failure_counts": {
+            "transport": 0,
+            "finite_velocity": 0,
+            "speed": 0,
+            "acceleration": 77,
+            "position_fit": 0,
+            "tracking": 0,
+            "other_axes": 0
+          },
+          "mean_velocity": -0.10019975486510488,
+          "tracking_rms_rad": 0.002814370347660842,
+          "tracking_peak_rad": 0.003756988076927259,
+          "abs_acceleration_p99": 0.23848511968297542
+        }
+      ],
+      "peak_temperature": [
+        28.0,
+        32.0,
+        57.0,
+        35.0,
+        28.0,
+        28.0
+      ],
+      "fold_verified": {
+        "kind": "fold_verified",
+        "position_velocity": [
+          -1.454442142038416e-12,
+          7.635130903270672e-05,
+          -0.0006385727080596978,
+          0.0014506861222770887,
+          -0.0001492346845781136,
+          -5.205564144517447e-05
+        ],
+        "q": [
+          0.002301041404039213,
+          0.002301041404039213,
+          0.009204165616156851,
+          0.008053644914137245,
+          0.0030680552053856175,
+          0.0015340276026928087
+        ],
+        "qd": [
+          -0.010681478316598714,
+          -0.07019257179479155,
+          -0.021362956633197427,
+          0.009063997314370908,
+          -0.035248878444775755,
+          -0.025177770317696968
+        ],
+        "settle": 0.5,
+        "t": 268431.348066227
+      },
+      "disabled_after_fold": {
+        "kind": "disabled_after_fold",
+        "t": 268431.373387277
+      },
+      "peak_j6_torque": 0.2837000640888696
+    },
+    {
+      "name": "holdout",
+      "file": "holdout/friction_20261019_140442_a4871e3c.npz",
+      "run_id": "a4871e3c-ec3c-4ad0-ace2-5d2f6e896bd2",
+      "sha256": "4911db183f747b61c0a564661d78eac8bf74ca2a0541c418bddd9d0867404592",
+      "seed": 20261021,
+      "segments": [
+        {
+          "segment": 0,
+          "repeat": 0,
+          "speed_id": 2,
+          "direction": 1,
+          "status": "invalid",
+          "reasons": [
+            "no_continuous_steady_window"
+          ],
+          "samples": 411,
+          "steady_fraction": 0.9470046082949308,
+          "velocity_cv": 0.011504301892570623,
+          "longest_steady_s": 0.7495915879844688,
+          "speed": 0.15,
+          "eligible_samples": 434,
+          "failure_counts": {
+            "transport": 0,
+            "finite_velocity": 0,
+            "speed": 0,
+            "acceleration": 23,
+            "position_fit": 0,
+            "tracking": 0,
+            "other_axes": 0
+          },
+          "mean_velocity": 0.15008308630854242,
+          "tracking_rms_rad": 0.0027260185679225776,
+          "tracking_peak_rad": 0.0036500205512803585,
+          "abs_acceleration_p99": 0.20617361692142636
+        },
+        {
+          "segment": 1,
+          "repeat": 0,
+          "speed_id": 2,
+          "direction": -1,
+          "status": "invalid",
+          "reasons": [
+            "no_continuous_steady_window"
+          ],
+          "samples": 380,
+          "steady_fraction": 0.8796296296296297,
+          "velocity_cv": 0.014909906302718153,
+          "longest_steady_s": 0.7399241240345873,
+          "speed": 0.15,
+          "eligible_samples": 432,
+          "failure_counts": {
+            "transport": 0,
+            "finite_velocity": 0,
+            "speed": 0,
+            "acceleration": 52,
+            "position_fit": 0,
+            "tracking": 0,
+            "other_axes": 0
+          },
+          "mean_velocity": -0.15015286843000578,
+          "tracking_rms_rad": 0.00288118523517003,
+          "tracking_peak_rad": 0.003911956072362888,
+          "abs_acceleration_p99": 0.19620301119950698
+        },
+        {
+          "segment": 2,
+          "repeat": 0,
+          "speed_id": 1,
+          "direction": 1,
+          "status": "invalid",
+          "reasons": [
+            "no_continuous_steady_window"
+          ],
+          "samples": 615,
+          "steady_fraction": 0.9057437407952872,
+          "velocity_cv": 0.033434503417118795,
+          "longest_steady_s": 0.6903022549813613,
+          "speed": 0.1,
+          "eligible_samples": 679,
+          "failure_counts": {
+            "transport": 0,
+            "finite_velocity": 0,
+            "speed": 0,
+            "acceleration": 64,
+            "position_fit": 0,
+            "tracking": 0,
+            "other_axes": 0
+          },
+          "mean_velocity": 0.10003465594889943,
+          "tracking_rms_rad": 0.0024631472776515907,
+          "tracking_peak_rad": 0.0034128201806327696,
+          "abs_acceleration_p99": 0.21117907955313223
+        },
+        {
+          "segment": 3,
+          "repeat": 0,
+          "speed_id": 1,
+          "direction": -1,
+          "status": "valid",
+          "reasons": [],
+          "samples": 603,
+          "steady_fraction": 0.8893805309734514,
+          "velocity_cv": 0.03429510757363744,
+          "longest_steady_s": 0.8817785769933835,
+          "speed": 0.1,
+          "eligible_samples": 678,
+          "failure_counts": {
+            "transport": 0,
+            "finite_velocity": 0,
+            "speed": 0,
+            "acceleration": 75,
+            "position_fit": 0,
+            "tracking": 0,
+            "other_axes": 0
+          },
+          "mean_velocity": -0.10018789156543398,
+          "tracking_rms_rad": 0.002869622290974213,
+          "tracking_peak_rad": 0.004066658618364083,
+          "abs_acceleration_p99": 0.20235584187719663
+        },
+        {
+          "segment": 4,
+          "repeat": 0,
+          "speed_id": 0,
+          "direction": 1,
+          "status": "valid",
+          "reasons": [],
+          "samples": 880,
+          "steady_fraction": 0.9062821833161689,
+          "velocity_cv": 0.06289159101071258,
+          "longest_steady_s": 1.1000142419943586,
+          "speed": 0.07,
+          "eligible_samples": 971,
+          "failure_counts": {
+            "transport": 0,
+            "finite_velocity": 0,
+            "speed": 0,
+            "acceleration": 91,
+            "position_fit": 0,
+            "tracking": 0,
+            "other_axes": 0
+          },
+          "mean_velocity": 0.0699722530411833,
+          "tracking_rms_rad": 0.0023620198343595857,
+          "tracking_peak_rad": 0.00348209651140885,
+          "abs_acceleration_p99": 0.21753963614058675
+        },
+        {
+          "segment": 5,
+          "repeat": 0,
+          "speed_id": 0,
+          "direction": -1,
+          "status": "valid",
+          "reasons": [],
+          "samples": 872,
+          "steady_fraction": 0.9008264462809917,
+          "velocity_cv": 0.06807627451997757,
+          "longest_steady_s": 0.9819083010079339,
+          "speed": 0.07,
+          "eligible_samples": 968,
+          "failure_counts": {
+            "transport": 0,
+            "finite_velocity": 0,
+            "speed": 0,
+            "acceleration": 96,
+            "position_fit": 0,
+            "tracking": 0,
+            "other_axes": 0
+          },
+          "mean_velocity": -0.07020949544238883,
+          "tracking_rms_rad": 0.002725033569625465,
+          "tracking_peak_rad": 0.004182805671188727,
+          "abs_acceleration_p99": 0.22843613785109754
+        },
+        {
+          "segment": 6,
+          "repeat": 1,
+          "speed_id": 1,
+          "direction": 1,
+          "status": "invalid",
+          "reasons": [
+            "no_continuous_steady_window"
+          ],
+          "samples": 573,
+          "steady_fraction": 0.8426470588235294,
+          "velocity_cv": 0.04521453084376632,
+          "longest_steady_s": 0.6378440679982305,
+          "speed": 0.1,
+          "eligible_samples": 680,
+          "failure_counts": {
+            "transport": 0,
+            "finite_velocity": 0,
+            "speed": 0,
+            "acceleration": 107,
+            "position_fit": 0,
+            "tracking": 0,
+            "other_axes": 0
+          },
+          "mean_velocity": 0.09991445866845368,
+          "tracking_rms_rad": 0.002500152152458409,
+          "tracking_peak_rad": 0.003801541703228023,
+          "abs_acceleration_p99": 0.23092599533915095
+        },
+        {
+          "segment": 7,
+          "repeat": 1,
+          "speed_id": 1,
+          "direction": -1,
+          "status": "invalid",
+          "reasons": [
+            "no_continuous_steady_window"
+          ],
+          "samples": 563,
+          "steady_fraction": 0.8316100443131462,
+          "velocity_cv": 0.04447246975412616,
+          "longest_steady_s": 0.6500668090302497,
+          "speed": 0.1,
+          "eligible_samples": 677,
+          "failure_counts": {
+            "transport": 0,
+            "finite_velocity": 0,
+            "speed": 0,
+            "acceleration": 114,
+            "position_fit": 0,
+            "tracking": 0,
+            "other_axes": 0
+          },
+          "mean_velocity": -0.10020735045828308,
+          "tracking_rms_rad": 0.0027856358679147863,
+          "tracking_peak_rad": 0.003764288584271358,
+          "abs_acceleration_p99": 0.25558670871521244
+        },
+        {
+          "segment": 8,
+          "repeat": 1,
+          "speed_id": 2,
+          "direction": 1,
+          "status": "invalid",
+          "reasons": [
+            "no_continuous_steady_window"
+          ],
+          "samples": 353,
+          "steady_fraction": 0.8133640552995391,
+          "velocity_cv": 0.02248126739389546,
+          "longest_steady_s": 0.41384326899424195,
+          "speed": 0.15,
+          "eligible_samples": 434,
+          "failure_counts": {
+            "transport": 0,
+            "finite_velocity": 0,
+            "speed": 0,
+            "acceleration": 81,
+            "position_fit": 0,
+            "tracking": 0,
+            "other_axes": 0
+          },
+          "mean_velocity": 0.1499180783528742,
+          "tracking_rms_rad": 0.0024727480315691443,
+          "tracking_peak_rad": 0.0038380060576534147,
+          "abs_acceleration_p99": 0.2398075225091496
+        },
+        {
+          "segment": 9,
+          "repeat": 1,
+          "speed_id": 2,
+          "direction": -1,
+          "status": "invalid",
+          "reasons": [
+            "no_continuous_steady_window"
+          ],
+          "samples": 418,
+          "steady_fraction": 0.9631336405529954,
+          "velocity_cv": 0.013078472442234826,
+          "longest_steady_s": 0.6509905810235068,
+          "speed": 0.15,
+          "eligible_samples": 434,
+          "failure_counts": {
+            "transport": 0,
+            "finite_velocity": 0,
+            "speed": 0,
+            "acceleration": 16,
+            "position_fit": 0,
+            "tracking": 0,
+            "other_axes": 0
+          },
+          "mean_velocity": -0.15022368366888061,
+          "tracking_rms_rad": 0.0031429367444490803,
+          "tracking_peak_rad": 0.003908800824541758,
+          "abs_acceleration_p99": 0.16516187126289156
+        },
+        {
+          "segment": 10,
+          "repeat": 1,
+          "speed_id": 0,
+          "direction": 1,
+          "status": "valid",
+          "reasons": [],
+          "samples": 871,
+          "steady_fraction": 0.8979381443298969,
+          "velocity_cv": 0.08451683428896413,
+          "longest_steady_s": 1.0902768220403232,
+          "speed": 0.07,
+          "eligible_samples": 970,
+          "failure_counts": {
+            "transport": 0,
+            "finite_velocity": 0,
+            "speed": 0,
+            "acceleration": 99,
+            "position_fit": 0,
+            "tracking": 0,
+            "other_axes": 0
+          },
+          "mean_velocity": 0.06991540812818824,
+          "tracking_rms_rad": 0.0024460109863473664,
+          "tracking_peak_rad": 0.004049305182017793,
+          "abs_acceleration_p99": 0.2290440414307955
+        },
+        {
+          "segment": 11,
+          "repeat": 1,
+          "speed_id": 0,
+          "direction": -1,
+          "status": "valid",
+          "reasons": [],
+          "samples": 863,
+          "steady_fraction": 0.8896907216494845,
+          "velocity_cv": 0.0758222280538745,
+          "longest_steady_s": 0.9701743790064938,
+          "speed": 0.07,
+          "eligible_samples": 970,
+          "failure_counts": {
+            "transport": 0,
+            "finite_velocity": 0,
+            "speed": 0,
+            "acceleration": 107,
+            "position_fit": 0,
+            "tracking": 0,
+            "other_axes": 0
+          },
+          "mean_velocity": -0.07013967444390355,
+          "tracking_rms_rad": 0.0027529056673769167,
+          "tracking_peak_rad": 0.0042222694505879566,
+          "abs_acceleration_p99": 0.23099792264596006
+        }
+      ],
+      "peak_temperature": [
+        29.0,
+        34.0,
+        59.0,
+        37.0,
+        29.0,
+        29.0
+      ],
+      "fold_verified": {
+        "kind": "fold_verified",
+        "position_velocity": [
+          5.074609345310688e-05,
+          0.00012605777405858782,
+          -0.0009414715305323005,
+          0.0014261240557958887,
+          -3.0500309100258405e-13,
+          -0.00010476595000636943
+        ],
+        "q": [
+          0.002301041404039213,
+          0.0019175345033660108,
+          0.009204165616156851,
+          0.008053644914137245,
+          0.0030680552053856175,
+          0.0015340276026928087
+        ],
+        "qd": [
+          0.04882961516159412,
+          0.030518509475996325,
+          0.027466658528396692,
+          -0.06848353526413942,
+          0.014099551377910302,
+          -0.02316354869228121
+        ],
+        "settle": 0.5,
+        "t": 268610.179347891
+      },
+      "disabled_after_fold": {
+        "kind": "disabled_after_fold",
+        "t": 268610.245743401
+      },
+      "peak_j6_torque": 0.3191625720999789
+    }
+  ],
+  "by_speed": [
+    {
+      "speed": 0.07,
+      "segments": 8,
+      "passed": 8,
+      "velocity_cv_mean": 0.06703589229421628,
+      "tracking_rms_rad_mean": 0.002548772105718987,
+      "failure_counts": {
+        "transport": 0,
+        "finite_velocity": 0,
+        "speed": 0,
+        "acceleration": 715,
+        "position_fit": 0,
+        "tracking": 0,
+        "other_axes": 0
+      }
+    },
+    {
+      "speed": 0.1,
+      "segments": 8,
+      "passed": 4,
+      "velocity_cv_mean": 0.035999305468083026,
+      "tracking_rms_rad_mean": 0.002623874996010236,
+      "failure_counts": {
+        "transport": 0,
+        "finite_velocity": 0,
+        "speed": 0,
+        "acceleration": 602,
+        "position_fit": 0,
+        "tracking": 0,
+        "other_axes": 0
+      }
+    },
+    {
+      "speed": 0.15,
+      "segments": 8,
+      "passed": 0,
+      "velocity_cv_mean": 0.014440026760035677,
+      "tracking_rms_rad_mean": 0.002815788269723187,
+      "failure_counts": {
+        "transport": 0,
+        "finite_velocity": 0,
+        "speed": 0,
+        "acceleration": 338,
+        "position_fit": 0,
+        "tracking": 0,
+        "other_axes": 0
+      }
+    }
+  ],
+  "limits": [
+    "One training and one independent validation run, two round trips per speed in each; changed order by seed",
+    "Same encoder supplies position and derivatives; no independent physical angle reference",
+    "Torque remains uncalibrated protocol scale; no deployable friction fit",
+    "Existing quality gates unchanged; failure counts are overlapping individual criteria within the eligible interval"
+  ]
+}

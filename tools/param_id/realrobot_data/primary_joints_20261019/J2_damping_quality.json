@@ -1,0 +1,99 @@
+{
+  "joint": 2,
+  "file": "J2_damping/friction_20261019_145137_0aa61226.npz",
+  "kp": [
+    80.0,
+    150.0,
+    150.0,
+    25.0,
+    12.0,
+    25.0
+  ],
+  "kd": [
+    5.0,
+    20.0,
+    10.0,
+    1.5,
+    0.8,
+    1.5
+  ],
+  "segments": [
+    {
+      "segment": 0,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": 1,
+      "status": "invalid",
+      "reasons": [
+        "no_continuous_steady_window"
+      ],
+      "samples": 626,
+      "steady_fraction": 0.798469387755102,
+      "velocity_cv": 0.08262571957273868,
+      "longest_steady_s": 0.7010346510214731
+    },
+    {
+      "segment": 1,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": -1,
+      "status": "invalid",
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "samples": 542,
+      "steady_fraction": 0.6975546975546976,
+      "velocity_cv": 0.09161799497185695,
+      "longest_steady_s": 0.4501899770111777
+    }
+  ],
+  "fold": {
+    "kind": "fold_verified",
+    "position_velocity": [
+      2.8948647902120146e-12,
+      0.00015220012817514507,
+      -0.0007954267218771582,
+      0.0009344108825870668,
+      2.5330049801855365e-12,
+      -0.0002209055752011966
+    ],
+    "q": [
+      0.0030680552053856175,
+      0.002301041404039213,
+      0.009204165616156851,
+      0.008437151814810447,
+      0.002684548304712415,
+      0.0030680552053856175
+    ],
+    "qd": [
+      -0.12817773979919012,
+      0.02441480758079706,
+      -0.0030518509475996325,
+      -0.04129154332102303,
+      -0.06646931363872366,
+      -0.03122043519394424
+    ],
+    "settle": 0.5,
+    "t": 271352.888368573
+  },
+  "disabled": {
+    "kind": "disabled_after_fold",
+    "t": 271352.913469675
+  },
+  "peak_temperature": [
+    31.0,
+    36.0,
+    52.0,
+    37.0,
+    31.0,
+    32.0
+  ],
+  "peak_axis_torque": 9.399090548417616,
+  "units": {
+    "q": "rad",
+    "qd": "rad/s",
+    "tau": "protocol_nm_unverified",
+    "time": "monotonic seconds"
+  }
+}

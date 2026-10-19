@@ -1,0 +1,550 @@
+{
+  "focus_joints": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "deferred_joint": 6,
+  "history": [
+    {
+      "file": "phase2_pointmatch_20261014_173452.npz",
+      "joint": 1,
+      "units": "historical_unverified",
+      "usable_as_validated": false,
+      "fc_D": 0.31150206535955605,
+      "fv_D": -0.3399690933449301,
+      "rmse_D": 0.009426163983698785
+    },
+    {
+      "file": "phase2_pointmatch_20261014_173452.npz",
+      "joint": 2,
+      "units": "historical_unverified",
+      "usable_as_validated": false,
+      "fc_D": 0.3039240332059862,
+      "fv_D": -0.04102620311623102,
+      "rmse_D": 0.011021044315825129
+    },
+    {
+      "file": "phase2_pointmatch_20261014_173452.npz",
+      "joint": 3,
+      "units": "historical_unverified",
+      "usable_as_validated": false,
+      "fc_D": 0.31737123212608126,
+      "fv_D": 0.000110237525924354,
+      "rmse_D": 0.003929020680653709
+    },
+    {
+      "file": "phase2_pointmatch_20261014_173452.npz",
+      "joint": 4,
+      "units": "historical_unverified",
+      "usable_as_validated": false,
+      "fc_D": 0.11806685187199771,
+      "fv_D": 0.41184373597796115,
+      "rmse_D": 0.008848098719179465
+    },
+    {
+      "file": "phase2_pointmatch_20261014_175634.npz",
+      "joint": 1,
+      "units": "historical_unverified",
+      "usable_as_validated": false,
+      "fc_D": 0.2265822738509737,
+      "fv_D": -0.22235558514015927,
+      "rmse_D": 0.0016770249927266201
+    },
+    {
+      "file": "phase2_pointmatch_20261014_175634.npz",
+      "joint": 2,
+      "units": "historical_unverified",
+      "usable_as_validated": false,
+      "fc_D": 0.2924280056880686,
+      "fv_D": 0.1915298850644609,
+      "rmse_D": 0.011620697134458867
+    },
+    {
+      "file": "phase2_pointmatch_20261014_175634.npz",
+      "joint": 3,
+      "units": "historical_unverified",
+      "usable_as_validated": false,
+      "fc_D": 0.3102483583191139,
+      "fv_D": 0.03196231910247002,
+      "rmse_D": 0.005464952066880883
+    },
+    {
+      "file": "phase2_pointmatch_20261014_175634.npz",
+      "joint": 4,
+      "units": "historical_unverified",
+      "usable_as_validated": false,
+      "fc_D": 0.15313210677256212,
+      "fv_D": 0.6441623227754328,
+      "rmse_D": 0.0038640104356036445
+    },
+    {
+      "file": "phase2_pointmatch_20261015_095128.npz",
+      "joint": 1,
+      "units": "historical_unverified",
+      "usable_as_validated": false,
+      "fc_D": 0.27635296721600877,
+      "fv_D": 0.09481130147528355,
+      "rmse_D": 0.002560450461741821
+    },
+    {
+      "file": "phase2_pointmatch_20261015_095128.npz",
+      "joint": 2,
+      "units": "historical_unverified",
+      "usable_as_validated": false,
+      "fc_D": 0.31423641540177605,
+      "fv_D": -0.002688755234348976,
+      "rmse_D": 0.00978098484652311
+    },
+    {
+      "file": "phase2_pointmatch_20261015_095128.npz",
+      "joint": 3,
+      "units": "historical_unverified",
+      "usable_as_validated": false,
+      "fc_D": 0.31979240860669317,
+      "fv_D": -0.019365211771783342,
+      "rmse_D": 0.004529757877501167
+    },
+    {
+      "file": "phase2_pointmatch_20261015_095128.npz",
+      "joint": 4,
+      "units": "historical_unverified",
+      "usable_as_validated": false,
+      "fc_D": 0.11181541061845186,
+      "fv_D": 0.4228378878476118,
+      "rmse_D": 0.007539644723118486
+    },
+    {
+      "file": "phase2_pointmatch_20261015_101900.npz",
+      "joint": 1,
+      "units": "historical_unverified",
+      "usable_as_validated": false,
+      "fc_D": 0.30660101300613785,
+      "fv_D": -0.2775214314609073,
+      "rmse_D": 0.0028262661258901464
+    },
+    {
+      "file": "phase2_pointmatch_20261015_101900.npz",
+      "joint": 2,
+      "units": "historical_unverified",
+      "usable_as_validated": false,
+      "fc_D": 0.2564829347079686,
+      "fv_D": 0.20380213175960435,
+      "rmse_D": 0.059060422243268726
+    },
+    {
+      "file": "phase2_pointmatch_20261015_101900.npz",
+      "joint": 3,
+      "units": "historical_unverified",
+      "usable_as_validated": false,
+      "fc_D": 0.30698883023677537,
+      "fv_D": 0.14780639253649278,
+      "rmse_D": 0.00710866087380851
+    },
+    {
+      "file": "phase2_pointmatch_20261015_101900.npz",
+      "joint": 4,
+      "units": "historical_unverified",
+      "usable_as_validated": false,
+      "fc_D": 0.1801404837891013,
+      "fv_D": 0.3253891627918479,
+      "rmse_D": 0.009658820434437922
+    }
+  ],
+  "pilots": [
+    {
+      "joint": 1,
+      "argv": [
+        "--joint",
+        "1",
+        "--mode",
+        "tracking",
+        "--speeds",
+        ".10",
+        "--repeats",
+        "1",
+        "--kp",
+        "80",
+        "--kd",
+        "5",
+        "--gain-policy",
+        "experiment",
+        "--rate",
+        "100",
+        "--load-id",
+        "unloaded_wrist_fixed_setup_20261019_user_reported",
+        "--output",
+        "tools/param_id/realrobot_data/primary_joints_20261019/J1_pilot",
+        "--dry-run"
+      ],
+      "configuration": {
+        "speeds": [
+          0.1
+        ],
+        "repeats": 1,
+        "kp": [
+          80.0,
+          150.0,
+          150.0,
+          25.0,
+          12.0,
+          25.0
+        ],
+        "kd": [
+          5.0,
+          10.0,
+          10.0,
+          1.5,
+          0.8,
+          1.5
+        ],
+        "home": [
+          0.0,
+          1.2,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gain_policy": "experiment",
+        "gain_limits": {
+          "kp": [
+            160.0,
+            300.0,
+            300.0,
+            50.0,
+            24.0,
+            50.0
+          ],
+          "kd": [
+            10.0,
+            20.0,
+            20.0,
+            3.0,
+            1.6,
+            3.0
+          ]
+        },
+        "position_probe": false,
+        "start": [
+          0.0,
+          1.2,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "start_offset": 0.0,
+        "end": [
+          0.55,
+          1.2,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "measurement_range": [
+          0.08,
+          0.47000000000000003
+        ]
+      },
+      "status": "preview_only_pending_workspace_constraints"
+    },
+    {
+      "joint": 2,
+      "argv": [
+        "--joint",
+        "2",
+        "--mode",
+        "tracking",
+        "--speeds",
+        ".10",
+        "--repeats",
+        "1",
+        "--kp",
+        "150",
+        "--kd",
+        "10",
+        "--gain-policy",
+        "experiment",
+        "--rate",
+        "100",
+        "--load-id",
+        "unloaded_wrist_fixed_setup_20261019_user_reported",
+        "--output",
+        "tools/param_id/realrobot_data/primary_joints_20261019/J2_pilot",
+        "--dry-run"
+      ],
+      "configuration": {
+        "speeds": [
+          0.1
+        ],
+        "repeats": 1,
+        "kp": [
+          80.0,
+          150.0,
+          150.0,
+          25.0,
+          12.0,
+          25.0
+        ],
+        "kd": [
+          5.0,
+          10.0,
+          10.0,
+          1.5,
+          0.8,
+          1.5
+        ],
+        "home": [
+          0.0,
+          1.2,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gain_policy": "experiment",
+        "gain_limits": {
+          "kp": [
+            160.0,
+            300.0,
+            300.0,
+            50.0,
+            24.0,
+            50.0
+          ],
+          "kd": [
+            10.0,
+            20.0,
+            20.0,
+            3.0,
+            1.6,
+            3.0
+          ]
+        },
+        "position_probe": false,
+        "start": [
+          0.0,
+          1.2,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "start_offset": 0.0,
+        "end": [
+          0.0,
+          1.75,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "measurement_range": [
+          1.28,
+          1.67
+        ]
+      },
+      "status": "preview_only_pending_workspace_constraints"
+    },
+    {
+      "joint": 3,
+      "argv": [
+        "--joint",
+        "3",
+        "--mode",
+        "tracking",
+        "--speeds",
+        ".10",
+        "--repeats",
+        "1",
+        "--kp",
+        "150",
+        "--kd",
+        "10",
+        "--gain-policy",
+        "experiment",
+        "--rate",
+        "100",
+        "--load-id",
+        "unloaded_wrist_fixed_setup_20261019_user_reported",
+        "--output",
+        "tools/param_id/realrobot_data/primary_joints_20261019/J3_pilot",
+        "--dry-run"
+      ],
+      "configuration": {
+        "speeds": [
+          0.1
+        ],
+        "repeats": 1,
+        "kp": [
+          80.0,
+          150.0,
+          150.0,
+          25.0,
+          12.0,
+          25.0
+        ],
+        "kd": [
+          5.0,
+          10.0,
+          10.0,
+          1.5,
+          0.8,
+          1.5
+        ],
+        "home": [
+          0.0,
+          1.2,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gain_policy": "experiment",
+        "gain_limits": {
+          "kp": [
+            160.0,
+            300.0,
+            300.0,
+            50.0,
+            24.0,
+            50.0
+          ],
+          "kd": [
+            10.0,
+            20.0,
+            20.0,
+            3.0,
+            1.6,
+            3.0
+          ]
+        },
+        "position_probe": false,
+        "start": [
+          0.0,
+          1.2,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "start_offset": 0.0,
+        "end": [
+          0.0,
+          1.2,
+          1.55,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "measurement_range": [
+          1.08,
+          1.47
+        ]
+      },
+      "status": "preview_only_pending_workspace_constraints"
+    },
+    {
+      "joint": 4,
+      "argv": [
+        "--joint",
+        "4",
+        "--mode",
+        "tracking",
+        "--speeds",
+        ".10",
+        "--repeats",
+        "1",
+        "--kp",
+        "50",
+        "--kd",
+        "5",
+        "--gain-policy",
+        "driver-reference",
+        "--rate",
+        "100",
+        "--load-id",
+        "unloaded_wrist_fixed_setup_20261019_user_reported",
+        "--output",
+        "tools/param_id/realrobot_data/primary_joints_20261019/J4_pilot",
+        "--dry-run"
+      ],
+      "configuration": {
+        "speeds": [
+          0.1
+        ],
+        "repeats": 1,
+        "kp": [
+          80.0,
+          150.0,
+          150.0,
+          50.0,
+          12.0,
+          25.0
+        ],
+        "kd": [
+          5.0,
+          10.0,
+          10.0,
+          5.0,
+          0.8,
+          1.5
+        ],
+        "home": [
+          0.0,
+          1.2,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "gain_policy": "driver-reference",
+        "gain_limits": {
+          "kp": [
+            160.0,
+            300.0,
+            300.0,
+            50.0,
+            24.0,
+            50.0
+          ],
+          "kd": [
+            10.0,
+            20.0,
+            20.0,
+            5.0,
+            1.6,
+            3.0
+          ]
+        },
+        "position_probe": false,
+        "start": [
+          0.0,
+          1.2,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "start_offset": 0.0,
+        "end": [
+          0.0,
+          1.2,
+          1.0,
+          0.55,
+          0.0,
+          0.0
+        ],
+        "measurement_range": [
+          0.08,
+          0.47000000000000003
+        ]
+      },
+      "status": "preview_only_pending_workspace_constraints"
+    }
+  ],
+  "policy": "No hardware IO performed by this preparation; no calibration or compensation approval"
+}

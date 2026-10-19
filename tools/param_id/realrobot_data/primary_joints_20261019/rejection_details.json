@@ -1,0 +1,930 @@
+[
+  {
+    "group": "J1_pilot",
+    "joint": 1,
+    "direction": 1,
+    "report": {
+      "segment": 0,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": 1,
+      "status": "invalid",
+      "reasons": [
+        "insufficient_steady_samples",
+        "low_steady_fraction",
+        "nonuniform_motion",
+        "no_continuous_steady_window"
+      ],
+      "samples": 24,
+      "steady_fraction": 0.030848329048843187,
+      "velocity_cv": 0.16635923848551162,
+      "longest_steady_s": 0.052832326968200505
+    },
+    "inside_samples": 778,
+    "target": 0.1,
+    "failure_percent": {
+      "transport": 0.0,
+      "finite_motion": 0.0,
+      "speed": 42.544987146529564,
+      "acceleration": 69.9228791773779,
+      "position_fit": 0.0,
+      "tracking": 0.0,
+      "other_pose": 0.0
+    },
+    "acceleration_abs_p50_p95_p99": [
+      0.2099477720034446,
+      0.3486565912521892,
+      0.40172292759634814
+    ],
+    "speed_signed_p05_p50_p95": [
+      0.07717111731353322,
+      0.09974533411661798,
+      0.12495202733050904
+    ],
+    "tracking_abs_max": 0.006438088999285552,
+    "torque_min_max": [
+      -0.18127994628742217,
+      0.622943815424053
+    ],
+    "ff_min_max": [
+      -1.1096550845616886e-16,
+      1.5235140384504965e-16
+    ],
+    "diagnostic_without_speed": {
+      "fraction": 0.30077120822622105,
+      "longest_s": 0.142983955971431
+    },
+    "diagnostic_without_acceleration": {
+      "fraction": 0.5745501285347043,
+      "longest_s": 0.18099507497390732
+    },
+    "command_interval_ms_p50_p99_max": [
+      10.006142023485154,
+      10.973444620613007,
+      16.226497013121843
+    ],
+    "feedback_interval_ms_p50_p99_max": [
+      5.008543987059966,
+      9.84535341092851,
+      10.090112977195531
+    ],
+    "ideal_quantized_constant_acceleration_abs_p99": 0.021542948635244176,
+    "velocity_spatial_sine_diagnostic": {
+      "period_rad": 0.049899833055091825,
+      "improvement_over_linear_q_r2": 0.9774382168048886
+    },
+    "torque_spatial_sine_diagnostic": {
+      "period_rad": 0.049899833055091825,
+      "improvement_over_linear_q_r2": 0.8582418797672426
+    }
+  },
+  {
+    "group": "J1_pilot",
+    "joint": 1,
+    "direction": -1,
+    "report": {
+      "segment": 1,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": -1,
+      "status": "invalid",
+      "reasons": [
+        "low_steady_fraction",
+        "nonuniform_motion",
+        "no_continuous_steady_window"
+      ],
+      "samples": 127,
+      "steady_fraction": 0.16178343949044585,
+      "velocity_cv": 0.16933610552188216,
+      "longest_steady_s": 0.17000640503829345
+    },
+    "inside_samples": 785,
+    "target": 0.1,
+    "failure_percent": {
+      "transport": 0.0,
+      "finite_motion": 0.0,
+      "speed": 37.07006369426752,
+      "acceleration": 61.27388535031847,
+      "position_fit": 0.0,
+      "tracking": 0.0,
+      "other_pose": 0.0
+    },
+    "acceleration_abs_p50_p95_p99": [
+      0.20922405128772,
+      0.439797607889448,
+      0.5266923664744111
+    ],
+    "speed_signed_p05_p50_p95": [
+      0.07845297927145085,
+      0.09542350675379277,
+      0.12759941146331832
+    ],
+    "tracking_abs_max": 0.005131462659388103,
+    "torque_min_max": [
+      -0.6613971373638123,
+      0.2417065950498989
+    ],
+    "ff_min_max": [
+      -1.1096550845616886e-16,
+      2.077919761169639e-16
+    ],
+    "diagnostic_without_speed": {
+      "fraction": 0.3872611464968153,
+      "longest_s": 0.1908024559961632
+    },
+    "diagnostic_without_acceleration": {
+      "fraction": 0.6292993630573248,
+      "longest_s": 0.39017724397126585
+    },
+    "command_interval_ms_p50_p99_max": [
+      9.997197019401938,
+      10.872297757305205,
+      11.33671001298353
+    ],
+    "feedback_interval_ms_p50_p99_max": [
+      4.9915444978978485,
+      9.730130448006094,
+      9.874819952528924
+    ],
+    "ideal_quantized_constant_acceleration_abs_p99": 0.01970957074804345,
+    "velocity_spatial_sine_diagnostic": {
+      "period_rad": 0.04974123539232053,
+      "improvement_over_linear_q_r2": 0.9659065807533814
+    },
+    "torque_spatial_sine_diagnostic": {
+      "period_rad": 0.049899833055091825,
+      "improvement_over_linear_q_r2": 0.8099782625720109
+    }
+  },
+  {
+    "group": "J1_damping",
+    "joint": 1,
+    "direction": 1,
+    "report": {
+      "segment": 0,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": 1,
+      "status": "invalid",
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "samples": 320,
+      "steady_fraction": 0.4118404118404118,
+      "velocity_cv": 0.12059893610271767,
+      "longest_steady_s": 0.21023110602982342
+    },
+    "inside_samples": 777,
+    "target": 0.1,
+    "failure_percent": {
+      "transport": 0.0,
+      "finite_motion": 0.0,
+      "speed": 7.078507078507078,
+      "acceleration": 51.737451737451735,
+      "position_fit": 0.0,
+      "tracking": 0.0,
+      "other_pose": 0.0
+    },
+    "acceleration_abs_p50_p95_p99": [
+      0.1544418465870922,
+      0.24707572282419243,
+      0.28364236355711653
+    ],
+    "speed_signed_p05_p50_p95": [
+      0.08344362420983822,
+      0.09996834467736704,
+      0.1179520534543219
+    ],
+    "tracking_abs_max": 0.005568308327971561,
+    "torque_min_max": [
+      -0.340586565752127,
+      0.7767571031830824
+    ],
+    "ff_min_max": [
+      -1.434085250724693e-17,
+      1.5231611436537786e-16
+    ],
+    "diagnostic_without_speed": {
+      "fraction": 0.4826254826254826,
+      "longest_s": 0.21023110602982342
+    },
+    "diagnostic_without_acceleration": {
+      "fraction": 0.9292149292149292,
+      "longest_s": 0.7014130540192127
+    },
+    "command_interval_ms_p50_p99_max": [
+      9.99947200762108,
+      11.015372935216874,
+      13.550347997806966
+    ],
+    "feedback_interval_ms_p50_p99_max": [
+      4.993650014512241,
+      9.848657913971692,
+      9.962106996681541
+    ],
+    "ideal_quantized_constant_acceleration_abs_p99": 0.022375811585731323,
+    "velocity_spatial_sine_diagnostic": {
+      "period_rad": 0.049899833055091825,
+      "improvement_over_linear_q_r2": 0.980060349600719
+    },
+    "torque_spatial_sine_diagnostic": {
+      "period_rad": 0.049899833055091825,
+      "improvement_over_linear_q_r2": 0.6590787154506943
+    }
+  },
+  {
+    "group": "J1_damping",
+    "joint": 1,
+    "direction": -1,
+    "report": {
+      "segment": 1,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": -1,
+      "status": "invalid",
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "samples": 380,
+      "steady_fraction": 0.4859335038363171,
+      "velocity_cv": 0.11441196103234798,
+      "longest_steady_s": 0.2703486449900083
+    },
+    "inside_samples": 782,
+    "target": 0.1,
+    "failure_percent": {
+      "transport": 0.0,
+      "finite_motion": 0.0,
+      "speed": 6.010230179028133,
+      "acceleration": 45.907928388746804,
+      "position_fit": 0.0,
+      "tracking": 0.0,
+      "other_pose": 0.0
+    },
+    "acceleration_abs_p50_p95_p99": [
+      0.14056563713665304,
+      0.29303666966182573,
+      0.3444987856310152
+    ],
+    "speed_signed_p05_p50_p95": [
+      0.08550671811843667,
+      0.09723266596847385,
+      0.11850112916114243
+    ],
+    "tracking_abs_max": 0.004173975605763436,
+    "torque_min_max": [
+      -0.7207251197851492,
+      0.39661854915005623
+    ],
+    "ff_min_max": [
+      -9.681433690215784e-17,
+      1.5933876592287567e-16
+    ],
+    "diagnostic_without_speed": {
+      "fraction": 0.540920716112532,
+      "longest_s": 0.2703486449900083
+    },
+    "diagnostic_without_acceleration": {
+      "fraction": 0.9398976982097187,
+      "longest_s": 1.439629440952558
+    },
+    "command_interval_ms_p50_p99_max": [
+      9.988475008867681,
+      11.106969807296991,
+      11.27820200053975
+    ],
+    "feedback_interval_ms_p50_p99_max": [
+      5.012402514694259,
+      9.776187420939095,
+      9.97834897134453
+    ],
+    "ideal_quantized_constant_acceleration_abs_p99": 0.017478197072789074,
+    "velocity_spatial_sine_diagnostic": {
+      "period_rad": 0.04942404006677797,
+      "improvement_over_linear_q_r2": 0.9712953823348974
+    },
+    "torque_spatial_sine_diagnostic": {
+      "period_rad": 0.04958263772954925,
+      "improvement_over_linear_q_r2": 0.6367593072712757
+    }
+  },
+  {
+    "group": "J2_pilot",
+    "joint": 2,
+    "direction": 1,
+    "report": {
+      "segment": 0,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": 1,
+      "status": "invalid",
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "samples": 277,
+      "steady_fraction": 0.35286624203821654,
+      "velocity_cv": 0.13544698443256933,
+      "longest_steady_s": 0.3233064570231363
+    },
+    "inside_samples": 785,
+    "target": 0.1,
+    "failure_percent": {
+      "transport": 0.0,
+      "finite_motion": 0.0,
+      "speed": 22.67515923566879,
+      "acceleration": 50.318471337579616,
+      "position_fit": 0.0,
+      "tracking": 0.0,
+      "other_pose": 0.0
+    },
+    "acceleration_abs_p50_p95_p99": [
+      0.1511027101269411,
+      0.31275813230265864,
+      0.4673554361282978
+    ],
+    "speed_signed_p05_p50_p95": [
+      0.07902708886756683,
+      0.09832050607203632,
+      0.1222804228657321
+    ],
+    "tracking_abs_max": 0.007970973465594167,
+    "torque_min_max": [
+      -7.873043000579852,
+      -3.8310495315408786
+    ],
+    "ff_min_max": [
+      -7.495526115524987,
+      -4.757528744472482
+    ],
+    "diagnostic_without_speed": {
+      "fraction": 0.4968152866242038,
+      "longest_s": 0.3233064570231363
+    },
+    "diagnostic_without_acceleration": {
+      "fraction": 0.7732484076433122,
+      "longest_s": 0.8811385089647956
+    },
+    "command_interval_ms_p50_p99_max": [
+      9.993105020839721,
+      11.078063449822364,
+      20.96883999183774
+    ],
+    "feedback_interval_ms_p50_p99_max": [
+      4.989837005268782,
+      7.992043843260036,
+      8.309088996611536
+    ],
+    "ideal_quantized_constant_acceleration_abs_p99": 0.01811270085044244,
+    "velocity_spatial_sine_diagnostic": {
+      "period_rad": 0.0500584307178631,
+      "improvement_over_linear_q_r2": 0.8007908447137229
+    },
+    "torque_spatial_sine_diagnostic": {
+      "period_rad": 0.049899833055091825,
+      "improvement_over_linear_q_r2": 0.5130161568580025
+    }
+  },
+  {
+    "group": "J2_pilot",
+    "joint": 2,
+    "direction": -1,
+    "report": {
+      "segment": 1,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": -1,
+      "status": "invalid",
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "samples": 248,
+      "steady_fraction": 0.31958762886597936,
+      "velocity_cv": 0.14099591867213113,
+      "longest_steady_s": 0.2703675859957002
+    },
+    "inside_samples": 776,
+    "target": 0.1,
+    "failure_percent": {
+      "transport": 0.0,
+      "finite_motion": 0.0,
+      "speed": 26.030927835051546,
+      "acceleration": 52.70618556701031,
+      "position_fit": 0.0,
+      "tracking": 0.0,
+      "other_pose": 0.0
+    },
+    "acceleration_abs_p50_p95_p99": [
+      0.15720994444876973,
+      0.3913760742978295,
+      0.46926386988809016
+    ],
+    "speed_signed_p05_p50_p95": [
+      0.07862702126235768,
+      0.10074101778036092,
+      0.1250672890373466
+    ],
+    "tracking_abs_max": 0.00477772085196837,
+    "torque_min_max": [
+      -8.610248115482039,
+      -4.838526566362497
+    ],
+    "ff_min_max": [
+      -7.498094047443389,
+      -4.773051383557949
+    ],
+    "diagnostic_without_speed": {
+      "fraction": 0.4729381443298969,
+      "longest_s": 0.2703675859957002
+    },
+    "diagnostic_without_acceleration": {
+      "fraction": 0.7396907216494846,
+      "longest_s": 0.8712864829576574
+    },
+    "command_interval_ms_p50_p99_max": [
+      10.00843197107315,
+      11.762395203113556,
+      12.034898973070085
+    ],
+    "feedback_interval_ms_p50_p99_max": [
+      4.999655007850379,
+      9.773440103745088,
+      9.969081031158566
+    ],
+    "ideal_quantized_constant_acceleration_abs_p99": 0.017786526431171512,
+    "velocity_spatial_sine_diagnostic": {
+      "period_rad": 0.050217028380634396,
+      "improvement_over_linear_q_r2": 0.7209567915921329
+    },
+    "torque_spatial_sine_diagnostic": {
+      "period_rad": 0.050375626043405675,
+      "improvement_over_linear_q_r2": 0.47712859090748383
+    }
+  },
+  {
+    "group": "J2_damping",
+    "joint": 2,
+    "direction": 1,
+    "report": {
+      "segment": 0,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": 1,
+      "status": "invalid",
+      "reasons": [
+        "no_continuous_steady_window"
+      ],
+      "samples": 626,
+      "steady_fraction": 0.798469387755102,
+      "velocity_cv": 0.08262571957273868,
+      "longest_steady_s": 0.7010346510214731
+    },
+    "inside_samples": 784,
+    "target": 0.1,
+    "failure_percent": {
+      "transport": 0.0,
+      "finite_motion": 0.0,
+      "speed": 1.1479591836734695,
+      "acceleration": 19.005102040816325,
+      "position_fit": 0.0,
+      "tracking": 0.0,
+      "other_pose": 0.0
+    },
+    "acceleration_abs_p50_p95_p99": [
+      0.09168798175139056,
+      0.21305543132087698,
+      0.261017340522461
+    ],
+    "speed_signed_p05_p50_p95": [
+      0.08681954183994674,
+      0.099538474589678,
+      0.11255191722216437
+    ],
+    "tracking_abs_max": 0.006519354865042182,
+    "torque_min_max": [
+      -8.409192175054171,
+      -3.337748344370862
+    ],
+    "ff_min_max": [
+      -7.487972033689988,
+      -4.7546061368628845
+    ],
+    "diagnostic_without_speed": {
+      "fraction": 0.8099489795918368,
+      "longest_s": 0.7010346510214731
+    },
+    "diagnostic_without_acceleration": {
+      "fraction": 0.9885204081632653,
+      "longest_s": 2.705036751984153
+    },
+    "command_interval_ms_p50_p99_max": [
+      10.001600021496415,
+      11.132327450904992,
+      11.684285011142492
+    ],
+    "feedback_interval_ms_p50_p99_max": [
+      4.9950820102822036,
+      9.541075720335355,
+      10.411097027827054
+    ],
+    "ideal_quantized_constant_acceleration_abs_p99": 0.019882966137659035,
+    "velocity_spatial_sine_diagnostic": {
+      "period_rad": 0.050375626043405675,
+      "improvement_over_linear_q_r2": 0.7771404763638843
+    },
+    "torque_spatial_sine_diagnostic": {
+      "period_rad": 0.049899833055091825,
+      "improvement_over_linear_q_r2": 0.1288009024707285
+    }
+  },
+  {
+    "group": "J2_damping",
+    "joint": 2,
+    "direction": -1,
+    "report": {
+      "segment": 1,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": -1,
+      "status": "invalid",
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "samples": 542,
+      "steady_fraction": 0.6975546975546976,
+      "velocity_cv": 0.09161799497185695,
+      "longest_steady_s": 0.4501899770111777
+    },
+    "inside_samples": 777,
+    "target": 0.1,
+    "failure_percent": {
+      "transport": 0.0,
+      "finite_motion": 0.0,
+      "speed": 2.187902187902188,
+      "acceleration": 28.056628056628057,
+      "position_fit": 0.0,
+      "tracking": 0.0,
+      "other_pose": 0.0
+    },
+    "acceleration_abs_p50_p95_p99": [
+      0.09466261168300827,
+      0.22723317350006397,
+      0.28940072089146607
+    ],
+    "speed_signed_p05_p50_p95": [
+      0.0867030907567528,
+      0.10007679578489723,
+      0.11656652482377801
+    ],
+    "tracking_abs_max": 0.0042431494451349305,
+    "torque_min_max": [
+      -9.399090548417616,
+      -4.074953459273049
+    ],
+    "ff_min_max": [
+      -7.501110739547244,
+      -4.7700728993613515
+    ],
+    "diagnostic_without_speed": {
+      "fraction": 0.7194337194337195,
+      "longest_s": 0.4501899770111777
+    },
+    "diagnostic_without_acceleration": {
+      "fraction": 0.9781209781209781,
+      "longest_s": 2.643433534016367
+    },
+    "command_interval_ms_p50_p99_max": [
+      10.005030024331063,
+      11.13362905336544,
+      11.59575895871967
+    ],
+    "feedback_interval_ms_p50_p99_max": [
+      5.011486995499581,
+      9.495624563423917,
+      10.06970799062401
+    ],
+    "ideal_quantized_constant_acceleration_abs_p99": 0.01720802581204003,
+    "velocity_spatial_sine_diagnostic": {
+      "period_rad": 0.05053422370617697,
+      "improvement_over_linear_q_r2": 0.7387049868936488
+    },
+    "torque_spatial_sine_diagnostic": {
+      "period_rad": 0.050375626043405675,
+      "improvement_over_linear_q_r2": 0.2056474276714374
+    }
+  },
+  {
+    "group": "J4_pilot",
+    "joint": 4,
+    "direction": 1,
+    "report": {
+      "segment": 0,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": 1,
+      "status": "invalid",
+      "reasons": [
+        "low_steady_fraction",
+        "nonuniform_motion",
+        "no_continuous_steady_window"
+      ],
+      "samples": 118,
+      "steady_fraction": 0.15265200517464425,
+      "velocity_cv": 0.15250364066708225,
+      "longest_steady_s": 0.14916544000152498
+    },
+    "inside_samples": 773,
+    "target": 0.1,
+    "failure_percent": {
+      "transport": 0.0,
+      "finite_motion": 0.0,
+      "speed": 30.53040103492885,
+      "acceleration": 63.90685640362225,
+      "position_fit": 0.0,
+      "tracking": 0.0,
+      "other_pose": 0.0
+    },
+    "acceleration_abs_p50_p95_p99": [
+      0.2079756681890139,
+      0.39397815544256015,
+      0.5074125515516358
+    ],
+    "speed_signed_p05_p50_p95": [
+      0.07729113490523691,
+      0.09982103620036642,
+      0.12198990125852072
+    ],
+    "tracking_abs_max": 0.011822084712827974,
+    "torque_min_max": [
+      2.051271095919676,
+      2.622516556291391
+    ],
+    "ff_min_max": [
+      1.8768984840005718,
+      2.012567019516409
+    ],
+    "diagnostic_without_speed": {
+      "fraction": 0.36093143596377747,
+      "longest_s": 0.14916544000152498
+    },
+    "diagnostic_without_acceleration": {
+      "fraction": 0.6946959896507116,
+      "longest_s": 0.6129932309850119
+    },
+    "command_interval_ms_p50_p99_max": [
+      9.978073998354375,
+      12.023840418551117,
+      14.629165001679212
+    ],
+    "feedback_interval_ms_p50_p99_max": [
+      5.012237001210451,
+      9.876625553588383,
+      10.023474984336644
+    ],
+    "ideal_quantized_constant_acceleration_abs_p99": 0.0214726002049569,
+    "velocity_spatial_sine_diagnostic": {
+      "period_rad": 0.04482470784641068,
+      "improvement_over_linear_q_r2": 0.9249057636317809
+    },
+    "torque_spatial_sine_diagnostic": {
+      "period_rad": 0.04482470784641068,
+      "improvement_over_linear_q_r2": 0.8737566425202322
+    }
+  },
+  {
+    "group": "J4_pilot",
+    "joint": 4,
+    "direction": -1,
+    "report": {
+      "segment": 1,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": -1,
+      "status": "invalid",
+      "reasons": [
+        "low_steady_fraction",
+        "nonuniform_motion",
+        "no_continuous_steady_window"
+      ],
+      "samples": 145,
+      "steady_fraction": 0.18447837150127228,
+      "velocity_cv": 0.17481862721757213,
+      "longest_steady_s": 0.20622022403404117
+    },
+    "inside_samples": 786,
+    "target": 0.1,
+    "failure_percent": {
+      "transport": 0.0,
+      "finite_motion": 0.0,
+      "speed": 33.71501272264631,
+      "acceleration": 66.2849872773537,
+      "position_fit": 0.0,
+      "tracking": 0.0,
+      "other_pose": 0.0
+    },
+    "acceleration_abs_p50_p95_p99": [
+      0.21278364723095317,
+      0.4630694263767133,
+      0.5212843680760337
+    ],
+    "speed_signed_p05_p50_p95": [
+      0.07398886009501696,
+      0.09649551753175639,
+      0.12887236953906467
+    ],
+    "tracking_abs_max": 0.0034153105837857467,
+    "torque_min_max": [
+      1.6235847041230511,
+      2.245674001281779
+    ],
+    "ff_min_max": [
+      1.8707029632198406,
+      2.0125671349416567
+    ],
+    "diagnostic_without_speed": {
+      "fraction": 0.3371501272264631,
+      "longest_s": 0.20622022403404117
+    },
+    "diagnostic_without_acceleration": {
+      "fraction": 0.6628498727735369,
+      "longest_s": 1.179889073013328
+    },
+    "command_interval_ms_p50_p99_max": [
+      10.008280980400741,
+      11.44644753774628,
+      12.04651896841824
+    ],
+    "feedback_interval_ms_p50_p99_max": [
+      5.0029660342261195,
+      9.570271103293633,
+      10.273726016748697
+    ],
+    "ideal_quantized_constant_acceleration_abs_p99": 0.022173874186893795,
+    "velocity_spatial_sine_diagnostic": {
+      "period_rad": 0.044983305509181976,
+      "improvement_over_linear_q_r2": 0.801792062094817
+    },
+    "torque_spatial_sine_diagnostic": {
+      "period_rad": 0.04482470784641068,
+      "improvement_over_linear_q_r2": 0.7551053974077268
+    }
+  },
+  {
+    "group": "J4_speed15",
+    "joint": 4,
+    "direction": 1,
+    "report": {
+      "segment": 0,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": 1,
+      "status": "invalid",
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "samples": 85,
+      "steady_fraction": 0.19767441860465115,
+      "velocity_cv": 0.0950287862089921,
+      "longest_steady_s": 0.0404814489884302
+    },
+    "inside_samples": 430,
+    "target": 0.15,
+    "failure_percent": {
+      "transport": 0.0,
+      "finite_motion": 0.0,
+      "speed": 0.0,
+      "acceleration": 80.23255813953489,
+      "position_fit": 0.0,
+      "tracking": 0.0,
+      "other_pose": 0.0
+    },
+    "acceleration_abs_p50_p95_p99": [
+      0.33745091229037005,
+      0.5387506214616282,
+      0.6063267021711073
+    ],
+    "speed_signed_p05_p50_p95": [
+      0.1294123353228394,
+      0.14933394614060563,
+      0.16997994442824815
+    ],
+    "tracking_abs_max": 0.011574375046047303,
+    "torque_min_max": [
+      2.092287972655415,
+      2.5985900448622097
+    ],
+    "ff_min_max": [
+      1.9031184076315086,
+      2.01247436567925
+    ],
+    "diagnostic_without_speed": {
+      "fraction": 0.19767441860465115,
+      "longest_s": 0.0404814489884302
+    },
+    "diagnostic_without_acceleration": {
+      "fraction": 1.0,
+      "longest_s": 2.1512191310175695
+    },
+    "command_interval_ms_p50_p99_max": [
+      9.980420989450067,
+      10.96556474512909,
+      11.484369984827936
+    ],
+    "feedback_interval_ms_p50_p99_max": [
+      7.126816955860704,
+      9.834768599830568,
+      10.048719006590545
+    ],
+    "ideal_quantized_constant_acceleration_abs_p99": 0.023455374390130977,
+    "velocity_spatial_sine_diagnostic": {
+      "period_rad": 0.04482470784641068,
+      "improvement_over_linear_q_r2": 0.9567858217749401
+    },
+    "torque_spatial_sine_diagnostic": {
+      "period_rad": 0.04482470784641068,
+      "improvement_over_linear_q_r2": 0.9120504981583538
+    }
+  },
+  {
+    "group": "J4_speed15",
+    "joint": 4,
+    "direction": -1,
+    "report": {
+      "segment": 1,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": -1,
+      "status": "invalid",
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "samples": 41,
+      "steady_fraction": 0.09468822170900693,
+      "velocity_cv": 0.126581303695251,
+      "longest_steady_s": 0.04245918401284143
+    },
+    "inside_samples": 433,
+    "target": 0.15,
+    "failure_percent": {
+      "transport": 0.0,
+      "finite_motion": 0.0,
+      "speed": 22.170900692840647,
+      "acceleration": 83.60277136258661,
+      "position_fit": 0.0,
+      "tracking": 0.0,
+      "other_pose": 0.0
+    },
+    "acceleration_abs_p50_p95_p99": [
+      0.388755663931967,
+      0.7345424662278026,
+      0.766588182743407
+    ],
+    "speed_signed_p05_p50_p95": [
+      0.11947874824962518,
+      0.1502077145480175,
+      0.18012910919248376
+    ],
+    "tracking_abs_max": 0.003672128117202883,
+    "torque_min_max": [
+      1.6680196539201018,
+      2.2973723563341166
+    ],
+    "ff_min_max": [
+      1.8920644809178517,
+      2.0120701215710057
+    ],
+    "diagnostic_without_speed": {
+      "fraction": 0.16397228637413394,
+      "longest_s": 0.04245918401284143
+    },
+    "diagnostic_without_acceleration": {
+      "fraction": 0.7782909930715936,
+      "longest_s": 0.8036386630265042
+    },
+    "command_interval_ms_p50_p99_max": [
+      9.979474998544902,
+      11.372454385855237,
+      11.755942017771304
+    ],
+    "feedback_interval_ms_p50_p99_max": [
+      5.003906029742211,
+      8.964005317538971,
+      9.40385996364057
+    ],
+    "ideal_quantized_constant_acceleration_abs_p99": 0.028503197425432416,
+    "velocity_spatial_sine_diagnostic": {
+      "period_rad": 0.044983305509181976,
+      "improvement_over_linear_q_r2": 0.8180524433145027
+    },
+    "torque_spatial_sine_diagnostic": {
+      "period_rad": 0.04482470784641068,
+      "improvement_over_linear_q_r2": 0.7931676156901302
+    }
+  }
+]

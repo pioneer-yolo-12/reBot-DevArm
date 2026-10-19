@@ -1,0 +1,114 @@
+[
+  {
+    "joint": 1,
+    "direction": 1,
+    "eligible": 778,
+    "failure_counts": {
+      "transport": 0,
+      "speed": 331,
+      "acceleration": 544,
+      "position_fit": 0,
+      "tracking": 0,
+      "other_pose": 0
+    },
+    "acceleration_p99": 0.40172292759634814
+  },
+  {
+    "joint": 1,
+    "direction": -1,
+    "eligible": 785,
+    "failure_counts": {
+      "transport": 0,
+      "speed": 291,
+      "acceleration": 481,
+      "position_fit": 0,
+      "tracking": 0,
+      "other_pose": 0
+    },
+    "acceleration_p99": 0.5266923664744111
+  },
+  {
+    "joint": 2,
+    "direction": 1,
+    "eligible": 785,
+    "failure_counts": {
+      "transport": 0,
+      "speed": 178,
+      "acceleration": 395,
+      "position_fit": 0,
+      "tracking": 0,
+      "other_pose": 0
+    },
+    "acceleration_p99": 0.4673554361282978
+  },
+  {
+    "joint": 2,
+    "direction": -1,
+    "eligible": 776,
+    "failure_counts": {
+      "transport": 0,
+      "speed": 202,
+      "acceleration": 409,
+      "position_fit": 0,
+      "tracking": 0,
+      "other_pose": 0
+    },
+    "acceleration_p99": 0.46926386988809016
+  },
+  {
+    "joint": 3,
+    "direction": 1,
+    "eligible": 772,
+    "failure_counts": {
+      "transport": 0,
+      "speed": 176,
+      "acceleration": 333,
+      "position_fit": 0,
+      "tracking": 0,
+      "other_pose": 0
+    },
+    "acceleration_p99": 0.44600905034995114
+  },
+  {
+    "joint": 3,
+    "direction": -1,
+    "eligible": 779,
+    "failure_counts": {
+      "transport": 0,
+      "speed": 75,
+      "acceleration": 280,
+      "position_fit": 0,
+      "tracking": 0,
+      "other_pose": 0
+    },
+    "acceleration_p99": 0.33810725081685494
+  },
+  {
+    "joint": 4,
+    "direction": 1,
+    "eligible": 773,
+    "failure_counts": {
+      "transport": 0,
+      "speed": 236,
+      "acceleration": 494,
+      "position_fit": 0,
+      "tracking": 0,
+      "other_pose": 0
+    },
+    "acceleration_p99": 0.5074125515516358
+  },
+  {
+    "joint": 4,
+    "direction": -1,
+    "eligible": 786,
+    "failure_counts": {
+      "transport": 0,
+      "speed": 265,
+      "acceleration": 521,
+      "position_fit": 0,
+      "tracking": 0,
+      "other_pose": 0
+    },
+    "acceleration_p99": 0.5212843680760337
+  }
+]

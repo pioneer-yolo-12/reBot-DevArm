@@ -1,0 +1,44 @@
+{
+  "primary_window": 0.2,
+  "alternative_windows": [
+    {
+      "window": 0.12,
+      "spatial_period": 0.0447693183172793,
+      "coefficients": {
+        "bias": 0.013370194469785938,
+        "effective_inertia": 0.00644387714294078,
+        "smooth_fc": 0.11498573324583747,
+        "fv": 0.0005137736873723865,
+        "position_sin": -0.06397854164136525,
+        "position_cos": 0.23210562860196235
+      },
+      "physical_issues": [],
+      "heldout_rmse": {
+        "baseline": 0.1352380661509156,
+        "spatial": 0.04723622917150987,
+        "temporal": 0.12980686525373974
+      },
+      "position_term_prediction_supported": true
+    },
+    {
+      "window": 0.28,
+      "spatial_period": 0.044779128099950105,
+      "coefficients": {
+        "bias": 0.012293712693073375,
+        "effective_inertia": 0.009550627333511317,
+        "smooth_fc": 0.10551991587451265,
+        "fv": 0.09626775592534041,
+        "position_sin": -0.0673437928628964,
+        "position_cos": 0.23137337757258664
+      },
+      "physical_issues": [],
+      "heldout_rmse": {
+        "baseline": 0.14199658627067524,
+        "spatial": 0.045610368505472745,
+        "temporal": 0.1373665968314011
+      },
+      "position_term_prediction_supported": true
+    }
+  ],
+  "policy": "Primary model fixed at 0.20 s before held-out evaluation; alternatives are sensitivity checks, not model selection"
+}

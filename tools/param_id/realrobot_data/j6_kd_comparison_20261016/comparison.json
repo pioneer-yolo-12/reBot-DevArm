@@ -1,0 +1,218 @@
+{
+  "purpose": "descriptive tracking and spatial ripple comparison; not friction calibration or deployable compensation",
+  "tau_units": "protocol_nm_unverified",
+  "speed_rad_s": 0.1,
+  "kp": 25.0,
+  "runs": [
+    {
+      "file": "/home/a12/reBot-DevArm/tools/param_id/realrobot_data/friction_20261016_170804_4efecf13.npz",
+      "kd": 2.0,
+      "status": "complete",
+      "segments": [
+        {
+          "segment": 0,
+          "repeat": 0,
+          "speed_id": 0,
+          "direction": 1,
+          "status": "invalid",
+          "reasons": [
+            "insufficient_steady_samples",
+            "low_steady_fraction",
+            "nonuniform_motion",
+            "no_continuous_steady_window"
+          ],
+          "samples": 0,
+          "steady_fraction": 0.0,
+          "velocity_cv": 0.37279887107221293,
+          "longest_steady_s": 0.0
+        },
+        {
+          "segment": 1,
+          "repeat": 0,
+          "speed_id": 0,
+          "direction": -1,
+          "status": "invalid",
+          "reasons": [
+            "insufficient_steady_samples",
+            "low_steady_fraction",
+            "nonuniform_motion",
+            "no_continuous_steady_window"
+          ],
+          "samples": 0,
+          "steady_fraction": 0.0,
+          "velocity_cv": 0.42256078138713776,
+          "longest_steady_s": 0.0
+        }
+      ],
+      "spatial_diagnostics": [
+        {
+          "direction": 1,
+          "bin_width_rad": 0.002,
+          "period_rad": 0.04485,
+          "period_deg": 2.5697157111617424,
+          "sine_with_linear_trend_in_sample_r2": 0.9596727300276877,
+          "warning": "Position-binned descriptive fit; no causal diagnosis or held-out validation"
+        },
+        {
+          "direction": -1,
+          "bin_width_rad": 0.002,
+          "period_rad": 0.04485,
+          "period_deg": 2.5697157111617424,
+          "sine_with_linear_trend_in_sample_r2": 0.9643021115957207,
+          "warning": "Position-binned descriptive fit; no causal diagnosis or held-out validation"
+        }
+      ],
+      "peak_tau_protocol": 0.3935056611835075,
+      "max_rx_gap_ms": 10.679158996936167,
+      "max_read_latency_ms": 7.355241999903228,
+      "send_failures": 0,
+      "fault_frames": 0,
+      "temperature_range_j6": [
+        29.0,
+        29.0
+      ],
+      "fold_verified": {
+        "kind": "fold_verified",
+        "position_velocity": [
+          -4.164668620295855e-05,
+          2.829130701420013e-12,
+          -9.71875533967608e-05,
+          0.00023599674918487644,
+          6.596291498857313e-05,
+          7.637112176482276e-05
+        ],
+        "q": [
+          0.002301041404039213,
+          0.01035468631817646,
+          0.01035468631817646,
+          0.01610728982827449,
+          0.0172578105302941,
+          -0.007286631112790841
+        ],
+        "qd": [
+          -0.04577776421399449,
+          -0.025940733054596876,
+          -0.004577776421399449,
+          -0.02316354869228121,
+          -0.004028443250831515,
+          -0.007049775688955151
+        ],
+        "settle": 0.5,
+        "t": 22517.632324617
+      },
+      "disabled_after_fold": {
+        "kind": "disabled_after_fold",
+        "t": 22517.681911147
+      },
+      "exit_max_command_period_ms": {
+        "exit_home": 12.000840000837343,
+        "exit_fold": 12.962991000676993
+      }
+    },
+    {
+      "file": "/home/a12/reBot-DevArm/tools/param_id/realrobot_data/friction_20261016_170909_c37fc19b.npz",
+      "kd": 2.5,
+      "status": "complete",
+      "segments": [
+        {
+          "segment": 0,
+          "repeat": 0,
+          "speed_id": 0,
+          "direction": 1,
+          "status": "invalid",
+          "reasons": [
+            "insufficient_steady_samples",
+            "low_steady_fraction",
+            "nonuniform_motion",
+            "no_continuous_steady_window"
+          ],
+          "samples": 0,
+          "steady_fraction": 0.0,
+          "velocity_cv": 0.37485989500180056,
+          "longest_steady_s": 0.0
+        },
+        {
+          "segment": 1,
+          "repeat": 0,
+          "speed_id": 0,
+          "direction": -1,
+          "status": "invalid",
+          "reasons": [
+            "insufficient_steady_samples",
+            "low_steady_fraction",
+            "nonuniform_motion",
+            "no_continuous_steady_window"
+          ],
+          "samples": 0,
+          "steady_fraction": 0.0,
+          "velocity_cv": 0.4057559607956486,
+          "longest_steady_s": 0.0
+        }
+      ],
+      "spatial_diagnostics": [
+        {
+          "direction": 1,
+          "bin_width_rad": 0.002,
+          "period_rad": 0.044899999999999995,
+          "period_deg": 2.5725805001373963,
+          "sine_with_linear_trend_in_sample_r2": 0.9660353254426363,
+          "warning": "Position-binned descriptive fit; no causal diagnosis or held-out validation"
+        },
+        {
+          "direction": -1,
+          "bin_width_rad": 0.002,
+          "period_rad": 0.044899999999999995,
+          "period_deg": 2.5725805001373963,
+          "sine_with_linear_trend_in_sample_r2": 0.9736082557162935,
+          "warning": "Position-binned descriptive fit; no causal diagnosis or held-out validation"
+        }
+      ],
+      "peak_tau_protocol": 0.4293954283272807,
+      "max_rx_gap_ms": 10.551755000051344,
+      "max_read_latency_ms": 12.741485999868019,
+      "send_failures": 0,
+      "fault_frames": 0,
+      "temperature_range_j6": [
+        29.0,
+        29.0
+      ],
+      "fold_verified": {
+        "kind": "fold_verified",
+        "position_velocity": [
+          -0.0001096950200820973,
+          -0.0005877393309349123,
+          -5.46755546482474e-13,
+          4.9115005477518693e-05,
+          -0.00022592306860624503,
+          0.0002357401372461668
+        ],
+        "q": [
+          0.0019175345033660108,
+          0.01035468631817646,
+          0.01035468631817646,
+          0.016490796728947692,
+          0.018408331232313703,
+          -0.006903124212117639
+        ],
+        "qd": [
+          -0.15869624927518644,
+          0.06408886989959228,
+          -0.004577776421399449,
+          -0.012085329752494545,
+          -0.028199102755820604,
+          0.058412427137056966
+        ],
+        "settle": 0.5,
+        "t": 22582.991481158
+      },
+      "disabled_after_fold": {
+        "kind": "disabled_after_fold",
+        "t": 22583.01674131
+      },
+      "exit_max_command_period_ms": {
+        "exit_home": 11.81234799878439,
+        "exit_fold": 13.11239300048328
+      }
+    }
+  ]
+}

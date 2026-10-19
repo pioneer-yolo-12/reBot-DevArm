@@ -1,0 +1,234 @@
+{
+  "status": "internal_measurement_chain_diagnostic",
+  "compensation_allowed": false,
+  "input": "damping_low/friction_20261019_143320_b53ae77e.npz",
+  "kp": 50.0,
+  "kd": 2.0,
+  "sha256": "0dec6c9499606648c40c3cced1f839e3eef84b3f8ecf4a916228ff257067e201",
+  "samples": 2148,
+  "reply_interval_ms": {
+    "median": 20.000661024823785,
+    "max": 27.32714102603495
+  },
+  "rtt_ms": {
+    "median": 0.6316575163509697,
+    "p99": 1.4290242252172967,
+    "max": 7.8906340058892965
+  },
+  "read_age_ms_max": 3.53816500864923,
+  "segments": [
+    {
+      "segment": 0,
+      "speed": 0.15,
+      "direction": 1,
+      "channels": {
+        "float_native_50hz": {
+          "samples": 108,
+          "velocity_cv": 0.03136198919860314,
+          "abs_acceleration_p99": 0.42907753553869404,
+          "acceleration_over_fraction": 0.4351851851851852,
+          "longest_steady_s": 0.27937181101879105
+        },
+        "status_interpolated_same_times": {
+          "samples": 108,
+          "velocity_cv": 0.03146748501120733,
+          "abs_acceleration_p99": 0.4592082674281561,
+          "acceleration_over_fraction": 0.48148148148148145,
+          "longest_steady_s": 0.27937181101879105
+        }
+      },
+      "position_difference": {
+        "mean": -0.00012675752265755763,
+        "rms": 0.00019562670309736962,
+        "abs_p99": 0.00039210938046495546
+      },
+      "matched_velocity_correlation": 0.9832184197596705,
+      "matched_acceleration_correlation": 0.9846500059194382
+    },
+    {
+      "segment": 1,
+      "speed": 0.15,
+      "direction": -1,
+      "channels": {
+        "float_native_50hz": {
+          "samples": 108,
+          "velocity_cv": 0.025208807679762177,
+          "abs_acceleration_p99": 0.3535892605866874,
+          "acceleration_over_fraction": 0.4166666666666667,
+          "longest_steady_s": 0.30005660303868353
+        },
+        "status_interpolated_same_times": {
+          "samples": 108,
+          "velocity_cv": 0.0242400797494702,
+          "abs_acceleration_p99": 0.3516996095759093,
+          "acceleration_over_fraction": 0.4074074074074074,
+          "longest_steady_s": 0.2800177010358311
+        }
+      },
+      "position_difference": {
+        "mean": -5.613676550574467e-05,
+        "rms": 0.00013287220056657853,
+        "abs_p99": 0.0003235615980047277
+      },
+      "matched_velocity_correlation": 0.9830967807256312,
+      "matched_acceleration_correlation": 0.9878651399191731
+    },
+    {
+      "segment": 2,
+      "speed": 0.1,
+      "direction": 1,
+      "channels": {
+        "float_native_50hz": {
+          "samples": 171,
+          "velocity_cv": 0.05876687331105068,
+          "abs_acceleration_p99": 0.37267031543441936,
+          "acceleration_over_fraction": 0.40350877192982454,
+          "longest_steady_s": 0.38010927295545116
+        },
+        "status_interpolated_same_times": {
+          "samples": 171,
+          "velocity_cv": 0.05780122195977076,
+          "abs_acceleration_p99": 0.3608734679790499,
+          "acceleration_over_fraction": 0.3567251461988304,
+          "longest_steady_s": 0.40010178298689425
+        }
+      },
+      "position_difference": {
+        "mean": -9.433989375532606e-05,
+        "rms": 0.000163464468691422,
+        "abs_p99": 0.0003712894362939034
+      },
+      "matched_velocity_correlation": 0.9904111508978937,
+      "matched_acceleration_correlation": 0.9791978734553414
+    },
+    {
+      "segment": 3,
+      "speed": 0.1,
+      "direction": -1,
+      "channels": {
+        "float_native_50hz": {
+          "samples": 170,
+          "velocity_cv": 0.06125373443013326,
+          "abs_acceleration_p99": 0.36480208147206344,
+          "acceleration_over_fraction": 0.3235294117647059,
+          "longest_steady_s": 0.3797052369918674
+        },
+        "status_interpolated_same_times": {
+          "samples": 170,
+          "velocity_cv": 0.060516462425417236,
+          "abs_acceleration_p99": 0.3759636003433813,
+          "acceleration_over_fraction": 0.3176470588235294,
+          "longest_steady_s": 0.27971323300153017
+        }
+      },
+      "position_difference": {
+        "mean": -4.922746935162608e-05,
+        "rms": 0.00014775165712825516,
+        "abs_p99": 0.0003948676161386128
+      },
+      "matched_velocity_correlation": 0.9926201055444345,
+      "matched_acceleration_correlation": 0.9821052791061335
+    }
+  ],
+  "original_status_quality": [
+    {
+      "segment": 0,
+      "repeat": 0,
+      "speed_id": 1,
+      "direction": 1,
+      "status": "invalid",
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "samples": 238,
+      "steady_fraction": 0.5496535796766744,
+      "velocity_cv": 0.029335709045981682,
+      "longest_steady_s": 0.2092828289605677
+    },
+    {
+      "segment": 1,
+      "repeat": 0,
+      "speed_id": 1,
+      "direction": -1,
+      "status": "invalid",
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "samples": 274,
+      "steady_fraction": 0.631336405529954,
+      "velocity_cv": 0.023205868225821148,
+      "longest_steady_s": 0.29600141500122845
+    },
+    {
+      "segment": 2,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": 1,
+      "status": "invalid",
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "samples": 445,
+      "steady_fraction": 0.6544117647058824,
+      "velocity_cv": 0.05615063923550294,
+      "longest_steady_s": 0.49010968999937177
+    },
+    {
+      "segment": 3,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": -1,
+      "status": "invalid",
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "samples": 439,
+      "steady_fraction": 0.6455882352941177,
+      "velocity_cv": 0.05936450679178001,
+      "longest_steady_s": 0.33635103300912306
+    }
+  ],
+  "fold_verified": {
+    "kind": "fold_verified",
+    "position_velocity": [
+      7.291405213503018e-05,
+      -5.5565543355381536e-05,
+      -0.0010167791065348723,
+      0.0010377688902812928,
+      -3.252181630518112e-12,
+      -2.0773593242236716e-05
+    ],
+    "q": [
+      0.002684548304712415,
+      0.002684548304712415,
+      0.009587672516830055,
+      0.007286631112790841,
+      0.002684548304712415,
+      0.0015340276026928087
+    ],
+    "qd": [
+      -0.05188146610919375,
+      -0.010681478316598714,
+      0.010681478316598714,
+      -0.0835901974547576,
+      0.018127994628741817,
+      -0.035248878444775755
+    ],
+    "settle": 0.5,
+    "t": 270266.432180749
+  },
+  "disabled_after_fold": {
+    "kind": "disabled_after_fold",
+    "t": 270266.457704481
+  },
+  "limits": [
+    "Both channels are internal and may share an encoder or filters; no external angle truth",
+    "Sample timestamps are host kernel reception; motor sampling age unknown",
+    "Interpolating status onto probe timestamps changes its observation operator; matched-time diagnostics do not replace native quality gates",
+    "Only one run, one round trip per speed; no parameter deployment"
+  ]
+}

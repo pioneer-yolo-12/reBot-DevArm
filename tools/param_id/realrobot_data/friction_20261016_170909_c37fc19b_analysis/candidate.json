@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "status": "candidate",
+  "joint": 6,
+  "fc": null,
+  "fv": null,
+  "method": "D",
+  "units": "protocol_nm_unverified",
+  "training_run_ids": [
+    "c37fc19b-c8be-43c2-b998-e9c0dc2fad38"
+  ],
+  "training_sha256": "ca7be7264cdf77232c65cfe0e27fbb631b7b7ca895a759c8a759ae0c888ec498",
+  "conditions": {
+    "calibration": {
+      "calibration_id": "unverified",
+      "offset": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "units": "protocol_nm_unverified",
+      "verified": false
+    },
+    "home": [
+      0.0,
+      1.2,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "kd": [
+      5.0,
+      10.0,
+      10.0,
+      1.5,
+      0.8,
+      2.5
+    ],
+    "kp": [
+      80.0,
+      150.0,
+      150.0,
+      25.0,
+      12.0,
+      25.0
+    ],
+    "load_id": "live_tracking_load_unverified_20261016",
+    "measurement_range": [
+      0.08,
+      0.47000000000000003
+    ],
+    "model_hash": "3838ca8f9d586be22a89b33c7cbdd4abd43d4a92a2de377b294eef4c5bd7654d",
+    "temperature_limit_c": 65.0
+  },
+  "training_raw_sha256": "7ef84931ff7aa5140b36ca7aa462c102bf918704a1ac5a3d3ea3d06580d90ead",
+  "eligible": false,
+  "gates": {
+    "max_gap": 0.04,
+    "window": 0.2,
+    "guard": 0.25,
+    "velocity_relative_error": 0.15,
+    "velocity_absolute_error": 0.003,
+    "max_acceleration": 0.15,
+    "max_position_residual": 0.001,
+    "max_tracking_error": 0.05,
+    "min_valid_fraction": 0.7,
+    "max_velocity_cv": 0.15,
+    "min_duration": 0.8,
+    "min_samples": 30,
+    "bin_width": 0.01,
+    "min_bins": 12,
+    "min_position_coverage": 0.6,
+    "max_pose_difference": 0.02,
+    "min_speed_levels": 3,
+    "min_speed_span": 0.06,
+    "min_repeats": 3,
+    "max_fit_rmse": 0.1,
+    "max_relative_rmse": 0.25,
+    "max_scaled_condition": 50.0
+  },
+  "speed_range": [
+    0,
+    0
+  ],
+  "temperature_range": [
+    29.0,
+    29.0
+  ],
+  "checksum": "fde5a8210719f5105e853d6d7245372a6a18223d9bad9fb14579c73c99a486a5"
+}

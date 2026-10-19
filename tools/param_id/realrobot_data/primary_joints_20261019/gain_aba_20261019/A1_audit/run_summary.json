@@ -1,0 +1,911 @@
+{
+  "file": "/home/a12/reBot-DevArm/tools/param_id/realrobot_data/primary_joints_20261019/gain_aba_20261019/A1/friction_20261019_174751_79e23b88.npz",
+  "kp": [
+    80.0,
+    150.0,
+    150.0,
+    25.0,
+    12.0,
+    25.0
+  ],
+  "kd": [
+    5.0,
+    20.0,
+    10.0,
+    1.5,
+    0.8,
+    1.5
+  ],
+  "pairing": {
+    "identity": {
+      "path": "/home/a12/reBot-DevArm/tools/param_id/realrobot_data/primary_joints_20261019/gain_aba_20261019/A1/friction_20261019_174751_79e23b88.npz",
+      "run_id": "79e23b88-abbc-4ee4-b4a8-0646af1f017f",
+      "sha256": "4be1ba865610a8128ab7cc065f8c500ecf9b2bfc7e4099be0f1f20730b6099b8",
+      "raw_sha256": "85097362cb4097f9664266e4fc0dabd50e2d4694ffb858d5d05cda3c8d0fb930"
+    },
+    "conditions": {
+      "joint": 2,
+      "kp": [
+        80.0,
+        150.0,
+        150.0,
+        25.0,
+        12.0,
+        25.0
+      ],
+      "kd": [
+        5.0,
+        20.0,
+        10.0,
+        1.5,
+        0.8,
+        1.5
+      ],
+      "home": [
+        0.0,
+        1.2,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_hash": "3838ca8f9d586be22a89b33c7cbdd4abd43d4a92a2de377b294eef4c5bd7654d",
+      "load_id": "unloaded_wrist_fixed_setup_20261019_user_reported",
+      "calibration": {
+        "calibration_id": "unverified",
+        "offset": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "units": "protocol_nm_unverified",
+        "verified": false
+      },
+      "rate": 100.0
+    },
+    "pair_reports": [
+      {
+        "repeat": 0,
+        "speed_id": 0,
+        "speed": 0.1,
+        "bins": 265,
+        "coverage": 1.0,
+        "accepted": true
+      }
+    ],
+    "bounds": [
+      1.21,
+      1.74
+    ],
+    "motion_scope": "full",
+    "trajectory": {
+      "directions_use_same_chronological_ramps": true,
+      "passes": [
+        {
+          "constant_duration": 4.1,
+          "pass_duration": 6.8999999999999995,
+          "peak_reference_acceleration": 0.234375,
+          "speed": 0.1
+        }
+      ],
+      "profile": "quintic_velocity_sweep_v1",
+      "ramp_down_time": 2.0,
+      "ramp_up_time": 0.8
+    },
+    "temperature_range": [
+      26.0,
+      43.0
+    ]
+  },
+  "processed": [
+    {
+      "sigma": 0,
+      "roundtrips": [
+        {
+          "group": "79e23b88-abbc-4ee4-b4a8-0646af1f017f:0:0",
+          "bins": 247,
+          "q_range": [
+            1.2289999999999999,
+            1.7210000000000003
+          ],
+          "mean_D": 0.3217439348689944,
+          "raw_same_support_mean_D": 0.3217439348689944,
+          "point_std": 0.27900659527281435
+        }
+      ],
+      "mean_D": 0.3217439348689944,
+      "roundtrip_std": null,
+      "roundtrip_cv": null
+    },
+    {
+      "sigma": 0.002,
+      "roundtrips": [
+        {
+          "group": "79e23b88-abbc-4ee4-b4a8-0646af1f017f:0:0",
+          "bins": 247,
+          "q_range": [
+            1.2289999999999999,
+            1.7210000000000003
+          ],
+          "mean_D": 0.3217710036324679,
+          "raw_same_support_mean_D": 0.3217439348689944,
+          "point_std": 0.19011250014354095
+        }
+      ],
+      "mean_D": 0.3217710036324679,
+      "roundtrip_std": null,
+      "roundtrip_cv": null
+    },
+    {
+      "sigma": 0.004,
+      "roundtrips": [
+        {
+          "group": "79e23b88-abbc-4ee4-b4a8-0646af1f017f:0:0",
+          "bins": 247,
+          "q_range": [
+            1.2289999999999999,
+            1.7210000000000003
+          ],
+          "mean_D": 0.3214919931212749,
+          "raw_same_support_mean_D": 0.3217439348689944,
+          "point_std": 0.1550016421270382
+        }
+      ],
+      "mean_D": 0.3214919931212749,
+      "roundtrip_std": null,
+      "roundtrip_cv": null
+    },
+    {
+      "sigma": 0.006,
+      "roundtrips": [
+        {
+          "group": "79e23b88-abbc-4ee4-b4a8-0646af1f017f:0:0",
+          "bins": 247,
+          "q_range": [
+            1.2289999999999999,
+            1.7210000000000003
+          ],
+          "mean_D": 0.32114653491457956,
+          "raw_same_support_mean_D": 0.3217439348689944,
+          "point_std": 0.13197101776085524
+        }
+      ],
+      "mean_D": 0.32114653491457956,
+      "roundtrip_std": null,
+      "roundtrip_cv": null
+    }
+  ],
+  "original_method_D_segments": [
+    {
+      "segment": 0,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": 1,
+      "status": "valid",
+      "reasons": [],
+      "samples": 525,
+      "steady_fraction": 0.898972602739726,
+      "velocity_cv": 0.05830173768946376,
+      "longest_steady_s": 0.9103027659584768
+    },
+    {
+      "segment": 1,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": -1,
+      "status": "invalid",
+      "reasons": [
+        "no_continuous_steady_window"
+      ],
+      "samples": 504,
+      "steady_fraction": 0.875,
+      "velocity_cv": 0.07258118868501046,
+      "longest_steady_s": 0.588294243963901
+    }
+  ],
+  "max_tracking_error": 0.005902169660561896,
+  "mean_motion_pose": [
+    0.0011212883713947934,
+    1.473555373093692,
+    0.9942531546314753,
+    -0.0005483624412024712,
+    0.0034802019849635513,
+    0.0022996590083666727
+  ],
+  "peak_temperature": [
+    27.0,
+    31.0,
+    43.0,
+    29.0,
+    27.0,
+    27.0
+  ],
+  "fold": {
+    "kind": "fold_verified",
+    "position_velocity": [
+      -3.108272239361216e-05,
+      -2.134253764579132e-12,
+      -0.000928147825800101,
+      0.0009460746102175192,
+      4.90897324808397e-05,
+      5.90548573980058e-05
+    ],
+    "q": [
+      0.0019175345033660108,
+      0.002684548304712415,
+      0.008437151814810447,
+      0.009971179417503256,
+      0.0042185759074052235,
+      0.002301041404039213
+    ],
+    "qd": [
+      -0.025940733054596876,
+      0.027466658528396692,
+      0.02899258400219651,
+      0.07754753257850666,
+      0.009063997314370908,
+      0.0010071108127078787
+    ],
+    "settle": 0.5,
+    "t": 281713.921371585
+  },
+  "disabled": {
+    "kind": "disabled_after_fold",
+    "t": 281713.975279232
+  },
+  "force_sections": [
+    {
+      "key": "b1_type2",
+      "block": 1,
+      "label": "hold",
+      "frame_type": 2,
+      "duration": 2.4894783649942838,
+      "samples": 250,
+      "target_q": 1.2,
+      "q_span": 0.0007670138013464722,
+      "local_velocity_rms": 0.000574390240765357,
+      "torque_mean": -4.069556810205389,
+      "torque_std": 0.3864995762996128,
+      "residual_std": 0.38632768459184774,
+      "torque_spectrum": {
+        "resampled_rate_hz": 99.83868075626273,
+        "frequency_resolution_hz": 0.7799896934083026,
+        "power_fraction_ge_10hz": 0.7984330692548752,
+        "largest_bin_hz": 23.39969080224908
+      },
+      "feedback_velocity_residual_std": 0.0801730706470149,
+      "receive_interval_ms_p50_p99_max": [
+        10.016157990321517,
+        10.962977714370936,
+        12.800369004253298
+      ],
+      "lag_scan": [
+        {
+          "lag_s": -0.04,
+          "correlation": -0.07918734810356645
+        },
+        {
+          "lag_s": -0.03,
+          "correlation": -0.12875081826466095
+        },
+        {
+          "lag_s": -0.02,
+          "correlation": 0.06993124863763758
+        },
+        {
+          "lag_s": -0.01,
+          "correlation": -0.20455625282269424
+        },
+        {
+          "lag_s": 0.0,
+          "correlation": 0.19142504558185042
+        },
+        {
+          "lag_s": 0.01,
+          "correlation": -0.007222231103486261
+        },
+        {
+          "lag_s": 0.02,
+          "correlation": -0.0294618105579341
+        },
+        {
+          "lag_s": 0.03,
+          "correlation": -0.02125089268021098
+        },
+        {
+          "lag_s": 0.04,
+          "correlation": -0.07308333254828678
+        }
+      ]
+    },
+    {
+      "key": "b1_type24",
+      "block": 1,
+      "label": "hold",
+      "frame_type": 24,
+      "duration": 2.4824384010280482,
+      "samples": 249,
+      "target_q": 1.2,
+      "q_span": 0.0007670138013464722,
+      "local_velocity_rms": 0.0006641421520581962,
+      "torque_mean": -4.0528301137531475,
+      "torque_std": 0.35654631860461705,
+      "residual_std": 0.3564716714556943,
+      "torque_spectrum": {
+        "resampled_rate_hz": 99.96141962542018,
+        "frequency_resolution_hz": 0.7809485908235951,
+        "power_fraction_ge_10hz": 0.8987364447203513,
+        "largest_bin_hz": 42.95217249529773
+      },
+      "feedback_velocity_residual_std": 0.08259967160309725,
+      "receive_interval_ms_p50_p99_max": [
+        10.003859526477754,
+        11.005181990331039,
+        11.196236999239773
+      ],
+      "lag_scan": [
+        {
+          "lag_s": -0.04,
+          "correlation": 0.05383460066646908
+        },
+        {
+          "lag_s": -0.03,
+          "correlation": -0.08444436476979957
+        },
+        {
+          "lag_s": -0.02,
+          "correlation": 0.05387253907175357
+        },
+        {
+          "lag_s": -0.01,
+          "correlation": -0.09031643931388217
+        },
+        {
+          "lag_s": 0.0,
+          "correlation": 0.05256263264106587
+        },
+        {
+          "lag_s": 0.01,
+          "correlation": 0.02010697535739922
+        },
+        {
+          "lag_s": 0.02,
+          "correlation": -0.03083609068138541
+        },
+        {
+          "lag_s": 0.03,
+          "correlation": 0.011594984635906518
+        },
+        {
+          "lag_s": 0.04,
+          "correlation": 0.07504386817131804
+        }
+      ]
+    },
+    {
+      "key": "b3_type2",
+      "block": 3,
+      "label": "motion:0:1",
+      "frame_type": 2,
+      "duration": 3.579438423970714,
+      "samples": 359,
+      "target_q": 1.444507394899265,
+      "q_span": 0.35742843142743275,
+      "local_velocity_rms": 0.10003819893060063,
+      "torque_mean": -5.821266776572973,
+      "torque_std": 0.8565748315015637,
+      "residual_std": 0.47460280124806076,
+      "torque_spectrum": {
+        "resampled_rate_hz": 100.0,
+        "frequency_resolution_hz": 0.78125,
+        "power_fraction_ge_10hz": 0.811789598068505,
+        "largest_bin_hz": 42.1875
+      },
+      "feedback_velocity_residual_std": 0.08294419999878457,
+      "receive_interval_ms_p50_p99_max": [
+        9.99193949974142,
+        11.271363872801885,
+        12.35342602012679
+      ],
+      "lag_scan": [
+        {
+          "lag_s": -0.04,
+          "correlation": -0.036879208290292766
+        },
+        {
+          "lag_s": -0.03,
+          "correlation": 0.03843261220531886
+        },
+        {
+          "lag_s": -0.02,
+          "correlation": 0.012775994473982992
+        },
+        {
+          "lag_s": -0.01,
+          "correlation": -0.18886137672838335
+        },
+        {
+          "lag_s": 0.0,
+          "correlation": 0.17626223760275136
+        },
+        {
+          "lag_s": 0.01,
+          "correlation": 0.005540018650035351
+        },
+        {
+          "lag_s": 0.02,
+          "correlation": -0.09669307440164505
+        },
+        {
+          "lag_s": 0.03,
+          "correlation": 0.02936793223871902
+        },
+        {
+          "lag_s": 0.04,
+          "correlation": 3.0822241340814904e-05
+        }
+      ]
+    },
+    {
+      "key": "b3_type24",
+      "block": 3,
+      "label": "motion:0:1",
+      "frame_type": 24,
+      "duration": 3.5831446410156786,
+      "samples": 359,
+      "target_q": 1.444507394899265,
+      "q_span": 0.357811938328106,
+      "local_velocity_rms": 0.10001400784299182,
+      "torque_mean": -5.794519300746989,
+      "torque_std": 0.8828474541610415,
+      "residual_std": 0.49977218464264533,
+      "torque_spectrum": {
+        "resampled_rate_hz": 99.99109085401126,
+        "frequency_resolution_hz": 0.781180397296963,
+        "power_fraction_ge_10hz": 0.8196177194782699,
+        "largest_bin_hz": 12.498886356751408
+      },
+      "feedback_velocity_residual_std": 0.08341357768065892,
+      "receive_interval_ms_p50_p99_max": [
+        10.000890993978828,
+        10.969414919964038,
+        11.32834400050342
+      ],
+      "lag_scan": [
+        {
+          "lag_s": -0.04,
+          "correlation": -0.07201580316439564
+        },
+        {
+          "lag_s": -0.03,
+          "correlation": -0.0019149167533043816
+        },
+        {
+          "lag_s": -0.02,
+          "correlation": 0.02560693140638333
+        },
+        {
+          "lag_s": -0.01,
+          "correlation": -0.2503301083942393
+        },
+        {
+          "lag_s": 0.0,
+          "correlation": 0.12028318944574502
+        },
+        {
+          "lag_s": 0.01,
+          "correlation": 0.09499497912777186
+        },
+        {
+          "lag_s": 0.02,
+          "correlation": -0.12283409518202416
+        },
+        {
+          "lag_s": 0.03,
+          "correlation": 0.10343147904587183
+        },
+        {
+          "lag_s": 0.04,
+          "correlation": 0.12396372755894328
+        }
+      ]
+    },
+    {
+      "key": "b5_type2",
+      "block": 5,
+      "label": "hold",
+      "frame_type": 2,
+      "duration": 2.4890847699716687,
+      "samples": 250,
+      "target_q": 1.75,
+      "q_span": 0.0023010414040391947,
+      "local_velocity_rms": 0.0012951991975508476,
+      "torque_mean": -7.823194311349833,
+      "torque_std": 0.5339863306811254,
+      "residual_std": 0.5146483037208555,
+      "torque_spectrum": {
+        "resampled_rate_hz": 99.94172378145038,
+        "frequency_resolution_hz": 0.7807947170425811,
+        "power_fraction_ge_10hz": 0.699095846565854,
+        "largest_bin_hz": 13.27351018972388
+      },
+      "feedback_velocity_residual_std": 0.09213233965004472,
+      "receive_interval_ms_p50_p99_max": [
+        10.005831019952893,
+        10.584507421590388,
+        11.012187984306365
+      ],
+      "lag_scan": [
+        {
+          "lag_s": -0.04,
+          "correlation": -0.03991164070178361
+        },
+        {
+          "lag_s": -0.03,
+          "correlation": -0.0007058892568405926
+        },
+        {
+          "lag_s": -0.02,
+          "correlation": 0.04153299562027007
+        },
+        {
+          "lag_s": -0.01,
+          "correlation": 0.36135341283665645
+        },
+        {
+          "lag_s": 0.0,
+          "correlation": 0.13605229481974965
+        },
+        {
+          "lag_s": 0.01,
+          "correlation": -0.3100256306881084
+        },
+        {
+          "lag_s": 0.02,
+          "correlation": -0.18797629599605215
+        },
+        {
+          "lag_s": 0.03,
+          "correlation": -0.1864434012444729
+        },
+        {
+          "lag_s": 0.04,
+          "correlation": -0.10248762941400597
+        }
+      ]
+    },
+    {
+      "key": "b5_type24",
+      "block": 5,
+      "label": "hold",
+      "frame_type": 24,
+      "duration": 2.492806591966655,
+      "samples": 250,
+      "target_q": 1.75,
+      "q_span": 0.0026845483047124308,
+      "local_velocity_rms": 0.0013234282038266595,
+      "torque_mean": -7.806244087038789,
+      "torque_std": 0.5481573763874634,
+      "residual_std": 0.5229759487397828,
+      "torque_spectrum": {
+        "resampled_rate_hz": 99.96018600858726,
+        "frequency_resolution_hz": 0.780938953192088,
+        "power_fraction_ge_10hz": 0.7526006448471441,
+        "largest_bin_hz": 13.275962204265495
+      },
+      "feedback_velocity_residual_std": 0.08721291273520224,
+      "receive_interval_ms_p50_p99_max": [
+        10.003982984926552,
+        10.078153465874493,
+        10.146638029254973
+      ],
+      "lag_scan": [
+        {
+          "lag_s": -0.04,
+          "correlation": 0.07633513921245168
+        },
+        {
+          "lag_s": -0.03,
+          "correlation": 0.012330817811290404
+        },
+        {
+          "lag_s": -0.02,
+          "correlation": 0.1972480526765337
+        },
+        {
+          "lag_s": -0.01,
+          "correlation": 0.4362790167502302
+        },
+        {
+          "lag_s": 0.0,
+          "correlation": 0.1487875429057851
+        },
+        {
+          "lag_s": 0.01,
+          "correlation": -0.25993524918108046
+        },
+        {
+          "lag_s": 0.02,
+          "correlation": -0.23096235245987293
+        },
+        {
+          "lag_s": 0.03,
+          "correlation": -0.1148923757629414
+        },
+        {
+          "lag_s": 0.04,
+          "correlation": -0.00555228980848958
+        }
+      ]
+    },
+    {
+      "key": "b7_type2",
+      "block": 7,
+      "label": "motion:1:-1",
+      "frame_type": 2,
+      "duration": 3.589998566021677,
+      "samples": 360,
+      "target_q": 1.5054771854984574,
+      "q_span": 0.3601129797321452,
+      "local_velocity_rms": 0.1007051113136224,
+      "torque_mean": -6.972811059907834,
+      "torque_std": 0.877343267475471,
+      "residual_std": 0.44624817729832,
+      "torque_spectrum": {
+        "resampled_rate_hz": 99.89136808916179,
+        "frequency_resolution_hz": 0.7804013131965765,
+        "power_fraction_ge_10hz": 0.7306554912144698,
+        "largest_bin_hz": 1.560802626393153
+      },
+      "feedback_velocity_residual_std": 0.07860416447291263,
+      "receive_interval_ms_p50_p99_max": [
+        10.01087500480935,
+        10.740361453499647,
+        11.30072504747659
+      ],
+      "lag_scan": [
+        {
+          "lag_s": -0.04,
+          "correlation": 0.07007949810409991
+        },
+        {
+          "lag_s": -0.03,
+          "correlation": -0.0032212162550264113
+        },
+        {
+          "lag_s": -0.02,
+          "correlation": -0.03850347521833376
+        },
+        {
+          "lag_s": -0.01,
+          "correlation": -0.07813301030706515
+        },
+        {
+          "lag_s": 0.0,
+          "correlation": 0.1549871775922344
+        },
+        {
+          "lag_s": 0.01,
+          "correlation": 0.006463754293653867
+        },
+        {
+          "lag_s": 0.02,
+          "correlation": -0.00822271443100117
+        },
+        {
+          "lag_s": 0.03,
+          "correlation": 0.0036929754466318693
+        },
+        {
+          "lag_s": 0.04,
+          "correlation": 0.04488000783863819
+        }
+      ]
+    },
+    {
+      "key": "b7_type24",
+      "block": 7,
+      "label": "motion:1:-1",
+      "frame_type": 24,
+      "duration": 3.5744921779842116,
+      "samples": 358,
+      "target_q": 1.5054771854984574,
+      "q_span": 0.35857895212945246,
+      "local_velocity_rms": 0.10074317520557256,
+      "torque_mean": -6.9674749411495736,
+      "torque_std": 0.8937571432040562,
+      "residual_std": 0.4525442377361192,
+      "torque_spectrum": {
+        "resampled_rate_hz": 99.89465095016847,
+        "frequency_resolution_hz": 0.7804269605481912,
+        "power_fraction_ge_10hz": 0.7725055631411878,
+        "largest_bin_hz": 1.5608539210963823
+      },
+      "feedback_velocity_residual_std": 0.08052135043246203,
+      "receive_interval_ms_p50_p99_max": [
+        10.010546015109867,
+        11.081398210953921,
+        11.247335001826286
+      ],
+      "lag_scan": [
+        {
+          "lag_s": -0.04,
+          "correlation": 0.04482555896984996
+        },
+        {
+          "lag_s": -0.03,
+          "correlation": 0.1025141466419005
+        },
+        {
+          "lag_s": -0.02,
+          "correlation": 0.013820030537057713
+        },
+        {
+          "lag_s": -0.01,
+          "correlation": -0.21867867425581075
+        },
+        {
+          "lag_s": 0.0,
+          "correlation": 0.09901120921921142
+        },
+        {
+          "lag_s": 0.01,
+          "correlation": 0.03547689394171166
+        },
+        {
+          "lag_s": 0.02,
+          "correlation": 0.12033420492755624
+        },
+        {
+          "lag_s": 0.03,
+          "correlation": 0.07452149901732935
+        },
+        {
+          "lag_s": 0.04,
+          "correlation": -0.10169653644373244
+        }
+      ]
+    },
+    {
+      "key": "b9_type2",
+      "block": 9,
+      "label": "hold",
+      "frame_type": 2,
+      "duration": 2.4993585790507495,
+      "samples": 251,
+      "target_q": 1.2,
+      "q_span": 0.0003835069006732361,
+      "local_velocity_rms": 0.00024572378459830114,
+      "torque_mean": -4.238160125390951,
+      "torque_std": 0.39705785924909387,
+      "residual_std": 0.3943611344871362,
+      "torque_spectrum": {
+        "resampled_rate_hz": 100.0,
+        "frequency_resolution_hz": 0.78125,
+        "power_fraction_ge_10hz": 0.8394981308236922,
+        "largest_bin_hz": 36.71875
+      },
+      "feedback_velocity_residual_std": 0.08106261720463454,
+      "receive_interval_ms_p50_p99_max": [
+        9.981676004827023,
+        11.296157187316567,
+        11.460795998573303
+      ],
+      "lag_scan": [
+        {
+          "lag_s": -0.04,
+          "correlation": -0.09436609460768211
+        },
+        {
+          "lag_s": -0.03,
+          "correlation": -0.0033252370908728847
+        },
+        {
+          "lag_s": -0.02,
+          "correlation": 0.007200399496816342
+        },
+        {
+          "lag_s": -0.01,
+          "correlation": -0.18546372399889272
+        },
+        {
+          "lag_s": 0.0,
+          "correlation": 0.11951639392471385
+        },
+        {
+          "lag_s": 0.01,
+          "correlation": 0.08016450396436574
+        },
+        {
+          "lag_s": 0.02,
+          "correlation": -0.0002906171185735007
+        },
+        {
+          "lag_s": 0.03,
+          "correlation": -0.03135389110715581
+        },
+        {
+          "lag_s": 0.04,
+          "correlation": 0.06213259161565871
+        }
+      ]
+    },
+    {
+      "key": "b9_type24",
+      "block": 9,
+      "label": "hold",
+      "frame_type": 24,
+      "duration": 2.4921498489566147,
+      "samples": 250,
+      "target_q": 1.2,
+      "q_span": 0.0003835069006732361,
+      "local_velocity_rms": 0.0004215633532140341,
+      "torque_mean": -4.243985473189491,
+      "torque_std": 0.443822189421451,
+      "residual_std": 0.4428160887216736,
+      "torque_spectrum": {
+        "resampled_rate_hz": 99.98110345083973,
+        "frequency_resolution_hz": 0.7811023707096854,
+        "power_fraction_ge_10hz": 0.9348042617042203,
+        "largest_bin_hz": 34.368504311226154
+      },
+      "feedback_velocity_residual_std": 0.08356480851007918,
+      "receive_interval_ms_p50_p99_max": [
+        10.001890012063086,
+        10.641736236866565,
+        10.933627025224268
+      ],
+      "lag_scan": [
+        {
+          "lag_s": -0.04,
+          "correlation": 0.07503258701822917
+        },
+        {
+          "lag_s": -0.03,
+          "correlation": 0.07373212207719763
+        },
+        {
+          "lag_s": -0.02,
+          "correlation": 0.029494822595632304
+        },
+        {
+          "lag_s": -0.01,
+          "correlation": -0.13484626247007472
+        },
+        {
+          "lag_s": 0.0,
+          "correlation": 0.18453141043071328
+        },
+        {
+          "lag_s": 0.01,
+          "correlation": -0.031445068077348856
+        },
+        {
+          "lag_s": 0.02,
+          "correlation": 0.04505375254933717
+        },
+        {
+          "lag_s": 0.03,
+          "correlation": 0.02963709105063642
+        },
+        {
+          "lag_s": 0.04,
+          "correlation": -0.0696700555709066
+        }
+      ]
+    }
+  ],
+  "payload_decode_max_error": 0.0,
+  "compensation_allowed": false
+}

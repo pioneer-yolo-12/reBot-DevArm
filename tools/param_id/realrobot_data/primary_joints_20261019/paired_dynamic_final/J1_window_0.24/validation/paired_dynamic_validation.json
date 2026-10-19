@@ -1,0 +1,462 @@
+{
+  "schema": "paired_dynamic_diagnostic_v1",
+  "status": "independent_diagnostic_validation",
+  "compensation_allowed": false,
+  "training_checksum": "870f9de88ef0ae4c067ece7ee9c8e3aec377b39175f52f4bbede5573df56006b",
+  "heldout": {
+    "identity": {
+      "path": "/home/a12/reBot-DevArm/tools/param_id/realrobot_data/primary_joints_20261019/J1_halfperiod_start/friction_20261019_151437_31449c94.npz",
+      "run_id": "31449c94-7992-4fe1-b20e-177ad3085039",
+      "sha256": "d6c346fc727046bc72b7fe4193cd8a9fa50638058a74d232af1d2409261b75cc",
+      "raw_sha256": "1ab8c403a954f128959783992da335a04ed5b3ee90a5bd7ce2c5f1be5b0d258d"
+    },
+    "conditions": {
+      "joint": 1,
+      "kp": [
+        80.0,
+        150.0,
+        150.0,
+        25.0,
+        12.0,
+        25.0
+      ],
+      "kd": [
+        10.0,
+        10.0,
+        10.0,
+        1.5,
+        0.8,
+        1.5
+      ],
+      "home": [
+        0.0,
+        1.2,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "model_hash": "3838ca8f9d586be22a89b33c7cbdd4abd43d4a92a2de377b294eef4c5bd7654d",
+      "load_id": "unloaded_wrist_fixed_setup_20261019_user_reported",
+      "calibration": {
+        "calibration_id": "unverified",
+        "offset": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "units": "protocol_nm_unverified",
+        "verified": false
+      },
+      "rate": 100.0
+    },
+    "pair_reports": [
+      {
+        "repeat": 0,
+        "speed_id": 0,
+        "speed": 0.1,
+        "bins": 177,
+        "coverage": 0.9567567567567568,
+        "accepted": true
+      }
+    ],
+    "bounds": [
+      0.09,
+      0.4600000000000001
+    ],
+    "temperature_range": [
+      32.0,
+      55.0
+    ]
+  },
+  "results": {
+    "velocity": {
+      "difference_rmse": 0.08004997775774539,
+      "common_rmse": 0.17603668064073466,
+      "reconstructed_torque_rmse": 0.19338281172333682,
+      "groups": [
+        {
+          "group": "31449c94-7992-4fe1-b20e-177ad3085039:0:0",
+          "speed": 0.1,
+          "bins": 177,
+          "difference_rmse": 0.08004997775774539,
+          "common_rmse": 0.17603668064073466
+        }
+      ]
+    },
+    "inertia": {
+      "difference_rmse": 0.06827654541899075,
+      "common_rmse": 0.15740660527829933,
+      "reconstructed_torque_rmse": 0.17157658942754936,
+      "groups": [
+        {
+          "group": "31449c94-7992-4fe1-b20e-177ad3085039:0:0",
+          "speed": 0.1,
+          "bins": 177,
+          "difference_rmse": 0.06827654541899075,
+          "common_rmse": 0.15740660527829933
+        }
+      ]
+    },
+    "spatial": {
+      "difference_rmse": 0.06865202529241747,
+      "common_rmse": 0.07281151250134489,
+      "reconstructed_torque_rmse": 0.1000730579600935,
+      "groups": [
+        {
+          "group": "31449c94-7992-4fe1-b20e-177ad3085039:0:0",
+          "speed": 0.1,
+          "bins": 177,
+          "difference_rmse": 0.06865202529241747,
+          "common_rmse": 0.07281151250134489
+        }
+      ]
+    }
+  },
+  "excitation_issues": [
+    "insufficient_commanded_speed_coverage",
+    "insufficient_independent_roundtrips_per_speed"
+  ],
+  "frozen_models": [
+    {
+      "kind": "velocity",
+      "period_rad": null,
+      "q_center": 0.2753297101449277,
+      "q_span": 0.3680000000000003,
+      "names": [
+        "smooth_fc",
+        "fv"
+      ],
+      "coefficients": [
+        0.1317362441776767,
+        0.40516457438477005
+      ],
+      "common_coefficients": [
+        0.019561871240316154,
+        -0.013153700928655577,
+        -0.2623411675889197,
+        0.15315507270639045
+      ],
+      "rank": 2,
+      "columns": 2,
+      "scaled_condition": 9.614191191418461,
+      "common_scaled_condition": 4.788307483004062,
+      "issues": [
+        "roundtrip_deletion_large_change_fv"
+      ],
+      "training_metrics": {
+        "difference_rmse": 0.08401001998095016,
+        "common_rmse": 0.17538960717314392,
+        "reconstructed_torque_rmse": 0.19447158600049874,
+        "groups": [
+          {
+            "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:0",
+            "speed": 0.07,
+            "bins": 185,
+            "difference_rmse": 0.06735699319477736,
+            "common_rmse": 0.18857215575082034
+          },
+          {
+            "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:1",
+            "speed": 0.12,
+            "bins": 182,
+            "difference_rmse": 0.10049784770536799,
+            "common_rmse": 0.15524990327486515
+          },
+          {
+            "group": "fd2b7122-3d1a-4ea2-a56e-9ee250c4a400:0:0",
+            "speed": 0.1,
+            "bins": 185,
+            "difference_rmse": 0.0808471919484302,
+            "common_rmse": 0.1806171434877724
+          }
+        ]
+      },
+      "stability": {
+        "method": "leave_one_roundtrip_out; period frozen; descriptive ranges, not confidence intervals",
+        "fits": [
+          {
+            "omitted": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:0",
+            "coefficients": [
+              0.11020912572630504,
+              0.5821920135115037
+            ],
+            "issues": []
+          },
+          {
+            "omitted": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:1",
+            "coefficients": [
+              0.08367091625429596,
+              1.01434685007608
+            ],
+            "issues": []
+          },
+          {
+            "omitted": "fd2b7122-3d1a-4ea2-a56e-9ee250c4a400:0:0",
+            "coefficients": [
+              0.14337408218367667,
+              0.25455653371491155
+            ],
+            "issues": []
+          }
+        ],
+        "coefficient_ranges": {
+          "smooth_fc": [
+            0.08367091625429596,
+            0.14337408218367667
+          ],
+          "fv": [
+            0.25455653371491155,
+            1.01434685007608
+          ]
+        },
+        "issues": [
+          "roundtrip_deletion_large_change_fv"
+        ]
+      }
+    },
+    {
+      "kind": "inertia",
+      "period_rad": null,
+      "q_center": 0.2753297101449277,
+      "q_span": 0.3680000000000003,
+      "names": [
+        "smooth_fc",
+        "fv",
+        "effective_inertia"
+      ],
+      "coefficients": [
+        0.16404762449242824,
+        0.08614146663907571,
+        0.38376237359997983
+      ],
+      "common_coefficients": [
+        0.018023793886881724,
+        -0.011788291547168187,
+        -0.2313043238048801,
+        0.14094373231341112
+      ],
+      "rank": 3,
+      "columns": 3,
+      "scaled_condition": 9.698505972696463,
+      "common_scaled_condition": 4.788307483004062,
+      "issues": [
+        "roundtrip_deletion_sign_change_fv",
+        "roundtrip_deletion_large_change_fv"
+      ],
+      "training_metrics": {
+        "difference_rmse": 0.06700138651046429,
+        "common_rmse": 0.15782341848362882,
+        "reconstructed_torque_rmse": 0.17145675027884805,
+        "groups": [
+          {
+            "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:0",
+            "speed": 0.07,
+            "bins": 185,
+            "difference_rmse": 0.06515195729964744,
+            "common_rmse": 0.16488494704449402
+          },
+          {
+            "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:1",
+            "speed": 0.12,
+            "bins": 182,
+            "difference_rmse": 0.0706843215050329,
+            "common_rmse": 0.14774777002003042
+          },
+          {
+            "group": "fd2b7122-3d1a-4ea2-a56e-9ee250c4a400:0:0",
+            "speed": 0.1,
+            "bins": 185,
+            "difference_rmse": 0.06501158770843807,
+            "common_rmse": 0.16033790867358377
+          }
+        ]
+      },
+      "stability": {
+        "method": "leave_one_roundtrip_out; period frozen; descriptive ranges, not confidence intervals",
+        "fits": [
+          {
+            "omitted": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:0",
+            "coefficients": [
+              0.23823885170539985,
+              -0.5586428998640967,
+              0.4106622958769224
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          },
+          {
+            "omitted": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:1",
+            "coefficients": [
+              0.14007409908595822,
+              0.37151987066629405,
+              0.31388540106424917
+            ],
+            "issues": []
+          },
+          {
+            "omitted": "fd2b7122-3d1a-4ea2-a56e-9ee250c4a400:0:0",
+            "coefficients": [
+              0.16210077176066714,
+              0.07259703025460683,
+              0.40748883327615965
+            ],
+            "issues": []
+          }
+        ],
+        "coefficient_ranges": {
+          "smooth_fc": [
+            0.14007409908595822,
+            0.23823885170539985
+          ],
+          "fv": [
+            -0.5586428998640967,
+            0.37151987066629405
+          ],
+          "effective_inertia": [
+            0.31388540106424917,
+            0.4106622958769224
+          ]
+        },
+        "issues": [
+          "roundtrip_deletion_sign_change_fv",
+          "roundtrip_deletion_large_change_fv"
+        ]
+      }
+    },
+    {
+      "kind": "spatial",
+      "period_rad": 0.05,
+      "q_center": 0.2753297101449277,
+      "q_span": 0.3680000000000003,
+      "names": [
+        "smooth_fc",
+        "fv",
+        "effective_inertia",
+        "odd_position_sin",
+        "odd_position_cos"
+      ],
+      "coefficients": [
+        0.15893059571602167,
+        0.13979811625930313,
+        0.5551783276252963,
+        0.03436355280490158,
+        0.006734362876760505
+      ],
+      "common_coefficients": [
+        0.005817484661203128,
+        -0.015642339419068837,
+        0.004543794970989731,
+        0.2070567706398115,
+        0.052269289911054354,
+        -0.18613653978000438
+      ],
+      "rank": 5,
+      "columns": 5,
+      "scaled_condition": 9.817986869496389,
+      "common_scaled_condition": 4.794616635985609,
+      "issues": [
+        "roundtrip_deletion_sign_change_fv",
+        "roundtrip_deletion_large_change_fv"
+      ],
+      "training_metrics": {
+        "difference_rmse": 0.0664333371470078,
+        "common_rmse": 0.06728315275310238,
+        "reconstructed_torque_rmse": 0.09455374624458471,
+        "groups": [
+          {
+            "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:0",
+            "speed": 0.07,
+            "bins": 185,
+            "difference_rmse": 0.06447399571913834,
+            "common_rmse": 0.062178018790480745
+          },
+          {
+            "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:1",
+            "speed": 0.12,
+            "bins": 182,
+            "difference_rmse": 0.06963934272014818,
+            "common_rmse": 0.06744024093439442
+          },
+          {
+            "group": "fd2b7122-3d1a-4ea2-a56e-9ee250c4a400:0:0",
+            "speed": 0.1,
+            "bins": 185,
+            "difference_rmse": 0.06506635593744507,
+            "common_rmse": 0.07188028808507503
+          }
+        ]
+      },
+      "stability": {
+        "method": "leave_one_roundtrip_out; period frozen; descriptive ranges, not confidence intervals",
+        "fits": [
+          {
+            "omitted": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:0",
+            "coefficients": [
+              0.23007767019816466,
+              -0.48394992698159783,
+              0.6104935579935402,
+              0.0440695593485643,
+              0.008483276051792528
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          },
+          {
+            "omitted": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:1",
+            "coefficients": [
+              0.1344856095516375,
+              0.43502447575005626,
+              0.4435530124391149,
+              0.022035296089772866,
+              0.009175168339207918
+            ],
+            "issues": []
+          },
+          {
+            "omitted": "fd2b7122-3d1a-4ea2-a56e-9ee250c4a400:0:0",
+            "coefficients": [
+              0.15717518690603288,
+              0.12683398114214028,
+              0.5859561863965623,
+              0.036246257252602984,
+              0.003794235912774354
+            ],
+            "issues": []
+          }
+        ],
+        "coefficient_ranges": {
+          "smooth_fc": [
+            0.1344856095516375,
+            0.23007767019816466
+          ],
+          "fv": [
+            -0.48394992698159783,
+            0.43502447575005626
+          ],
+          "effective_inertia": [
+            0.4435530124391149,
+            0.6104935579935402
+          ]
+        },
+        "issues": [
+          "roundtrip_deletion_sign_change_fv",
+          "roundtrip_deletion_large_change_fv"
+        ]
+      }
+    }
+  ]
+}

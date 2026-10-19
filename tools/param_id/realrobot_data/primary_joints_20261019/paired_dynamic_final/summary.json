@@ -1,0 +1,1773 @@
+[
+  {
+    "joint": "J1",
+    "window": 0.2,
+    "training": [
+      "J1_damping",
+      "J1_speed_screen"
+    ],
+    "heldout": "J1_halfperiod_start",
+    "excitation_issues": [
+      "insufficient_commanded_speed_coverage",
+      "insufficient_independent_roundtrips_per_speed"
+    ],
+    "models": [
+      {
+        "kind": "velocity",
+        "period": null,
+        "coefficients": {
+          "smooth_fc": 0.13098242590378278,
+          "fv": 0.41236198027598275
+        },
+        "issues": [
+          "roundtrip_deletion_large_change_fv"
+        ],
+        "scaled_condition": 9.589056467531142,
+        "deletion_ranges": {
+          "smooth_fc": [
+            0.08225501990734817,
+            0.14326401662427216
+          ],
+          "fv": [
+            0.25545122426411,
+            1.0294304305695694
+          ]
+        },
+        "training_metrics": {
+          "difference_rmse": 0.08399021267224502,
+          "common_rmse": 0.17575046401671224,
+          "reconstructed_torque_rmse": 0.19478855568749057,
+          "groups": [
+            {
+              "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:0",
+              "speed": 0.07,
+              "bins": 185,
+              "difference_rmse": 0.06732846584779582,
+              "common_rmse": 0.18877896716845033
+            },
+            {
+              "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:1",
+              "speed": 0.12,
+              "bins": 182,
+              "difference_rmse": 0.1005204595945193,
+              "common_rmse": 0.15575344107472186
+            },
+            {
+              "group": "fd2b7122-3d1a-4ea2-a56e-9ee250c4a400:0:0",
+              "speed": 0.1,
+              "bins": 185,
+              "difference_rmse": 0.0807810767672457,
+              "common_rmse": 0.18101945739192038
+            }
+          ]
+        },
+        "heldout_metrics": {
+          "difference_rmse": 0.08000584094743247,
+          "common_rmse": 0.17644581159814576,
+          "reconstructed_torque_rmse": 0.19373708735354264,
+          "groups": [
+            {
+              "group": "31449c94-7992-4fe1-b20e-177ad3085039:0:0",
+              "speed": 0.1,
+              "bins": 177,
+              "difference_rmse": 0.08000584094743247,
+              "common_rmse": 0.17644581159814576
+            }
+          ]
+        }
+      },
+      {
+        "kind": "inertia",
+        "period": null,
+        "coefficients": {
+          "smooth_fc": 0.16458559518141125,
+          "fv": 0.08111786007887889,
+          "effective_inertia": 0.3583289113303581
+        },
+        "issues": [
+          "roundtrip_deletion_sign_change_fv",
+          "roundtrip_deletion_large_change_fv"
+        ],
+        "scaled_condition": 9.678816368252697,
+        "deletion_ranges": {
+          "smooth_fc": [
+            0.14033371233646594,
+            0.2447433249742933
+          ],
+          "fv": [
+            -0.615458561217601,
+            0.368376544174899
+          ],
+          "effective_inertia": [
+            0.29596393326482645,
+            0.3815389920120442
+          ]
+        },
+        "training_metrics": {
+          "difference_rmse": 0.0666267576817457,
+          "common_rmse": 0.15804282773120792,
+          "reconstructed_torque_rmse": 0.1715128573502824,
+          "groups": [
+            {
+              "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:0",
+              "speed": 0.07,
+              "bins": 185,
+              "difference_rmse": 0.06467713547912035,
+              "common_rmse": 0.16569703798274368
+            },
+            {
+              "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:1",
+              "speed": 0.12,
+              "bins": 182,
+              "difference_rmse": 0.06998896416374537,
+              "common_rmse": 0.14725223832358098
+            },
+            {
+              "group": "fd2b7122-3d1a-4ea2-a56e-9ee250c4a400:0:0",
+              "speed": 0.1,
+              "bins": 185,
+              "difference_rmse": 0.0650829283226228,
+              "common_rmse": 0.16060472005600987
+            }
+          ]
+        },
+        "heldout_metrics": {
+          "difference_rmse": 0.06804737670129545,
+          "common_rmse": 0.1574122848118265,
+          "reconstructed_torque_rmse": 0.17149073702567025,
+          "groups": [
+            {
+              "group": "31449c94-7992-4fe1-b20e-177ad3085039:0:0",
+              "speed": 0.1,
+              "bins": 177,
+              "difference_rmse": 0.06804737670129545,
+              "common_rmse": 0.1574122848118265
+            }
+          ]
+        }
+      },
+      {
+        "kind": "spatial",
+        "period": 0.049875,
+        "coefficients": {
+          "smooth_fc": 0.16039205966241327,
+          "fv": 0.12541097243245147,
+          "effective_inertia": 0.46839947315658714,
+          "odd_position_sin": 0.024806090237223792,
+          "odd_position_cos": 0.0012761964007574793
+        },
+        "issues": [
+          "roundtrip_deletion_sign_change_fv",
+          "roundtrip_deletion_large_change_fv"
+        ],
+        "scaled_condition": 9.804096458776263,
+        "deletion_ranges": {
+          "smooth_fc": [
+            0.13594939971994094,
+            0.2386970464399063
+          ],
+          "fv": [
+            -0.5596116576703773,
+            0.4177352006783779
+          ],
+          "effective_inertia": [
+            0.37452447244732867,
+            0.5064919678376807
+          ]
+        },
+        "training_metrics": {
+          "difference_rmse": 0.0662611947793183,
+          "common_rmse": 0.06746298576618544,
+          "reconstructed_torque_rmse": 0.0945610933844956,
+          "groups": [
+            {
+              "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:0",
+              "speed": 0.07,
+              "bins": 185,
+              "difference_rmse": 0.06409191554003758,
+              "common_rmse": 0.0628995631999481
+            },
+            {
+              "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:1",
+              "speed": 0.12,
+              "bins": 182,
+              "difference_rmse": 0.06915441518555211,
+              "common_rmse": 0.06726262997311716
+            },
+            {
+              "group": "fd2b7122-3d1a-4ea2-a56e-9ee250c4a400:0:0",
+              "speed": 0.1,
+              "bins": 185,
+              "difference_rmse": 0.06543340907748306,
+              "common_rmse": 0.07192459178765542
+            }
+          ]
+        },
+        "heldout_metrics": {
+          "difference_rmse": 0.06838925298648367,
+          "common_rmse": 0.07237327268424293,
+          "reconstructed_torque_rmse": 0.09957399521500103,
+          "groups": [
+            {
+              "group": "31449c94-7992-4fe1-b20e-177ad3085039:0:0",
+              "speed": 0.1,
+              "bins": 177,
+              "difference_rmse": 0.06838925298648367,
+              "common_rmse": 0.07237327268424293
+            }
+          ]
+        }
+      }
+    ],
+    "validation_error": null
+  },
+  {
+    "joint": "J2",
+    "window": 0.2,
+    "training": [
+      "J2_speed_screen"
+    ],
+    "heldout": "J2_damping",
+    "excitation_issues": [
+      "insufficient_independent_roundtrips_per_speed"
+    ],
+    "models": [
+      {
+        "kind": "velocity",
+        "period": null,
+        "coefficients": {
+          "smooth_fc": 0.29653522481694883,
+          "fv": 0.5195827017119955
+        },
+        "issues": [],
+        "scaled_condition": 7.191611379405344,
+        "deletion_ranges": {
+          "smooth_fc": [
+            0.27076447560714867,
+            0.3511650128416199
+          ],
+          "fv": [
+            0.02234645456014179,
+            0.8595033115413543
+          ]
+        },
+        "training_metrics": {
+          "difference_rmse": 0.26299865398720107,
+          "common_rmse": 0.32181463764136126,
+          "reconstructed_torque_rmse": 0.4156115409842707,
+          "groups": [
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:0",
+              "speed": 0.06,
+              "bins": 185,
+              "difference_rmse": 0.24569468110743659,
+              "common_rmse": 0.311586186560219
+            },
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:1",
+              "speed": 0.08,
+              "bins": 185,
+              "difference_rmse": 0.2778319943093005,
+              "common_rmse": 0.3247811592005244
+            },
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:2",
+              "speed": 0.12,
+              "bins": 182,
+              "difference_rmse": 0.26447756542071843,
+              "common_rmse": 0.32882401064086836
+            }
+          ]
+        },
+        "heldout_metrics": {
+          "difference_rmse": 0.25517153784480445,
+          "common_rmse": 0.2854196129303419,
+          "reconstructed_torque_rmse": 0.38285358712096285,
+          "groups": [
+            {
+              "group": "0aa61226-8215-48d4-91be-236d1264d830:0:0",
+              "speed": 0.1,
+              "bins": 185,
+              "difference_rmse": 0.25517153784480445,
+              "common_rmse": 0.2854196129303419
+            }
+          ]
+        }
+      },
+      {
+        "kind": "inertia",
+        "period": null,
+        "coefficients": {
+          "smooth_fc": 0.3132511285479766,
+          "fv": 0.31860198591378114,
+          "effective_inertia": 1.019407032525054
+        },
+        "issues": [
+          "roundtrip_deletion_sign_change_fv",
+          "roundtrip_deletion_large_change_fv"
+        ],
+        "scaled_condition": 7.201815848823033,
+        "deletion_ranges": {
+          "smooth_fc": [
+            0.2916587967640453,
+            0.4126531762816691
+          ],
+          "fv": [
+            -1.1552337496296932,
+            0.5336680914238271
+          ],
+          "effective_inertia": [
+            0.9371216869836739,
+            1.2765275719974465
+          ]
+        },
+        "training_metrics": {
+          "difference_rmse": 0.24443341871294624,
+          "common_rmse": 0.3037381020002733,
+          "reconstructed_torque_rmse": 0.38987758436517855,
+          "groups": [
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:0",
+              "speed": 0.06,
+              "bins": 185,
+              "difference_rmse": 0.22802522577520434,
+              "common_rmse": 0.29034891035618765
+            },
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:1",
+              "speed": 0.08,
+              "bins": 185,
+              "difference_rmse": 0.25633331689949534,
+              "common_rmse": 0.3010973161262176
+            },
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:2",
+              "speed": 0.12,
+              "bins": 182,
+              "difference_rmse": 0.24807421391302537,
+              "common_rmse": 0.31907431782697326
+            }
+          ]
+        },
+        "heldout_metrics": {
+          "difference_rmse": 0.24609046623302028,
+          "common_rmse": 0.2732970411880201,
+          "reconstructed_torque_rmse": 0.3677659449879932,
+          "groups": [
+            {
+              "group": "0aa61226-8215-48d4-91be-236d1264d830:0:0",
+              "speed": 0.1,
+              "bins": 185,
+              "difference_rmse": 0.24609046623302028,
+              "common_rmse": 0.2732970411880201
+            }
+          ]
+        }
+      },
+      {
+        "kind": "spatial",
+        "period": 0.050125,
+        "coefficients": {
+          "smooth_fc": 0.29805438027774045,
+          "fv": 0.4943653177234833,
+          "effective_inertia": 1.5853278905787775,
+          "odd_position_sin": -0.07059254298881339,
+          "odd_position_cos": -0.06721529898206122
+        },
+        "issues": [
+          "roundtrip_deletion_sign_change_fv",
+          "roundtrip_deletion_large_change_fv"
+        ],
+        "scaled_condition": 7.269042197189815,
+        "deletion_ranges": {
+          "smooth_fc": [
+            0.28358119936323206,
+            0.3440376690363074
+          ],
+          "fv": [
+            -0.1712386651978087,
+            0.615912001720087
+          ],
+          "effective_inertia": [
+            1.3865266177627893,
+            1.9769559807108443
+          ]
+        },
+        "training_metrics": {
+          "difference_rmse": 0.24088389848048872,
+          "common_rmse": 0.24874018414607643,
+          "reconstructed_torque_rmse": 0.34626107456106353,
+          "groups": [
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:0",
+              "speed": 0.06,
+              "bins": 185,
+              "difference_rmse": 0.23052599375869132,
+              "common_rmse": 0.2311036337695345
+            },
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:1",
+              "speed": 0.08,
+              "bins": 185,
+              "difference_rmse": 0.2478442685080622,
+              "common_rmse": 0.24007731111902939
+            },
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:2",
+              "speed": 0.12,
+              "bins": 182,
+              "difference_rmse": 0.24393880874257487,
+              "common_rmse": 0.27307331025101245
+            }
+          ]
+        },
+        "heldout_metrics": {
+          "difference_rmse": 0.24123301830945595,
+          "common_rmse": 0.23083308600603666,
+          "reconstructed_torque_rmse": 0.33388213896188074,
+          "groups": [
+            {
+              "group": "0aa61226-8215-48d4-91be-236d1264d830:0:0",
+              "speed": 0.1,
+              "bins": 185,
+              "difference_rmse": 0.24123301830945595,
+              "common_rmse": 0.23083308600603666
+            }
+          ]
+        }
+      }
+    ],
+    "validation_error": null
+  },
+  {
+    "joint": "J3",
+    "window": 0.2,
+    "training": [
+      "J3_train"
+    ],
+    "heldout": "J3_damping",
+    "excitation_issues": [],
+    "models": [
+      {
+        "kind": "velocity",
+        "period": null,
+        "coefficients": {
+          "smooth_fc": 0.5679187181221519,
+          "fv": -0.9088528851565968
+        },
+        "issues": [
+          "negative_fv"
+        ],
+        "scaled_condition": 7.480713730593322,
+        "deletion_ranges": {
+          "smooth_fc": [
+            0.4985035144417882,
+            0.6146962367589713
+          ],
+          "fv": [
+            -1.159651320040409,
+            -0.5309198549298849
+          ]
+        },
+        "training_metrics": {
+          "difference_rmse": 0.22643188613442297,
+          "common_rmse": 0.23202091691379775,
+          "reconstructed_torque_rmse": 0.3241991748044892,
+          "groups": [
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:0",
+              "speed": 0.1,
+              "bins": 145,
+              "difference_rmse": 0.2451159317029657,
+              "common_rmse": 0.2653750749156124
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:1",
+              "speed": 0.15,
+              "bins": 145,
+              "difference_rmse": 0.24101535043275193,
+              "common_rmse": 0.2490281471520724
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:2",
+              "speed": 0.2,
+              "bins": 120,
+              "difference_rmse": 0.21136899480697782,
+              "common_rmse": 0.206186635022415
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:0",
+              "speed": 0.1,
+              "bins": 145,
+              "difference_rmse": 0.2320123409080622,
+              "common_rmse": 0.2336944577396319
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:1",
+              "speed": 0.15,
+              "bins": 144,
+              "difference_rmse": 0.22950652255551765,
+              "common_rmse": 0.19979689971450626
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:2",
+              "speed": 0.2,
+              "bins": 121,
+              "difference_rmse": 0.21021276452734927,
+              "common_rmse": 0.23059325469467382
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:0",
+              "speed": 0.1,
+              "bins": 145,
+              "difference_rmse": 0.21990640577549367,
+              "common_rmse": 0.21982043843001775
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:1",
+              "speed": 0.15,
+              "bins": 145,
+              "difference_rmse": 0.21549764789635478,
+              "common_rmse": 0.24062947785992708
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:2",
+              "speed": 0.2,
+              "bins": 121,
+              "difference_rmse": 0.23044539546632278,
+              "common_rmse": 0.23584476983009217
+            }
+          ]
+        },
+        "heldout_metrics": {
+          "difference_rmse": 0.25930511198641804,
+          "common_rmse": 0.2905741582975014,
+          "reconstructed_torque_rmse": 0.38945151504723946,
+          "groups": [
+            {
+              "group": "d0cfcc57-896f-474e-aea7-4b09c3ed8376:0:0",
+              "speed": 0.1,
+              "bins": 145,
+              "difference_rmse": 0.25930511198641804,
+              "common_rmse": 0.2905741582975014
+            }
+          ]
+        }
+      },
+      {
+        "kind": "inertia",
+        "period": null,
+        "coefficients": {
+          "smooth_fc": 0.543877961100818,
+          "fv": -0.7613066432087907,
+          "effective_inertia": 0.8182613718859953
+        },
+        "issues": [
+          "negative_fv"
+        ],
+        "scaled_condition": 7.50193909860465,
+        "deletion_ranges": {
+          "smooth_fc": [
+            0.47014945070715247,
+            0.5861931001346705
+          ],
+          "fv": [
+            -0.9873055646730876,
+            -0.3597188377646285
+          ],
+          "effective_inertia": [
+            0.7957368734781641,
+            0.8439924323636031
+          ]
+        },
+        "training_metrics": {
+          "difference_rmse": 0.20975201477894398,
+          "common_rmse": 0.2365730395343806,
+          "reconstructed_torque_rmse": 0.3161688010199013,
+          "groups": [
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:0",
+              "speed": 0.1,
+              "bins": 145,
+              "difference_rmse": 0.23176128488705297,
+              "common_rmse": 0.26357384796998723
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:1",
+              "speed": 0.15,
+              "bins": 145,
+              "difference_rmse": 0.22872355355377003,
+              "common_rmse": 0.25631887103848217
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:2",
+              "speed": 0.2,
+              "bins": 120,
+              "difference_rmse": 0.19539317292222758,
+              "common_rmse": 0.22072257219701993
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:0",
+              "speed": 0.1,
+              "bins": 145,
+              "difference_rmse": 0.21661794567080564,
+              "common_rmse": 0.2301164166622992
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:1",
+              "speed": 0.15,
+              "bins": 144,
+              "difference_rmse": 0.19885611449324855,
+              "common_rmse": 0.2103823733869814
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:2",
+              "speed": 0.2,
+              "bins": 121,
+              "difference_rmse": 0.19607293412759305,
+              "common_rmse": 0.23140252244685994
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:0",
+              "speed": 0.1,
+              "bins": 145,
+              "difference_rmse": 0.20881592859645076,
+              "common_rmse": 0.21663453622952833
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:1",
+              "speed": 0.15,
+              "bins": 145,
+              "difference_rmse": 0.19010847066154174,
+              "common_rmse": 0.24725026635816374
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:2",
+              "speed": 0.2,
+              "bins": 121,
+              "difference_rmse": 0.21702514457729452,
+              "common_rmse": 0.24695664458287486
+            }
+          ]
+        },
+        "heldout_metrics": {
+          "difference_rmse": 0.24607656580812928,
+          "common_rmse": 0.2870954471322626,
+          "reconstructed_torque_rmse": 0.3781236200027662,
+          "groups": [
+            {
+              "group": "d0cfcc57-896f-474e-aea7-4b09c3ed8376:0:0",
+              "speed": 0.1,
+              "bins": 145,
+              "difference_rmse": 0.24607656580812928,
+              "common_rmse": 0.2870954471322626
+            }
+          ]
+        }
+      },
+      {
+        "kind": "spatial",
+        "period": 0.04925,
+        "coefficients": {
+          "smooth_fc": 0.5345036409792808,
+          "fv": -0.7021935520210321,
+          "effective_inertia": 1.2105029569482737,
+          "odd_position_sin": 0.004934282739813157,
+          "odd_position_cos": 0.07362718618661164
+        },
+        "issues": [
+          "negative_fv"
+        ],
+        "scaled_condition": 7.535640536546337,
+        "deletion_ranges": {
+          "smooth_fc": [
+            0.457808564732108,
+            0.5759417117470025
+          ],
+          "fv": [
+            -0.9242825935740576,
+            -0.2840106333199231
+          ],
+          "effective_inertia": [
+            1.1629445045105702,
+            1.2917974924357412
+          ]
+        },
+        "training_metrics": {
+          "difference_rmse": 0.20721627413895521,
+          "common_rmse": 0.2110474047552543,
+          "reconstructed_torque_rmse": 0.2957694901810509,
+          "groups": [
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:0",
+              "speed": 0.1,
+              "bins": 145,
+              "difference_rmse": 0.23465395142428572,
+              "common_rmse": 0.22787281139187146
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:1",
+              "speed": 0.15,
+              "bins": 145,
+              "difference_rmse": 0.22516694190331277,
+              "common_rmse": 0.21805863349689836
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:0:2",
+              "speed": 0.2,
+              "bins": 120,
+              "difference_rmse": 0.1901835058135654,
+              "common_rmse": 0.210383993956635
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:0",
+              "speed": 0.1,
+              "bins": 145,
+              "difference_rmse": 0.21214791469772037,
+              "common_rmse": 0.19964052486445635
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:1",
+              "speed": 0.15,
+              "bins": 144,
+              "difference_rmse": 0.19516557595825101,
+              "common_rmse": 0.17950849473375735
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:1:2",
+              "speed": 0.2,
+              "bins": 121,
+              "difference_rmse": 0.1947416608677955,
+              "common_rmse": 0.21145165486530257
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:0",
+              "speed": 0.1,
+              "bins": 145,
+              "difference_rmse": 0.2064936056738891,
+              "common_rmse": 0.19602257394663233
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:1",
+              "speed": 0.15,
+              "bins": 145,
+              "difference_rmse": 0.18643167138520825,
+              "common_rmse": 0.21271789685560333
+            },
+            {
+              "group": "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35:2:2",
+              "speed": 0.2,
+              "bins": 121,
+              "difference_rmse": 0.21470405766234602,
+              "common_rmse": 0.2380480170547398
+            }
+          ]
+        },
+        "heldout_metrics": {
+          "difference_rmse": 0.2453908873223366,
+          "common_rmse": 0.24282488181939169,
+          "reconstructed_torque_rmse": 0.3452254492522897,
+          "groups": [
+            {
+              "group": "d0cfcc57-896f-474e-aea7-4b09c3ed8376:0:0",
+              "speed": 0.1,
+              "bins": 145,
+              "difference_rmse": 0.2453908873223366,
+              "common_rmse": 0.24282488181939169
+            }
+          ]
+        }
+      }
+    ],
+    "validation_error": null
+  },
+  {
+    "joint": "J4",
+    "window": 0.2,
+    "training": [
+      "J4_pilot"
+    ],
+    "heldout": "J4_speed15",
+    "excitation_issues": [
+      "insufficient_commanded_speed_coverage",
+      "insufficient_independent_roundtrips_per_speed"
+    ],
+    "models": [
+      {
+        "kind": "velocity",
+        "period": null,
+        "coefficients": {
+          "smooth_fc": 0.24766281225262707,
+          "fv": -0.5091127195445475
+        },
+        "issues": [
+          "negative_fv",
+          "no_roundtrip_deletion_stability_check"
+        ],
+        "scaled_condition": 23.12441561506529,
+        "deletion_ranges": {},
+        "training_metrics": {
+          "difference_rmse": 0.03854216487113693,
+          "common_rmse": 0.10659088641031911,
+          "reconstructed_torque_rmse": 0.11334511696006781,
+          "groups": [
+            {
+              "group": "8815a91a-30f4-4b69-a8a5-5ae1193c8537:0:0",
+              "speed": 0.1,
+              "bins": 192,
+              "difference_rmse": 0.03854216487113693,
+              "common_rmse": 0.10659088641031911
+            }
+          ]
+        },
+        "heldout_metrics": null
+      },
+      {
+        "kind": "inertia",
+        "period": null,
+        "coefficients": {
+          "smooth_fc": 0.6489598362511996,
+          "fv": -4.413639743285416,
+          "effective_inertia": 0.22080860431873003
+        },
+        "issues": [
+          "negative_fv",
+          "no_roundtrip_deletion_stability_check"
+        ],
+        "scaled_condition": 34.95059539194124,
+        "deletion_ranges": {},
+        "training_metrics": {
+          "difference_rmse": 0.023371283787592085,
+          "common_rmse": 0.034826545210304136,
+          "reconstructed_torque_rmse": 0.04194168758127792,
+          "groups": [
+            {
+              "group": "8815a91a-30f4-4b69-a8a5-5ae1193c8537:0:0",
+              "speed": 0.1,
+              "bins": 192,
+              "difference_rmse": 0.023371283787592085,
+              "common_rmse": 0.034826545210304136
+            }
+          ]
+        },
+        "heldout_metrics": null
+      },
+      {
+        "kind": "spatial",
+        "period": 0.044125,
+        "coefficients": {
+          "smooth_fc": 0.6556421538279191,
+          "fv": -4.478273936691178,
+          "effective_inertia": 0.22493614206586784,
+          "odd_position_sin": 0.001668249859949824,
+          "odd_position_cos": -0.005184105855956296
+        },
+        "issues": [
+          "negative_fv",
+          "no_roundtrip_deletion_stability_check"
+        ],
+        "scaled_condition": 45.02167153562388,
+        "deletion_ranges": {},
+        "training_metrics": {
+          "difference_rmse": 0.023053996974505084,
+          "common_rmse": 0.02167753701173083,
+          "reconstructed_torque_rmse": 0.031644942524761355,
+          "groups": [
+            {
+              "group": "8815a91a-30f4-4b69-a8a5-5ae1193c8537:0:0",
+              "speed": 0.1,
+              "bins": 192,
+              "difference_rmse": 0.023053996974505084,
+              "common_rmse": 0.02167753701173083
+            }
+          ]
+        },
+        "heldout_metrics": null
+      }
+    ],
+    "validation_error": "Held-out commanded speed outside training range"
+  },
+  {
+    "joint": "J1",
+    "window": 0.16,
+    "training": [
+      "J1_damping",
+      "J1_speed_screen"
+    ],
+    "heldout": "J1_halfperiod_start",
+    "excitation_issues": [
+      "insufficient_commanded_speed_coverage",
+      "insufficient_independent_roundtrips_per_speed"
+    ],
+    "models": [
+      {
+        "kind": "velocity",
+        "period": null,
+        "coefficients": {
+          "smooth_fc": 0.1308400496274711,
+          "fv": 0.4133955550364902
+        },
+        "issues": [
+          "roundtrip_deletion_large_change_fv"
+        ],
+        "scaled_condition": 9.561289333077482,
+        "deletion_ranges": {
+          "smooth_fc": [
+            0.08182713356537995,
+            0.14344005543964566
+          ],
+          "fv": [
+            0.2534258088538985,
+            1.0332826664458394
+          ]
+        },
+        "training_metrics": {
+          "difference_rmse": 0.08398327078114251,
+          "common_rmse": 0.17602960506797832,
+          "reconstructed_torque_rmse": 0.19503746212327294,
+          "groups": [
+            {
+              "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:0",
+              "speed": 0.07,
+              "bins": 185,
+              "difference_rmse": 0.06730950749532214,
+              "common_rmse": 0.18891739675096583
+            },
+            {
+              "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:1",
+              "speed": 0.12,
+              "bins": 182,
+              "difference_rmse": 0.10054120125762653,
+              "common_rmse": 0.1561683857693954
+            },
+            {
+              "group": "fd2b7122-3d1a-4ea2-a56e-9ee250c4a400:0:0",
+              "speed": 0.1,
+              "bins": 185,
+              "difference_rmse": 0.0807494047266401,
+              "common_rmse": 0.18133096280609312
+            }
+          ]
+        },
+        "heldout_metrics": {
+          "difference_rmse": 0.07998193070493827,
+          "common_rmse": 0.17677030732927687,
+          "reconstructed_torque_rmse": 0.19402280998010657,
+          "groups": [
+            {
+              "group": "31449c94-7992-4fe1-b20e-177ad3085039:0:0",
+              "speed": 0.1,
+              "bins": 177,
+              "difference_rmse": 0.07998193070493827,
+              "common_rmse": 0.17677030732927687
+            }
+          ]
+        }
+      },
+      {
+        "kind": "inertia",
+        "period": null,
+        "coefficients": {
+          "smooth_fc": 0.16477567201014298,
+          "fv": 0.07872863948183911,
+          "effective_inertia": 0.33155841539806374
+        },
+        "issues": [
+          "roundtrip_deletion_sign_change_fv",
+          "roundtrip_deletion_large_change_fv"
+        ],
+        "scaled_condition": 9.653454221473156,
+        "deletion_ranges": {
+          "smooth_fc": [
+            0.13907652104632934,
+            0.2512098868872814
+          ],
+          "fv": [
+            -0.6727233681905699,
+            0.38231323790409044
+          ],
+          "effective_inertia": [
+            0.27375491788063794,
+            0.35397515909446503
+          ]
+        },
+        "training_metrics": {
+          "difference_rmse": 0.06667707434165225,
+          "common_rmse": 0.15863299176121431,
+          "reconstructed_torque_rmse": 0.17207631538906135,
+          "groups": [
+            {
+              "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:0",
+              "speed": 0.07,
+              "bins": 185,
+              "difference_rmse": 0.06506155008469272,
+              "common_rmse": 0.1669972163465542
+            },
+            {
+              "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:1",
+              "speed": 0.12,
+              "bins": 182,
+              "difference_rmse": 0.06967355933650614,
+              "common_rmse": 0.1472013014254219
+            },
+            {
+              "group": "fd2b7122-3d1a-4ea2-a56e-9ee250c4a400:0:0",
+              "speed": 0.1,
+              "bins": 185,
+              "difference_rmse": 0.06519268792008844,
+              "common_rmse": 0.16104963463635896
+            }
+          ]
+        },
+        "heldout_metrics": {
+          "difference_rmse": 0.06739890301826065,
+          "common_rmse": 0.15793792611169513,
+          "reconstructed_torque_rmse": 0.17171779358158598,
+          "groups": [
+            {
+              "group": "31449c94-7992-4fe1-b20e-177ad3085039:0:0",
+              "speed": 0.1,
+              "bins": 177,
+              "difference_rmse": 0.06739890301826065,
+              "common_rmse": 0.15793792611169513
+            }
+          ]
+        }
+      },
+      {
+        "kind": "spatial",
+        "period": 0.049875,
+        "coefficients": {
+          "smooth_fc": 0.16268679514189588,
+          "fv": 0.10143315374901846,
+          "effective_inertia": 0.37270120219540265,
+          "odd_position_sin": 0.010769258526681945,
+          "odd_position_cos": -0.0017582478635268161
+        },
+        "issues": [
+          "roundtrip_deletion_sign_change_fv",
+          "roundtrip_deletion_large_change_fv"
+        ],
+        "scaled_condition": 9.781297825301184,
+        "deletion_ranges": {
+          "smooth_fc": [
+            0.13743193610343704,
+            0.249250815757042
+          ],
+          "fv": [
+            -0.6536559215243634,
+            0.3998214852722312
+          ],
+          "effective_inertia": [
+            0.2938612285346457,
+            0.4046663688546792
+          ]
+        },
+        "training_metrics": {
+          "difference_rmse": 0.06655119647075555,
+          "common_rmse": 0.0678613017441168,
+          "reconstructed_torque_rmse": 0.0950485035447438,
+          "groups": [
+            {
+              "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:0",
+              "speed": 0.07,
+              "bins": 185,
+              "difference_rmse": 0.06485420677187247,
+              "common_rmse": 0.06353659520589636
+            },
+            {
+              "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:1",
+              "speed": 0.12,
+              "bins": 182,
+              "difference_rmse": 0.06915456666551162,
+              "common_rmse": 0.06817715529942377
+            },
+            {
+              "group": "fd2b7122-3d1a-4ea2-a56e-9ee250c4a400:0:0",
+              "speed": 0.1,
+              "bins": 185,
+              "difference_rmse": 0.06556495274431182,
+              "common_rmse": 0.07162712745977276
+            }
+          ]
+        },
+        "heldout_metrics": {
+          "difference_rmse": 0.06755201397557963,
+          "common_rmse": 0.07275153615658032,
+          "reconstructed_torque_rmse": 0.0992776943995937,
+          "groups": [
+            {
+              "group": "31449c94-7992-4fe1-b20e-177ad3085039:0:0",
+              "speed": 0.1,
+              "bins": 177,
+              "difference_rmse": 0.06755201397557963,
+              "common_rmse": 0.07275153615658032
+            }
+          ]
+        }
+      }
+    ],
+    "validation_error": null
+  },
+  {
+    "joint": "J2",
+    "window": 0.16,
+    "training": [
+      "J2_speed_screen"
+    ],
+    "heldout": "J2_damping",
+    "excitation_issues": [
+      "insufficient_independent_roundtrips_per_speed"
+    ],
+    "models": [
+      {
+        "kind": "velocity",
+        "period": null,
+        "coefficients": {
+          "smooth_fc": 0.29743983008516356,
+          "fv": 0.5091189201444893
+        },
+        "issues": [
+          "roundtrip_deletion_sign_change_fv",
+          "roundtrip_deletion_large_change_fv"
+        ],
+        "scaled_condition": 7.189044773278969,
+        "deletion_ranges": {
+          "smooth_fc": [
+            0.27085068848003485,
+            0.3545934345921283
+          ],
+          "fv": [
+            -0.011619194556709017,
+            0.8578492931113475
+          ]
+        },
+        "training_metrics": {
+          "difference_rmse": 0.2630071052278696,
+          "common_rmse": 0.3219378507870343,
+          "reconstructed_torque_rmse": 0.4157123009603137,
+          "groups": [
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:0",
+              "speed": 0.06,
+              "bins": 185,
+              "difference_rmse": 0.24567413023530324,
+              "common_rmse": 0.3116672426616598
+            },
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:1",
+              "speed": 0.08,
+              "bins": 185,
+              "difference_rmse": 0.2778437031103082,
+              "common_rmse": 0.3248841557598313
+            },
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:2",
+              "speed": 0.12,
+              "bins": 182,
+              "difference_rmse": 0.2645095661334561,
+              "common_rmse": 0.3290072255985026
+            }
+          ]
+        },
+        "heldout_metrics": {
+          "difference_rmse": 0.25522670334659814,
+          "common_rmse": 0.28555652392764685,
+          "reconstructed_torque_rmse": 0.3829924261115527,
+          "groups": [
+            {
+              "group": "0aa61226-8215-48d4-91be-236d1264d830:0:0",
+              "speed": 0.1,
+              "bins": 185,
+              "difference_rmse": 0.25522670334659814,
+              "common_rmse": 0.28555652392764685
+            }
+          ]
+        }
+      },
+      {
+        "kind": "inertia",
+        "period": null,
+        "coefficients": {
+          "smooth_fc": 0.31327444576678093,
+          "fv": 0.31959521265964674,
+          "effective_inertia": 0.9473053140494784
+        },
+        "issues": [
+          "roundtrip_deletion_sign_change_fv",
+          "roundtrip_deletion_large_change_fv"
+        ],
+        "scaled_condition": 7.197732547976234,
+        "deletion_ranges": {
+          "smooth_fc": [
+            0.29149716583443097,
+            0.41004132760029827
+          ],
+          "fv": [
+            -1.118884541265514,
+            0.5359946997751185
+          ],
+          "effective_inertia": [
+            0.864864131486274,
+            1.2082310446345266
+          ]
+        },
+        "training_metrics": {
+          "difference_rmse": 0.2436406476828127,
+          "common_rmse": 0.30345714800448886,
+          "reconstructed_torque_rmse": 0.3891619275806907,
+          "groups": [
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:0",
+              "speed": 0.06,
+              "bins": 185,
+              "difference_rmse": 0.2253717583073596,
+              "common_rmse": 0.29164925724871843
+            },
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:1",
+              "speed": 0.08,
+              "bins": 185,
+              "difference_rmse": 0.25479193915520404,
+              "common_rmse": 0.30075268921209936
+            },
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:2",
+              "speed": 0.12,
+              "bins": 182,
+              "difference_rmse": 0.24974173441553832,
+              "common_rmse": 0.31740707727304374
+            }
+          ]
+        },
+        "heldout_metrics": {
+          "difference_rmse": 0.24332067492277734,
+          "common_rmse": 0.2735117386953466,
+          "reconstructed_torque_rmse": 0.36607871018269755,
+          "groups": [
+            {
+              "group": "0aa61226-8215-48d4-91be-236d1264d830:0:0",
+              "speed": 0.1,
+              "bins": 185,
+              "difference_rmse": 0.24332067492277734,
+              "common_rmse": 0.2735117386953466
+            }
+          ]
+        }
+      },
+      {
+        "kind": "spatial",
+        "period": 0.050125,
+        "coefficients": {
+          "smooth_fc": 0.2996924642050692,
+          "fv": 0.47888112723845816,
+          "effective_inertia": 1.3281748693234527,
+          "odd_position_sin": -0.05253671860268467,
+          "odd_position_cos": -0.0556841290321548
+        },
+        "issues": [
+          "roundtrip_deletion_sign_change_fv",
+          "roundtrip_deletion_large_change_fv"
+        ],
+        "scaled_condition": 7.267970840799521,
+        "deletion_ranges": {
+          "smooth_fc": [
+            0.28463197201718476,
+            0.34815460903714185
+          ],
+          "fv": [
+            -0.22926776138008134,
+            0.6063757024891402
+          ],
+          "effective_inertia": [
+            1.1567511297684998,
+            1.5579520025994675
+          ]
+        },
+        "training_metrics": {
+          "difference_rmse": 0.24102850373841633,
+          "common_rmse": 0.2461792898890291,
+          "reconstructed_torque_rmse": 0.3445271867133948,
+          "groups": [
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:0",
+              "speed": 0.06,
+              "bins": 185,
+              "difference_rmse": 0.22703133315412286,
+              "common_rmse": 0.23203647396877308
+            },
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:1",
+              "speed": 0.08,
+              "bins": 185,
+              "difference_rmse": 0.247960193406541,
+              "common_rmse": 0.236548895496792
+            },
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:2",
+              "speed": 0.12,
+              "bins": 182,
+              "difference_rmse": 0.24750097998834625,
+              "common_rmse": 0.2683587581916911
+            }
+          ]
+        },
+        "heldout_metrics": {
+          "difference_rmse": 0.23798828070647254,
+          "common_rmse": 0.22749127802564498,
+          "reconstructed_torque_rmse": 0.3292274340503295,
+          "groups": [
+            {
+              "group": "0aa61226-8215-48d4-91be-236d1264d830:0:0",
+              "speed": 0.1,
+              "bins": 185,
+              "difference_rmse": 0.23798828070647254,
+              "common_rmse": 0.22749127802564498
+            }
+          ]
+        }
+      }
+    ],
+    "validation_error": null
+  },
+  {
+    "joint": "J1",
+    "window": 0.24,
+    "training": [
+      "J1_damping",
+      "J1_speed_screen"
+    ],
+    "heldout": "J1_halfperiod_start",
+    "excitation_issues": [
+      "insufficient_commanded_speed_coverage",
+      "insufficient_independent_roundtrips_per_speed"
+    ],
+    "models": [
+      {
+        "kind": "velocity",
+        "period": null,
+        "coefficients": {
+          "smooth_fc": 0.1317362441776767,
+          "fv": 0.40516457438477005
+        },
+        "issues": [
+          "roundtrip_deletion_large_change_fv"
+        ],
+        "scaled_condition": 9.614191191418461,
+        "deletion_ranges": {
+          "smooth_fc": [
+            0.08367091625429596,
+            0.14337408218367667
+          ],
+          "fv": [
+            0.25455653371491155,
+            1.01434685007608
+          ]
+        },
+        "training_metrics": {
+          "difference_rmse": 0.08401001998095016,
+          "common_rmse": 0.17538960717314392,
+          "reconstructed_torque_rmse": 0.19447158600049874,
+          "groups": [
+            {
+              "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:0",
+              "speed": 0.07,
+              "bins": 185,
+              "difference_rmse": 0.06735699319477736,
+              "common_rmse": 0.18857215575082034
+            },
+            {
+              "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:1",
+              "speed": 0.12,
+              "bins": 182,
+              "difference_rmse": 0.10049784770536799,
+              "common_rmse": 0.15524990327486515
+            },
+            {
+              "group": "fd2b7122-3d1a-4ea2-a56e-9ee250c4a400:0:0",
+              "speed": 0.1,
+              "bins": 185,
+              "difference_rmse": 0.0808471919484302,
+              "common_rmse": 0.1806171434877724
+            }
+          ]
+        },
+        "heldout_metrics": {
+          "difference_rmse": 0.08004997775774539,
+          "common_rmse": 0.17603668064073466,
+          "reconstructed_torque_rmse": 0.19338281172333682,
+          "groups": [
+            {
+              "group": "31449c94-7992-4fe1-b20e-177ad3085039:0:0",
+              "speed": 0.1,
+              "bins": 177,
+              "difference_rmse": 0.08004997775774539,
+              "common_rmse": 0.17603668064073466
+            }
+          ]
+        }
+      },
+      {
+        "kind": "inertia",
+        "period": null,
+        "coefficients": {
+          "smooth_fc": 0.16404762449242824,
+          "fv": 0.08614146663907571,
+          "effective_inertia": 0.38376237359997983
+        },
+        "issues": [
+          "roundtrip_deletion_sign_change_fv",
+          "roundtrip_deletion_large_change_fv"
+        ],
+        "scaled_condition": 9.698505972696463,
+        "deletion_ranges": {
+          "smooth_fc": [
+            0.14007409908595822,
+            0.23823885170539985
+          ],
+          "fv": [
+            -0.5586428998640967,
+            0.37151987066629405
+          ],
+          "effective_inertia": [
+            0.31388540106424917,
+            0.4106622958769224
+          ]
+        },
+        "training_metrics": {
+          "difference_rmse": 0.06700138651046429,
+          "common_rmse": 0.15782341848362882,
+          "reconstructed_torque_rmse": 0.17145675027884805,
+          "groups": [
+            {
+              "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:0",
+              "speed": 0.07,
+              "bins": 185,
+              "difference_rmse": 0.06515195729964744,
+              "common_rmse": 0.16488494704449402
+            },
+            {
+              "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:1",
+              "speed": 0.12,
+              "bins": 182,
+              "difference_rmse": 0.0706843215050329,
+              "common_rmse": 0.14774777002003042
+            },
+            {
+              "group": "fd2b7122-3d1a-4ea2-a56e-9ee250c4a400:0:0",
+              "speed": 0.1,
+              "bins": 185,
+              "difference_rmse": 0.06501158770843807,
+              "common_rmse": 0.16033790867358377
+            }
+          ]
+        },
+        "heldout_metrics": {
+          "difference_rmse": 0.06827654541899075,
+          "common_rmse": 0.15740660527829933,
+          "reconstructed_torque_rmse": 0.17157658942754936,
+          "groups": [
+            {
+              "group": "31449c94-7992-4fe1-b20e-177ad3085039:0:0",
+              "speed": 0.1,
+              "bins": 177,
+              "difference_rmse": 0.06827654541899075,
+              "common_rmse": 0.15740660527829933
+            }
+          ]
+        }
+      },
+      {
+        "kind": "spatial",
+        "period": 0.05,
+        "coefficients": {
+          "smooth_fc": 0.15893059571602167,
+          "fv": 0.13979811625930313,
+          "effective_inertia": 0.5551783276252963,
+          "odd_position_sin": 0.03436355280490158,
+          "odd_position_cos": 0.006734362876760505
+        },
+        "issues": [
+          "roundtrip_deletion_sign_change_fv",
+          "roundtrip_deletion_large_change_fv"
+        ],
+        "scaled_condition": 9.817986869496389,
+        "deletion_ranges": {
+          "smooth_fc": [
+            0.1344856095516375,
+            0.23007767019816466
+          ],
+          "fv": [
+            -0.48394992698159783,
+            0.43502447575005626
+          ],
+          "effective_inertia": [
+            0.4435530124391149,
+            0.6104935579935402
+          ]
+        },
+        "training_metrics": {
+          "difference_rmse": 0.0664333371470078,
+          "common_rmse": 0.06728315275310238,
+          "reconstructed_torque_rmse": 0.09455374624458471,
+          "groups": [
+            {
+              "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:0",
+              "speed": 0.07,
+              "bins": 185,
+              "difference_rmse": 0.06447399571913834,
+              "common_rmse": 0.062178018790480745
+            },
+            {
+              "group": "459c9ca8-9c78-4a58-a44e-716afd5511ca:0:1",
+              "speed": 0.12,
+              "bins": 182,
+              "difference_rmse": 0.06963934272014818,
+              "common_rmse": 0.06744024093439442
+            },
+            {
+              "group": "fd2b7122-3d1a-4ea2-a56e-9ee250c4a400:0:0",
+              "speed": 0.1,
+              "bins": 185,
+              "difference_rmse": 0.06506635593744507,
+              "common_rmse": 0.07188028808507503
+            }
+          ]
+        },
+        "heldout_metrics": {
+          "difference_rmse": 0.06865202529241747,
+          "common_rmse": 0.07281151250134489,
+          "reconstructed_torque_rmse": 0.1000730579600935,
+          "groups": [
+            {
+              "group": "31449c94-7992-4fe1-b20e-177ad3085039:0:0",
+              "speed": 0.1,
+              "bins": 177,
+              "difference_rmse": 0.06865202529241747,
+              "common_rmse": 0.07281151250134489
+            }
+          ]
+        }
+      }
+    ],
+    "validation_error": null
+  },
+  {
+    "joint": "J2",
+    "window": 0.24,
+    "training": [
+      "J2_speed_screen"
+    ],
+    "heldout": "J2_damping",
+    "excitation_issues": [
+      "insufficient_independent_roundtrips_per_speed"
+    ],
+    "models": [
+      {
+        "kind": "velocity",
+        "period": null,
+        "coefficients": {
+          "smooth_fc": 0.29449327560719024,
+          "fv": 0.5431278176878772
+        },
+        "issues": [],
+        "scaled_condition": 7.1984251567458015,
+        "deletion_ranges": {
+          "smooth_fc": [
+            0.26371304205845625,
+            0.34654835853539123
+          ],
+          "fv": [
+            0.0681438872772092,
+            0.958982043144716
+          ]
+        },
+        "training_metrics": {
+          "difference_rmse": 0.26297031036835633,
+          "common_rmse": 0.3217396996136295,
+          "reconstructed_torque_rmse": 0.4155355802367569,
+          "groups": [
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:0",
+              "speed": 0.06,
+              "bins": 185,
+              "difference_rmse": 0.24566043977276214,
+              "common_rmse": 0.3115662621371705
+            },
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:1",
+              "speed": 0.08,
+              "bins": 185,
+              "difference_rmse": 0.2778103820207855,
+              "common_rmse": 0.32472851388416923
+            },
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:2",
+              "speed": 0.12,
+              "bins": 182,
+              "difference_rmse": 0.264447522918645,
+              "common_rmse": 0.32867485375497857
+            }
+          ]
+        },
+        "heldout_metrics": {
+          "difference_rmse": 0.2551317512049818,
+          "common_rmse": 0.28532192150731694,
+          "reconstructed_torque_rmse": 0.38275424147296955,
+          "groups": [
+            {
+              "group": "0aa61226-8215-48d4-91be-236d1264d830:0:0",
+              "speed": 0.1,
+              "bins": 185,
+              "difference_rmse": 0.2551317512049818,
+              "common_rmse": 0.28532192150731694
+            }
+          ]
+        }
+      },
+      {
+        "kind": "inertia",
+        "period": null,
+        "coefficients": {
+          "smooth_fc": 0.3102288978281794,
+          "fv": 0.34936617337722237,
+          "effective_inertia": 1.0857198043789984
+        },
+        "issues": [
+          "roundtrip_deletion_sign_change_fv",
+          "roundtrip_deletion_large_change_fv"
+        ],
+        "scaled_condition": 7.208549883385115,
+        "deletion_ranges": {
+          "smooth_fc": [
+            0.2899388161744156,
+            0.40768381870554593
+          ],
+          "fv": [
+            -1.094797063805269,
+            0.5523005064567078
+          ],
+          "effective_inertia": [
+            1.0055596069389015,
+            1.3421697830671975
+          ]
+        },
+        "training_metrics": {
+          "difference_rmse": 0.2450733151255975,
+          "common_rmse": 0.3032844326204309,
+          "reconstructed_torque_rmse": 0.3899261171767635,
+          "groups": [
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:0",
+              "speed": 0.06,
+              "bins": 185,
+              "difference_rmse": 0.22954166220702538,
+              "common_rmse": 0.28921197352834377
+            },
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:1",
+              "speed": 0.08,
+              "bins": 185,
+              "difference_rmse": 0.25680000710018797,
+              "common_rmse": 0.3006239861811934
+            },
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:2",
+              "speed": 0.12,
+              "bins": 182,
+              "difference_rmse": 0.24808702308772726,
+              "common_rmse": 0.31925850734171574
+            }
+          ]
+        },
+        "heldout_metrics": {
+          "difference_rmse": 0.24270430466463205,
+          "common_rmse": 0.27150874545042997,
+          "reconstructed_torque_rmse": 0.36417355527112194,
+          "groups": [
+            {
+              "group": "0aa61226-8215-48d4-91be-236d1264d830:0:0",
+              "speed": 0.1,
+              "bins": 185,
+              "difference_rmse": 0.24270430466463205,
+              "common_rmse": 0.27150874545042997
+            }
+          ]
+        }
+      },
+      {
+        "kind": "spatial",
+        "period": 0.050125,
+        "coefficients": {
+          "smooth_fc": 0.29418649871130426,
+          "fv": 0.5309971285442093,
+          "effective_inertia": 1.802649637861493,
+          "odd_position_sin": -0.0822208632926085,
+          "odd_position_cos": -0.07368607706165338
+        },
+        "issues": [
+          "roundtrip_deletion_sign_change_fv",
+          "roundtrip_deletion_large_change_fv"
+        ],
+        "scaled_condition": 7.276739806842899,
+        "deletion_ranges": {
+          "smooth_fc": [
+            0.2815998161712603,
+            0.33795071041900143
+          ],
+          "fv": [
+            -0.09934653552860179,
+            0.6362871568014908
+          ],
+          "effective_inertia": [
+            1.5464267695913878,
+            2.363229763510533
+          ]
+        },
+        "training_metrics": {
+          "difference_rmse": 0.24100897371138072,
+          "common_rmse": 0.24907005051100828,
+          "reconstructed_torque_rmse": 0.3465850768151584,
+          "groups": [
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:0",
+              "speed": 0.06,
+              "bins": 185,
+              "difference_rmse": 0.23279108885746597,
+              "common_rmse": 0.2300231418557695
+            },
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:1",
+              "speed": 0.08,
+              "bins": 185,
+              "difference_rmse": 0.24694588907924037,
+              "common_rmse": 0.241336642846651
+            },
+            {
+              "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:2",
+              "speed": 0.12,
+              "bins": 182,
+              "difference_rmse": 0.24306791858173696,
+              "common_rmse": 0.27377664110544064
+            }
+          ]
+        },
+        "heldout_metrics": {
+          "difference_rmse": 0.23461697296206518,
+          "common_rmse": 0.22856137806000837,
+          "reconstructed_torque_rmse": 0.327544542837417,
+          "groups": [
+            {
+              "group": "0aa61226-8215-48d4-91be-236d1264d830:0:0",
+              "speed": 0.1,
+              "bins": 185,
+              "difference_rmse": 0.23461697296206518,
+              "common_rmse": 0.22856137806000837
+            }
+          ]
+        }
+      }
+    ],
+    "validation_error": null
+  }
+]

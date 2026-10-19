@@ -1,0 +1,432 @@
+{
+  "schema": "single_axis_dynamic_diagnostic_v1",
+  "status": "diagnostic_candidate",
+  "compensation_allowed": false,
+  "options": {
+    "window": 0.28,
+    "max_residual": 0.002,
+    "max_tracking": 0.08,
+    "max_acceleration": 5.0,
+    "min_fraction": 0.7,
+    "min_samples": 100,
+    "period_min": 0.03,
+    "period_max": 0.06,
+    "frequency_min": 0.5,
+    "frequency_max": 8.0
+  },
+  "training": {
+    "run_id": "b4729f07-47e3-42a4-83f8-e37c93d1041c",
+    "file_sha256": "39e48f25e33a23d15a079b7ea219f1361feee8f33b13f12af10d84f5df595e47",
+    "raw_sha256": "cd742e71b1cbc684bd62e20b71cf772c80ef7284e3face02a3d17b3e91d07586",
+    "conditions": {
+      "joint": 6,
+      "conditions": {
+        "calibration": {
+          "calibration_id": "unverified",
+          "offset": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "units": "protocol_nm_unverified",
+          "verified": false
+        },
+        "home": [
+          0.0,
+          1.2,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "kd": [
+          5.0,
+          10.0,
+          10.0,
+          1.5,
+          0.8,
+          2.0
+        ],
+        "kp": [
+          80.0,
+          150.0,
+          150.0,
+          25.0,
+          12.0,
+          25.0
+        ],
+        "load_id": "live_tracking_load_unverified_20261016",
+        "measurement_range": [
+          0.105,
+          0.44500000000000006
+        ],
+        "model_hash": "3838ca8f9d586be22a89b33c7cbdd4abd43d4a92a2de377b294eef4c5bd7654d",
+        "temperature_limit_c": 65.0
+      },
+      "rate": 100.0
+    },
+    "calibrated": false,
+    "segments": [
+      {
+        "segment": 0,
+        "direction": 1,
+        "speed": 0.1,
+        "samples": 1243,
+        "reliable_fraction": 1.0
+      },
+      {
+        "segment": 1,
+        "direction": -1,
+        "speed": 0.1,
+        "samples": 1242,
+        "reliable_fraction": 1.0
+      },
+      {
+        "segment": 2,
+        "direction": 1,
+        "speed": 0.07,
+        "samples": 1715,
+        "reliable_fraction": 1.0
+      },
+      {
+        "segment": 3,
+        "direction": -1,
+        "speed": 0.07,
+        "samples": 1716,
+        "reliable_fraction": 1.0
+      },
+      {
+        "segment": 4,
+        "direction": 1,
+        "speed": 0.15,
+        "samples": 822,
+        "reliable_fraction": 0.9383561643835616
+      },
+      {
+        "segment": 5,
+        "direction": -1,
+        "speed": 0.15,
+        "samples": 763,
+        "reliable_fraction": 0.8710045662100456
+      },
+      {
+        "segment": 6,
+        "direction": 1,
+        "speed": 0.1,
+        "samples": 1235,
+        "reliable_fraction": 0.9951651893634166
+      },
+      {
+        "segment": 7,
+        "direction": -1,
+        "speed": 0.1,
+        "samples": 1210,
+        "reliable_fraction": 0.9758064516129032
+      },
+      {
+        "segment": 8,
+        "direction": 1,
+        "speed": 0.15,
+        "samples": 770,
+        "reliable_fraction": 0.88
+      },
+      {
+        "segment": 9,
+        "direction": -1,
+        "speed": 0.15,
+        "samples": 755,
+        "reliable_fraction": 0.8638443935926774
+      },
+      {
+        "segment": 10,
+        "direction": 1,
+        "speed": 0.07,
+        "samples": 1714,
+        "reliable_fraction": 1.0
+      },
+      {
+        "segment": 11,
+        "direction": -1,
+        "speed": 0.07,
+        "samples": 1706,
+        "reliable_fraction": 0.9970777323202805
+      }
+    ],
+    "torque_units": "protocol_nm_unverified",
+    "feedback_frames": 125787,
+    "fit_samples": 7461,
+    "gravity_policy": "reference only; no N*m subtraction from unverified protocol torque",
+    "temperature_range": [
+      30.0,
+      31.0
+    ]
+  },
+  "models": [
+    {
+      "kind": "baseline",
+      "frequency": null,
+      "coefficients": [
+        0.03267981735845489,
+        0.12517853000809642,
+        0.3225619295058924,
+        -1.263004483259359
+      ],
+      "names": [
+        "bias",
+        "effective_inertia",
+        "smooth_fc",
+        "fv"
+      ],
+      "frequency_units": null,
+      "training_balanced_rmse": 0.13392007890909105,
+      "scaled_condition": 4.492907645395925,
+      "rank": 4,
+      "physical_issues": [
+        "fv is negative; no physical parameter interpretation"
+      ]
+    },
+    {
+      "kind": "spatial",
+      "frequency": 0.044779128099950105,
+      "coefficients": [
+        0.012293712693073375,
+        0.009550627333511317,
+        0.10551991587451265,
+        0.09626775592534041,
+        -0.0673437928628964,
+        0.23137337757258664
+      ],
+      "names": [
+        "bias",
+        "effective_inertia",
+        "smooth_fc",
+        "fv",
+        "position_sin",
+        "position_cos"
+      ],
+      "frequency_units": "rad (spatial period)",
+      "training_balanced_rmse": 0.04388602546757925,
+      "scaled_condition": 5.733741002457077,
+      "rank": 6,
+      "physical_issues": []
+    },
+    {
+      "kind": "temporal",
+      "frequency": 0.5,
+      "coefficients": [
+        0.030336965638032953,
+        0.12700771737513633,
+        0.33371978733040325,
+        -1.3695246559502947,
+        0.012794281538658633,
+        0.01478726787613609,
+        0.06375194730887833,
+        0.0030337674311545254
+      ],
+      "names": [
+        "bias",
+        "effective_inertia",
+        "smooth_fc",
+        "fv",
+        "time_sin_1",
+        "time_cos_1",
+        "time_sin_-1",
+        "time_cos_-1"
+      ],
+      "frequency_units": "Hz",
+      "training_balanced_rmse": 0.12968482645019433,
+      "scaled_condition": 4.631180584057907,
+      "rank": 8,
+      "physical_issues": [
+        "fv is negative; no physical parameter interpretation"
+      ]
+    }
+  ],
+  "period_diagnostics": [
+    {
+      "segment": 0,
+      "direction": 1,
+      "speed": 0.1,
+      "mean_actual_speed": 0.09966695793727758,
+      "spatial_period": {
+        "value": 0.044875,
+        "in_sample_r2": 0.9517778338021313
+      },
+      "temporal_frequency": {
+        "value": 2.225,
+        "in_sample_r2": 0.8106077953025058
+      }
+    },
+    {
+      "segment": 1,
+      "direction": -1,
+      "speed": 0.1,
+      "mean_actual_speed": 0.09889200714955955,
+      "spatial_period": {
+        "value": 0.04475,
+        "in_sample_r2": 0.954434267457666
+      },
+      "temporal_frequency": {
+        "value": 2.225,
+        "in_sample_r2": 0.8292334931216208
+      }
+    },
+    {
+      "segment": 2,
+      "direction": 1,
+      "speed": 0.07,
+      "mean_actual_speed": 0.0692603321830532,
+      "spatial_period": {
+        "value": 0.044875,
+        "in_sample_r2": 0.9616281202302487
+      },
+      "temporal_frequency": {
+        "value": 1.55,
+        "in_sample_r2": 0.766953855340083
+      }
+    },
+    {
+      "segment": 3,
+      "direction": -1,
+      "speed": 0.07,
+      "mean_actual_speed": 0.06870849468817392,
+      "spatial_period": {
+        "value": 0.044875,
+        "in_sample_r2": 0.969714578333531
+      },
+      "temporal_frequency": {
+        "value": 1.55,
+        "in_sample_r2": 0.8001655416964308
+      }
+    },
+    {
+      "segment": 4,
+      "direction": 1,
+      "speed": 0.15,
+      "mean_actual_speed": 0.14755544515183458,
+      "spatial_period": {
+        "value": 0.04475,
+        "in_sample_r2": 0.9642996869593622
+      },
+      "temporal_frequency": {
+        "value": 3.35,
+        "in_sample_r2": 0.8243243419733175
+      }
+    },
+    {
+      "segment": 5,
+      "direction": -1,
+      "speed": 0.15,
+      "mean_actual_speed": 0.14269818112422308,
+      "spatial_period": {
+        "value": 0.044875,
+        "in_sample_r2": 0.9593100621369772
+      },
+      "temporal_frequency": {
+        "value": 3.35,
+        "in_sample_r2": 0.8862575424773371
+      }
+    },
+    {
+      "segment": 6,
+      "direction": 1,
+      "speed": 0.1,
+      "mean_actual_speed": 0.09870439825017314,
+      "spatial_period": {
+        "value": 0.044875,
+        "in_sample_r2": 0.9753024842703376
+      },
+      "temporal_frequency": {
+        "value": 2.225,
+        "in_sample_r2": 0.775795048196601
+      }
+    },
+    {
+      "segment": 7,
+      "direction": -1,
+      "speed": 0.1,
+      "mean_actual_speed": 0.09745191636092809,
+      "spatial_period": {
+        "value": 0.044875,
+        "in_sample_r2": 0.9765307484954708
+      },
+      "temporal_frequency": {
+        "value": 2.225,
+        "in_sample_r2": 0.8138054572574407
+      }
+    },
+    {
+      "segment": 8,
+      "direction": 1,
+      "speed": 0.15,
+      "mean_actual_speed": 0.14402060046357013,
+      "spatial_period": {
+        "value": 0.04475,
+        "in_sample_r2": 0.9621850196740968
+      },
+      "temporal_frequency": {
+        "value": 3.35,
+        "in_sample_r2": 0.8289788512343029
+      }
+    },
+    {
+      "segment": 9,
+      "direction": -1,
+      "speed": 0.15,
+      "mean_actual_speed": 0.14242200682742387,
+      "spatial_period": {
+        "value": 0.044875,
+        "in_sample_r2": 0.9587550001789633
+      },
+      "temporal_frequency": {
+        "value": 3.35,
+        "in_sample_r2": 0.8842765270741978
+      }
+    },
+    {
+      "segment": 10,
+      "direction": 1,
+      "speed": 0.07,
+      "mean_actual_speed": 0.06895827273275608,
+      "spatial_period": {
+        "value": 0.044875,
+        "in_sample_r2": 0.978718967801762
+      },
+      "temporal_frequency": {
+        "value": 1.55,
+        "in_sample_r2": 0.7344805461111841
+      }
+    },
+    {
+      "segment": 11,
+      "direction": -1,
+      "speed": 0.07,
+      "mean_actual_speed": 0.06831425158472051,
+      "spatial_period": {
+        "value": 0.044875,
+        "in_sample_r2": 0.9763868677558489
+      },
+      "temporal_frequency": {
+        "value": 1.55,
+        "in_sample_r2": 0.7682797323875138
+      }
+    }
+  ],
+  "interpretation": "Lumped single-axis regression; bias absorbs offsets. Coefficients are not physical N*m parameters without calibration; position derivatives may contain encoder error.",
+  "implementation_sha256": {
+    "dynamic": "c8d485350e41e542146abb44dda4c5e4f2c8a322890225e88a02b86eea33d830",
+    "alignment": "a94025a8bb63dfdd3b07fb3818ef4a5896632fc92fee88c358473ddbb5515b0e"
+  },
+  "checksum": "fbae9eb192b525d6b550491bb52f12fbff61873bd87deb799da52494a1f57449"
+}

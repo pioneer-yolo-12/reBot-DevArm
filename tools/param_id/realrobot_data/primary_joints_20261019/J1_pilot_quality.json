@@ -1,0 +1,103 @@
+{
+  "joint": 1,
+  "file": "J1_pilot/friction_20261019_144537_e097f106.npz",
+  "kp": [
+    80.0,
+    150.0,
+    150.0,
+    25.0,
+    12.0,
+    25.0
+  ],
+  "kd": [
+    5.0,
+    10.0,
+    10.0,
+    1.5,
+    0.8,
+    1.5
+  ],
+  "segments": [
+    {
+      "segment": 0,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": 1,
+      "status": "invalid",
+      "reasons": [
+        "insufficient_steady_samples",
+        "low_steady_fraction",
+        "nonuniform_motion",
+        "no_continuous_steady_window"
+      ],
+      "samples": 24,
+      "steady_fraction": 0.030848329048843187,
+      "velocity_cv": 0.16635923848551162,
+      "longest_steady_s": 0.052832326968200505
+    },
+    {
+      "segment": 1,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": -1,
+      "status": "invalid",
+      "reasons": [
+        "low_steady_fraction",
+        "nonuniform_motion",
+        "no_continuous_steady_window"
+      ],
+      "samples": 127,
+      "steady_fraction": 0.16178343949044585,
+      "velocity_cv": 0.16933610552188216,
+      "longest_steady_s": 0.17000640503829345
+    }
+  ],
+  "fold": {
+    "kind": "fold_verified",
+    "position_velocity": [
+      -0.00023592647390617048,
+      -0.0001526490018247421,
+      -0.0006558194819016059,
+      0.001582345611097807,
+      2.6861782307778905e-12,
+      0.0005205412452025593
+    ],
+    "q": [
+      0.002684548304712415,
+      0.002684548304712415,
+      0.009587672516830055,
+      0.007670138013464043,
+      0.002684548304712415,
+      0.002301041404039213
+    ],
+    "qd": [
+      -0.07782219916379063,
+      -0.01220740379039853,
+      -0.021362956633197427,
+      0.02417065950498909,
+      -0.007049775688955151,
+      0.03021332438123636
+    ],
+    "settle": 0.5,
+    "t": 270992.912686896
+  },
+  "disabled": {
+    "kind": "disabled_after_fold",
+    "t": 270992.978332378
+  },
+  "peak_temperature": [
+    30.0,
+    32.0,
+    46.0,
+    33.0,
+    31.0,
+    31.0
+  ],
+  "peak_axis_torque": 0.6613971373638123,
+  "units": {
+    "q": "rad",
+    "qd": "rad/s",
+    "tau": "protocol_nm_unverified",
+    "time": "monotonic seconds"
+  }
+}

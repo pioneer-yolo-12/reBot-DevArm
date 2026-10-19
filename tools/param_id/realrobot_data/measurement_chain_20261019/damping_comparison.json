@@ -1,0 +1,28 @@
+{
+  "kp": 50,
+  "speeds": [
+    {
+      "speed": 0.1,
+      "4": {
+        "velocity_cv": 0.04169551608878703,
+        "acceleration_p99": 0.2269755554266114
+      },
+      "2": {
+        "velocity_cv": 0.060010303870591974,
+        "acceleration_p99": 0.3687361984532414
+      }
+    },
+    {
+      "speed": 0.15,
+      "4": {
+        "velocity_cv": 0.021158046736203716,
+        "acceleration_p99": 0.24760782588872327
+      },
+      "2": {
+        "velocity_cv": 0.02828539843918266,
+        "acceleration_p99": 0.39133339806269074
+      }
+    }
+  ],
+  "limits": "One run per kd, matched internal float method, no external angle truth, no deployment approval"
+}

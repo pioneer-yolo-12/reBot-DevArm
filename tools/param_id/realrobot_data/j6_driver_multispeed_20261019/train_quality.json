@@ -1,0 +1,156 @@
+[
+  {
+    "segment": 0,
+    "repeat": 0,
+    "speed_id": 0,
+    "direction": 1,
+    "status": "valid",
+    "reasons": [],
+    "samples": 904,
+    "steady_fraction": 0.932920536635707,
+    "velocity_cv": 0.061167684259745454,
+    "longest_steady_s": 1.084390120988246
+  },
+  {
+    "segment": 1,
+    "repeat": 0,
+    "speed_id": 0,
+    "direction": -1,
+    "status": "valid",
+    "reasons": [],
+    "samples": 882,
+    "steady_fraction": 0.9111570247933884,
+    "velocity_cv": 0.060192366024449384,
+    "longest_steady_s": 0.9902492180117406
+  },
+  {
+    "segment": 2,
+    "repeat": 0,
+    "speed_id": 2,
+    "direction": 1,
+    "status": "invalid",
+    "reasons": [
+      "no_continuous_steady_window"
+    ],
+    "samples": 399,
+    "steady_fraction": 0.9214780600461894,
+    "velocity_cv": 0.013686211723090036,
+    "longest_steady_s": 0.5686583269853145
+  },
+  {
+    "segment": 3,
+    "repeat": 0,
+    "speed_id": 2,
+    "direction": -1,
+    "status": "invalid",
+    "reasons": [
+      "no_continuous_steady_window"
+    ],
+    "samples": 409,
+    "steady_fraction": 0.9445727482678984,
+    "velocity_cv": 0.009338895260668136,
+    "longest_steady_s": 0.7702490460360423
+  },
+  {
+    "segment": 4,
+    "repeat": 0,
+    "speed_id": 1,
+    "direction": 1,
+    "status": "valid",
+    "reasons": [],
+    "samples": 600,
+    "steady_fraction": 0.8902077151335311,
+    "velocity_cv": 0.030510763955031217,
+    "longest_steady_s": 0.8433887220453471
+  },
+  {
+    "segment": 5,
+    "repeat": 0,
+    "speed_id": 1,
+    "direction": -1,
+    "status": "valid",
+    "reasons": [],
+    "samples": 636,
+    "steady_fraction": 0.9394387001477105,
+    "velocity_cv": 0.02946156729472755,
+    "longest_steady_s": 1.1523355310200714
+  },
+  {
+    "segment": 6,
+    "repeat": 1,
+    "speed_id": 2,
+    "direction": 1,
+    "status": "invalid",
+    "reasons": [
+      "no_continuous_steady_window"
+    ],
+    "samples": 399,
+    "steady_fraction": 0.9193548387096774,
+    "velocity_cv": 0.010340891816486774,
+    "longest_steady_s": 0.6870493949973024
+  },
+  {
+    "segment": 7,
+    "repeat": 1,
+    "speed_id": 2,
+    "direction": -1,
+    "status": "invalid",
+    "reasons": [
+      "no_continuous_steady_window"
+    ],
+    "samples": 359,
+    "steady_fraction": 0.8310185185185185,
+    "velocity_cv": 0.02018026724862141,
+    "longest_steady_s": 0.6811601410154253
+  },
+  {
+    "segment": 8,
+    "repeat": 1,
+    "speed_id": 0,
+    "direction": 1,
+    "status": "valid",
+    "reasons": [],
+    "samples": 875,
+    "steady_fraction": 0.9020618556701031,
+    "velocity_cv": 0.06067872653470915,
+    "longest_steady_s": 1.2409337740391493
+  },
+  {
+    "segment": 9,
+    "repeat": 1,
+    "speed_id": 0,
+    "direction": -1,
+    "status": "valid",
+    "reasons": [],
+    "samples": 893,
+    "steady_fraction": 0.9215686274509803,
+    "velocity_cv": 0.06294143366129752,
+    "longest_steady_s": 0.989488382008858
+  },
+  {
+    "segment": 10,
+    "repeat": 1,
+    "speed_id": 1,
+    "direction": 1,
+    "status": "valid",
+    "reasons": [],
+    "samples": 630,
+    "steady_fraction": 0.9264705882352942,
+    "velocity_cv": 0.031597749043250675,
+    "longest_steady_s": 1.1821292999666184
+  },
+  {
+    "segment": 11,
+    "repeat": 1,
+    "speed_id": 1,
+    "direction": -1,
+    "status": "invalid",
+    "reasons": [
+      "no_continuous_steady_window"
+    ],
+    "samples": 601,
+    "steady_fraction": 0.8864306784660767,
+    "velocity_cv": 0.03900775186300608,
+    "longest_steady_s": 0.689478375017643
+  }
+]

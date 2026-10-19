@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "status": "candidate",
+  "joint": 3,
+  "fc": null,
+  "fv": null,
+  "method": "D",
+  "units": "protocol_nm_unverified",
+  "training_run_ids": [
+    "aabe9fb1-a8fd-4e3a-b09a-327d4b35ef35"
+  ],
+  "training_sha256": "2cc966fc6c433e3b12b5542623c2688b9ac0c6baa4a900e2becc6b2c759189b4",
+  "conditions": {
+    "calibration": {
+      "calibration_id": "unverified",
+      "offset": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "units": "protocol_nm_unverified",
+      "verified": false
+    },
+    "home": [
+      0.0,
+      1.2,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "kd": [
+      5.0,
+      10.0,
+      20.0,
+      1.5,
+      0.8,
+      1.5
+    ],
+    "kp": [
+      80.0,
+      150.0,
+      150.0,
+      25.0,
+      12.0,
+      25.0
+    ],
+    "load_id": "unloaded_wrist_fixed_setup_20261019_user_reported",
+    "measurement_range": [
+      1.13,
+      1.42
+    ],
+    "model_hash": "3838ca8f9d586be22a89b33c7cbdd4abd43d4a92a2de377b294eef4c5bd7654d",
+    "temperature_limit_c": 65.0
+  },
+  "training_raw_sha256": "a9e5516d685f19d73c277aeccff864c966e0693702213106e96b85718a9f1682",
+  "eligible": false,
+  "gates": {
+    "max_gap": 0.04,
+    "window": 0.2,
+    "guard": 0.25,
+    "velocity_relative_error": 0.15,
+    "velocity_absolute_error": 0.003,
+    "max_acceleration": 0.15,
+    "max_position_residual": 0.001,
+    "max_tracking_error": 0.05,
+    "min_valid_fraction": 0.7,
+    "max_velocity_cv": 0.15,
+    "min_duration": 0.8,
+    "min_samples": 30,
+    "bin_width": 0.01,
+    "min_bins": 12,
+    "min_position_coverage": 0.6,
+    "max_pose_difference": 0.02,
+    "min_speed_levels": 3,
+    "min_speed_span": 0.06,
+    "min_repeats": 3,
+    "max_fit_rmse": 0.1,
+    "max_relative_rmse": 0.25,
+    "max_scaled_condition": 50.0
+  },
+  "speed_range": [
+    0.09479985717116914,
+    0.10802073924514219
+  ],
+  "temperature_range": [
+    41.0,
+    55.0
+  ],
+  "checksum": "c0d3fc719ddedc0d061495bfb43bd388c7830d85e0313026c80c508b1aad2612"
+}

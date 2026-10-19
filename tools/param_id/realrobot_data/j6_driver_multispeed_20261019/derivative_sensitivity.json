@@ -1,0 +1,1737 @@
+{
+  "primary_window": 0.2,
+  "alternate_windows": [
+    0.12,
+    0.28
+  ],
+  "quantum_rad": 0.0003835069006732131,
+  "policy": "Sensitivity only; no acceptance tuning; ideal replay cannot exclude firmware or systematic measurement effects",
+  "results": [
+    {
+      "run": "train",
+      "window": 0.12,
+      "speed": 0.07,
+      "segment": 0,
+      "status": "invalid",
+      "longest_steady_s": 0.2603608379722573,
+      "reasons": [
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.31915980035027225
+    },
+    {
+      "run": "train",
+      "window": 0.12,
+      "speed": 0.07,
+      "segment": 1,
+      "status": "invalid",
+      "longest_steady_s": 0.31056812801398337,
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.36120133673827576
+    },
+    {
+      "run": "train",
+      "window": 0.12,
+      "speed": 0.15,
+      "segment": 2,
+      "status": "invalid",
+      "longest_steady_s": 0.14833525102585554,
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.4315097703347152
+    },
+    {
+      "run": "train",
+      "window": 0.12,
+      "speed": 0.15,
+      "segment": 3,
+      "status": "invalid",
+      "longest_steady_s": 0.1741172350011766,
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.4749825368784247
+    },
+    {
+      "run": "train",
+      "window": 0.12,
+      "speed": 0.1,
+      "segment": 4,
+      "status": "invalid",
+      "longest_steady_s": 0.15995204099453986,
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.38943712899328053
+    },
+    {
+      "run": "train",
+      "window": 0.12,
+      "speed": 0.1,
+      "segment": 5,
+      "status": "invalid",
+      "longest_steady_s": 0.1661501469789073,
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.37750784642018587
+    },
+    {
+      "run": "train",
+      "window": 0.12,
+      "speed": 0.15,
+      "segment": 6,
+      "status": "invalid",
+      "longest_steady_s": 0.09626098995795473,
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.4622304391420506
+    },
+    {
+      "run": "train",
+      "window": 0.12,
+      "speed": 0.15,
+      "segment": 7,
+      "status": "invalid",
+      "longest_steady_s": 0.12073783297091722,
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.46136775207225517
+    },
+    {
+      "run": "train",
+      "window": 0.12,
+      "speed": 0.07,
+      "segment": 8,
+      "status": "invalid",
+      "longest_steady_s": 0.2396448950166814,
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.3308506173764549
+    },
+    {
+      "run": "train",
+      "window": 0.12,
+      "speed": 0.07,
+      "segment": 9,
+      "status": "invalid",
+      "longest_steady_s": 0.2893754920223728,
+      "reasons": [
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.35266944298037
+    },
+    {
+      "run": "train",
+      "window": 0.12,
+      "speed": 0.1,
+      "segment": 10,
+      "status": "invalid",
+      "longest_steady_s": 0.1692513240268454,
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.381987622328801
+    },
+    {
+      "run": "train",
+      "window": 0.12,
+      "speed": 0.1,
+      "segment": 11,
+      "status": "invalid",
+      "longest_steady_s": 0.19128713599639013,
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.4098989245424312
+    },
+    {
+      "run": "train",
+      "window": 0.2,
+      "speed": 0.07,
+      "segment": 0,
+      "status": "valid",
+      "longest_steady_s": 1.084390120988246,
+      "reasons": [],
+      "abs_acceleration_p99": 0.19117287944778735
+    },
+    {
+      "run": "train",
+      "window": 0.2,
+      "speed": 0.07,
+      "segment": 1,
+      "status": "valid",
+      "longest_steady_s": 0.9902492180117406,
+      "reasons": [],
+      "abs_acceleration_p99": 0.19106665814141366
+    },
+    {
+      "run": "train",
+      "window": 0.2,
+      "speed": 0.15,
+      "segment": 2,
+      "status": "invalid",
+      "longest_steady_s": 0.5686583269853145,
+      "reasons": [
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.21285250448208248
+    },
+    {
+      "run": "train",
+      "window": 0.2,
+      "speed": 0.15,
+      "segment": 3,
+      "status": "invalid",
+      "longest_steady_s": 0.7702490460360423,
+      "reasons": [
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.18704119469589975
+    },
+    {
+      "run": "train",
+      "window": 0.2,
+      "speed": 0.1,
+      "segment": 4,
+      "status": "valid",
+      "longest_steady_s": 0.8433887220453471,
+      "reasons": [],
+      "abs_acceleration_p99": 0.2101486516578759
+    },
+    {
+      "run": "train",
+      "window": 0.2,
+      "speed": 0.1,
+      "segment": 5,
+      "status": "valid",
+      "longest_steady_s": 1.1523355310200714,
+      "reasons": [],
+      "abs_acceleration_p99": 0.19145043171225612
+    },
+    {
+      "run": "train",
+      "window": 0.2,
+      "speed": 0.15,
+      "segment": 6,
+      "status": "invalid",
+      "longest_steady_s": 0.6870493949973024,
+      "reasons": [
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.20098593630709582
+    },
+    {
+      "run": "train",
+      "window": 0.2,
+      "speed": 0.15,
+      "segment": 7,
+      "status": "invalid",
+      "longest_steady_s": 0.6811601410154253,
+      "reasons": [
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.2143865157554031
+    },
+    {
+      "run": "train",
+      "window": 0.2,
+      "speed": 0.07,
+      "segment": 8,
+      "status": "valid",
+      "longest_steady_s": 1.2409337740391493,
+      "reasons": [],
+      "abs_acceleration_p99": 0.21729295844877952
+    },
+    {
+      "run": "train",
+      "window": 0.2,
+      "speed": 0.07,
+      "segment": 9,
+      "status": "valid",
+      "longest_steady_s": 0.989488382008858,
+      "reasons": [],
+      "abs_acceleration_p99": 0.2192687269793306
+    },
+    {
+      "run": "train",
+      "window": 0.2,
+      "speed": 0.1,
+      "segment": 10,
+      "status": "valid",
+      "longest_steady_s": 1.1821292999666184,
+      "reasons": [],
+      "abs_acceleration_p99": 0.20358586175257426
+    },
+    {
+      "run": "train",
+      "window": 0.2,
+      "speed": 0.1,
+      "segment": 11,
+      "status": "invalid",
+      "longest_steady_s": 0.689478375017643,
+      "reasons": [
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.23848511968297542
+    },
+    {
+      "run": "train",
+      "window": 0.28,
+      "speed": 0.07,
+      "segment": 0,
+      "status": "valid",
+      "longest_steady_s": 3.952880013966933,
+      "reasons": [],
+      "abs_acceleration_p99": 0.13815569565897254
+    },
+    {
+      "run": "train",
+      "window": 0.28,
+      "speed": 0.07,
+      "segment": 1,
+      "status": "valid",
+      "longest_steady_s": 4.843414722010493,
+      "reasons": [],
+      "abs_acceleration_p99": 0.12776925500740982
+    },
+    {
+      "run": "train",
+      "window": 0.28,
+      "speed": 0.15,
+      "segment": 2,
+      "status": "valid",
+      "longest_steady_s": 2.1604360889759846,
+      "reasons": [],
+      "abs_acceleration_p99": 0.08460628699205869
+    },
+    {
+      "run": "train",
+      "window": 0.28,
+      "speed": 0.15,
+      "segment": 3,
+      "status": "valid",
+      "longest_steady_s": 2.1636890919762664,
+      "reasons": [],
+      "abs_acceleration_p99": 0.05439400801117346
+    },
+    {
+      "run": "train",
+      "window": 0.28,
+      "speed": 0.1,
+      "segment": 4,
+      "status": "valid",
+      "longest_steady_s": 3.3857340160175227,
+      "reasons": [],
+      "abs_acceleration_p99": 0.11848475076249572
+    },
+    {
+      "run": "train",
+      "window": 0.28,
+      "speed": 0.1,
+      "segment": 5,
+      "status": "valid",
+      "longest_steady_s": 3.3858774099498987,
+      "reasons": [],
+      "abs_acceleration_p99": 0.11652806697755766
+    },
+    {
+      "run": "train",
+      "window": 0.28,
+      "speed": 0.15,
+      "segment": 6,
+      "status": "valid",
+      "longest_steady_s": 2.1657169469981454,
+      "reasons": [],
+      "abs_acceleration_p99": 0.05605947217133987
+    },
+    {
+      "run": "train",
+      "window": 0.28,
+      "speed": 0.15,
+      "segment": 7,
+      "status": "valid",
+      "longest_steady_s": 2.1536909269634634,
+      "reasons": [],
+      "abs_acceleration_p99": 0.11012054018201062
+    },
+    {
+      "run": "train",
+      "window": 0.28,
+      "speed": 0.07,
+      "segment": 8,
+      "status": "valid",
+      "longest_steady_s": 3.9569530460285023,
+      "reasons": [],
+      "abs_acceleration_p99": 0.14243563396170694
+    },
+    {
+      "run": "train",
+      "window": 0.28,
+      "speed": 0.07,
+      "segment": 9,
+      "status": "valid",
+      "longest_steady_s": 2.6443212630110793,
+      "reasons": [],
+      "abs_acceleration_p99": 0.1518288813620482
+    },
+    {
+      "run": "train",
+      "window": 0.28,
+      "speed": 0.1,
+      "segment": 10,
+      "status": "valid",
+      "longest_steady_s": 3.397248611028772,
+      "reasons": [],
+      "abs_acceleration_p99": 0.10963588276509345
+    },
+    {
+      "run": "train",
+      "window": 0.28,
+      "speed": 0.1,
+      "segment": 11,
+      "status": "valid",
+      "longest_steady_s": 2.8355047479853965,
+      "reasons": [],
+      "abs_acceleration_p99": 0.14444352988247317
+    },
+    {
+      "run": "train",
+      "kind": "ideal_constant_speed_quantization",
+      "segment": 0,
+      "speed": 0.07,
+      "samples": [
+        {
+          "phase_lsb": 0.0,
+          "p99": 0.028002490552770494,
+          "max": 0.03156818161560218,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.2,
+          "p99": 0.027214565557773147,
+          "max": 0.0374285893147001,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.4,
+          "p99": 0.02497790933984449,
+          "max": 0.02877187267412673,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.6,
+          "p99": 0.02874933171035007,
+          "max": 0.034066374310102204,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.8,
+          "p99": 0.031109132483128143,
+          "max": 0.03567514284094811,
+          "over_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "run": "train",
+      "kind": "ideal_constant_speed_quantization",
+      "segment": 1,
+      "speed": 0.07,
+      "samples": [
+        {
+          "phase_lsb": 0.0,
+          "p99": 0.02545138385893934,
+          "max": 0.033017825459428496,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.2,
+          "p99": 0.02729268611458624,
+          "max": 0.033161529212553054,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.4,
+          "p99": 0.029973971100964204,
+          "max": 0.035601797586888195,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.6,
+          "p99": 0.027063836472194187,
+          "max": 0.03338806991152868,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.8,
+          "p99": 0.027058219836671064,
+          "max": 0.034979825972311335,
+          "over_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "run": "train",
+      "kind": "ideal_constant_speed_quantization",
+      "segment": 2,
+      "speed": 0.15,
+      "samples": [
+        {
+          "phase_lsb": 0.0,
+          "p99": 0.029163268335847415,
+          "max": 0.03549000936728541,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.2,
+          "p99": 0.029181739788149044,
+          "max": 0.032863171372774,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.4,
+          "p99": 0.025183590313174457,
+          "max": 0.03159859098706952,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.6,
+          "p99": 0.03141543848854037,
+          "max": 0.04013417720874779,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.8,
+          "p99": 0.028971413527482365,
+          "max": 0.04966081011792334,
+          "over_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "run": "train",
+      "kind": "ideal_constant_speed_quantization",
+      "segment": 3,
+      "speed": 0.15,
+      "samples": [
+        {
+          "phase_lsb": 0.0,
+          "p99": 0.029764231561759218,
+          "max": 0.0391721967506683,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.2,
+          "p99": 0.03613073449496322,
+          "max": 0.048747512906469614,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.4,
+          "p99": 0.030160711700493406,
+          "max": 0.031409932034478505,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.6,
+          "p99": 0.02763646885472529,
+          "max": 0.03327660352951134,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.8,
+          "p99": 0.032462489991913326,
+          "max": 0.03638002440023669,
+          "over_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "run": "train",
+      "kind": "ideal_constant_speed_quantization",
+      "segment": 4,
+      "speed": 0.1,
+      "samples": [
+        {
+          "phase_lsb": 0.0,
+          "p99": 0.017702107229872897,
+          "max": 0.02287825944553548,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.2,
+          "p99": 0.01824438937498791,
+          "max": 0.021967432317047064,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.4,
+          "p99": 0.023153515381994345,
+          "max": 0.0269906078267301,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.6,
+          "p99": 0.023723891800615786,
+          "max": 0.031898759386404185,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.8,
+          "p99": 0.02346424875469381,
+          "max": 0.03279640155920578,
+          "over_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "run": "train",
+      "kind": "ideal_constant_speed_quantization",
+      "segment": 5,
+      "speed": 0.1,
+      "samples": [
+        {
+          "phase_lsb": 0.0,
+          "p99": 0.02296313825979065,
+          "max": 0.026693737072825047,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.2,
+          "p99": 0.021170385195338495,
+          "max": 0.026219023838126992,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.4,
+          "p99": 0.019511075380267785,
+          "max": 0.024491382024662,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.6,
+          "p99": 0.021721623214640537,
+          "max": 0.028094453627102806,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.8,
+          "p99": 0.023214602340756,
+          "max": 0.030171810231381796,
+          "over_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "run": "train",
+      "kind": "ideal_constant_speed_quantization",
+      "segment": 6,
+      "speed": 0.15,
+      "samples": [
+        {
+          "phase_lsb": 0.0,
+          "p99": 0.029949835430611537,
+          "max": 0.041843137196813485,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.2,
+          "p99": 0.029658094135645626,
+          "max": 0.03694875614171628,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.4,
+          "p99": 0.030178167881624668,
+          "max": 0.03731640406761577,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.6,
+          "p99": 0.025618304601229224,
+          "max": 0.02938083518313117,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.8,
+          "p99": 0.030769298060576572,
+          "max": 0.03600190562060818,
+          "over_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "run": "train",
+      "kind": "ideal_constant_speed_quantization",
+      "segment": 7,
+      "speed": 0.15,
+      "samples": [
+        {
+          "phase_lsb": 0.0,
+          "p99": 0.03227208679527809,
+          "max": 0.0419261539162184,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.2,
+          "p99": 0.029999722354220344,
+          "max": 0.03182633434378812,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.4,
+          "p99": 0.031490497240582185,
+          "max": 0.03849813844592831,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.6,
+          "p99": 0.03098035552927921,
+          "max": 0.03574999558241068,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.8,
+          "p99": 0.028155557229579634,
+          "max": 0.03538849509061598,
+          "over_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "run": "train",
+      "kind": "ideal_constant_speed_quantization",
+      "segment": 8,
+      "speed": 0.07,
+      "samples": [
+        {
+          "phase_lsb": 0.0,
+          "p99": 0.026466789240894295,
+          "max": 0.033921547907026964,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.2,
+          "p99": 0.02903644980211085,
+          "max": 0.043430221015874626,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.4,
+          "p99": 0.027217285730116465,
+          "max": 0.030712993640898315,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.6,
+          "p99": 0.026656421810486088,
+          "max": 0.03252458965751677,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.8,
+          "p99": 0.02718690386915471,
+          "max": 0.03687331028706434,
+          "over_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "run": "train",
+      "kind": "ideal_constant_speed_quantization",
+      "segment": 9,
+      "speed": 0.07,
+      "samples": [
+        {
+          "phase_lsb": 0.0,
+          "p99": 0.024350896440818177,
+          "max": 0.031051665793459998,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.2,
+          "p99": 0.027117230125333517,
+          "max": 0.03137890416691674,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.4,
+          "p99": 0.02699340902169096,
+          "max": 0.03281465371910615,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.6,
+          "p99": 0.028732389844095763,
+          "max": 0.031429270061985135,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.8,
+          "p99": 0.025510119284072482,
+          "max": 0.033631030800372136,
+          "over_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "run": "train",
+      "kind": "ideal_constant_speed_quantization",
+      "segment": 10,
+      "speed": 0.1,
+      "samples": [
+        {
+          "phase_lsb": 0.0,
+          "p99": 0.023781745247225875,
+          "max": 0.029955014324437396,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.2,
+          "p99": 0.022607654647609225,
+          "max": 0.027804356514447737,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.4,
+          "p99": 0.02156257665615836,
+          "max": 0.0261638819262133,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.6,
+          "p99": 0.023754470143685695,
+          "max": 0.028326053462992162,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.8,
+          "p99": 0.022194816771939043,
+          "max": 0.025826929510273516,
+          "over_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "run": "train",
+      "kind": "ideal_constant_speed_quantization",
+      "segment": 11,
+      "speed": 0.1,
+      "samples": [
+        {
+          "phase_lsb": 0.0,
+          "p99": 0.020355794752290622,
+          "max": 0.022709851258101266,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.2,
+          "p99": 0.01966799985085262,
+          "max": 0.025971609026345155,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.4,
+          "p99": 0.019888488000185712,
+          "max": 0.025188510459959707,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.6,
+          "p99": 0.018591931782424798,
+          "max": 0.02341587438690576,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.8,
+          "p99": 0.020014542266930963,
+          "max": 0.025418289975127767,
+          "over_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "run": "holdout",
+      "window": 0.12,
+      "speed": 0.15,
+      "segment": 0,
+      "status": "invalid",
+      "longest_steady_s": 0.14975549594964832,
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.4537472273959338
+    },
+    {
+      "run": "holdout",
+      "window": 0.12,
+      "speed": 0.15,
+      "segment": 1,
+      "status": "invalid",
+      "longest_steady_s": 0.2145831580273807,
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.4245283710250161
+    },
+    {
+      "run": "holdout",
+      "window": 0.12,
+      "speed": 0.1,
+      "segment": 2,
+      "status": "invalid",
+      "longest_steady_s": 0.1504435790120624,
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.3804427343096624
+    },
+    {
+      "run": "holdout",
+      "window": 0.12,
+      "speed": 0.1,
+      "segment": 3,
+      "status": "invalid",
+      "longest_steady_s": 0.15150936198187992,
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.3971123369174413
+    },
+    {
+      "run": "holdout",
+      "window": 0.12,
+      "speed": 0.07,
+      "segment": 4,
+      "status": "invalid",
+      "longest_steady_s": 0.22012103197630495,
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.345009903926311
+    },
+    {
+      "run": "holdout",
+      "window": 0.12,
+      "speed": 0.07,
+      "segment": 5,
+      "status": "invalid",
+      "longest_steady_s": 0.27174235199345276,
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.34195284985615365
+    },
+    {
+      "run": "holdout",
+      "window": 0.12,
+      "speed": 0.1,
+      "segment": 6,
+      "status": "invalid",
+      "longest_steady_s": 0.1809747270308435,
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.3939151353628692
+    },
+    {
+      "run": "holdout",
+      "window": 0.12,
+      "speed": 0.1,
+      "segment": 7,
+      "status": "invalid",
+      "longest_steady_s": 0.18697495304513723,
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.407724702860018
+    },
+    {
+      "run": "holdout",
+      "window": 0.12,
+      "speed": 0.15,
+      "segment": 8,
+      "status": "invalid",
+      "longest_steady_s": 0.1096267300308682,
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.4902591127806234
+    },
+    {
+      "run": "holdout",
+      "window": 0.12,
+      "speed": 0.15,
+      "segment": 9,
+      "status": "invalid",
+      "longest_steady_s": 0.14987042400753126,
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.3828197159628758
+    },
+    {
+      "run": "holdout",
+      "window": 0.12,
+      "speed": 0.07,
+      "segment": 10,
+      "status": "invalid",
+      "longest_steady_s": 0.21662724600173533,
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.35457519239174806
+    },
+    {
+      "run": "holdout",
+      "window": 0.12,
+      "speed": 0.07,
+      "segment": 11,
+      "status": "invalid",
+      "longest_steady_s": 0.3099013260216452,
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.38561102944185094
+    },
+    {
+      "run": "holdout",
+      "window": 0.2,
+      "speed": 0.15,
+      "segment": 0,
+      "status": "invalid",
+      "longest_steady_s": 0.7495915879844688,
+      "reasons": [
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.20598044901543747
+    },
+    {
+      "run": "holdout",
+      "window": 0.2,
+      "speed": 0.15,
+      "segment": 1,
+      "status": "invalid",
+      "longest_steady_s": 0.7399241240345873,
+      "reasons": [
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.19574791861149413
+    },
+    {
+      "run": "holdout",
+      "window": 0.2,
+      "speed": 0.1,
+      "segment": 2,
+      "status": "invalid",
+      "longest_steady_s": 0.6903022549813613,
+      "reasons": [
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.21117907955313223
+    },
+    {
+      "run": "holdout",
+      "window": 0.2,
+      "speed": 0.1,
+      "segment": 3,
+      "status": "valid",
+      "longest_steady_s": 0.8817785769933835,
+      "reasons": [],
+      "abs_acceleration_p99": 0.20235584187719663
+    },
+    {
+      "run": "holdout",
+      "window": 0.2,
+      "speed": 0.07,
+      "segment": 4,
+      "status": "valid",
+      "longest_steady_s": 1.1000142419943586,
+      "reasons": [],
+      "abs_acceleration_p99": 0.21753963614058675
+    },
+    {
+      "run": "holdout",
+      "window": 0.2,
+      "speed": 0.07,
+      "segment": 5,
+      "status": "valid",
+      "longest_steady_s": 0.9819083010079339,
+      "reasons": [],
+      "abs_acceleration_p99": 0.22843613785109754
+    },
+    {
+      "run": "holdout",
+      "window": 0.2,
+      "speed": 0.1,
+      "segment": 6,
+      "status": "invalid",
+      "longest_steady_s": 0.6378440679982305,
+      "reasons": [
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.23092599533915095
+    },
+    {
+      "run": "holdout",
+      "window": 0.2,
+      "speed": 0.1,
+      "segment": 7,
+      "status": "invalid",
+      "longest_steady_s": 0.6500668090302497,
+      "reasons": [
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.25558670871521244
+    },
+    {
+      "run": "holdout",
+      "window": 0.2,
+      "speed": 0.15,
+      "segment": 8,
+      "status": "invalid",
+      "longest_steady_s": 0.41384326899424195,
+      "reasons": [
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.23897198159811325
+    },
+    {
+      "run": "holdout",
+      "window": 0.2,
+      "speed": 0.15,
+      "segment": 9,
+      "status": "invalid",
+      "longest_steady_s": 0.6509905810235068,
+      "reasons": [
+        "no_continuous_steady_window"
+      ],
+      "abs_acceleration_p99": 0.16516187126289153
+    },
+    {
+      "run": "holdout",
+      "window": 0.2,
+      "speed": 0.07,
+      "segment": 10,
+      "status": "valid",
+      "longest_steady_s": 1.0902768220403232,
+      "reasons": [],
+      "abs_acceleration_p99": 0.2290440414307955
+    },
+    {
+      "run": "holdout",
+      "window": 0.2,
+      "speed": 0.07,
+      "segment": 11,
+      "status": "valid",
+      "longest_steady_s": 0.9701743790064938,
+      "reasons": [],
+      "abs_acceleration_p99": 0.23099792264596006
+    },
+    {
+      "run": "holdout",
+      "window": 0.28,
+      "speed": 0.15,
+      "segment": 0,
+      "status": "valid",
+      "longest_steady_s": 2.164264970982913,
+      "reasons": [],
+      "abs_acceleration_p99": 0.06516038992527932
+    },
+    {
+      "run": "holdout",
+      "window": 0.28,
+      "speed": 0.15,
+      "segment": 1,
+      "status": "valid",
+      "longest_steady_s": 2.1552744479849935,
+      "reasons": [],
+      "abs_acceleration_p99": 0.07933924424744876
+    },
+    {
+      "run": "holdout",
+      "window": 0.28,
+      "speed": 0.1,
+      "segment": 2,
+      "status": "valid",
+      "longest_steady_s": 3.3903364170109853,
+      "reasons": [],
+      "abs_acceleration_p99": 0.11162724366212272
+    },
+    {
+      "run": "holdout",
+      "window": 0.28,
+      "speed": 0.1,
+      "segment": 3,
+      "status": "valid",
+      "longest_steady_s": 3.385737624950707,
+      "reasons": [],
+      "abs_acceleration_p99": 0.11905013530291103
+    },
+    {
+      "run": "holdout",
+      "window": 0.28,
+      "speed": 0.07,
+      "segment": 4,
+      "status": "valid",
+      "longest_steady_s": 2.7446745630004443,
+      "reasons": [],
+      "abs_acceleration_p99": 0.1483466529160673
+    },
+    {
+      "run": "holdout",
+      "window": 0.28,
+      "speed": 0.07,
+      "segment": 5,
+      "status": "valid",
+      "longest_steady_s": 4.838616048975382,
+      "reasons": [],
+      "abs_acceleration_p99": 0.13868467505797763
+    },
+    {
+      "run": "holdout",
+      "window": 0.28,
+      "speed": 0.1,
+      "segment": 6,
+      "status": "valid",
+      "longest_steady_s": 1.5937493449891917,
+      "reasons": [],
+      "abs_acceleration_p99": 0.14770278799559192
+    },
+    {
+      "run": "holdout",
+      "window": 0.28,
+      "speed": 0.1,
+      "segment": 7,
+      "status": "valid",
+      "longest_steady_s": 1.630938924034126,
+      "reasons": [],
+      "abs_acceleration_p99": 0.16141368196420033
+    },
+    {
+      "run": "holdout",
+      "window": 0.28,
+      "speed": 0.15,
+      "segment": 8,
+      "status": "valid",
+      "longest_steady_s": 2.1681738769984804,
+      "reasons": [],
+      "abs_acceleration_p99": 0.10867301088063828
+    },
+    {
+      "run": "holdout",
+      "window": 0.28,
+      "speed": 0.15,
+      "segment": 9,
+      "status": "valid",
+      "longest_steady_s": 2.16344274696894,
+      "reasons": [],
+      "abs_acceleration_p99": 0.06601692877323709
+    },
+    {
+      "run": "holdout",
+      "window": 0.28,
+      "speed": 0.07,
+      "segment": 10,
+      "status": "valid",
+      "longest_steady_s": 1.8395064449869096,
+      "reasons": [],
+      "abs_acceleration_p99": 0.16667764583643946
+    },
+    {
+      "run": "holdout",
+      "window": 0.28,
+      "speed": 0.07,
+      "segment": 11,
+      "status": "valid",
+      "longest_steady_s": 2.66444359900197,
+      "reasons": [],
+      "abs_acceleration_p99": 0.15293720673300945
+    },
+    {
+      "run": "holdout",
+      "kind": "ideal_constant_speed_quantization",
+      "segment": 0,
+      "speed": 0.15,
+      "samples": [
+        {
+          "phase_lsb": 0.0,
+          "p99": 0.028128797552592375,
+          "max": 0.038230595080559926,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.2,
+          "p99": 0.04213696705842454,
+          "max": 0.04665888491658321,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.4,
+          "p99": 0.032275109247886694,
+          "max": 0.035979652379984184,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.6,
+          "p99": 0.030737218554332722,
+          "max": 0.035518442633027,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.8,
+          "p99": 0.030759420259052372,
+          "max": 0.03586783914255809,
+          "over_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "run": "holdout",
+      "kind": "ideal_constant_speed_quantization",
+      "segment": 1,
+      "speed": 0.15,
+      "samples": [
+        {
+          "phase_lsb": 0.0,
+          "p99": 0.03139781395420801,
+          "max": 0.037835243930396056,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.2,
+          "p99": 0.027540851577062517,
+          "max": 0.04330774495402556,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.4,
+          "p99": 0.024922564761019745,
+          "max": 0.028630379104357506,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.6,
+          "p99": 0.029765626816965724,
+          "max": 0.04022245589984447,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.8,
+          "p99": 0.025872785761260828,
+          "max": 0.032598644296424284,
+          "over_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "run": "holdout",
+      "kind": "ideal_constant_speed_quantization",
+      "segment": 2,
+      "speed": 0.1,
+      "samples": [
+        {
+          "phase_lsb": 0.0,
+          "p99": 0.019629886625445663,
+          "max": 0.025273106484820257,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.2,
+          "p99": 0.019867133787574105,
+          "max": 0.022878948698731055,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.4,
+          "p99": 0.020553665963354895,
+          "max": 0.024100407003293023,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.6,
+          "p99": 0.020293276540436958,
+          "max": 0.024365967512328,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.8,
+          "p99": 0.022056951595523535,
+          "max": 0.026976474510048754,
+          "over_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "run": "holdout",
+      "kind": "ideal_constant_speed_quantization",
+      "segment": 3,
+      "speed": 0.1,
+      "samples": [
+        {
+          "phase_lsb": 0.0,
+          "p99": 0.02562596475851626,
+          "max": 0.03498233696722483,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.2,
+          "p99": 0.02366451881513633,
+          "max": 0.03178606349231375,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.4,
+          "p99": 0.02488296666033676,
+          "max": 0.035181877954575974,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.6,
+          "p99": 0.02185092865378459,
+          "max": 0.02533447739062092,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.8,
+          "p99": 0.02134391211359566,
+          "max": 0.02628008115385108,
+          "over_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "run": "holdout",
+      "kind": "ideal_constant_speed_quantization",
+      "segment": 4,
+      "speed": 0.07,
+      "samples": [
+        {
+          "phase_lsb": 0.0,
+          "p99": 0.02562029244200689,
+          "max": 0.03185942547010771,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.2,
+          "p99": 0.02700503660445956,
+          "max": 0.03750294005981405,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.4,
+          "p99": 0.024960109228836232,
+          "max": 0.03790787590262179,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.6,
+          "p99": 0.02525606227191443,
+          "max": 0.0308137372714377,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.8,
+          "p99": 0.024609825414175078,
+          "max": 0.03671190481469125,
+          "over_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "run": "holdout",
+      "kind": "ideal_constant_speed_quantization",
+      "segment": 5,
+      "speed": 0.07,
+      "samples": [
+        {
+          "phase_lsb": 0.0,
+          "p99": 0.02598389801514886,
+          "max": 0.03435016670399063,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.2,
+          "p99": 0.024975898478464677,
+          "max": 0.0338837371447709,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.4,
+          "p99": 0.02543786746736099,
+          "max": 0.030776307084729518,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.6,
+          "p99": 0.02421404601910174,
+          "max": 0.031509194786894346,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.8,
+          "p99": 0.025828735189938803,
+          "max": 0.03427457040634749,
+          "over_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "run": "holdout",
+      "kind": "ideal_constant_speed_quantization",
+      "segment": 6,
+      "speed": 0.1,
+      "samples": [
+        {
+          "phase_lsb": 0.0,
+          "p99": 0.020491878729231996,
+          "max": 0.02334677225811088,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.2,
+          "p99": 0.02057633636333002,
+          "max": 0.02798519740202096,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.4,
+          "p99": 0.018527910714691006,
+          "max": 0.02085081263331992,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.6,
+          "p99": 0.02182197093420733,
+          "max": 0.02707346244991332,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.8,
+          "p99": 0.021041753524891446,
+          "max": 0.0268380978234955,
+          "over_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "run": "holdout",
+      "kind": "ideal_constant_speed_quantization",
+      "segment": 7,
+      "speed": 0.1,
+      "samples": [
+        {
+          "phase_lsb": 0.0,
+          "p99": 0.020003370928655475,
+          "max": 0.023910506525653047,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.2,
+          "p99": 0.01835198951579968,
+          "max": 0.021251988320764276,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.4,
+          "p99": 0.022511785408024933,
+          "max": 0.039961633941852676,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.6,
+          "p99": 0.020620993766792915,
+          "max": 0.02282939359515279,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.8,
+          "p99": 0.020699152112266583,
+          "max": 0.024340737113719396,
+          "over_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "run": "holdout",
+      "kind": "ideal_constant_speed_quantization",
+      "segment": 8,
+      "speed": 0.15,
+      "samples": [
+        {
+          "phase_lsb": 0.0,
+          "p99": 0.03896040950165216,
+          "max": 0.04796490485601129,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.2,
+          "p99": 0.031333337542910795,
+          "max": 0.03466312213423972,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.4,
+          "p99": 0.030472222413267386,
+          "max": 0.0353918713683089,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.6,
+          "p99": 0.030083263863806206,
+          "max": 0.038657875573400446,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.8,
+          "p99": 0.03296296870573221,
+          "max": 0.037767781852934335,
+          "over_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "run": "holdout",
+      "kind": "ideal_constant_speed_quantization",
+      "segment": 9,
+      "speed": 0.15,
+      "samples": [
+        {
+          "phase_lsb": 0.0,
+          "p99": 0.026627571186433337,
+          "max": 0.03288701259450272,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.2,
+          "p99": 0.026709502389707374,
+          "max": 0.03109808037098649,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.4,
+          "p99": 0.02780746965842245,
+          "max": 0.03240329590257657,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.6,
+          "p99": 0.028897456079373756,
+          "max": 0.03275381716250203,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.8,
+          "p99": 0.023031772829984237,
+          "max": 0.029795474869407312,
+          "over_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "run": "holdout",
+      "kind": "ideal_constant_speed_quantization",
+      "segment": 10,
+      "speed": 0.07,
+      "samples": [
+        {
+          "phase_lsb": 0.0,
+          "p99": 0.02577534779977032,
+          "max": 0.03164366798937507,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.2,
+          "p99": 0.024183393013908455,
+          "max": 0.03129750624947175,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.4,
+          "p99": 0.02479556834415105,
+          "max": 0.036767630217931044,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.6,
+          "p99": 0.023509178189026033,
+          "max": 0.025901952998654984,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.8,
+          "p99": 0.025105361375387342,
+          "max": 0.028718195537505042,
+          "over_fraction": 0.0
+        }
+      ]
+    },
+    {
+      "run": "holdout",
+      "kind": "ideal_constant_speed_quantization",
+      "segment": 11,
+      "speed": 0.07,
+      "samples": [
+        {
+          "phase_lsb": 0.0,
+          "p99": 0.02544186468381791,
+          "max": 0.03313422987558992,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.2,
+          "p99": 0.026327499147517284,
+          "max": 0.03308266213380723,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.4,
+          "p99": 0.025660263545411045,
+          "max": 0.03416915282076828,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.6,
+          "p99": 0.02449153231251948,
+          "max": 0.03463903023097065,
+          "over_fraction": 0.0
+        },
+        {
+          "phase_lsb": 0.8,
+          "p99": 0.026826762053658814,
+          "max": 0.034286956475790664,
+          "over_fraction": 0.0
+        }
+      ]
+    }
+  ]
+}

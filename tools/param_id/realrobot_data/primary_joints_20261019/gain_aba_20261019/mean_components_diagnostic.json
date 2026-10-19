@@ -1,0 +1,32 @@
+[
+  {
+    "group": "A1",
+    "tau_fb_mean_half_difference": 0.3217439348689944,
+    "tau_ff_mean_half_difference": 0.006721664522843744,
+    "tau_pd_host_mean_half_difference": 0.32706826332040784,
+    "q_ref_mean_half_difference": 0.0026176939899570147,
+    "qd_feedback_mean_half_difference": 0.10189726772339967,
+    "v_mean_half_difference": 0.09898184633347204,
+    "acceleration_mean_half_difference": -0.004121304486606505
+  },
+  {
+    "group": "B",
+    "tau_fb_mean_half_difference": 0.35362511288419873,
+    "tau_ff_mean_half_difference": 0.006338452649479165,
+    "tau_pd_host_mean_half_difference": 0.4051915829338493,
+    "q_ref_mean_half_difference": 0.002751927811719837,
+    "qd_feedback_mean_half_difference": 0.09937303151940748,
+    "v_mean_half_difference": 0.09999677679537872,
+    "acceleration_mean_half_difference": -0.0031123833557859812
+  },
+  {
+    "group": "A2",
+    "tau_fb_mean_half_difference": 0.386399828567132,
+    "tau_ff_mean_half_difference": 0.006267558094038552,
+    "tau_pd_host_mean_half_difference": 0.3987468806679791,
+    "q_ref_mean_half_difference": 0.0026089505445362738,
+    "qd_feedback_mean_half_difference": 0.09825635510936251,
+    "v_mean_half_difference": 0.0990511621881334,
+    "acceleration_mean_half_difference": -0.004175185069784999
+  }
+]

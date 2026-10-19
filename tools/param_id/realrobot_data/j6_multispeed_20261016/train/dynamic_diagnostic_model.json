@@ -1,0 +1,424 @@
+{
+  "schema": "single_axis_dynamic_diagnostic_v1",
+  "status": "diagnostic_candidate",
+  "compensation_allowed": false,
+  "options": {
+    "window": 0.2,
+    "max_residual": 0.002,
+    "max_tracking": 0.08,
+    "max_acceleration": 5.0,
+    "min_fraction": 0.7,
+    "min_samples": 100,
+    "period_min": 0.03,
+    "period_max": 0.06,
+    "frequency_min": 0.5,
+    "frequency_max": 8.0
+  },
+  "training": {
+    "run_id": "b4729f07-47e3-42a4-83f8-e37c93d1041c",
+    "file_sha256": "39e48f25e33a23d15a079b7ea219f1361feee8f33b13f12af10d84f5df595e47",
+    "raw_sha256": "cd742e71b1cbc684bd62e20b71cf772c80ef7284e3face02a3d17b3e91d07586",
+    "conditions": {
+      "joint": 6,
+      "conditions": {
+        "calibration": {
+          "calibration_id": "unverified",
+          "offset": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "units": "protocol_nm_unverified",
+          "verified": false
+        },
+        "home": [
+          0.0,
+          1.2,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "kd": [
+          5.0,
+          10.0,
+          10.0,
+          1.5,
+          0.8,
+          2.0
+        ],
+        "kp": [
+          80.0,
+          150.0,
+          150.0,
+          25.0,
+          12.0,
+          25.0
+        ],
+        "load_id": "live_tracking_load_unverified_20261016",
+        "measurement_range": [
+          0.105,
+          0.44500000000000006
+        ],
+        "model_hash": "3838ca8f9d586be22a89b33c7cbdd4abd43d4a92a2de377b294eef4c5bd7654d",
+        "temperature_limit_c": 65.0
+      },
+      "rate": 100.0
+    },
+    "calibrated": false,
+    "segments": [
+      {
+        "segment": 0,
+        "direction": 1,
+        "speed": 0.1,
+        "samples": 1258,
+        "reliable_fraction": 1.0
+      },
+      {
+        "segment": 1,
+        "direction": -1,
+        "speed": 0.1,
+        "samples": 1258,
+        "reliable_fraction": 1.0
+      },
+      {
+        "segment": 2,
+        "direction": 1,
+        "speed": 0.07,
+        "samples": 1731,
+        "reliable_fraction": 1.0
+      },
+      {
+        "segment": 3,
+        "direction": -1,
+        "speed": 0.07,
+        "samples": 1732,
+        "reliable_fraction": 1.0
+      },
+      {
+        "segment": 4,
+        "direction": 1,
+        "speed": 0.15,
+        "samples": 893,
+        "reliable_fraction": 1.0
+      },
+      {
+        "segment": 5,
+        "direction": -1,
+        "speed": 0.15,
+        "samples": 892,
+        "reliable_fraction": 1.0
+      },
+      {
+        "segment": 6,
+        "direction": 1,
+        "speed": 0.1,
+        "samples": 1258,
+        "reliable_fraction": 1.0
+      },
+      {
+        "segment": 7,
+        "direction": -1,
+        "speed": 0.1,
+        "samples": 1256,
+        "reliable_fraction": 1.0
+      },
+      {
+        "segment": 8,
+        "direction": 1,
+        "speed": 0.15,
+        "samples": 892,
+        "reliable_fraction": 1.0
+      },
+      {
+        "segment": 9,
+        "direction": -1,
+        "speed": 0.15,
+        "samples": 891,
+        "reliable_fraction": 1.0
+      },
+      {
+        "segment": 10,
+        "direction": 1,
+        "speed": 0.07,
+        "samples": 1730,
+        "reliable_fraction": 1.0
+      },
+      {
+        "segment": 11,
+        "direction": -1,
+        "speed": 0.07,
+        "samples": 1727,
+        "reliable_fraction": 1.0
+      }
+    ],
+    "torque_units": "protocol_nm_unverified",
+    "gravity_policy": "reference only; no N*m subtraction from unverified protocol torque",
+    "temperature_range": [
+      30.0,
+      31.0
+    ]
+  },
+  "models": [
+    {
+      "kind": "baseline",
+      "frequency": null,
+      "coefficients": [
+        0.037013185259517516,
+        0.09132272347834124,
+        0.3543999139607334,
+        -1.6739922264737914
+      ],
+      "names": [
+        "bias",
+        "effective_inertia",
+        "smooth_fc",
+        "fv"
+      ],
+      "training_balanced_rmse": 0.12921609858206048,
+      "scaled_condition": 3.930318657624027,
+      "rank": 4,
+      "physical_issues": [
+        "fv is negative; no physical parameter interpretation"
+      ]
+    },
+    {
+      "kind": "spatial",
+      "frequency": 0.04477639408192329,
+      "coefficients": [
+        0.012957389728781724,
+        0.007621088963724933,
+        0.11077466069410435,
+        0.03630894782019714,
+        -0.06599092300846772,
+        0.23240898817744532
+      ],
+      "names": [
+        "bias",
+        "effective_inertia",
+        "smooth_fc",
+        "fv",
+        "position_sin",
+        "position_cos"
+      ],
+      "training_balanced_rmse": 0.04482289702614263,
+      "scaled_condition": 5.557605263676644,
+      "rank": 6,
+      "physical_issues": []
+    },
+    {
+      "kind": "temporal",
+      "frequency": 0.5,
+      "coefficients": [
+        0.034477751549017534,
+        0.09218345079784042,
+        0.3629627134990001,
+        -1.752470752770371,
+        0.016247790212558556,
+        0.013000327306560151,
+        0.06421373387727126,
+        0.008967981754760794
+      ],
+      "names": [
+        "bias",
+        "effective_inertia",
+        "smooth_fc",
+        "fv",
+        "time_sin_1",
+        "time_cos_1",
+        "time_sin_-1",
+        "time_cos_-1"
+      ],
+      "training_balanced_rmse": 0.1245981695397675,
+      "scaled_condition": 4.017722640439072,
+      "rank": 8,
+      "physical_issues": [
+        "fv is negative; no physical parameter interpretation"
+      ]
+    }
+  ],
+  "period_diagnostics": [
+    {
+      "segment": 0,
+      "direction": 1,
+      "speed": 0.1,
+      "mean_actual_speed": 0.0998183471664356,
+      "spatial_period": {
+        "value": 0.044875,
+        "in_sample_r2": 0.9327725536350766
+      },
+      "temporal_frequency": {
+        "value": 2.225,
+        "in_sample_r2": 0.8068602997977827
+      }
+    },
+    {
+      "segment": 1,
+      "direction": -1,
+      "speed": 0.1,
+      "mean_actual_speed": 0.09993023110895802,
+      "spatial_period": {
+        "value": 0.044875,
+        "in_sample_r2": 0.9364137120302066
+      },
+      "temporal_frequency": {
+        "value": 2.225,
+        "in_sample_r2": 0.8255730803443904
+      }
+    },
+    {
+      "segment": 2,
+      "direction": 1,
+      "speed": 0.07,
+      "mean_actual_speed": 0.0690969895661294,
+      "spatial_period": {
+        "value": 0.044875,
+        "in_sample_r2": 0.9531428205394644
+      },
+      "temporal_frequency": {
+        "value": 1.55,
+        "in_sample_r2": 0.7663307491450213
+      }
+    },
+    {
+      "segment": 3,
+      "direction": -1,
+      "speed": 0.07,
+      "mean_actual_speed": 0.07064231347522362,
+      "spatial_period": {
+        "value": 0.044875,
+        "in_sample_r2": 0.9675685361519932
+      },
+      "temporal_frequency": {
+        "value": 1.55,
+        "in_sample_r2": 0.7844642641188757
+      }
+    },
+    {
+      "segment": 4,
+      "direction": 1,
+      "speed": 0.15,
+      "mean_actual_speed": 0.14916930007566795,
+      "spatial_period": {
+        "value": 0.044875,
+        "in_sample_r2": 0.9157377064248137
+      },
+      "temporal_frequency": {
+        "value": 3.35,
+        "in_sample_r2": 0.8236158816428178
+      }
+    },
+    {
+      "segment": 5,
+      "direction": -1,
+      "speed": 0.15,
+      "mean_actual_speed": 0.14968843219847652,
+      "spatial_period": {
+        "value": 0.044875,
+        "in_sample_r2": 0.9406506110493875
+      },
+      "temporal_frequency": {
+        "value": 3.35,
+        "in_sample_r2": 0.8707944155487656
+      }
+    },
+    {
+      "segment": 6,
+      "direction": 1,
+      "speed": 0.1,
+      "mean_actual_speed": 0.09975371648991022,
+      "spatial_period": {
+        "value": 0.044875,
+        "in_sample_r2": 0.9525059284220677
+      },
+      "temporal_frequency": {
+        "value": 2.225,
+        "in_sample_r2": 0.7739040412293634
+      }
+    },
+    {
+      "segment": 7,
+      "direction": -1,
+      "speed": 0.1,
+      "mean_actual_speed": 0.10007021750973874,
+      "spatial_period": {
+        "value": 0.04475,
+        "in_sample_r2": 0.9515093535776153
+      },
+      "temporal_frequency": {
+        "value": 2.225,
+        "in_sample_r2": 0.7987736162772272
+      }
+    },
+    {
+      "segment": 8,
+      "direction": 1,
+      "speed": 0.15,
+      "mean_actual_speed": 0.14895860185098192,
+      "spatial_period": {
+        "value": 0.04475,
+        "in_sample_r2": 0.910906359871688
+      },
+      "temporal_frequency": {
+        "value": 3.35,
+        "in_sample_r2": 0.8192550942171758
+      }
+    },
+    {
+      "segment": 9,
+      "direction": -1,
+      "speed": 0.15,
+      "mean_actual_speed": 0.14976894821980302,
+      "spatial_period": {
+        "value": 0.044875,
+        "in_sample_r2": 0.9215428900362904
+      },
+      "temporal_frequency": {
+        "value": 3.35,
+        "in_sample_r2": 0.8700389718403921
+      }
+    },
+    {
+      "segment": 10,
+      "direction": 1,
+      "speed": 0.07,
+      "mean_actual_speed": 0.068543131571617,
+      "spatial_period": {
+        "value": 0.044875,
+        "in_sample_r2": 0.9670894779864248
+      },
+      "temporal_frequency": {
+        "value": 1.55,
+        "in_sample_r2": 0.724905923920677
+      }
+    },
+    {
+      "segment": 11,
+      "direction": -1,
+      "speed": 0.07,
+      "mean_actual_speed": 0.07049543391636306,
+      "spatial_period": {
+        "value": 0.044875,
+        "in_sample_r2": 0.9711786764558283
+      },
+      "temporal_frequency": {
+        "value": 1.55,
+        "in_sample_r2": 0.7473050328605428
+      }
+    }
+  ],
+  "interpretation": "Lumped single-axis regression; bias absorbs offsets. Coefficients are not physical N*m parameters without calibration; position derivatives may contain encoder error.",
+  "code_sha256": "ef9c2772fae85cb3c76b3aee36ba55814c4c69257251086d6035b7f39eca5d79",
+  "checksum": "c27ce9b1b4a778d07bd42ef536ef558659bfcbe2722ddb8ee30583d3b555a868"
+}

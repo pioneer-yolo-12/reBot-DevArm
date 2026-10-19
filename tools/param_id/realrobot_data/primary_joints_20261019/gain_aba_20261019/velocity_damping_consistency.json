@@ -1,0 +1,60 @@
+{
+  "rows": [
+    {
+      "group": "A1",
+      "kp": 150.0,
+      "kd": 20.0,
+      "q_ref": 0.0026176939899570147,
+      "qd_ref": 0.09861797596474246,
+      "qd_feedback": 0.10189726772339967,
+      "v": 0.09898184633347204,
+      "tau_pd_host": 0.32706826332040784,
+      "tau_ff": 0.006721664522843744,
+      "tau_fb": 0.3217439348689944,
+      "reported_minus_position_derived_speed": 0.0029154213899276332,
+      "host_PD_with_position_derived_velocity_counterfactual": 0.3853766911189605
+    },
+    {
+      "group": "B",
+      "kp": 150.0,
+      "kd": 10.0,
+      "q_ref": 0.002751927811719837,
+      "qd_ref": 0.09861327263699478,
+      "qd_feedback": 0.09937303151940748,
+      "v": 0.09999677679537872,
+      "tau_pd_host": 0.4051915829338493,
+      "tau_ff": 0.006338452649479165,
+      "tau_fb": 0.35362511288419873,
+      "reported_minus_position_derived_speed": -0.0006237452759712409,
+      "host_PD_with_position_derived_velocity_counterfactual": 0.39895413017413695
+    },
+    {
+      "group": "A2",
+      "kp": 150.0,
+      "kd": 20.0,
+      "q_ref": 0.0026089505445362738,
+      "qd_ref": 0.09862657005873941,
+      "qd_feedback": 0.09825635510936251,
+      "v": 0.0990511621881334,
+      "tau_pd_host": 0.3987468806679791,
+      "tau_ff": 0.006267558094038552,
+      "tau_fb": 0.386399828567132,
+      "reported_minus_position_derived_speed": -0.0007948070787708872,
+      "host_PD_with_position_derived_velocity_counterfactual": 0.38285073909256134
+    }
+  ],
+  "A1_to_A2": {
+    "reported_speed_change": -0.0036409126140371645,
+    "position_derived_speed_change": 6.931585466135592e-05,
+    "feedback_half_difference_change": 0.06465589369813762,
+    "host_PD_half_difference_change": 0.07167861734757125,
+    "damping_contribution_from_reported_speed_change": 0.07281825228074329,
+    "position_contribution": -0.0013115168131111422,
+    "reference_velocity_contribution": 0.0001718818799389954
+  },
+  "limits": [
+    "Position-derived velocity is not an independent motion reference.",
+    "Counterfactual host formula only; raw measured torque and motor control are unchanged.",
+    "Reported speed is not proven identical to firmware internal PD speed."
+  ]
+}

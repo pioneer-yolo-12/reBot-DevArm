@@ -1,0 +1,154 @@
+{
+  "joint": 2,
+  "file": "J2_speed_screen/friction_20261019_150840_0164d3bc.npz",
+  "kp": [
+    80.0,
+    150.0,
+    150.0,
+    25.0,
+    12.0,
+    25.0
+  ],
+  "kd": [
+    5.0,
+    20.0,
+    10.0,
+    1.5,
+    0.8,
+    1.5
+  ],
+  "segments": [
+    {
+      "segment": 0,
+      "repeat": 0,
+      "speed_id": 2,
+      "direction": 1,
+      "status": "invalid",
+      "reasons": [
+        "no_continuous_steady_window"
+      ],
+      "samples": 477,
+      "steady_fraction": 0.7794117647058824,
+      "velocity_cv": 0.06315024110127547,
+      "longest_steady_s": 0.7308185060392134
+    },
+    {
+      "segment": 1,
+      "repeat": 0,
+      "speed_id": 2,
+      "direction": -1,
+      "status": "invalid",
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "samples": 421,
+      "steady_fraction": 0.6856677524429967,
+      "velocity_cv": 0.0717284596968798,
+      "longest_steady_s": 0.3893769889837131
+    },
+    {
+      "segment": 2,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": 1,
+      "status": "valid",
+      "reasons": [],
+      "samples": 1144,
+      "steady_fraction": 0.9225806451612903,
+      "velocity_cv": 0.11883137881601147,
+      "longest_steady_s": 2.4581905699451454
+    },
+    {
+      "segment": 3,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": -1,
+      "status": "invalid",
+      "reasons": [
+        "no_continuous_steady_window"
+      ],
+      "samples": 1010,
+      "steady_fraction": 0.8218063466232709,
+      "velocity_cv": 0.13219106020744822,
+      "longest_steady_s": 0.7789848229731433
+    },
+    {
+      "segment": 4,
+      "repeat": 0,
+      "speed_id": 1,
+      "direction": 1,
+      "status": "invalid",
+      "reasons": [
+        "no_continuous_steady_window"
+      ],
+      "samples": 750,
+      "steady_fraction": 0.8038585209003215,
+      "velocity_cv": 0.10989058423342835,
+      "longest_steady_s": 0.608202364994213
+    },
+    {
+      "segment": 5,
+      "repeat": 0,
+      "speed_id": 1,
+      "direction": -1,
+      "status": "invalid",
+      "reasons": [
+        "low_steady_fraction",
+        "no_continuous_steady_window"
+      ],
+      "samples": 633,
+      "steady_fraction": 0.6872964169381107,
+      "velocity_cv": 0.11933434644924625,
+      "longest_steady_s": 0.5186101959552616
+    }
+  ],
+  "fold": {
+    "kind": "fold_verified",
+    "position_velocity": [
+      3.818098055912518e-05,
+      -3.470815305919017e-05,
+      -0.0008676570403699466,
+      0.0016242627812526366,
+      -3.122722264593531e-05,
+      1.3131268642924884e-12
+    ],
+    "q": [
+      0.002684548304712415,
+      0.0019175345033660108,
+      0.009204165616156851,
+      0.008437151814810447,
+      0.0030680552053856175,
+      0.0019175345033660108
+    ],
+    "qd": [
+      -0.11139255958739214,
+      -0.04425183874019467,
+      -0.03967406231879522,
+      -0.03021332438123636,
+      -0.08661152989288123,
+      -0.07351908932767881
+    ],
+    "settle": 0.5,
+    "t": 272412.105629048
+  },
+  "disabled": {
+    "kind": "disabled_after_fold",
+    "t": 272412.130603807
+  },
+  "peak_temperature": [
+    32.0,
+    40.0,
+    56.0,
+    37.0,
+    32.0,
+    32.0
+  ],
+  "peak_axis_torque": 9.543015839106419,
+  "units": {
+    "q": "rad",
+    "qd": "rad/s",
+    "tau": "protocol_nm_unverified",
+    "time": "monotonic seconds"
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "position_queries": [
+    {
+      "joint": 1,
+      "q": -0.00017044279957190156
+    },
+    {
+      "joint": 2,
+      "q": -0.0007243950967676938
+    },
+    {
+      "joint": 3,
+      "q": 0.00017044279957190156
+    },
+    {
+      "joint": 4,
+      "q": 0.0018407822353765368
+    },
+    {
+      "joint": 5,
+      "q": -0.0004601955588441342
+    },
+    {
+      "joint": 6,
+      "q": 0.003758251667022705
+    }
+  ],
+  "feedback": [
+    {
+      "joint": 1,
+      "q": -0.0003835069006732022,
+      "qd": -0.02441480758079706,
+      "tau": 0.0,
+      "temperature": 27.0,
+      "status": 0,
+      "can_id": 402653693,
+      "payload": "7ffe7fef7fff010e",
+      "t": 281633.679673081,
+      "read_t": 281633.679790864,
+      "kernel_ns": 1792403232162704849,
+      "clock_error": 1.1245e-06,
+      "timestamp_valid": true,
+      "seq": 31,
+      "drive_state": 0
+    },
+    {
+      "joint": 2,
+      "q": -0.0007670138013464044,
+      "qd": 0.010681478316598714,
+      "tau": 0.0,
+      "temperature": 27.0,
+      "status": 0,
+      "can_id": 402653949,
+      "payload": "7ffd80067fff010e",
+      "t": 281633.681159932,
+      "read_t": 281633.68123967,
+      "kernel_ns": 1792403232164191474,
+      "clock_error": 9.805e-07,
+      "timestamp_valid": true,
+      "seq": 31,
+      "drive_state": 0
+    },
+    {
+      "joint": 3,
+      "q": 0.0003835069006732022,
+      "qd": -0.04425183874019467,
+      "tau": 0.0,
+      "temperature": 26.0,
+      "status": 0,
+      "can_id": 402654205,
+      "payload": "80007fe27fff0104",
+      "t": 281633.684067288,
+      "read_t": 281633.684123008,
+      "kernel_ns": 1792403232167098804,
+      "clock_error": 8.274999999999999e-07,
+      "timestamp_valid": true,
+      "seq": 31,
+      "drive_state": 0
+    },
+    {
+      "joint": 4,
+      "q": 0.0019175345033660108,
+      "qd": 0.0,
+      "tau": 0.0,
+      "temperature": 26.0,
+      "status": 0,
+      "can_id": 402654461,
+      "payload": "80047fff7fff0104",
+      "t": 281633.684219589,
+      "read_t": 281633.684273667,
+      "kernel_ns": 1792403232167251124,
+      "clock_error": 8.27e-07,
+      "timestamp_valid": true,
+      "seq": 31,
+      "drive_state": 0
+    },
+    {
+      "joint": 5,
+      "q": -0.0003835069006732022,
+      "qd": 0.06445509201330424,
+      "tau": 0.0,
+      "temperature": 26.0,
+      "status": 0,
+      "can_id": 402654717,
+      "payload": "7ffe803f7fff0104",
+      "t": 281633.683743742,
+      "read_t": 281633.68380746,
+      "kernel_ns": 1792403232166775261,
+      "clock_error": 8.54e-07,
+      "timestamp_valid": true,
+      "seq": 31,
+      "drive_state": 0
+    },
+    {
+      "joint": 6,
+      "q": 0.0038350690067320216,
+      "qd": -0.0010071108127078787,
+      "tau": 0.0,
+      "temperature": 26.0,
+      "status": 0,
+      "can_id": 402654973,
+      "payload": "80097ffe7fff0104",
+      "t": 281633.674986519,
+      "read_t": 281633.675046996,
+      "kernel_ns": 1792403232158018064,
+      "clock_error": 8.385e-07,
+      "timestamp_valid": true,
+      "seq": 30,
+      "drive_state": 0
+    }
+  ]
+}

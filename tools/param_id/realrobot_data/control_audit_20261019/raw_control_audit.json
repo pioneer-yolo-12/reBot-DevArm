@@ -1,0 +1,3145 @@
+{
+  "spatial_period_rad": 0.04477639408192329,
+  "derivative_policy": "15-point order-3 Savitzky-Golay derivative on 100Hz interpolated position; 0.15s trimmed constant segments",
+  "limits": [
+    "Same encoder underlies actual position and derivative; does not independently verify physical shaft motion",
+    "Command timestamps bracket host send API; not wire TX timestamp or motor execution time",
+    "Existing datasets move J6 only; J1-J5 are holding and are not matched moving-axis controls"
+  ],
+  "runs": [
+    {
+      "file": "friction_20261016_172447_b4729f07.npz",
+      "run_status": "complete",
+      "joint": 6,
+      "commands": [
+        {
+          "joint": 1,
+          "interval_ms": {
+            "median": 9.998561499742209,
+            "p99": 10.800429481205356,
+            "max": 12.92545400065137
+          },
+          "send_duration_ms": {
+            "median": 0.08542649993614759,
+            "p99": 0.5889564070457706,
+            "max": 1.221831000293605
+          },
+          "gaps_gt_20ms": 0,
+          "policy": "Only within one motion segment; intentional 0.5s holds between segments excluded"
+        },
+        {
+          "joint": 2,
+          "interval_ms": {
+            "median": 9.997277498769108,
+            "p99": 10.997726178611629,
+            "max": 13.308157998835668
+          },
+          "send_duration_ms": {
+            "median": 0.1388750006299233,
+            "p99": 0.5293845389678605,
+            "max": 1.6575640001974534
+          },
+          "gaps_gt_20ms": 0,
+          "policy": "Only within one motion segment; intentional 0.5s holds between segments excluded"
+        },
+        {
+          "joint": 3,
+          "interval_ms": {
+            "median": 9.995102000175393,
+            "p99": 11.100973268512465,
+            "max": 13.504284001101041
+          },
+          "send_duration_ms": {
+            "median": 0.13831700016453397,
+            "p99": 0.5636431313178009,
+            "max": 1.420223001332488
+          },
+          "gaps_gt_20ms": 0,
+          "policy": "Only within one motion segment; intentional 0.5s holds between segments excluded"
+        },
+        {
+          "joint": 4,
+          "interval_ms": {
+            "median": 9.995821499614976,
+            "p99": 11.246025028121952,
+            "max": 13.918811000621645
+          },
+          "send_duration_ms": {
+            "median": 0.15252049888658803,
+            "p99": 0.6094982889408097,
+            "max": 2.0078329980606213
+          },
+          "gaps_gt_20ms": 0,
+          "policy": "Only within one motion segment; intentional 0.5s holds between segments excluded"
+        },
+        {
+          "joint": 5,
+          "interval_ms": {
+            "median": 9.996405000492814,
+            "p99": 11.446327972080326,
+            "max": 20.83953400142491
+          },
+          "send_duration_ms": {
+            "median": 0.1596469992364291,
+            "p99": 0.6929319514165395,
+            "max": 2.18702299753204
+          },
+          "gaps_gt_20ms": 1,
+          "policy": "Only within one motion segment; intentional 0.5s holds between segments excluded"
+        },
+        {
+          "joint": 6,
+          "interval_ms": {
+            "median": 9.994852998715942,
+            "p99": 11.66062779906497,
+            "max": 20.94901199961896
+          },
+          "send_duration_ms": {
+            "median": 0.1883489985630149,
+            "p99": 0.7604303110201723,
+            "max": 2.2644349992333446
+          },
+          "gaps_gt_20ms": 1,
+          "policy": "Only within one motion segment; intentional 0.5s holds between segments excluded"
+        }
+      ],
+      "passes": [
+        {
+          "segment": 0,
+          "direction": 1,
+          "speed": 0.1,
+          "duration": 4.189999999329302,
+          "samples": 420,
+          "mean_position_velocity": 0.10143178873865356,
+          "position_velocity_std": 0.04919613658124983,
+          "raw_velocity_std": 0.0594687506856665,
+          "torque_harmonic": {
+            "amplitude": 0.18958475098663244,
+            "phase_rad": 1.756983537708885,
+            "r2": 0.9499959141707667
+          },
+          "feedforward_harmonic": {
+            "amplitude": 5.838699921069701e-07,
+            "phase_rad": -1.3218896087235663,
+            "r2": 0.9663828866504041
+          },
+          "tracking_error_harmonic": {
+            "amplitude": 0.004637018732303441,
+            "phase_rad": 0.849707721734143,
+            "r2": 0.9662526981983367
+          },
+          "position_velocity_harmonic": {
+            "amplitude": 0.07213633758935784,
+            "phase_rad": -0.7618704576059351,
+            "r2": 0.9501955580345559
+          },
+          "raw_velocity_harmonic": {
+            "amplitude": 0.07450320393182741,
+            "phase_rad": -0.7670198735230395,
+            "r2": 0.6951130141406369
+          },
+          "command_quant_error_harmonic": {
+            "amplitude": 2.592292571747661e-06,
+            "phase_rad": -1.0253286314323706,
+            "r2": 0.0007437679452807489
+          },
+          "ff_span": 9.463219188740515e-05,
+          "tau_span": 0.49262336192992584,
+          "type_specific": {
+            "2": {
+              "q_span": 0.4540721703970853,
+              "torque_harmonic": {
+                "amplitude": 0.18824192485989988,
+                "phase_rad": 1.7622717652351163,
+                "r2": 0.9415802210755375
+              },
+              "zero_position_step_fraction": 0.006550218340611353,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            },
+            "24": {
+              "q_span": 0.45445567729775854,
+              "torque_harmonic": {
+                "amplitude": 0.1870284465323937,
+                "phase_rad": 1.7615312205061937,
+                "r2": 0.9369865675270842
+              },
+              "zero_position_step_fraction": 0.0,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            }
+          }
+        },
+        {
+          "segment": 1,
+          "direction": -1,
+          "speed": 0.1,
+          "duration": 4.179999999330903,
+          "samples": 419,
+          "mean_position_velocity": -0.09957466906972141,
+          "position_velocity_std": 0.05260126196455665,
+          "raw_velocity_std": 0.06202123945404706,
+          "torque_harmonic": {
+            "amplitude": 0.19923013448931795,
+            "phase_rad": 1.9364866602794553,
+            "r2": 0.9447251652232214
+          },
+          "feedforward_harmonic": {
+            "amplitude": 5.914151891835477e-07,
+            "phase_rad": 2.7952530316872837,
+            "r2": 0.9702583328773805
+          },
+          "tracking_error_harmonic": {
+            "amplitude": 0.00519468406749149,
+            "phase_rad": 2.8409985347477824,
+            "r2": 0.9463581557867575
+          },
+          "position_velocity_harmonic": {
+            "amplitude": 0.07942117047681024,
+            "phase_rad": -1.8488160025307576,
+            "r2": 0.9649404539487404
+          },
+          "raw_velocity_harmonic": {
+            "amplitude": 0.0809100339740618,
+            "phase_rad": -1.8096246465655805,
+            "r2": 0.7193371643866172
+          },
+          "command_quant_error_harmonic": {
+            "amplitude": 2.22247638443624e-06,
+            "phase_rad": -0.3595009773317537,
+            "r2": 0.0006806736960468518
+          },
+          "ff_span": 9.6454088012236e-05,
+          "tau_span": 0.5158065904147214,
+          "type_specific": {
+            "2": {
+              "q_span": 0.456756718701795,
+              "torque_harmonic": {
+                "amplitude": 0.19760664289395893,
+                "phase_rad": 1.928073628560375,
+                "r2": 0.9413710680537742
+              },
+              "zero_position_step_fraction": 0.008733624454148471,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            },
+            "24": {
+              "q_span": 0.4567567187017949,
+              "torque_harmonic": {
+                "amplitude": 0.2004866208623503,
+                "phase_rad": 1.9149603074727783,
+                "r2": 0.9376336320636159
+              },
+              "zero_position_step_fraction": 0.01098901098901099,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            }
+          }
+        },
+        {
+          "segment": 2,
+          "direction": 1,
+          "speed": 0.07,
+          "duration": 6.5499999989515345,
+          "samples": 656,
+          "mean_position_velocity": 0.06928690345109886,
+          "position_velocity_std": 0.043949104017165695,
+          "raw_velocity_std": 0.05192522653186897,
+          "torque_harmonic": {
+            "amplitude": 0.20367126611033165,
+            "phase_rad": 1.8305496108769894,
+            "r2": 0.9476664293396571
+          },
+          "feedforward_harmonic": {
+            "amplitude": 6.183555636805714e-07,
+            "phase_rad": 2.131179233081052,
+            "r2": 0.9594920305966305
+          },
+          "tracking_error_harmonic": {
+            "amplitude": 0.005658967652918774,
+            "phase_rad": 1.0958286493507794,
+            "r2": 0.9477323610883914
+          },
+          "position_velocity_harmonic": {
+            "amplitude": 0.0672299420140098,
+            "phase_rad": -0.5749952205532424,
+            "r2": 0.9102414229459375
+          },
+          "raw_velocity_harmonic": {
+            "amplitude": 0.06473610813388979,
+            "phase_rad": -0.5850773599828056,
+            "r2": 0.6070818598283345
+          },
+          "command_quant_error_harmonic": {
+            "amplitude": 2.6992798547151314e-06,
+            "phase_rad": -2.9937052113207794,
+            "r2": 0.00030976464157228545
+          },
+          "ff_span": 9.996876822367226e-05,
+          "tau_span": 0.5442337580086609,
+          "type_specific": {
+            "2": {
+              "q_span": 0.47976713274218985,
+              "torque_harmonic": {
+                "amplitude": 0.20309890039718326,
+                "phase_rad": 1.8272848282828902,
+                "r2": 0.9420964795485157
+              },
+              "zero_position_step_fraction": 0.06618705035971223,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            },
+            "24": {
+              "q_span": 0.48091765344420945,
+              "torque_harmonic": {
+                "amplitude": 0.20354643776896486,
+                "phase_rad": 1.8238521666335887,
+                "r2": 0.9453031739196672
+              },
+              "zero_position_step_fraction": 0.07369942196531792,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            }
+          }
+        },
+        {
+          "segment": 3,
+          "direction": -1,
+          "speed": 0.07,
+          "duration": 6.539999998953135,
+          "samples": 655,
+          "mean_position_velocity": -0.06981919465094688,
+          "position_velocity_std": 0.04797826072092914,
+          "raw_velocity_std": 0.05625164472954306,
+          "torque_harmonic": {
+            "amplitude": 0.2210824528275757,
+            "phase_rad": 1.9013506971186376,
+            "r2": 0.9549158701060043
+          },
+          "feedforward_harmonic": {
+            "amplitude": 6.704987651986196e-07,
+            "phase_rad": -0.38036719109330785,
+            "r2": 0.9648824149763571
+          },
+          "tracking_error_harmonic": {
+            "amplitude": 0.006420754568056606,
+            "phase_rad": 2.6462631251495403,
+            "r2": 0.9492975020835162
+          },
+          "position_velocity_harmonic": {
+            "amplitude": 0.07573754642095008,
+            "phase_rad": -2.002755767605071,
+            "r2": 0.9469885802116942
+          },
+          "raw_velocity_harmonic": {
+            "amplitude": 0.07516180074554636,
+            "phase_rad": -1.9665403537846209,
+            "r2": 0.6773831467660699
+          },
+          "command_quant_error_harmonic": {
+            "amplitude": 3.929054269943181e-06,
+            "phase_rad": -0.9477080609776245,
+            "r2": 0.0005763433971974763
+          },
+          "ff_span": 0.00010824957328020178,
+          "tau_span": 0.5610922610381922,
+          "type_specific": {
+            "2": {
+              "q_span": 0.48935480525901986,
+              "torque_harmonic": {
+                "amplitude": 0.2203506321832188,
+                "phase_rad": 1.903820315661435,
+                "r2": 0.9513481309086427
+              },
+              "zero_position_step_fraction": 0.09077809798270893,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            },
+            "24": {
+              "q_span": 0.48973831215969305,
+              "torque_harmonic": {
+                "amplitude": 0.22091831012123472,
+                "phase_rad": 1.9087507162224735,
+                "r2": 0.9505604738726487
+              },
+              "zero_position_step_fraction": 0.08513708513708514,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            }
+          }
+        },
+        {
+          "segment": 4,
+          "direction": 1,
+          "speed": 0.15,
+          "duration": 2.3599999996222323,
+          "samples": 237,
+          "mean_position_velocity": 0.1506054645641184,
+          "position_velocity_std": 0.06727315394213976,
+          "raw_velocity_std": 0.07889351585287072,
+          "torque_harmonic": {
+            "amplitude": 0.2369759477475449,
+            "phase_rad": 1.7745353037313167,
+            "r2": 0.964320856951805
+          },
+          "feedforward_harmonic": {
+            "amplitude": 1.906571041757086e-07,
+            "phase_rad": 2.2557255438558017,
+            "r2": 0.9744457711768383
+          },
+          "tracking_error_harmonic": {
+            "amplitude": 0.004493543354804077,
+            "phase_rad": 0.6588410289360754,
+            "r2": 0.9639560959161922
+          },
+          "position_velocity_harmonic": {
+            "amplitude": 0.09992846482242158,
+            "phase_rad": -0.9299337972336135,
+            "r2": 0.9765849273588404
+          },
+          "raw_velocity_harmonic": {
+            "amplitude": 0.10647150992776365,
+            "phase_rad": -0.9662229377459152,
+            "r2": 0.8051907058205044
+          },
+          "command_quant_error_harmonic": {
+            "amplitude": 2.978016701131676e-06,
+            "phase_rad": -2.4850749595902784,
+            "r2": 0.0006074566049534269
+          },
+          "ff_span": 7.855971575611656e-05,
+          "tau_span": 0.5953317493538586,
+          "type_specific": {
+            "2": {
+              "q_span": 0.4176390148331283,
+              "torque_harmonic": {
+                "amplitude": 0.24002477843925452,
+                "phase_rad": 1.7696691532927096,
+                "r2": 0.9626211857481196
+              },
+              "zero_position_step_fraction": 0.0,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            },
+            "24": {
+              "q_span": 0.4157214803297623,
+              "torque_harmonic": {
+                "amplitude": 0.23984501208404202,
+                "phase_rad": 1.7695091377404524,
+                "r2": 0.9631953772302536
+              },
+              "zero_position_step_fraction": 0.0,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            }
+          }
+        },
+        {
+          "segment": 5,
+          "direction": -1,
+          "speed": 0.15,
+          "duration": 2.349999999623833,
+          "samples": 236,
+          "mean_position_velocity": -0.15034381002999075,
+          "position_velocity_std": 0.07580312017366242,
+          "raw_velocity_std": 0.08818011499468682,
+          "torque_harmonic": {
+            "amplitude": 0.2556572057856987,
+            "phase_rad": 1.8942482006807246,
+            "r2": 0.9677904705009623
+          },
+          "feedforward_harmonic": {
+            "amplitude": 1.3297163467931034e-07,
+            "phase_rad": 1.5998489371687061,
+            "r2": 0.9781646155358865
+          },
+          "tracking_error_harmonic": {
+            "amplitude": 0.005143543592591919,
+            "phase_rad": 3.005370354809743,
+            "r2": 0.9523321362283247
+          },
+          "position_velocity_harmonic": {
+            "amplitude": 0.11227965127202157,
+            "phase_rad": -1.678057688782347,
+            "r2": 0.9761619132897675
+          },
+          "raw_velocity_harmonic": {
+            "amplitude": 0.11711456397112374,
+            "phase_rad": -1.6391671116574855,
+            "r2": 0.7881144554981295
+          },
+          "command_quant_error_harmonic": {
+            "amplitude": 1.1184498240098657e-06,
+            "phase_rad": 0.04977870065814687,
+            "r2": 0.00015320894747250513
+          },
+          "ff_span": 8.491122148801956e-05,
+          "tau_span": 0.616978859873721,
+          "type_specific": {
+            "2": {
+              "q_span": 0.4118864113230303,
+              "torque_harmonic": {
+                "amplitude": 0.25701765076917493,
+                "phase_rad": 1.9001072246282293,
+                "r2": 0.9685939261598789
+              },
+              "zero_position_step_fraction": 0.0,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            },
+            "24": {
+              "q_span": 0.4126534251243767,
+              "torque_harmonic": {
+                "amplitude": 0.2569219681201049,
+                "phase_rad": 1.9060161859284912,
+                "r2": 0.9672406559894021
+              },
+              "zero_position_step_fraction": 0.0,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            }
+          }
+        },
+        {
+          "segment": 6,
+          "direction": 1,
+          "speed": 0.1,
+          "duration": 4.179999999330903,
+          "samples": 419,
+          "mean_position_velocity": 0.10199742156247792,
+          "position_velocity_std": 0.06274092265432987,
+          "raw_velocity_std": 0.07350157086995585,
+          "torque_harmonic": {
+            "amplitude": 0.24873507062472716,
+            "phase_rad": 1.8209158153652152,
+            "r2": 0.9659004011141716
+          },
+          "feedforward_harmonic": {
+            "amplitude": 5.820567505828579e-07,
+            "phase_rad": -1.1508353994745402,
+            "r2": 0.9659573820075206
+          },
+          "tracking_error_harmonic": {
+            "amplitude": 0.005824085404690886,
+            "phase_rad": 0.912610207403187,
+            "r2": 0.9544149188298613
+          },
+          "position_velocity_harmonic": {
+            "amplitude": 0.09474310517734337,
+            "phase_rad": -0.7442196132645661,
+            "r2": 0.9447341800709088
+          },
+          "raw_velocity_harmonic": {
+            "amplitude": 0.0994497590801417,
+            "phase_rad": -0.7791742534139081,
+            "r2": 0.7569760328914403
+          },
+          "command_quant_error_harmonic": {
+            "amplitude": 2.9551596163376775e-06,
+            "phase_rad": -2.4341412942065626,
+            "r2": 0.00037219369028596017
+          },
+          "ff_span": 9.442303098399255e-05,
+          "tau_span": 0.6053861829122341,
+          "type_specific": {
+            "2": {
+              "q_span": 0.45330515659573895,
+              "torque_harmonic": {
+                "amplitude": 0.2464521085576656,
+                "phase_rad": 1.8247074526952742,
+                "r2": 0.9613438137355431
+              },
+              "zero_position_step_fraction": 0.010917030567685589,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            },
+            "24": {
+              "q_span": 0.4533051565957389,
+              "torque_harmonic": {
+                "amplitude": 0.2477032815158037,
+                "phase_rad": 1.8219509995838117,
+                "r2": 0.9604685890898007
+              },
+              "zero_position_step_fraction": 0.013157894736842105,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            }
+          }
+        },
+        {
+          "segment": 7,
+          "direction": -1,
+          "speed": 0.1,
+          "duration": 4.179999999330903,
+          "samples": 419,
+          "mean_position_velocity": -0.09938910562746911,
+          "position_velocity_std": 0.06604900677826898,
+          "raw_velocity_std": 0.07172401349128535,
+          "torque_harmonic": {
+            "amplitude": 0.26334236984769904,
+            "phase_rad": 1.8271341385218163,
+            "r2": 0.9715172906755407
+          },
+          "feedforward_harmonic": {
+            "amplitude": 7.066012985914846e-07,
+            "phase_rad": 2.6721630259962836,
+            "r2": 0.970250997430706
+          },
+          "tracking_error_harmonic": {
+            "amplitude": 0.006531160424295896,
+            "phase_rad": 2.7352387513361434,
+            "r2": 0.9481903945667134
+          },
+          "position_velocity_harmonic": {
+            "amplitude": 0.10417149252529745,
+            "phase_rad": -1.923830411142912,
+            "r2": 0.9686866104551098
+          },
+          "raw_velocity_harmonic": {
+            "amplitude": 0.10132033595860912,
+            "phase_rad": -1.9145570175348348,
+            "r2": 0.777678933774561
+          },
+          "command_quant_error_harmonic": {
+            "amplitude": 2.6350629441397835e-06,
+            "phase_rad": -2.511390121915856,
+            "r2": 0.0005413396768387813
+          },
+          "ff_span": 9.686702552204687e-05,
+          "tau_span": 0.6539736055720637,
+          "type_specific": {
+            "2": {
+              "q_span": 0.45598970490044854,
+              "torque_harmonic": {
+                "amplitude": 0.261987139993972,
+                "phase_rad": 1.8141585750070914,
+                "r2": 0.9685389589539989
+              },
+              "zero_position_step_fraction": 0.015283842794759825,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            },
+            "24": {
+              "q_span": 0.4563732118011218,
+              "torque_harmonic": {
+                "amplitude": 0.26287174480274067,
+                "phase_rad": 1.8239054229332952,
+                "r2": 0.9652333158488156
+              },
+              "zero_position_step_fraction": 0.026373626373626374,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            }
+          }
+        },
+        {
+          "segment": 8,
+          "direction": 1,
+          "speed": 0.15,
+          "duration": 2.349999999623833,
+          "samples": 236,
+          "mean_position_velocity": 0.1508274125399051,
+          "position_velocity_std": 0.07272572761512122,
+          "raw_velocity_std": 0.08155636638977785,
+          "torque_harmonic": {
+            "amplitude": 0.2575359489953629,
+            "phase_rad": 1.7756085920695508,
+            "r2": 0.9709165986020805
+          },
+          "feedforward_harmonic": {
+            "amplitude": 1.2687884433690958e-07,
+            "phase_rad": 2.058910305653095,
+            "r2": 0.9745347449588495
+          },
+          "tracking_error_harmonic": {
+            "amplitude": 0.004871008286311187,
+            "phase_rad": 0.6547066999537831,
+            "r2": 0.9568310950406597
+          },
+          "position_velocity_harmonic": {
+            "amplitude": 0.10906964905798658,
+            "phase_rad": -0.9393258708042097,
+            "r2": 0.9808332572122214
+          },
+          "raw_velocity_harmonic": {
+            "amplitude": 0.11392961971517913,
+            "phase_rad": -1.0178254657737325,
+            "r2": 0.8488654679398533
+          },
+          "command_quant_error_harmonic": {
+            "amplitude": 4.8815078372125664e-06,
+            "phase_rad": -2.1899205786989566,
+            "r2": 0.0015175962668765308
+          },
+          "ff_span": 7.841180172202971e-05,
+          "tau_span": 0.6311865123110809,
+          "type_specific": {
+            "2": {
+              "q_span": 0.4180225217338015,
+              "torque_harmonic": {
+                "amplitude": 0.2589523848048908,
+                "phase_rad": 1.770644259070328,
+                "r2": 0.9694949162795663
+              },
+              "zero_position_step_fraction": 0.0,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            },
+            "24": {
+              "q_span": 0.4187895355351479,
+              "torque_harmonic": {
+                "amplitude": 0.2601784393055175,
+                "phase_rad": 1.7856755244282774,
+                "r2": 0.9670124386705016
+              },
+              "zero_position_step_fraction": 0.0,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            }
+          }
+        },
+        {
+          "segment": 9,
+          "direction": -1,
+          "speed": 0.15,
+          "duration": 2.3599999996222323,
+          "samples": 237,
+          "mean_position_velocity": -0.15060155700626354,
+          "position_velocity_std": 0.07724033371984605,
+          "raw_velocity_std": 0.08338630254682723,
+          "torque_harmonic": {
+            "amplitude": 0.2598738366165289,
+            "phase_rad": 1.8863631649010415,
+            "r2": 0.9703213495456257
+          },
+          "feedforward_harmonic": {
+            "amplitude": 1.6906252770185006e-07,
+            "phase_rad": 0.9791304949927875,
+            "r2": 0.9779066558274807
+          },
+          "tracking_error_harmonic": {
+            "amplitude": 0.005259945895645157,
+            "phase_rad": 2.986857717917293,
+            "r2": 0.9456723901026801
+          },
+          "position_velocity_harmonic": {
+            "amplitude": 0.11456208227910585,
+            "phase_rad": -1.6918717498936977,
+            "r2": 0.9729970527154665
+          },
+          "raw_velocity_harmonic": {
+            "amplitude": 0.11539774988415806,
+            "phase_rad": -1.6502509463033095,
+            "r2": 0.8466595545961731
+          },
+          "command_quant_error_harmonic": {
+            "amplitude": 2.0706464730519926e-06,
+            "phase_rad": 1.4183923286758606,
+            "r2": 0.0002084053694777488
+          },
+          "ff_span": 8.523203615521562e-05,
+          "tau_span": 0.6138112998013279,
+          "type_specific": {
+            "2": {
+              "q_span": 0.41226991822370346,
+              "torque_harmonic": {
+                "amplitude": 0.26118994201478757,
+                "phase_rad": 1.896761645420634,
+                "r2": 0.96852748326517
+              },
+              "zero_position_step_fraction": 0.0,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            },
+            "24": {
+              "q_span": 0.4126534251243767,
+              "torque_harmonic": {
+                "amplitude": 0.2621625612327735,
+                "phase_rad": 1.892964924987826,
+                "r2": 0.9659326003970364
+              },
+              "zero_position_step_fraction": 0.0,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            }
+          }
+        },
+        {
+          "segment": 10,
+          "direction": 1,
+          "speed": 0.07,
+          "duration": 6.539999998953135,
+          "samples": 655,
+          "mean_position_velocity": 0.06931621063163698,
+          "position_velocity_std": 0.05347659273890155,
+          "raw_velocity_std": 0.06268714155212633,
+          "torque_harmonic": {
+            "amplitude": 0.2598839502471751,
+            "phase_rad": 1.8320389029844502,
+            "r2": 0.961108360950456
+          },
+          "feedforward_harmonic": {
+            "amplitude": 7.955966865339865e-07,
+            "phase_rad": 2.181063722453883,
+            "r2": 0.9594525269151732
+          },
+          "tracking_error_harmonic": {
+            "amplitude": 0.006801340749428111,
+            "phase_rad": 1.0857385459208042,
+            "r2": 0.9429259303756462
+          },
+          "position_velocity_harmonic": {
+            "amplitude": 0.08571492064901541,
+            "phase_rad": -0.6256279043737425,
+            "r2": 0.911587221439356
+          },
+          "raw_velocity_harmonic": {
+            "amplitude": 0.08564230797816663,
+            "phase_rad": -0.6369916747749156,
+            "r2": 0.663068369759277
+          },
+          "command_quant_error_harmonic": {
+            "amplitude": 1.8809599531266682e-06,
+            "phase_rad": -1.515094426987162,
+            "r2": 0.00012705071566643245
+          },
+          "ff_span": 9.925236635644917e-05,
+          "tau_span": 0.6517235547216302,
+          "type_specific": {
+            "2": {
+              "q_span": 0.4778495982388239,
+              "torque_harmonic": {
+                "amplitude": 0.2599305530760178,
+                "phase_rad": 1.83001680035313,
+                "r2": 0.9603493766420879
+              },
+              "zero_position_step_fraction": 0.10662824207492795,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            },
+            "24": {
+              "q_span": 0.4790001189408435,
+              "torque_harmonic": {
+                "amplitude": 0.2585990810391463,
+                "phase_rad": 1.8256751494839265,
+                "r2": 0.9591582146928338
+              },
+              "zero_position_step_fraction": 0.10822510822510822,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            }
+          }
+        },
+        {
+          "segment": 11,
+          "direction": -1,
+          "speed": 0.07,
+          "duration": 6.5499999989515345,
+          "samples": 656,
+          "mean_position_velocity": -0.06965951988011507,
+          "position_velocity_std": 0.05591513588933303,
+          "raw_velocity_std": 0.06362208064147311,
+          "torque_harmonic": {
+            "amplitude": 0.26946429836797037,
+            "phase_rad": 1.8812912571238531,
+            "r2": 0.9653889343404835
+          },
+          "feedforward_harmonic": {
+            "amplitude": 6.262355766302564e-07,
+            "phase_rad": -0.46205455765688247,
+            "r2": 0.9641616246957962
+          },
+          "tracking_error_harmonic": {
+            "amplitude": 0.007447636490884552,
+            "phase_rad": 2.6292639109789717,
+            "r2": 0.9416333163542957
+          },
+          "position_velocity_harmonic": {
+            "amplitude": 0.09160002803400646,
+            "phase_rad": -1.9782769213768998,
+            "r2": 0.9450660690990936
+          },
+          "raw_velocity_harmonic": {
+            "amplitude": 0.08922614121097257,
+            "phase_rad": -1.9695435360870992,
+            "r2": 0.6916914992479575
+          },
+          "command_quant_error_harmonic": {
+            "amplitude": 1.7604526853755697e-06,
+            "phase_rad": -0.010663135690283597,
+            "r2": 0.00012010961145925148
+          },
+          "ff_span": 0.00010854173271995099,
+          "tau_span": 0.664821285268667,
+          "type_specific": {
+            "2": {
+              "q_span": 0.4901218190603663,
+              "torque_harmonic": {
+                "amplitude": 0.2688026411182348,
+                "phase_rad": 1.8820054076149426,
+                "r2": 0.9619725507586633
+              },
+              "zero_position_step_fraction": 0.11781609195402298,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            },
+            "24": {
+              "q_span": 0.4897383121596931,
+              "torque_harmonic": {
+                "amplitude": 0.2698430654641707,
+                "phase_rad": 1.8807736950743028,
+                "r2": 0.9642287241969902
+              },
+              "zero_position_step_fraction": 0.11304347826086956,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            }
+          }
+        }
+      ],
+      "stationary_axes": [
+        {
+          "segment": 0,
+          "joint": 1,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.002311208383230568,
+          "reported_velocity_rms": 0.06489065291628415,
+          "tau_rms": 0.21672201211605327
+        },
+        {
+          "segment": 0,
+          "joint": 2,
+          "q_span": 0.0007576029637890169,
+          "position_velocity_rms": 0.0010476031807221228,
+          "reported_velocity_rms": 0.06535197061985785,
+          "tau_rms": 4.467549851697994
+        },
+        {
+          "segment": 0,
+          "joint": 3,
+          "q_span": 0.00037004923373751275,
+          "position_velocity_rms": 0.0005794753258957674,
+          "reported_velocity_rms": 0.05766693239366644,
+          "tau_rms": 7.250749301746337
+        },
+        {
+          "segment": 0,
+          "joint": 4,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.0017710468775126065,
+          "reported_velocity_rms": 0.03080867463485929,
+          "tau_rms": 2.0498334061610484
+        },
+        {
+          "segment": 0,
+          "joint": 5,
+          "q_span": 0.0003835069006732014,
+          "position_velocity_rms": 0.0013746064482587335,
+          "reported_velocity_rms": 0.029151757393415665,
+          "tau_rms": 0.1977676433094832
+        },
+        {
+          "segment": 1,
+          "joint": 1,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.0025123453524015984,
+          "reported_velocity_rms": 0.06128134822400172,
+          "tau_rms": 0.21606213907652413
+        },
+        {
+          "segment": 1,
+          "joint": 2,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.002725702191282794,
+          "reported_velocity_rms": 0.0636631906128024,
+          "tau_rms": 4.507998783325884
+        },
+        {
+          "segment": 1,
+          "joint": 3,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.0016085639994596183,
+          "reported_velocity_rms": 0.05690553207155167,
+          "tau_rms": 7.253728325817796
+        },
+        {
+          "segment": 1,
+          "joint": 4,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.0021916927920027024,
+          "reported_velocity_rms": 0.03080986223184238,
+          "tau_rms": 2.0498437181257145
+        },
+        {
+          "segment": 1,
+          "joint": 5,
+          "q_span": 0.00035965237482695964,
+          "position_velocity_rms": 0.0012517182070567565,
+          "reported_velocity_rms": 0.03060998363102519,
+          "tau_rms": 0.1980567998437002
+        },
+        {
+          "segment": 2,
+          "joint": 1,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.0023370620239679825,
+          "reported_velocity_rms": 0.06025505709920375,
+          "tau_rms": 0.21136048280320413
+        },
+        {
+          "segment": 2,
+          "joint": 2,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.0025588273856356034,
+          "reported_velocity_rms": 0.06355960237422226,
+          "tau_rms": 4.565971214218188
+        },
+        {
+          "segment": 2,
+          "joint": 3,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.001275488666821731,
+          "reported_velocity_rms": 0.05726131144887789,
+          "tau_rms": 7.252072851049906
+        },
+        {
+          "segment": 2,
+          "joint": 4,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.0020633571270795366,
+          "reported_velocity_rms": 0.03173906809792857,
+          "tau_rms": 2.0486692104221005
+        },
+        {
+          "segment": 2,
+          "joint": 5,
+          "q_span": 0.0007251897209745763,
+          "position_velocity_rms": 0.0007974399749986573,
+          "reported_velocity_rms": 0.032256890451460754,
+          "tau_rms": 0.19994392292622845
+        },
+        {
+          "segment": 3,
+          "joint": 1,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.0022187315168200597,
+          "reported_velocity_rms": 0.06292010487560273,
+          "tau_rms": 0.20887136229528494
+        },
+        {
+          "segment": 3,
+          "joint": 2,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.002462945798397628,
+          "reported_velocity_rms": 0.06928362855099819,
+          "tau_rms": 4.574366128752482
+        },
+        {
+          "segment": 3,
+          "joint": 3,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.001154616036092783,
+          "reported_velocity_rms": 0.05512245562788561,
+          "tau_rms": 7.244076430366956
+        },
+        {
+          "segment": 3,
+          "joint": 4,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.002333106114469983,
+          "reported_velocity_rms": 0.030542375088595673,
+          "tau_rms": 2.050230960034601
+        },
+        {
+          "segment": 3,
+          "joint": 5,
+          "q_span": 0.0007275945783542827,
+          "position_velocity_rms": 0.0009130880560598608,
+          "reported_velocity_rms": 0.03160046376284678,
+          "tau_rms": 0.1996388209317382
+        },
+        {
+          "segment": 4,
+          "joint": 1,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.0022866216843060653,
+          "reported_velocity_rms": 0.04999375615372543,
+          "tau_rms": 0.20379108833468212
+        },
+        {
+          "segment": 4,
+          "joint": 2,
+          "q_span": 0.0003828936599430399,
+          "position_velocity_rms": 0.0010025847580100082,
+          "reported_velocity_rms": 0.06409134987165975,
+          "tau_rms": 4.596774372293931
+        },
+        {
+          "segment": 4,
+          "joint": 3,
+          "q_span": 0.00038195160312670673,
+          "position_velocity_rms": 0.0010471762811863857,
+          "reported_velocity_rms": 0.057081818069749726,
+          "tau_rms": 7.256361789823021
+        },
+        {
+          "segment": 4,
+          "joint": 4,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.002532426604337029,
+          "reported_velocity_rms": 0.03336622780994437,
+          "tau_rms": 2.0518118657323012
+        },
+        {
+          "segment": 4,
+          "joint": 5,
+          "q_span": 0.0003835069006732014,
+          "position_velocity_rms": 0.0016819648314423449,
+          "reported_velocity_rms": 0.031018246100031847,
+          "tau_rms": 0.20122691198109982
+        },
+        {
+          "segment": 5,
+          "joint": 1,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.001845999267412189,
+          "reported_velocity_rms": 0.05244689915835553,
+          "tau_rms": 0.20416762027779653
+        },
+        {
+          "segment": 5,
+          "joint": 2,
+          "q_span": 0.00037462147507794086,
+          "position_velocity_rms": 0.0007157317416331071,
+          "reported_velocity_rms": 0.061793819992588296,
+          "tau_rms": 4.595903353133981
+        },
+        {
+          "segment": 5,
+          "joint": 3,
+          "q_span": 0.0003527186620320144,
+          "position_velocity_rms": 0.0012188067876360736,
+          "reported_velocity_rms": 0.05575077362756481,
+          "tau_rms": 7.25552497240602
+        },
+        {
+          "segment": 5,
+          "joint": 4,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.0033806073156929803,
+          "reported_velocity_rms": 0.03132567959986718,
+          "tau_rms": 2.0517744290400466
+        },
+        {
+          "segment": 5,
+          "joint": 5,
+          "q_span": 0.0003835069006732014,
+          "position_velocity_rms": 0.002056636548574932,
+          "reported_velocity_rms": 0.03228134115310387,
+          "tau_rms": 0.1994797118029523
+        },
+        {
+          "segment": 6,
+          "joint": 1,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.00202582704409826,
+          "reported_velocity_rms": 0.0596958554698796,
+          "tau_rms": 0.21079886634411937
+        },
+        {
+          "segment": 6,
+          "joint": 2,
+          "q_span": 0.00038312727148137604,
+          "position_velocity_rms": 0.0012888054803992758,
+          "reported_velocity_rms": 0.06387734950848807,
+          "tau_rms": 4.61771707231947
+        },
+        {
+          "segment": 6,
+          "joint": 3,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.001313676160549234,
+          "reported_velocity_rms": 0.05327200492970755,
+          "tau_rms": 7.244374453320295
+        },
+        {
+          "segment": 6,
+          "joint": 4,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.002117151695546493,
+          "reported_velocity_rms": 0.031651499564999276,
+          "tau_rms": 2.0514209713017917
+        },
+        {
+          "segment": 6,
+          "joint": 5,
+          "q_span": 0.0003835069006732014,
+          "position_velocity_rms": 0.001823085294075442,
+          "reported_velocity_rms": 0.026422955939321216,
+          "tau_rms": 0.20063180052016014
+        },
+        {
+          "segment": 7,
+          "joint": 1,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.0017410043485943509,
+          "reported_velocity_rms": 0.05835701637310844,
+          "tau_rms": 0.20796410961346162
+        },
+        {
+          "segment": 7,
+          "joint": 2,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.002529217533436542,
+          "reported_velocity_rms": 0.06608160142309848,
+          "tau_rms": 4.632574910467118
+        },
+        {
+          "segment": 7,
+          "joint": 3,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.0012327947799243473,
+          "reported_velocity_rms": 0.060512925283139514,
+          "tau_rms": 7.246144180063185
+        },
+        {
+          "segment": 7,
+          "joint": 4,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.0013099539177183184,
+          "reported_velocity_rms": 0.03487004148729157,
+          "tau_rms": 2.0532923361145405
+        },
+        {
+          "segment": 7,
+          "joint": 5,
+          "q_span": 0.0003835069006732014,
+          "position_velocity_rms": 0.002431750960379331,
+          "reported_velocity_rms": 0.029803552087162552,
+          "tau_rms": 0.20090380616794573
+        },
+        {
+          "segment": 8,
+          "joint": 1,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.002689055565737849,
+          "reported_velocity_rms": 0.06274633321510258,
+          "tau_rms": 0.20467258447329836
+        },
+        {
+          "segment": 8,
+          "joint": 2,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.002707536949333882,
+          "reported_velocity_rms": 0.07168937168961376,
+          "tau_rms": 4.6432919339669905
+        },
+        {
+          "segment": 8,
+          "joint": 3,
+          "q_span": 0.0003545647594627166,
+          "position_velocity_rms": 0.0010322817188209315,
+          "reported_velocity_rms": 0.055980272870628046,
+          "tau_rms": 7.242731219742272
+        },
+        {
+          "segment": 8,
+          "joint": 4,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.00200292054511266,
+          "reported_velocity_rms": 0.03336851122879009,
+          "tau_rms": 2.0531582441091953
+        },
+        {
+          "segment": 8,
+          "joint": 5,
+          "q_span": 0.00034645004732740403,
+          "position_velocity_rms": 0.0005122862050764633,
+          "reported_velocity_rms": 0.031398820286165564,
+          "tau_rms": 0.2021916421166046
+        },
+        {
+          "segment": 9,
+          "joint": 1,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.0015738778358096433,
+          "reported_velocity_rms": 0.06329700011494772,
+          "tau_rms": 0.20620792291729528
+        },
+        {
+          "segment": 9,
+          "joint": 2,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.002931884796320706,
+          "reported_velocity_rms": 0.06613587620412303,
+          "tau_rms": 4.636845221916817
+        },
+        {
+          "segment": 9,
+          "joint": 3,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.0013602132545570214,
+          "reported_velocity_rms": 0.04656758747405296,
+          "tau_rms": 7.243680018259881
+        },
+        {
+          "segment": 9,
+          "joint": 4,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.0010609944725456064,
+          "reported_velocity_rms": 0.02727551699795959,
+          "tau_rms": 2.053699084428324
+        },
+        {
+          "segment": 9,
+          "joint": 5,
+          "q_span": 0.0003102453771675097,
+          "position_velocity_rms": 0.0002806880800485301,
+          "reported_velocity_rms": 0.030818620869681065,
+          "tau_rms": 0.2043976988667752
+        },
+        {
+          "segment": 10,
+          "joint": 1,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.001700191720097852,
+          "reported_velocity_rms": 0.05502649000011787,
+          "tau_rms": 0.2053768727318733
+        },
+        {
+          "segment": 10,
+          "joint": 2,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.0025144511293315923,
+          "reported_velocity_rms": 0.05917865893023093,
+          "tau_rms": 4.64084589471856
+        },
+        {
+          "segment": 10,
+          "joint": 3,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.0013953747704072172,
+          "reported_velocity_rms": 0.05760449859257514,
+          "tau_rms": 7.2507201719853285
+        },
+        {
+          "segment": 10,
+          "joint": 4,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.0012813237372869912,
+          "reported_velocity_rms": 0.03377711020161918,
+          "tau_rms": 2.054380091173006
+        },
+        {
+          "segment": 10,
+          "joint": 5,
+          "q_span": 0.0003835069006732014,
+          "position_velocity_rms": 0.0009842074842529446,
+          "reported_velocity_rms": 0.033606314843887035,
+          "tau_rms": 0.2028263087688156
+        },
+        {
+          "segment": 11,
+          "joint": 1,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.0013915298930631394,
+          "reported_velocity_rms": 0.06554975589375245,
+          "tau_rms": 0.2051631169248565
+        },
+        {
+          "segment": 11,
+          "joint": 2,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.0017747196979488267,
+          "reported_velocity_rms": 0.06373376496238152,
+          "tau_rms": 4.653260165142124
+        },
+        {
+          "segment": 11,
+          "joint": 3,
+          "q_span": 0.0003818337695131735,
+          "position_velocity_rms": 0.001337312502476603,
+          "reported_velocity_rms": 0.05748648678891453,
+          "tau_rms": 7.250627631156698
+        },
+        {
+          "segment": 11,
+          "joint": 4,
+          "q_span": 0.0007277594533631831,
+          "position_velocity_rms": 0.00047029510528817653,
+          "reported_velocity_rms": 0.03306588306419208,
+          "tau_rms": 2.0549512657340987
+        },
+        {
+          "segment": 11,
+          "joint": 5,
+          "q_span": 0.0003835069006732014,
+          "position_velocity_rms": 0.0008915285107583782,
+          "reported_velocity_rms": 0.031193995662322286,
+          "tau_rms": 0.2015926569741567
+        }
+      ],
+      "feedback": [
+        {
+          "joint": 1,
+          "read_latency_ms": {
+            "median": 0.09246099943993613,
+            "p99": 0.907965399892419,
+            "max": 10.91339299819083
+          },
+          "types": {
+            "2": 10502,
+            "24": 10468
+          }
+        },
+        {
+          "joint": 2,
+          "read_latency_ms": {
+            "median": 0.08761749813857023,
+            "p99": 0.9942419998333196,
+            "max": 10.815318000823027
+          },
+          "types": {
+            "2": 10510,
+            "24": 10458
+          }
+        },
+        {
+          "joint": 3,
+          "read_latency_ms": {
+            "median": 0.07688700134167448,
+            "p99": 1.0086398394196296,
+            "max": 10.514219000469893
+          },
+          "types": {
+            "2": 10514,
+            "24": 10451
+          }
+        },
+        {
+          "joint": 4,
+          "read_latency_ms": {
+            "median": 0.07268949957506265,
+            "p99": 1.0308898508810669,
+            "max": 11.535614998138044
+          },
+          "types": {
+            "2": 10512,
+            "24": 10452
+          }
+        },
+        {
+          "joint": 5,
+          "read_latency_ms": {
+            "median": 0.072386501415167,
+            "p99": 0.9921351482989853,
+            "max": 4.675781001424184
+          },
+          "types": {
+            "2": 10506,
+            "24": 10452
+          }
+        },
+        {
+          "joint": 6,
+          "read_latency_ms": {
+            "median": 0.08308399992529303,
+            "p99": 1.005690711390343,
+            "max": 9.333311001682887
+          },
+          "types": {
+            "2": 10501,
+            "24": 10461
+          }
+        }
+      ]
+    },
+    {
+      "file": "friction_20261016_172702_03e23883.npz",
+      "run_status": "complete",
+      "joint": 6,
+      "commands": [
+        {
+          "joint": 1,
+          "interval_ms": {
+            "median": 9.996753999075736,
+            "p99": 10.828608378833453,
+            "max": 20.23403800194501
+          },
+          "send_duration_ms": {
+            "median": 0.08692150004208088,
+            "p99": 0.6079525708628348,
+            "max": 1.9070150010520592
+          },
+          "gaps_gt_20ms": 1,
+          "policy": "Only within one motion segment; intentional 0.5s holds between segments excluded"
+        },
+        {
+          "joint": 2,
+          "interval_ms": {
+            "median": 9.997219998695073,
+            "p99": 11.053977171977749,
+            "max": 20.234069001162425
+          },
+          "send_duration_ms": {
+            "median": 0.1377220014546765,
+            "p99": 0.5022183914115882,
+            "max": 1.4577889996871818
+          },
+          "gaps_gt_20ms": 1,
+          "policy": "Only within one motion segment; intentional 0.5s holds between segments excluded"
+        },
+        {
+          "joint": 3,
+          "interval_ms": {
+            "median": 9.998263500165194,
+            "p99": 11.193188529832698,
+            "max": 20.495317003224045
+          },
+          "send_duration_ms": {
+            "median": 0.1347639990854077,
+            "p99": 0.49516150964336686,
+            "max": 1.5424189987243153
+          },
+          "gaps_gt_20ms": 1,
+          "policy": "Only within one motion segment; intentional 0.5s holds between segments excluded"
+        },
+        {
+          "joint": 4,
+          "interval_ms": {
+            "median": 9.997064000344835,
+            "p99": 11.285217609583931,
+            "max": 20.58603999830666
+          },
+          "send_duration_ms": {
+            "median": 0.15169099970080424,
+            "p99": 0.6212786992182372,
+            "max": 1.8453659977240022
+          },
+          "gaps_gt_20ms": 1,
+          "policy": "Only within one motion segment; intentional 0.5s holds between segments excluded"
+        },
+        {
+          "joint": 5,
+          "interval_ms": {
+            "median": 9.998113000619924,
+            "p99": 11.458631111381692,
+            "max": 20.685339000920067
+          },
+          "send_duration_ms": {
+            "median": 0.15926699961710256,
+            "p99": 0.7024150784127408,
+            "max": 2.3713899972790387
+          },
+          "gaps_gt_20ms": 1,
+          "policy": "Only within one motion segment; intentional 0.5s holds between segments excluded"
+        },
+        {
+          "joint": 6,
+          "interval_ms": {
+            "median": 9.998686999097117,
+            "p99": 11.672222891393176,
+            "max": 20.688999000412878
+          },
+          "send_duration_ms": {
+            "median": 0.18112850011675619,
+            "p99": 0.8366131412549281,
+            "max": 2.867024999432033
+          },
+          "gaps_gt_20ms": 1,
+          "policy": "Only within one motion segment; intentional 0.5s holds between segments excluded"
+        }
+      ],
+      "passes": [
+        {
+          "segment": 0,
+          "direction": 1,
+          "speed": 0.1,
+          "duration": 4.179999999330903,
+          "samples": 419,
+          "mean_position_velocity": 0.1020000211054175,
+          "position_velocity_std": 0.061423758336777656,
+          "raw_velocity_std": 0.0687362834249062,
+          "torque_harmonic": {
+            "amplitude": 0.24463330056348442,
+            "phase_rad": 1.773382855403027,
+            "r2": 0.9638163585059762
+          },
+          "feedforward_harmonic": {
+            "amplitude": 5.960150146508979e-07,
+            "phase_rad": -1.3119498988709875,
+            "r2": 0.9660205135734621
+          },
+          "tracking_error_harmonic": {
+            "amplitude": 0.0056849344430461865,
+            "phase_rad": 0.8684634883430999,
+            "r2": 0.9569309292887773
+          },
+          "position_velocity_harmonic": {
+            "amplitude": 0.09279026361962349,
+            "phase_rad": -0.7784233044057268,
+            "r2": 0.948224213108242
+          },
+          "raw_velocity_harmonic": {
+            "amplitude": 0.09168758020678802,
+            "phase_rad": -0.795952612022676,
+            "r2": 0.7382326327406235
+          },
+          "command_quant_error_harmonic": {
+            "amplitude": 5.68400802185031e-06,
+            "phase_rad": 0.45847502721624717,
+            "r2": 0.0017883683949447837
+          },
+          "ff_span": 9.447976064992929e-05,
+          "tau_span": 0.6167408931869477,
+          "type_specific": {
+            "2": {
+              "q_span": 0.4536886634964121,
+              "torque_harmonic": {
+                "amplitude": 0.24324564379462751,
+                "phase_rad": 1.7774587431624924,
+                "r2": 0.9604856667086751
+              },
+              "zero_position_step_fraction": 0.017429193899782137,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            },
+            "24": {
+              "q_span": 0.4533051565957389,
+              "torque_harmonic": {
+                "amplitude": 0.2420644647882445,
+                "phase_rad": 1.7818352320406528,
+                "r2": 0.9575825741225643
+              },
+              "zero_position_step_fraction": 0.010964912280701754,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            }
+          }
+        },
+        {
+          "segment": 1,
+          "direction": -1,
+          "speed": 0.1,
+          "duration": 4.179999999330903,
+          "samples": 419,
+          "mean_position_velocity": -0.09956163872059955,
+          "position_velocity_std": 0.06234216792235355,
+          "raw_velocity_std": 0.07010786034203811,
+          "torque_harmonic": {
+            "amplitude": 0.24459491020656537,
+            "phase_rad": 1.881000395853499,
+            "r2": 0.9640731127882618
+          },
+          "feedforward_harmonic": {
+            "amplitude": 6.26890277374864e-07,
+            "phase_rad": 2.7383464288606483,
+            "r2": 0.9699532647769226
+          },
+          "tracking_error_harmonic": {
+            "amplitude": 0.006170230306439161,
+            "phase_rad": 2.7861752978845558,
+            "r2": 0.9476557283726352
+          },
+          "position_velocity_harmonic": {
+            "amplitude": 0.09686364976761898,
+            "phase_rad": -1.8801921885273045,
+            "r2": 0.9683864639533658
+          },
+          "raw_velocity_harmonic": {
+            "amplitude": 0.09633193292216563,
+            "phase_rad": -1.8798620819963288,
+            "r2": 0.756932164631032
+          },
+          "command_quant_error_harmonic": {
+            "amplitude": 1.2204459862395112e-06,
+            "phase_rad": -0.12705058467933297,
+            "r2": 0.0001910266996254517
+          },
+          "ff_span": 9.703810035189902e-05,
+          "tau_span": 0.5899474159670435,
+          "type_specific": {
+            "2": {
+              "q_span": 0.4556061979997753,
+              "torque_harmonic": {
+                "amplitude": 0.24338893699599645,
+                "phase_rad": 1.8700773351463136,
+                "r2": 0.9613884154302522
+              },
+              "zero_position_step_fraction": 0.017467248908296942,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            },
+            "24": {
+              "q_span": 0.45598970490044854,
+              "torque_harmonic": {
+                "amplitude": 0.2462839471095721,
+                "phase_rad": 1.8744283764427019,
+                "r2": 0.9626102710119272
+              },
+              "zero_position_step_fraction": 0.017582417582417582,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            }
+          }
+        },
+        {
+          "segment": 2,
+          "direction": 1,
+          "speed": 0.07,
+          "duration": 6.539999998953135,
+          "samples": 655,
+          "mean_position_velocity": 0.06927316377796199,
+          "position_velocity_std": 0.052627771163937916,
+          "raw_velocity_std": 0.06143460146619703,
+          "torque_harmonic": {
+            "amplitude": 0.2542538618691915,
+            "phase_rad": 1.7975636561566808,
+            "r2": 0.9612483034702061
+          },
+          "feedforward_harmonic": {
+            "amplitude": 6.94524471870889e-07,
+            "phase_rad": 2.2362727236393862,
+            "r2": 0.9593917771658769
+          },
+          "tracking_error_harmonic": {
+            "amplitude": 0.006733641006727963,
+            "phase_rad": 1.0520769473239862,
+            "r2": 0.9480873783045273
+          },
+          "position_velocity_harmonic": {
+            "amplitude": 0.0842296650442141,
+            "phase_rad": -0.6431091752122132,
+            "r2": 0.9179245392255947
+          },
+          "raw_velocity_harmonic": {
+            "amplitude": 0.08400675952836971,
+            "phase_rad": -0.6741099920904255,
+            "r2": 0.6668869701968744
+          },
+          "command_quant_error_harmonic": {
+            "amplitude": 2.8878093790448016e-06,
+            "phase_rad": -2.472028494843976,
+            "r2": 0.0003293492547844501
+          },
+          "ff_span": 9.934248804465654e-05,
+          "tau_span": 0.6230865124772444,
+          "type_specific": {
+            "2": {
+              "q_span": 0.47746609133815066,
+              "torque_harmonic": {
+                "amplitude": 0.25369007219396095,
+                "phase_rad": 1.7979053415213586,
+                "r2": 0.9573966416627653
+              },
+              "zero_position_step_fraction": 0.10760401721664276,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            },
+            "24": {
+              "q_span": 0.478233105139497,
+              "torque_harmonic": {
+                "amplitude": 0.2523918507583693,
+                "phase_rad": 1.8014210543203495,
+                "r2": 0.9587090975300927
+              },
+              "zero_position_step_fraction": 0.09869375907111756,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            }
+          }
+        },
+        {
+          "segment": 3,
+          "direction": -1,
+          "speed": 0.07,
+          "duration": 6.539999998953135,
+          "samples": 655,
+          "mean_position_velocity": -0.06973780103357216,
+          "position_velocity_std": 0.05609527686794503,
+          "raw_velocity_std": 0.06350630646021457,
+          "torque_harmonic": {
+            "amplitude": 0.26938428468158915,
+            "phase_rad": 1.8343655495389781,
+            "r2": 0.9674801302634356
+          },
+          "feedforward_harmonic": {
+            "amplitude": 6.311254251788365e-07,
+            "phase_rad": -0.589886994675491,
+            "r2": 0.9643041637826615
+          },
+          "tracking_error_harmonic": {
+            "amplitude": 0.0074241740218215025,
+            "phase_rad": 2.5870984018569225,
+            "r2": 0.9452599280146197
+          },
+          "position_velocity_harmonic": {
+            "amplitude": 0.09208711912956578,
+            "phase_rad": -2.020427469509239,
+            "r2": 0.9442925305880653
+          },
+          "raw_velocity_harmonic": {
+            "amplitude": 0.09030153750378121,
+            "phase_rad": -2.008734346948263,
+            "r2": 0.7065986038195511
+          },
+          "command_quant_error_harmonic": {
+            "amplitude": 6.605396443538137e-07,
+            "phase_rad": 2.631027318329432,
+            "r2": 1.6022890961142622e-05
+          },
+          "ff_span": 0.00010870425803266451,
+          "tau_span": 0.6441066769648669,
+          "type_specific": {
+            "2": {
+              "q_span": 0.4897383121596931,
+              "torque_harmonic": {
+                "amplitude": 0.26799776859061325,
+                "phase_rad": 1.8367137591254454,
+                "r2": 0.9656444568628504
+              },
+              "zero_position_step_fraction": 0.11671469740634005,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            },
+            "24": {
+              "q_span": 0.4897383121596931,
+              "torque_harmonic": {
+                "amplitude": 0.27041671455578165,
+                "phase_rad": 1.834869308685316,
+                "r2": 0.9641867083461448
+              },
+              "zero_position_step_fraction": 0.11127167630057803,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            }
+          }
+        },
+        {
+          "segment": 4,
+          "direction": 1,
+          "speed": 0.15,
+          "duration": 2.349999999623833,
+          "samples": 236,
+          "mean_position_velocity": 0.15081279868743908,
+          "position_velocity_std": 0.07402346760694829,
+          "raw_velocity_std": 0.08294728959839295,
+          "torque_harmonic": {
+            "amplitude": 0.2647791762396299,
+            "phase_rad": 1.770348141033784,
+            "r2": 0.972638018545746
+          },
+          "feedforward_harmonic": {
+            "amplitude": 1.3524155273046473e-07,
+            "phase_rad": 1.8533011204402368,
+            "r2": 0.9746548994432284
+          },
+          "tracking_error_harmonic": {
+            "amplitude": 0.00498698771798761,
+            "phase_rad": 0.6604447966883762,
+            "r2": 0.9581035942436621
+          },
+          "position_velocity_harmonic": {
+            "amplitude": 0.11084790189926735,
+            "phase_rad": -0.9416359533705204,
+            "r2": 0.9785851916419174
+          },
+          "raw_velocity_harmonic": {
+            "amplitude": 0.11330990378023026,
+            "phase_rad": -1.003237912843417,
+            "r2": 0.8126119076060221
+          },
+          "command_quant_error_harmonic": {
+            "amplitude": 6.469581456704276e-06,
+            "phase_rad": -1.9604328363904868,
+            "r2": 0.0022796733719748774
+          },
+          "ff_span": 7.826830138567818e-05,
+          "tau_span": 0.617560137009951,
+          "type_specific": {
+            "2": {
+              "q_span": 0.41725550793245514,
+              "torque_harmonic": {
+                "amplitude": 0.26702589535970933,
+                "phase_rad": 1.76575066312879,
+                "r2": 0.9713028657199344
+              },
+              "zero_position_step_fraction": 0.0,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            },
+            "24": {
+              "q_span": 0.4184060286344747,
+              "torque_harmonic": {
+                "amplitude": 0.267619778033374,
+                "phase_rad": 1.7749005996321239,
+                "r2": 0.9685189645999888
+              },
+              "zero_position_step_fraction": 0.0,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            }
+          }
+        },
+        {
+          "segment": 5,
+          "direction": -1,
+          "speed": 0.15,
+          "duration": 2.349999999623833,
+          "samples": 236,
+          "mean_position_velocity": -0.15043321343007326,
+          "position_velocity_std": 0.07960556146566673,
+          "raw_velocity_std": 0.08842324152117761,
+          "torque_harmonic": {
+            "amplitude": 0.26926090867031094,
+            "phase_rad": 1.8735848678653835,
+            "r2": 0.9684108590961322
+          },
+          "feedforward_harmonic": {
+            "amplitude": 2.089789571457445e-07,
+            "phase_rad": 1.4083921452648545,
+            "r2": 0.9782092122801331
+          },
+          "tracking_error_harmonic": {
+            "amplitude": 0.005412947867454256,
+            "phase_rad": 2.962396825255725,
+            "r2": 0.9373277030204621
+          },
+          "position_velocity_harmonic": {
+            "amplitude": 0.11822185370596297,
+            "phase_rad": -1.7097370997222672,
+            "r2": 0.9729018255435464
+          },
+          "raw_velocity_harmonic": {
+            "amplitude": 0.12007065062542172,
+            "phase_rad": -1.714965733654371,
+            "r2": 0.8191383527892119
+          },
+          "command_quant_error_harmonic": {
+            "amplitude": 6.419979102602507e-06,
+            "phase_rad": -1.8008358593860805,
+            "r2": 0.0019581822248806446
+          },
+          "ff_span": 8.476009899645006e-05,
+          "tau_span": 0.6452828658527534,
+          "type_specific": {
+            "2": {
+              "q_span": 0.41035238372033744,
+              "torque_harmonic": {
+                "amplitude": 0.27004769586616484,
+                "phase_rad": 1.8811475060840857,
+                "r2": 0.9680182634574558
+              },
+              "zero_position_step_fraction": 0.0,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            },
+            "24": {
+              "q_span": 0.4115029044223571,
+              "torque_harmonic": {
+                "amplitude": 0.27133651831734545,
+                "phase_rad": 1.8772431619663785,
+                "r2": 0.9689264347712843
+              },
+              "zero_position_step_fraction": 0.0,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            }
+          }
+        },
+        {
+          "segment": 6,
+          "direction": 1,
+          "speed": 0.1,
+          "duration": 4.189999999329302,
+          "samples": 420,
+          "mean_position_velocity": 0.10223811816029992,
+          "position_velocity_std": 0.06828999028541542,
+          "raw_velocity_std": 0.07543106022762122,
+          "torque_harmonic": {
+            "amplitude": 0.2757573128155804,
+            "phase_rad": 1.784358641903218,
+            "r2": 0.9696294367745165
+          },
+          "feedforward_harmonic": {
+            "amplitude": 7.125825274293796e-07,
+            "phase_rad": -1.1587554274951741,
+            "r2": 0.966450089307476
+          },
+          "tracking_error_harmonic": {
+            "amplitude": 0.006302360138248706,
+            "phase_rad": 0.8656858718850817,
+            "r2": 0.9521013846672471
+          },
+          "position_velocity_harmonic": {
+            "amplitude": 0.10523537888534477,
+            "phase_rad": -0.798273500105766,
+            "r2": 0.9485402690084278
+          },
+          "raw_velocity_harmonic": {
+            "amplitude": 0.10593202516430597,
+            "phase_rad": -0.8084788913180492,
+            "r2": 0.7872047959205697
+          },
+          "command_quant_error_harmonic": {
+            "amplitude": 2.7776933084188997e-06,
+            "phase_rad": -0.2553337100379782,
+            "r2": 0.00032297165986672205
+          },
+          "ff_span": 9.469839266173618e-05,
+          "tau_span": 0.65776225278945,
+          "type_specific": {
+            "2": {
+              "q_span": 0.4536886634964121,
+              "torque_harmonic": {
+                "amplitude": 0.2741213643135583,
+                "phase_rad": 1.791317137134444,
+                "r2": 0.964583667600125
+              },
+              "zero_position_step_fraction": 0.02178649237472767,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            },
+            "24": {
+              "q_span": 0.4536886634964121,
+              "torque_harmonic": {
+                "amplitude": 0.2740971081767517,
+                "phase_rad": 1.784805790151409,
+                "r2": 0.9639656803210184
+              },
+              "zero_position_step_fraction": 0.021834061135371178,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            }
+          }
+        },
+        {
+          "segment": 7,
+          "direction": -1,
+          "speed": 0.1,
+          "duration": 4.179999999330903,
+          "samples": 419,
+          "mean_position_velocity": -0.09972237970742978,
+          "position_velocity_std": 0.06826279309583866,
+          "raw_velocity_std": 0.0761244333078471,
+          "torque_harmonic": {
+            "amplitude": 0.27532301830567374,
+            "phase_rad": 1.8726873322872433,
+            "r2": 0.9683906165941656
+          },
+          "feedforward_harmonic": {
+            "amplitude": 7.474825415029997e-07,
+            "phase_rad": 2.5692926331075046,
+            "r2": 0.9707705462451436
+          },
+          "tracking_error_harmonic": {
+            "amplitude": 0.006733871510518511,
+            "phase_rad": 2.7833811003714124,
+            "r2": 0.9437135109983806
+          },
+          "position_velocity_harmonic": {
+            "amplitude": 0.10780828635866743,
+            "phase_rad": -1.8627635294168812,
+            "r2": 0.9644367564167717
+          },
+          "raw_velocity_harmonic": {
+            "amplitude": 0.11051871874053078,
+            "phase_rad": -1.8511627499618495,
+            "r2": 0.8152389440087692
+          },
+          "command_quant_error_harmonic": {
+            "amplitude": 2.4432291753481807e-06,
+            "phase_rad": 1.2195378945825166,
+            "r2": 0.0002780623198659349
+          },
+          "ff_span": 9.677973872467883e-05,
+          "tau_span": 0.6820636379085478,
+          "type_specific": {
+            "2": {
+              "q_span": 0.45560619799977536,
+              "torque_harmonic": {
+                "amplitude": 0.2749220464244761,
+                "phase_rad": 1.865009882386162,
+                "r2": 0.9652458465032784
+              },
+              "zero_position_step_fraction": 0.02826086956521739,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            },
+            "24": {
+              "q_span": 0.4556061979997753,
+              "torque_harmonic": {
+                "amplitude": 0.27436353348592174,
+                "phase_rad": 1.8676739741127268,
+                "r2": 0.9680244905829601
+              },
+              "zero_position_step_fraction": 0.019823788546255508,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            }
+          }
+        },
+        {
+          "segment": 8,
+          "direction": 1,
+          "speed": 0.07,
+          "duration": 6.5499999989515345,
+          "samples": 656,
+          "mean_position_velocity": 0.06921771141982587,
+          "position_velocity_std": 0.05692785999090604,
+          "raw_velocity_std": 0.06536448280415073,
+          "torque_harmonic": {
+            "amplitude": 0.28108236746491055,
+            "phase_rad": 1.7934813580001148,
+            "r2": 0.9681594171519552
+          },
+          "feedforward_harmonic": {
+            "amplitude": 7.20520243510134e-07,
+            "phase_rad": 2.3502982813573685,
+            "r2": 0.959007702076075
+          },
+          "tracking_error_harmonic": {
+            "amplitude": 0.0072759524800291185,
+            "phase_rad": 1.04124858306875,
+            "r2": 0.945065489508135
+          },
+          "position_velocity_harmonic": {
+            "amplitude": 0.09311200031768807,
+            "phase_rad": -0.6799850618504526,
+            "r2": 0.9174327057630938
+          },
+          "raw_velocity_harmonic": {
+            "amplitude": 0.09373174646802306,
+            "phase_rad": -0.7183652721821965,
+            "r2": 0.7002379710207045
+          },
+          "command_quant_error_harmonic": {
+            "amplitude": 9.373245962757107e-07,
+            "phase_rad": -2.344386570379502,
+            "r2": 4.7016361520491046e-05
+          },
+          "ff_span": 9.92155687039336e-05,
+          "tau_span": 0.6813518042333625,
+          "type_specific": {
+            "2": {
+              "q_span": 0.4755485568347846,
+              "torque_harmonic": {
+                "amplitude": 0.2810340132318343,
+                "phase_rad": 1.7904591105349226,
+                "r2": 0.9635216174936523
+              },
+              "zero_position_step_fraction": 0.12195121951219512,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            },
+            "24": {
+              "q_span": 0.4759320637354578,
+              "torque_harmonic": {
+                "amplitude": 0.2783191406271688,
+                "phase_rad": 1.79857994175876,
+                "r2": 0.9669733117521485
+              },
+              "zero_position_step_fraction": 0.10434782608695652,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            }
+          }
+        },
+        {
+          "segment": 9,
+          "direction": -1,
+          "speed": 0.07,
+          "duration": 6.539999998953135,
+          "samples": 655,
+          "mean_position_velocity": -0.06949942709532936,
+          "position_velocity_std": 0.05909044473409661,
+          "raw_velocity_std": 0.06835580836508653,
+          "torque_harmonic": {
+            "amplitude": 0.2889377757707166,
+            "phase_rad": 1.8749193149304906,
+            "r2": 0.9732452004620772
+          },
+          "feedforward_harmonic": {
+            "amplitude": 5.636830602770786e-07,
+            "phase_rad": -0.716008061720099,
+            "r2": 0.9647226465515124
+          },
+          "tracking_error_harmonic": {
+            "amplitude": 0.007865591437679927,
+            "phase_rad": 2.626285022430282,
+            "r2": 0.9412111079400612
+          },
+          "position_velocity_harmonic": {
+            "amplitude": 0.09829459219916373,
+            "phase_rad": -1.9672150143989144,
+            "r2": 0.9461745619720218
+          },
+          "raw_velocity_harmonic": {
+            "amplitude": 0.10119914506706391,
+            "phase_rad": -1.9371330587317408,
+            "r2": 0.7465574526952421
+          },
+          "command_quant_error_harmonic": {
+            "amplitude": 1.8692934807004811e-06,
+            "phase_rad": -3.0442768863389915,
+            "r2": 0.00013236187266019162
+          },
+          "ff_span": 0.00010847011535045027,
+          "tau_span": 0.701733889093666,
+          "type_specific": {
+            "2": {
+              "q_span": 0.4897383121596931,
+              "torque_harmonic": {
+                "amplitude": 0.2890196114170746,
+                "phase_rad": 1.8754551154115735,
+                "r2": 0.9711405187738822
+              },
+              "zero_position_step_fraction": 0.125,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            },
+            "24": {
+              "q_span": 0.4897383121596931,
+              "torque_harmonic": {
+                "amplitude": 0.2886880341866073,
+                "phase_rad": 1.874665631099498,
+                "r2": 0.97128742805973
+              },
+              "zero_position_step_fraction": 0.12608695652173912,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            }
+          }
+        },
+        {
+          "segment": 10,
+          "direction": 1,
+          "speed": 0.15,
+          "duration": 2.3599999996222323,
+          "samples": 237,
+          "mean_position_velocity": 0.1505027378448552,
+          "position_velocity_std": 0.07741499551932636,
+          "raw_velocity_std": 0.0874104896895149,
+          "torque_harmonic": {
+            "amplitude": 0.28045642838983736,
+            "phase_rad": 1.775605093257598,
+            "r2": 0.9738741481789425
+          },
+          "feedforward_harmonic": {
+            "amplitude": 1.8174733408462927e-07,
+            "phase_rad": 2.388344588436951,
+            "r2": 0.9743186688134227
+          },
+          "tracking_error_harmonic": {
+            "amplitude": 0.00522527142253625,
+            "phase_rad": 0.665350591344593,
+            "r2": 0.956232797199459
+          },
+          "position_velocity_harmonic": {
+            "amplitude": 0.11669478811225327,
+            "phase_rad": -0.9396397000705876,
+            "r2": 0.9785152919318159
+          },
+          "raw_velocity_harmonic": {
+            "amplitude": 0.12118063682985276,
+            "phase_rad": -0.9522306440227668,
+            "r2": 0.8288144934117054
+          },
+          "command_quant_error_harmonic": {
+            "amplitude": 7.40091667908809e-06,
+            "phase_rad": -1.8120179317152594,
+            "r2": 0.0020263786957032126
+          },
+          "ff_span": 7.851436806669335e-05,
+          "tau_span": 0.6706660137016461,
+          "type_specific": {
+            "2": {
+              "q_span": 0.41840602863447474,
+              "torque_harmonic": {
+                "amplitude": 0.2843935739567561,
+                "phase_rad": 1.7731303874396855,
+                "r2": 0.9720391563393433
+              },
+              "zero_position_step_fraction": 0.0,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            },
+            "24": {
+              "q_span": 0.4184060286344747,
+              "torque_harmonic": {
+                "amplitude": 0.2805388690377052,
+                "phase_rad": 1.7698463029364675,
+                "r2": 0.9712054491425468
+              },
+              "zero_position_step_fraction": 0.0,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            }
+          }
+        },
+        {
+          "segment": 11,
+          "direction": -1,
+          "speed": 0.15,
+          "duration": 2.3599999996222323,
+          "samples": 237,
+          "mean_position_velocity": -0.15027643393068735,
+          "position_velocity_std": 0.08132238169354951,
+          "raw_velocity_std": 0.0899635229694784,
+          "torque_harmonic": {
+            "amplitude": 0.2778030378808156,
+            "phase_rad": 1.9028974704755515,
+            "r2": 0.9750822554459603
+          },
+          "feedforward_harmonic": {
+            "amplitude": 1.9871302975527486e-07,
+            "phase_rad": 1.2061147232173033,
+            "r2": 0.9779938810201386
+          },
+          "tracking_error_harmonic": {
+            "amplitude": 0.005495171719084786,
+            "phase_rad": 2.999427035352331,
+            "r2": 0.9458043469039935
+          },
+          "position_velocity_harmonic": {
+            "amplitude": 0.12159043326754988,
+            "phase_rad": -1.6686976957972504,
+            "r2": 0.9705491730090536
+          },
+          "raw_velocity_harmonic": {
+            "amplitude": 0.12429802631214769,
+            "phase_rad": -1.6470983971848467,
+            "r2": 0.8299802429039431
+          },
+          "command_quant_error_harmonic": {
+            "amplitude": 4.1243802484896555e-06,
+            "phase_rad": -0.09912686802875695,
+            "r2": 0.000640120049223758
+          },
+          "ff_span": 8.529658237195297e-05,
+          "tau_span": 0.6447570117779627,
+          "type_specific": {
+            "2": {
+              "q_span": 0.4130369320250499,
+              "torque_harmonic": {
+                "amplitude": 0.2802550157149268,
+                "phase_rad": 1.9066905169029613,
+                "r2": 0.9716365876398788
+              },
+              "zero_position_step_fraction": 0.0036363636363636364,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            },
+            "24": {
+              "q_span": 0.4130369320250499,
+              "torque_harmonic": {
+                "amplitude": 0.2781052532164969,
+                "phase_rad": 1.9117091391565066,
+                "r2": 0.9719414780712606
+              },
+              "zero_position_step_fraction": 0.0,
+              "unique_positive_position_steps": [
+                0.00038351,
+                0.00076701,
+                0.00115052,
+                0.00153403,
+                0.00191753
+              ]
+            }
+          }
+        }
+      ],
+      "stationary_axes": [
+        {
+          "segment": 0,
+          "joint": 1,
+          "q_span": 5.966521479267885e-05,
+          "position_velocity_rms": 4.4249770908807916e-05,
+          "reported_velocity_rms": 0.05914963032745237,
+          "tau_rms": 0.22959797855560016
+        },
+        {
+          "segment": 0,
+          "joint": 2,
+          "q_span": 0.0002874267537147368,
+          "position_velocity_rms": 0.0003148287245115317,
+          "reported_velocity_rms": 0.05514868879162313,
+          "tau_rms": 4.613821722900028
+        },
+        {
+          "segment": 0,
+          "joint": 3,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.002512759798517697,
+          "reported_velocity_rms": 0.05761181834094233,
+          "tau_rms": 7.292080696832951
+        },
+        {
+          "segment": 0,
+          "joint": 4,
+          "q_span": 0.0003777137214571744,
+          "position_velocity_rms": 0.00047625193863145085,
+          "reported_velocity_rms": 0.03382083689265739,
+          "tau_rms": 2.0644411720479154
+        },
+        {
+          "segment": 0,
+          "joint": 5,
+          "q_span": 0.0007472373105553327,
+          "position_velocity_rms": 0.001344809016996873,
+          "reported_velocity_rms": 0.031858115020841286,
+          "tau_rms": 0.20234731363303657
+        },
+        {
+          "segment": 1,
+          "joint": 1,
+          "q_span": 0.00032067805452002957,
+          "position_velocity_rms": 0.0002964073135821317,
+          "reported_velocity_rms": 0.059482786196939474,
+          "tau_rms": 0.22596841166832685
+        },
+        {
+          "segment": 1,
+          "joint": 2,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.0017508896312578566,
+          "reported_velocity_rms": 0.06121050459426037,
+          "tau_rms": 4.6200244810665705
+        },
+        {
+          "segment": 1,
+          "joint": 3,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.0024710230668821167,
+          "reported_velocity_rms": 0.06425743580436617,
+          "tau_rms": 7.2844291798677965
+        },
+        {
+          "segment": 1,
+          "joint": 4,
+          "q_span": 0.0006063665223368774,
+          "position_velocity_rms": 0.0003251894640443569,
+          "reported_velocity_rms": 0.0371130389034742,
+          "tau_rms": 2.0653182266554397
+        },
+        {
+          "segment": 1,
+          "joint": 5,
+          "q_span": 0.0003835069006732014,
+          "position_velocity_rms": 0.0018666553344843875,
+          "reported_velocity_rms": 0.03029688808649672,
+          "tau_rms": 0.2021218971652025
+        },
+        {
+          "segment": 2,
+          "joint": 1,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.0008009387137704982,
+          "reported_velocity_rms": 0.062298098106473895,
+          "tau_rms": 0.22524328470866817
+        },
+        {
+          "segment": 2,
+          "joint": 2,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.0024248335445154713,
+          "reported_velocity_rms": 0.07076360075280043,
+          "tau_rms": 4.627337875368386
+        },
+        {
+          "segment": 2,
+          "joint": 3,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.002488563842541151,
+          "reported_velocity_rms": 0.05905722128574674,
+          "tau_rms": 7.283144639900743
+        },
+        {
+          "segment": 2,
+          "joint": 4,
+          "q_span": 0.0003835069006732023,
+          "position_velocity_rms": 0.000741384174738416,
+          "reported_velocity_rms": 0.033045989465939764,
+          "tau_rms": 2.065628824163525
+        },
+        {
+          "segment": 2,
+          "joint": 5,
+          "q_span": 0.0003835069006732014,
+          "position_velocity_rms": 0.0013780234663376874,
+          "reported_velocity_rms": 0.03065918396372775,
+          "tau_rms": 0.2013642674104158
+        },
+        {
+          "segment": 3,
+          "joint": 1,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.001120894373722524,
+          "reported_velocity_rms": 0.061318910202437335,
+          "tau_rms": 0.2241112882818135
+        },
+        {
+          "segment": 3,
+          "joint": 2,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.0021926658116022636,
+          "reported_velocity_rms": 0.06188730633211685,
+          "tau_rms": 4.661095717830721
+        },
+        {
+          "segment": 3,
+          "joint": 3,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.0028356006413587623,
+          "reported_velocity_rms": 0.06584160948042624,
+          "tau_rms": 7.287341182760792
+        },
+        {
+          "segment": 3,
+          "joint": 4,
+          "q_span": 0.0003835069006732023,
+          "position_velocity_rms": 0.0010818434152673824,
+          "reported_velocity_rms": 0.03365098822942115,
+          "tau_rms": 2.0662669523309147
+        },
+        {
+          "segment": 3,
+          "joint": 5,
+          "q_span": 0.000436216809169606,
+          "position_velocity_rms": 0.0008212228809550675,
+          "reported_velocity_rms": 0.031935973783834525,
+          "tau_rms": 0.2028555561660174
+        },
+        {
+          "segment": 4,
+          "joint": 1,
+          "q_span": 0.0003045401498294165,
+          "position_velocity_rms": 0.0008285208920573435,
+          "reported_velocity_rms": 0.05506975245949997,
+          "tau_rms": 0.21952420169652723
+        },
+        {
+          "segment": 4,
+          "joint": 2,
+          "q_span": 0.0003801451419296331,
+          "position_velocity_rms": 0.0008630813185717753,
+          "reported_velocity_rms": 0.06069890182752082,
+          "tau_rms": 4.667649244817259
+        },
+        {
+          "segment": 4,
+          "joint": 3,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.003186855247434556,
+          "reported_velocity_rms": 0.06153473807892556,
+          "tau_rms": 7.287565657185739
+        },
+        {
+          "segment": 4,
+          "joint": 4,
+          "q_span": 0.0003835069006732023,
+          "position_velocity_rms": 0.0018433400170218526,
+          "reported_velocity_rms": 0.03365524073099502,
+          "tau_rms": 2.066548553713425
+        },
+        {
+          "segment": 4,
+          "joint": 5,
+          "q_span": 0.0003835069006732014,
+          "position_velocity_rms": 0.0016518497921453957,
+          "reported_velocity_rms": 0.03113409342243723,
+          "tau_rms": 0.20286840659836144
+        },
+        {
+          "segment": 5,
+          "joint": 1,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.0018514524682758985,
+          "reported_velocity_rms": 0.052799655886627675,
+          "tau_rms": 0.21013569328628134
+        },
+        {
+          "segment": 5,
+          "joint": 2,
+          "q_span": 0.000409317834501044,
+          "position_velocity_rms": 0.003073965150338901,
+          "reported_velocity_rms": 0.058832506468102966,
+          "tau_rms": 4.6993665245847875
+        },
+        {
+          "segment": 5,
+          "joint": 3,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.001869053669420772,
+          "reported_velocity_rms": 0.05934484468191792,
+          "tau_rms": 7.266099197817057
+        },
+        {
+          "segment": 5,
+          "joint": 4,
+          "q_span": 0.0003835069006732023,
+          "position_velocity_rms": 0.0027195314689280707,
+          "reported_velocity_rms": 0.03450181933330212,
+          "tau_rms": 2.069975515460882
+        },
+        {
+          "segment": 5,
+          "joint": 5,
+          "q_span": 0.0003835069006732014,
+          "position_velocity_rms": 0.0025989290947939425,
+          "reported_velocity_rms": 0.03379450018957282,
+          "tau_rms": 0.200635361613565
+        },
+        {
+          "segment": 6,
+          "joint": 1,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.0024835648443372856,
+          "reported_velocity_rms": 0.05751951915574678,
+          "tau_rms": 0.2096111410003664
+        },
+        {
+          "segment": 6,
+          "joint": 2,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.002749409049582747,
+          "reported_velocity_rms": 0.0614055603493045,
+          "tau_rms": 4.689843853928711
+        },
+        {
+          "segment": 6,
+          "joint": 3,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.0015106720094655655,
+          "reported_velocity_rms": 0.06462025269862333,
+          "tau_rms": 7.270493257135377
+        },
+        {
+          "segment": 6,
+          "joint": 4,
+          "q_span": 0.0003835069006732023,
+          "position_velocity_rms": 0.002539047879464345,
+          "reported_velocity_rms": 0.030647000980950214,
+          "tau_rms": 2.0700963430483705
+        },
+        {
+          "segment": 6,
+          "joint": 5,
+          "q_span": 0.0003835069006732014,
+          "position_velocity_rms": 0.0019612002273090385,
+          "reported_velocity_rms": 0.029324831934502794,
+          "tau_rms": 0.20176725316693286
+        },
+        {
+          "segment": 7,
+          "joint": 1,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.0020860701646106543,
+          "reported_velocity_rms": 0.05562075758317066,
+          "tau_rms": 0.20790979899060588
+        },
+        {
+          "segment": 7,
+          "joint": 2,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.0028786874945190472,
+          "reported_velocity_rms": 0.05500086224034319,
+          "tau_rms": 4.701715686682859
+        },
+        {
+          "segment": 7,
+          "joint": 3,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.0019287801459603815,
+          "reported_velocity_rms": 0.07169619483192836,
+          "tau_rms": 7.269147478141383
+        },
+        {
+          "segment": 7,
+          "joint": 4,
+          "q_span": 0.0003835069006732023,
+          "position_velocity_rms": 0.003073371630131817,
+          "reported_velocity_rms": 0.032702239194916036,
+          "tau_rms": 2.0712458604162785
+        },
+        {
+          "segment": 7,
+          "joint": 5,
+          "q_span": 0.0003835069006732014,
+          "position_velocity_rms": 0.0022772111533021317,
+          "reported_velocity_rms": 0.031902091795074604,
+          "tau_rms": 0.20190085009805384
+        },
+        {
+          "segment": 8,
+          "joint": 1,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.0022930026999334846,
+          "reported_velocity_rms": 0.05647763972500826,
+          "tau_rms": 0.2091329029296206
+        },
+        {
+          "segment": 8,
+          "joint": 2,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.0032779707613483406,
+          "reported_velocity_rms": 0.06337778555037808,
+          "tau_rms": 4.706208714499888
+        },
+        {
+          "segment": 8,
+          "joint": 3,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.001521299177482207,
+          "reported_velocity_rms": 0.060879212268636,
+          "tau_rms": 7.267579680001128
+        },
+        {
+          "segment": 8,
+          "joint": 4,
+          "q_span": 0.0003835069006732023,
+          "position_velocity_rms": 0.0029037356013630646,
+          "reported_velocity_rms": 0.03374174703872289,
+          "tau_rms": 2.070824027743906
+        },
+        {
+          "segment": 8,
+          "joint": 5,
+          "q_span": 0.0003835069006732014,
+          "position_velocity_rms": 0.0017628860257174652,
+          "reported_velocity_rms": 0.03000093529647228,
+          "tau_rms": 0.20186773481546352
+        },
+        {
+          "segment": 9,
+          "joint": 1,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.0023723007486650704,
+          "reported_velocity_rms": 0.057427408463151766,
+          "tau_rms": 0.2101555776472725
+        },
+        {
+          "segment": 9,
+          "joint": 2,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.0029717514585325387,
+          "reported_velocity_rms": 0.056638594425410936,
+          "tau_rms": 4.706235396747014
+        },
+        {
+          "segment": 9,
+          "joint": 3,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.0016601708056990928,
+          "reported_velocity_rms": 0.06119015421747923,
+          "tau_rms": 7.276615230897663
+        },
+        {
+          "segment": 9,
+          "joint": 4,
+          "q_span": 0.0003835069006732023,
+          "position_velocity_rms": 0.002660299963717172,
+          "reported_velocity_rms": 0.03193256232270408,
+          "tau_rms": 2.0700001631561897
+        },
+        {
+          "segment": 9,
+          "joint": 5,
+          "q_span": 0.0003835069006732014,
+          "position_velocity_rms": 0.0011615975577126984,
+          "reported_velocity_rms": 0.028609538587526708,
+          "tau_rms": 0.2017688852220067
+        },
+        {
+          "segment": 10,
+          "joint": 1,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.0025441722889237225,
+          "reported_velocity_rms": 0.05799973107620227,
+          "tau_rms": 0.21067920580756103
+        },
+        {
+          "segment": 10,
+          "joint": 2,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.0026349988447878447,
+          "reported_velocity_rms": 0.06467997707877636,
+          "tau_rms": 4.721639597460593
+        },
+        {
+          "segment": 10,
+          "joint": 3,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.001614988189729303,
+          "reported_velocity_rms": 0.06078620117382127,
+          "tau_rms": 7.269327668119785
+        },
+        {
+          "segment": 10,
+          "joint": 4,
+          "q_span": 0.0003835069006732023,
+          "position_velocity_rms": 0.002850311284480534,
+          "reported_velocity_rms": 0.03257322952405977,
+          "tau_rms": 2.0697887179508827
+        },
+        {
+          "segment": 10,
+          "joint": 5,
+          "q_span": 0.0003835069006732014,
+          "position_velocity_rms": 0.0014443397065673868,
+          "reported_velocity_rms": 0.029370240071853685,
+          "tau_rms": 0.20153071324150176
+        },
+        {
+          "segment": 11,
+          "joint": 1,
+          "q_span": 0.0003835069006732021,
+          "position_velocity_rms": 0.0022226270333106845,
+          "reported_velocity_rms": 0.05986127883016103,
+          "tau_rms": 0.2122756606839487
+        },
+        {
+          "segment": 11,
+          "joint": 2,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.0021949671741644723,
+          "reported_velocity_rms": 0.06222844353888745,
+          "tau_rms": 4.71162681093171
+        },
+        {
+          "segment": 11,
+          "joint": 3,
+          "q_span": 0.0003835069006732361,
+          "position_velocity_rms": 0.0015569642861515463,
+          "reported_velocity_rms": 0.05768969627668156,
+          "tau_rms": 7.280625284399045
+        },
+        {
+          "segment": 11,
+          "joint": 4,
+          "q_span": 0.0003835069006732023,
+          "position_velocity_rms": 0.003135984266927527,
+          "reported_velocity_rms": 0.031805542659387585,
+          "tau_rms": 2.0705046804707252
+        },
+        {
+          "segment": 11,
+          "joint": 5,
+          "q_span": 0.000695223966739919,
+          "position_velocity_rms": 0.0006142197212245648,
+          "reported_velocity_rms": 0.03186826521376673,
+          "tau_rms": 0.20350991652249262
+        }
+      ],
+      "feedback": [
+        {
+          "joint": 1,
+          "read_latency_ms": {
+            "median": 0.09728700024425052,
+            "p99": 0.9147656296045156,
+            "max": 12.918338001327356
+          },
+          "types": {
+            "2": 10509,
+            "24": 10455
+          }
+        },
+        {
+          "joint": 2,
+          "read_latency_ms": {
+            "median": 0.09013200178742409,
+            "p99": 1.03774883915321,
+            "max": 6.325661997834686
+          },
+          "types": {
+            "2": 10508,
+            "24": 10455
+          }
+        },
+        {
+          "joint": 3,
+          "read_latency_ms": {
+            "median": 0.07688199912081473,
+            "p99": 0.9687911595392508,
+            "max": 9.504469002422411
+          },
+          "types": {
+            "2": 10505,
+            "24": 10458
+          }
+        },
+        {
+          "joint": 4,
+          "read_latency_ms": {
+            "median": 0.0723409993952373,
+            "p99": 0.9410581991687624,
+            "max": 6.200877000082983
+          },
+          "types": {
+            "2": 10501,
+            "24": 10465
+          }
+        },
+        {
+          "joint": 5,
+          "read_latency_ms": {
+            "median": 0.0705820020812098,
+            "p99": 1.023658600752243,
+            "max": 11.400254999898607
+          },
+          "types": {
+            "2": 10504,
+            "24": 10457
+          }
+        },
+        {
+          "joint": 6,
+          "read_latency_ms": {
+            "median": 0.08085499939625151,
+            "p99": 1.0209167590801362,
+            "max": 11.421834999055136
+          },
+          "types": {
+            "2": 10514,
+            "24": 10441
+          }
+        }
+      ]
+    }
+  ]
+}

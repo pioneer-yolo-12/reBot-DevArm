@@ -1,0 +1,689 @@
+{
+  "kind": "J2_torque_receive_chain_diagnostic",
+  "compensation_allowed": false,
+  "input": "/home/a12/reBot-DevArm/tools/param_id/realrobot_data/primary_joints_20261019/gain_aba_20261019/B/friction_20261019_175029_43cb18f6.npz",
+  "input_sha256": "ec139770e3ba413be755de5937ac9973716eb20fa85e3843b87dbb5dc9def22a",
+  "implementation_sha256": "dc9ba5d24659d833a45755f25cc395851a7d20a039da0c56a12f0f66ec820392",
+  "units": {
+    "q": "rad",
+    "qd": "rad/s",
+    "tau": "protocol_nm_unverified",
+    "time": "monotonic seconds"
+  },
+  "run_id": "43cb18f6-5335-49b7-b10f-f796f8eb0d1d",
+  "payload_decode_max_error": 0.0,
+  "read_delay_ms_p50_p99_max": [
+    0.10163101251237094,
+    1.087534541147762,
+    8.057963976170868
+  ],
+  "invalid_transport_samples": 19,
+  "sections": [
+    {
+      "key": "b1_type2",
+      "block": 1,
+      "label": "hold",
+      "frame_type": 2,
+      "duration": 2.488687136035878,
+      "samples": 250,
+      "target_q": 1.2,
+      "q_span": 0.0007670138013462502,
+      "local_velocity_rms": 0.00041492144439734635,
+      "torque_mean": -3.99093185216834,
+      "torque_std": 0.13152944828351784,
+      "residual_std": 0.13095795960591222,
+      "torque_spectrum": {
+        "resampled_rate_hz": 100.0,
+        "frequency_resolution_hz": 0.78125,
+        "power_fraction_ge_10hz": 0.7022198335183716,
+        "largest_bin_hz": 26.5625
+      },
+      "feedback_velocity_residual_std": 0.07307827193319825,
+      "receive_interval_ms_p50_p99_max": [
+        9.998624038416892,
+        10.750901449937373,
+        10.966854984872043
+      ],
+      "lag_scan": [
+        {
+          "lag_s": -0.04,
+          "correlation": -0.004234051519944604
+        },
+        {
+          "lag_s": -0.03,
+          "correlation": -0.03464231900719184
+        },
+        {
+          "lag_s": -0.02,
+          "correlation": 0.02458315252633689
+        },
+        {
+          "lag_s": -0.01,
+          "correlation": 0.0069065153213912055
+        },
+        {
+          "lag_s": 0.0,
+          "correlation": -0.15098783276801672
+        },
+        {
+          "lag_s": 0.01,
+          "correlation": -0.028457322444126888
+        },
+        {
+          "lag_s": 0.02,
+          "correlation": 0.09103756131931734
+        },
+        {
+          "lag_s": 0.03,
+          "correlation": 0.08214433511476808
+        },
+        {
+          "lag_s": 0.04,
+          "correlation": -0.01622146956493242
+        }
+      ]
+    },
+    {
+      "key": "b1_type24",
+      "block": 1,
+      "label": "hold",
+      "frame_type": 24,
+      "duration": 2.492172150989063,
+      "samples": 250,
+      "target_q": 1.2,
+      "q_span": 0.0007670138013462502,
+      "local_velocity_rms": 0.0003611095673106471,
+      "torque_mean": -3.9824853053376867,
+      "torque_std": 0.15293085463606865,
+      "residual_std": 0.15174029887749999,
+      "torque_spectrum": {
+        "resampled_rate_hz": 100.0,
+        "frequency_resolution_hz": 0.78125,
+        "power_fraction_ge_10hz": 0.7562333191832818,
+        "largest_bin_hz": 30.46875
+      },
+      "feedback_velocity_residual_std": 0.07529097596132063,
+      "receive_interval_ms_p50_p99_max": [
+        9.998850000556558,
+        10.118005343247205,
+        10.267712001223117
+      ],
+      "lag_scan": [
+        {
+          "lag_s": -0.04,
+          "correlation": -0.05531754649981495
+        },
+        {
+          "lag_s": -0.03,
+          "correlation": 0.08032420939989755
+        },
+        {
+          "lag_s": -0.02,
+          "correlation": -0.061803611140265884
+        },
+        {
+          "lag_s": -0.01,
+          "correlation": 0.007556015210091417
+        },
+        {
+          "lag_s": 0.0,
+          "correlation": -0.2175322169551609
+        },
+        {
+          "lag_s": 0.01,
+          "correlation": 0.14496229523789292
+        },
+        {
+          "lag_s": 0.02,
+          "correlation": -0.027393926418782816
+        },
+        {
+          "lag_s": 0.03,
+          "correlation": 0.04807008603630477
+        },
+        {
+          "lag_s": 0.04,
+          "correlation": -0.05285811984045645
+        }
+      ]
+    },
+    {
+      "key": "b3_type2",
+      "block": 3,
+      "label": "motion:0:1",
+      "frame_type": 2,
+      "duration": 3.579507831018418,
+      "samples": 359,
+      "target_q": 1.4445087193010842,
+      "q_span": 0.35742843142743275,
+      "local_velocity_rms": 0.10039660260809151,
+      "torque_mean": -5.785922772189188,
+      "torque_std": 0.7572221909213765,
+      "residual_std": 0.19917461564606762,
+      "torque_spectrum": {
+        "resampled_rate_hz": 100.0,
+        "frequency_resolution_hz": 0.78125,
+        "power_fraction_ge_10hz": 0.6111732120407024,
+        "largest_bin_hz": 1.5625
+      },
+      "feedback_velocity_residual_std": 0.06952741330388013,
+      "receive_interval_ms_p50_p99_max": [
+        9.999932517530397,
+        10.734514707000926,
+        22.16435398440808
+      ],
+      "lag_scan": [
+        {
+          "lag_s": -0.04,
+          "correlation": 0.012892274278992021
+        },
+        {
+          "lag_s": -0.03,
+          "correlation": -0.005409156079153997
+        },
+        {
+          "lag_s": -0.02,
+          "correlation": -0.030067461970476467
+        },
+        {
+          "lag_s": -0.01,
+          "correlation": -0.025890324058045134
+        },
+        {
+          "lag_s": 0.0,
+          "correlation": -0.10741527929180632
+        },
+        {
+          "lag_s": 0.01,
+          "correlation": 0.06581851891765012
+        },
+        {
+          "lag_s": 0.02,
+          "correlation": 0.11166015358407598
+        },
+        {
+          "lag_s": 0.03,
+          "correlation": 0.12491349279477718
+        },
+        {
+          "lag_s": 0.04,
+          "correlation": 0.111786722480935
+        }
+      ]
+    },
+    {
+      "key": "b3_type24",
+      "block": 3,
+      "label": "motion:0:1",
+      "frame_type": 24,
+      "duration": 3.583422244992107,
+      "samples": 359,
+      "target_q": 1.4445087193010842,
+      "q_span": 0.357811938328106,
+      "local_velocity_rms": 0.10043580299185556,
+      "torque_mean": -5.78784161284627,
+      "torque_std": 0.7527659144920708,
+      "residual_std": 0.20707022121102814,
+      "torque_spectrum": {
+        "resampled_rate_hz": 99.96040091512873,
+        "frequency_resolution_hz": 0.7809406321494432,
+        "power_fraction_ge_10hz": 0.5731444818994975,
+        "largest_bin_hz": 1.5618812642988864
+      },
+      "feedback_velocity_residual_std": 0.06747624243479315,
+      "receive_interval_ms_p50_p99_max": [
+        10.003961477195844,
+        10.078725545899943,
+        10.116350022144616
+      ],
+      "lag_scan": [
+        {
+          "lag_s": -0.04,
+          "correlation": 0.057004922072254195
+        },
+        {
+          "lag_s": -0.03,
+          "correlation": -0.017274426490659425
+        },
+        {
+          "lag_s": -0.02,
+          "correlation": -0.07558674207380063
+        },
+        {
+          "lag_s": -0.01,
+          "correlation": -0.03946681323164688
+        },
+        {
+          "lag_s": 0.0,
+          "correlation": -0.08952439875997231
+        },
+        {
+          "lag_s": 0.01,
+          "correlation": 0.10421843922053342
+        },
+        {
+          "lag_s": 0.02,
+          "correlation": 0.08997559594012716
+        },
+        {
+          "lag_s": 0.03,
+          "correlation": 0.18272525760765815
+        },
+        {
+          "lag_s": 0.04,
+          "correlation": 0.08747278928341981
+        }
+      ]
+    },
+    {
+      "key": "b5_type2",
+      "block": 5,
+      "label": "hold",
+      "frame_type": 2,
+      "duration": 2.4995107210124843,
+      "samples": 252,
+      "target_q": 1.75,
+      "q_span": 0.0007670138013462502,
+      "local_velocity_rms": 0.0004666904827253423,
+      "torque_mean": -7.4750598380775095,
+      "torque_std": 0.1344473482180675,
+      "residual_std": 0.13199760223150594,
+      "torque_spectrum": {
+        "resampled_rate_hz": 100.0,
+        "frequency_resolution_hz": 0.78125,
+        "power_fraction_ge_10hz": 0.8450353718112619,
+        "largest_bin_hz": 10.9375
+      },
+      "feedback_velocity_residual_std": 0.06689017278364556,
+      "receive_interval_ms_p50_p99_max": [
+        9.995078959036618,
+        10.789303487399593,
+        11.261041974648833
+      ],
+      "lag_scan": [
+        {
+          "lag_s": -0.04,
+          "correlation": 0.014850257138276132
+        },
+        {
+          "lag_s": -0.03,
+          "correlation": 0.0271675366132687
+        },
+        {
+          "lag_s": -0.02,
+          "correlation": -0.0728935432535181
+        },
+        {
+          "lag_s": -0.01,
+          "correlation": 0.11998344792690997
+        },
+        {
+          "lag_s": 0.0,
+          "correlation": -0.10890507911195668
+        },
+        {
+          "lag_s": 0.01,
+          "correlation": -0.03532590919230385
+        },
+        {
+          "lag_s": 0.02,
+          "correlation": -0.053080877203608566
+        },
+        {
+          "lag_s": 0.03,
+          "correlation": -0.0034596418869413683
+        },
+        {
+          "lag_s": 0.04,
+          "correlation": 0.074351235651322
+        }
+      ]
+    },
+    {
+      "key": "b5_type24",
+      "block": 5,
+      "label": "hold",
+      "frame_type": 24,
+      "duration": 2.4826868209638633,
+      "samples": 248,
+      "target_q": 1.75,
+      "q_span": 0.0007670138013462502,
+      "local_velocity_rms": 0.0006401598716344278,
+      "torque_mean": -7.488589523094143,
+      "torque_std": 0.13658481009647033,
+      "residual_std": 0.13644781862891792,
+      "torque_spectrum": {
+        "resampled_rate_hz": 99.99042100769344,
+        "frequency_resolution_hz": 0.781175164122605,
+        "power_fraction_ge_10hz": 0.7211507055463493,
+        "largest_bin_hz": 14.06115295420689
+      },
+      "feedback_velocity_residual_std": 0.07224345659533055,
+      "receive_interval_ms_p50_p99_max": [
+        10.00095799099654,
+        11.447324563050643,
+        21.11442299792543
+      ],
+      "lag_scan": [
+        {
+          "lag_s": -0.04,
+          "correlation": 0.055631371129513094
+        },
+        {
+          "lag_s": -0.03,
+          "correlation": -0.10500552376644481
+        },
+        {
+          "lag_s": -0.02,
+          "correlation": 0.058522871946719464
+        },
+        {
+          "lag_s": -0.01,
+          "correlation": 0.21398815734927473
+        },
+        {
+          "lag_s": 0.0,
+          "correlation": -0.10654765566096844
+        },
+        {
+          "lag_s": 0.01,
+          "correlation": -0.14354315588750458
+        },
+        {
+          "lag_s": 0.02,
+          "correlation": 0.005125777715622601
+        },
+        {
+          "lag_s": 0.03,
+          "correlation": -0.07761897355004786
+        },
+        {
+          "lag_s": 0.04,
+          "correlation": -0.0050881565266430555
+        }
+      ]
+    },
+    {
+      "key": "b7_type2",
+      "block": 7,
+      "label": "motion:1:-1",
+      "frame_type": 2,
+      "duration": 3.579444979026448,
+      "samples": 361,
+      "target_q": 1.5054917612991994,
+      "q_span": 0.35857895212945246,
+      "local_velocity_rms": 0.10145432556737073,
+      "torque_mean": -6.991310002369624,
+      "torque_std": 0.805410213443727,
+      "residual_std": 0.21986158842373815,
+      "torque_spectrum": {
+        "resampled_rate_hz": 99.9827879542078,
+        "frequency_resolution_hz": 0.7811155308922484,
+        "power_fraction_ge_10hz": 0.3807703305593414,
+        "largest_bin_hz": 1.5622310617844968
+      },
+      "feedback_velocity_residual_std": 0.07193281843278995,
+      "receive_interval_ms_p50_p99_max": [
+        10.001721500884742,
+        11.092235958203679,
+        12.901654990855604
+      ],
+      "lag_scan": [
+        {
+          "lag_s": -0.04,
+          "correlation": 0.10018724794041764
+        },
+        {
+          "lag_s": -0.03,
+          "correlation": 0.038502340513352114
+        },
+        {
+          "lag_s": -0.02,
+          "correlation": 0.09803411445667325
+        },
+        {
+          "lag_s": -0.01,
+          "correlation": 0.00032615304986879055
+        },
+        {
+          "lag_s": 0.0,
+          "correlation": -0.08851545199651394
+        },
+        {
+          "lag_s": 0.01,
+          "correlation": 0.06915595122591285
+        },
+        {
+          "lag_s": 0.02,
+          "correlation": 0.16373644922027972
+        },
+        {
+          "lag_s": 0.03,
+          "correlation": 0.15622892839671293
+        },
+        {
+          "lag_s": 0.04,
+          "correlation": 0.1577852336692529
+        }
+      ]
+    },
+    {
+      "key": "b7_type24",
+      "block": 7,
+      "label": "motion:1:-1",
+      "frame_type": 24,
+      "duration": 3.583612023969181,
+      "samples": 357,
+      "target_q": 1.5054917612991994,
+      "q_span": 0.3589624590301257,
+      "local_velocity_rms": 0.10144666659242176,
+      "torque_mean": -7.006493774608754,
+      "torque_std": 0.7930514264596741,
+      "residual_std": 0.22107361497323086,
+      "torque_spectrum": {
+        "resampled_rate_hz": 99.93844276739648,
+        "frequency_resolution_hz": 0.780769084120285,
+        "power_fraction_ge_10hz": 0.367630048523192,
+        "largest_bin_hz": 1.56153816824057
+      },
+      "feedback_velocity_residual_std": 0.07344962905666115,
+      "receive_interval_ms_p50_p99_max": [
+        10.006159514887258,
+        11.37715590884909,
+        20.14894102467224
+      ],
+      "lag_scan": [
+        {
+          "lag_s": -0.04,
+          "correlation": 0.0021836888406748284
+        },
+        {
+          "lag_s": -0.03,
+          "correlation": 0.06982144431595788
+        },
+        {
+          "lag_s": -0.02,
+          "correlation": -0.017386136039156237
+        },
+        {
+          "lag_s": -0.01,
+          "correlation": -0.012570869999858998
+        },
+        {
+          "lag_s": 0.0,
+          "correlation": -0.05580005715220707
+        },
+        {
+          "lag_s": 0.01,
+          "correlation": 0.09062143250445963
+        },
+        {
+          "lag_s": 0.02,
+          "correlation": 0.15070845609146147
+        },
+        {
+          "lag_s": 0.03,
+          "correlation": 0.18655665381823297
+        },
+        {
+          "lag_s": 0.04,
+          "correlation": 0.13309707570985474
+        }
+      ]
+    },
+    {
+      "key": "b9_type2",
+      "block": 9,
+      "label": "hold",
+      "frame_type": 2,
+      "duration": 2.4890068460372277,
+      "samples": 250,
+      "target_q": 1.2,
+      "q_span": 0.00038350690067301407,
+      "local_velocity_rms": 0.00040618360859016086,
+      "torque_mean": -4.309088045899838,
+      "torque_std": 0.1346186517306486,
+      "residual_std": 0.13455798023039056,
+      "torque_spectrum": {
+        "resampled_rate_hz": 100.0,
+        "frequency_resolution_hz": 0.78125,
+        "power_fraction_ge_10hz": 0.7823284162915481,
+        "largest_bin_hz": 13.28125
+      },
+      "feedback_velocity_residual_std": 0.07092846935823745,
+      "receive_interval_ms_p50_p99_max": [
+        9.994882973842323,
+        10.728827477432787,
+        11.265403009019792
+      ],
+      "lag_scan": [
+        {
+          "lag_s": -0.04,
+          "correlation": -0.0509099113105939
+        },
+        {
+          "lag_s": -0.03,
+          "correlation": -0.006121119332766155
+        },
+        {
+          "lag_s": -0.02,
+          "correlation": 0.04974415057737239
+        },
+        {
+          "lag_s": -0.01,
+          "correlation": 0.0024952215525887345
+        },
+        {
+          "lag_s": 0.0,
+          "correlation": -0.11876799248254447
+        },
+        {
+          "lag_s": 0.01,
+          "correlation": -0.00023611791464353402
+        },
+        {
+          "lag_s": 0.02,
+          "correlation": -0.026551943871827827
+        },
+        {
+          "lag_s": 0.03,
+          "correlation": -0.10137768843860885
+        },
+        {
+          "lag_s": 0.04,
+          "correlation": -0.0436659525104392
+        }
+      ]
+    },
+    {
+      "key": "b9_type24",
+      "block": 9,
+      "label": "hold",
+      "frame_type": 24,
+      "duration": 2.4928267860086635,
+      "samples": 250,
+      "target_q": 1.2,
+      "q_span": 0.00038350690067301407,
+      "local_velocity_rms": 0.0004482934123164984,
+      "torque_mean": -4.313333292641988,
+      "torque_std": 0.15274567817394857,
+      "residual_std": 0.1522568321157989,
+      "torque_spectrum": {
+        "resampled_rate_hz": 99.95336182514554,
+        "frequency_resolution_hz": 0.7808856392589495,
+        "power_fraction_ge_10hz": 0.8031227169198222,
+        "largest_bin_hz": 48.414909634054865
+      },
+      "feedback_velocity_residual_std": 0.07321079413650113,
+      "receive_interval_ms_p50_p99_max": [
+        10.00466599361971,
+        10.101190258283168,
+        10.202168021351099
+      ],
+      "lag_scan": [
+        {
+          "lag_s": -0.04,
+          "correlation": 0.026155089220635173
+        },
+        {
+          "lag_s": -0.03,
+          "correlation": 0.09769625704295272
+        },
+        {
+          "lag_s": -0.02,
+          "correlation": 0.032031800125002965
+        },
+        {
+          "lag_s": -0.01,
+          "correlation": 0.02783743003180885
+        },
+        {
+          "lag_s": 0.0,
+          "correlation": -0.13884398460232175
+        },
+        {
+          "lag_s": 0.01,
+          "correlation": -0.03755595689342947
+        },
+        {
+          "lag_s": 0.02,
+          "correlation": 0.01573278452661206
+        },
+        {
+          "lag_s": 0.03,
+          "correlation": 0.006352841071332237
+        },
+        {
+          "lag_s": 0.04,
+          "correlation": -0.061090327622742406
+        }
+      ]
+    }
+  ],
+  "skipped": [],
+  "frozen_hold_lag_checks": [
+    {
+      "frame_type": 2,
+      "training": "b1_type2",
+      "heldout": "b9_type2",
+      "training_lag_s": 0.02,
+      "training_correlation": 0.09103756131931734,
+      "heldout_correlation": -0.026551943871827827
+    },
+    {
+      "frame_type": 24,
+      "training": "b1_type24",
+      "heldout": "b9_type24",
+      "training_lag_s": 0.01,
+      "training_correlation": 0.14496229523789292,
+      "heldout_correlation": -0.03755595689342947
+    }
+  ],
+  "limits": [
+    "No device sample time; reception lag is not a calibrated motor/control delay.",
+    "Spectra use separate frame types, host-time interpolation and at most 100 Hz resampling; aliases remain possible.",
+    "Lag selected only on first long hold; later same-target holds use the frozen lag.",
+    "Signals are locally detrended for correlation; this is not prediction of the DC torque or calibration.",
+    "Motion trend uses fixed .05 rad descriptive basis, not a newly identified physical period."
+  ]
+}

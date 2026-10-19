@@ -1,0 +1,516 @@
+{
+  "schema": "paired_dynamic_diagnostic_v1",
+  "status": "diagnostic_candidate",
+  "compensation_allowed": false,
+  "options": {
+    "window": 0.24,
+    "guard": 0.25,
+    "grid_step": 0.002,
+    "max_q_gap": 0.004,
+    "max_other_pose_difference": 0.003,
+    "min_pair_bins": 30,
+    "min_coverage": 0.6,
+    "period_min": 0.03,
+    "period_max": 0.06,
+    "period_steps": 241
+  },
+  "implementation_sha256": {
+    "paired_dynamic": "577b623569371d6b2e0ce8ad3ed0640a6df8b051b224f4aabb086b7fcf61238f",
+    "alignment": "a94025a8bb63dfdd3b07fb3818ef4a5896632fc92fee88c358473ddbb5515b0e"
+  },
+  "conditions": {
+    "joint": 2,
+    "kp": [
+      80.0,
+      150.0,
+      150.0,
+      25.0,
+      12.0,
+      25.0
+    ],
+    "kd": [
+      5.0,
+      20.0,
+      10.0,
+      1.5,
+      0.8,
+      1.5
+    ],
+    "home": [
+      0.0,
+      1.2,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "model_hash": "3838ca8f9d586be22a89b33c7cbdd4abd43d4a92a2de377b294eef4c5bd7654d",
+    "load_id": "unloaded_wrist_fixed_setup_20261019_user_reported",
+    "calibration": {
+      "calibration_id": "unverified",
+      "offset": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "units": "protocol_nm_unverified",
+      "verified": false
+    },
+    "rate": 100.0
+  },
+  "training": [
+    {
+      "identity": {
+        "path": "/home/a12/reBot-DevArm/tools/param_id/realrobot_data/primary_joints_20261019/J2_speed_screen/friction_20261019_150840_0164d3bc.npz",
+        "run_id": "0164d3bc-bab8-469d-8bd9-637117d37383",
+        "sha256": "a477abf88e201cae7e049e373c9a7fb1a0ccb9a96ff1de3499069018122a0367",
+        "raw_sha256": "6a2c3db414951b3935cbb9565257babe3265e7f44deace07dbee746b16016413"
+      },
+      "conditions": {
+        "joint": 2,
+        "kp": [
+          80.0,
+          150.0,
+          150.0,
+          25.0,
+          12.0,
+          25.0
+        ],
+        "kd": [
+          5.0,
+          20.0,
+          10.0,
+          1.5,
+          0.8,
+          1.5
+        ],
+        "home": [
+          0.0,
+          1.2,
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "model_hash": "3838ca8f9d586be22a89b33c7cbdd4abd43d4a92a2de377b294eef4c5bd7654d",
+        "load_id": "unloaded_wrist_fixed_setup_20261019_user_reported",
+        "calibration": {
+          "calibration_id": "unverified",
+          "offset": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "scale": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "units": "protocol_nm_unverified",
+          "verified": false
+        },
+        "rate": 100.0
+      },
+      "pair_reports": [
+        {
+          "repeat": 0,
+          "speed_id": 0,
+          "speed": 0.06,
+          "bins": 185,
+          "coverage": 1.0,
+          "accepted": true
+        },
+        {
+          "repeat": 0,
+          "speed_id": 1,
+          "speed": 0.08,
+          "bins": 185,
+          "coverage": 1.0,
+          "accepted": true
+        },
+        {
+          "repeat": 0,
+          "speed_id": 2,
+          "speed": 0.12,
+          "bins": 182,
+          "coverage": 0.9837837837837838,
+          "accepted": true
+        }
+      ],
+      "bounds": [
+        1.29,
+        1.66
+      ],
+      "temperature_range": [
+        32.0,
+        56.0
+      ]
+    }
+  ],
+  "bounds": [
+    1.29,
+    1.66
+  ],
+  "models": [
+    {
+      "kind": "velocity",
+      "period_rad": null,
+      "q_center": 1.4740108695652174,
+      "q_span": 0.3680000000000003,
+      "names": [
+        "smooth_fc",
+        "fv"
+      ],
+      "coefficients": [
+        0.29449327560719024,
+        0.5431278176878772
+      ],
+      "common_coefficients": [
+        -6.452275236878075,
+        -2.6133483035365983,
+        0.6858529045279125,
+        0.35567446202341735
+      ],
+      "rank": 2,
+      "columns": 2,
+      "scaled_condition": 7.1984251567458015,
+      "common_scaled_condition": 4.785631210555852,
+      "issues": [],
+      "training_metrics": {
+        "difference_rmse": 0.26297031036835633,
+        "common_rmse": 0.3217396996136295,
+        "reconstructed_torque_rmse": 0.4155355802367569,
+        "groups": [
+          {
+            "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:0",
+            "speed": 0.06,
+            "bins": 185,
+            "difference_rmse": 0.24566043977276214,
+            "common_rmse": 0.3115662621371705
+          },
+          {
+            "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:1",
+            "speed": 0.08,
+            "bins": 185,
+            "difference_rmse": 0.2778103820207855,
+            "common_rmse": 0.32472851388416923
+          },
+          {
+            "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:2",
+            "speed": 0.12,
+            "bins": 182,
+            "difference_rmse": 0.264447522918645,
+            "common_rmse": 0.32867485375497857
+          }
+        ]
+      },
+      "stability": {
+        "method": "leave_one_roundtrip_out; period frozen; descriptive ranges, not confidence intervals",
+        "fits": [
+          {
+            "omitted": "0164d3bc-bab8-469d-8bd9-637117d37383:0:0",
+            "coefficients": [
+              0.34654835853539123,
+              0.0681438872772092
+            ],
+            "issues": []
+          },
+          {
+            "omitted": "0164d3bc-bab8-469d-8bd9-637117d37383:0:1",
+            "coefficients": [
+              0.28328829309870296,
+              0.6326586711448977
+            ],
+            "issues": []
+          },
+          {
+            "omitted": "0164d3bc-bab8-469d-8bd9-637117d37383:0:2",
+            "coefficients": [
+              0.26371304205845625,
+              0.958982043144716
+            ],
+            "issues": []
+          }
+        ],
+        "coefficient_ranges": {
+          "smooth_fc": [
+            0.26371304205845625,
+            0.34654835853539123
+          ],
+          "fv": [
+            0.0681438872772092,
+            0.958982043144716
+          ]
+        },
+        "issues": []
+      }
+    },
+    {
+      "kind": "inertia",
+      "period_rad": null,
+      "q_center": 1.4740108695652174,
+      "q_span": 0.3680000000000003,
+      "names": [
+        "smooth_fc",
+        "fv",
+        "effective_inertia"
+      ],
+      "coefficients": [
+        0.3102288978281794,
+        0.34936617337722237,
+        1.0857198043789984
+      ],
+      "common_coefficients": [
+        -6.448722906802249,
+        -2.6124202481633714,
+        0.6148151766423171,
+        0.36486294229884564
+      ],
+      "rank": 3,
+      "columns": 3,
+      "scaled_condition": 7.208549883385115,
+      "common_scaled_condition": 4.785631210555852,
+      "issues": [
+        "roundtrip_deletion_sign_change_fv",
+        "roundtrip_deletion_large_change_fv"
+      ],
+      "training_metrics": {
+        "difference_rmse": 0.2450733151255975,
+        "common_rmse": 0.3032844326204309,
+        "reconstructed_torque_rmse": 0.3899261171767635,
+        "groups": [
+          {
+            "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:0",
+            "speed": 0.06,
+            "bins": 185,
+            "difference_rmse": 0.22954166220702538,
+            "common_rmse": 0.28921197352834377
+          },
+          {
+            "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:1",
+            "speed": 0.08,
+            "bins": 185,
+            "difference_rmse": 0.25680000710018797,
+            "common_rmse": 0.3006239861811934
+          },
+          {
+            "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:2",
+            "speed": 0.12,
+            "bins": 182,
+            "difference_rmse": 0.24808702308772726,
+            "common_rmse": 0.31925850734171574
+          }
+        ]
+      },
+      "stability": {
+        "method": "leave_one_roundtrip_out; period frozen; descriptive ranges, not confidence intervals",
+        "fits": [
+          {
+            "omitted": "0164d3bc-bab8-469d-8bd9-637117d37383:0:0",
+            "coefficients": [
+              0.3706556905807939,
+              -0.18230846122471817,
+              1.0055596069389015
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          },
+          {
+            "omitted": "0164d3bc-bab8-469d-8bd9-637117d37383:0:1",
+            "coefficients": [
+              0.2899388161744156,
+              0.5523005064567078,
+              1.0324579258638502
+            ],
+            "issues": []
+          },
+          {
+            "omitted": "0164d3bc-bab8-469d-8bd9-637117d37383:0:2",
+            "coefficients": [
+              0.40768381870554593,
+              -1.094797063805269,
+              1.3421697830671975
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          }
+        ],
+        "coefficient_ranges": {
+          "smooth_fc": [
+            0.2899388161744156,
+            0.40768381870554593
+          ],
+          "fv": [
+            -1.094797063805269,
+            0.5523005064567078
+          ],
+          "effective_inertia": [
+            1.0055596069389015,
+            1.3421697830671975
+          ]
+        },
+        "issues": [
+          "roundtrip_deletion_sign_change_fv",
+          "roundtrip_deletion_large_change_fv"
+        ]
+      }
+    },
+    {
+      "kind": "spatial",
+      "period_rad": 0.050125,
+      "q_center": 1.4740108695652174,
+      "q_span": 0.3680000000000003,
+      "names": [
+        "smooth_fc",
+        "fv",
+        "effective_inertia",
+        "odd_position_sin",
+        "odd_position_cos"
+      ],
+      "coefficients": [
+        0.29418649871130426,
+        0.5309971285442093,
+        1.802649637861493,
+        -0.0822208632926085,
+        -0.07368607706165338
+      ],
+      "common_coefficients": [
+        -6.432421437810932,
+        -2.613429957632702,
+        0.3018036812073989,
+        0.38034039979201284,
+        -0.1380551420320629,
+        0.17971471878328152
+      ],
+      "rank": 5,
+      "columns": 5,
+      "scaled_condition": 7.276739806842899,
+      "common_scaled_condition": 4.794043024262388,
+      "issues": [
+        "roundtrip_deletion_sign_change_fv",
+        "roundtrip_deletion_large_change_fv"
+      ],
+      "training_metrics": {
+        "difference_rmse": 0.24100897371138072,
+        "common_rmse": 0.24907005051100828,
+        "reconstructed_torque_rmse": 0.3465850768151584,
+        "groups": [
+          {
+            "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:0",
+            "speed": 0.06,
+            "bins": 185,
+            "difference_rmse": 0.23279108885746597,
+            "common_rmse": 0.2300231418557695
+          },
+          {
+            "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:1",
+            "speed": 0.08,
+            "bins": 185,
+            "difference_rmse": 0.24694588907924037,
+            "common_rmse": 0.241336642846651
+          },
+          {
+            "group": "0164d3bc-bab8-469d-8bd9-637117d37383:0:2",
+            "speed": 0.12,
+            "bins": 182,
+            "difference_rmse": 0.24306791858173696,
+            "common_rmse": 0.27377664110544064
+          }
+        ]
+      },
+      "stability": {
+        "method": "leave_one_roundtrip_out; period frozen; descriptive ranges, not confidence intervals",
+        "fits": [
+          {
+            "omitted": "0164d3bc-bab8-469d-8bd9-637117d37383:0:0",
+            "coefficients": [
+              0.3225418586182923,
+              0.2823371257591562,
+              2.363229763510533,
+              -0.17256905482511303,
+              -0.13252032087031487
+            ],
+            "issues": []
+          },
+          {
+            "omitted": "0164d3bc-bab8-469d-8bd9-637117d37383:0:1",
+            "coefficients": [
+              0.2815998161712603,
+              0.6362871568014908,
+              1.5464267695913878,
+              -0.06887842971670553,
+              -0.03575189808232275
+            ],
+            "issues": []
+          },
+          {
+            "omitted": "0164d3bc-bab8-469d-8bd9-637117d37383:0:2",
+            "coefficients": [
+              0.33795071041900143,
+              -0.09934653552860179,
+              1.907846204533044,
+              -0.04651700726080112,
+              -0.08026820496161226
+            ],
+            "issues": [
+              "negative_fv"
+            ]
+          }
+        ],
+        "coefficient_ranges": {
+          "smooth_fc": [
+            0.2815998161712603,
+            0.33795071041900143
+          ],
+          "fv": [
+            -0.09934653552860179,
+            0.6362871568014908
+          ],
+          "effective_inertia": [
+            1.5464267695913878,
+            2.363229763510533
+          ]
+        },
+        "issues": [
+          "roundtrip_deletion_sign_change_fv",
+          "roundtrip_deletion_large_change_fv"
+        ]
+      }
+    }
+  ],
+  "excitation_issues": [
+    "insufficient_independent_roundtrips_per_speed"
+  ],
+  "independent_roundtrips_per_speed": {
+    "0.06": 1,
+    "0.08": 1,
+    "0.12": 1
+  },
+  "limits": [
+    "Effective coefficients are in dataset calibration units, not verified physical parameters.",
+    "Same-position difference cancels common gravity/ripple only for matched full poses.",
+    "Angle cubic is descriptive, not an identified gravity model; other-axis residual motion/coupling is unmodeled.",
+    "Odd/even position terms are phenomenological; they do not identify a physical cause.",
+    "Neighbouring bins/derivatives are correlated; bin count is not independent trial count."
+  ],
+  "checksum": "00cda8adeab8f87c80714c2c21b23966feb88053682d02ebc8027a8acc077626"
+}

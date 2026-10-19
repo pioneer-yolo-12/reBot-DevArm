@@ -18,6 +18,11 @@ from friction_id.common import (HOME, KP, KD, MODELS, SPEEDS, ROOT, Gravity,
                                 Sweep, check_position, file_hash, load_calibration, ramp, vector)
 from friction_id.recording import Journal
 
+# Reviewed original driver config, commit 76512ea: config/rebotarm_rs.yaml.
+# These are comparison ceilings, not certified hardware stability limits.
+DRIVER_REFERENCE_KP = np.array([50., 150., 150., 50., 50., 50.])
+DRIVER_REFERENCE_KD = np.array([3., 10., 10., 5., 4., 4.])
+
 
 def parser():
     ap = argparse.ArgumentParser(description=__doc__)
@@ -27,9 +32,14 @@ def parser():
     ap.add_argument('--repeats', type=int)
     ap.add_argument('--kp', type=float, help='Override only the moving axis; tune one setting per run')
     ap.add_argument('--kd', type=float)
+    ap.add_argument('--gain-policy', choices=['experiment', 'driver-reference'], default='experiment',
+                    help='driver-reference permits explicit moving-wrist gains up to the reviewed driver values; tracking only')
+    ap.add_argument('--position-probe',action='store_true',help='Tracking only: read internal float position 0x7019 at 50 Hz on a separate socket')
     ap.add_argument('--excursion', type=float, default=.55)
     ap.add_argument('--start-offset',type=float,default=0.,help='Moving-axis start offset from HOME, rad; bounded to +/-0.10. Does not change encoder zero.')
     ap.add_argument('--ramp-time', type=float, default=1.)
+    ap.add_argument('--ramp-down-time', type=float, help='Deceleration duration; defaults to --ramp-time. Same chronological profile in both directions.')
+    ap.add_argument('--hold-time', type=float, default=.5, help='Settled-pose diagnostic hold after HOME and each pass, 0.5 to 5 seconds')
     ap.add_argument('--rate', type=float, default=100.)
     ap.add_argument('--seed', type=int, default=42)
     ap.add_argument('--channel', default='can0')
@@ -42,11 +52,16 @@ def parser():
 
 
 def configuration(args):
+    if args.position_probe and args.mode!='tracking':
+        raise ValueError('Position probe is diagnostic tracking only')
     speeds = sorted(set(args.speeds or ([.10] if args.mode == 'tracking' else SPEEDS)))
     repeats = args.repeats if args.repeats is not None else (1 if args.mode == 'tracking' else 3)
+    down_time = args.ramp_time if args.ramp_down_time is None else args.ramp_down_time
+    if not np.isfinite(args.hold_time) or not .5 <= args.hold_time <= 5.:
+        raise ValueError('Hold duration must be within [0.5, 5] seconds')
     if not speeds or not np.isfinite(speeds).all() or min(speeds) < .01 or max(speeds) > .20:
         raise ValueError('Experiment speeds must be within [0.01, 0.20] rad/s')
-    if not 1 <= repeats <= 10 or not np.isfinite([args.rate,args.ramp_time,args.excursion]).all() or not 50 <= args.rate <= 200 or args.ramp_time < .5:
+    if not 1 <= repeats <= 10 or not np.isfinite([args.rate,args.ramp_time,down_time,args.excursion]).all() or not 50 <= args.rate <= 200 or min(args.ramp_time,down_time) < .5:
         raise ValueError('Invalid repeat count/rate/ramp time')
     if not np.isfinite(args.start_offset) or abs(args.start_offset)>.10:
         raise ValueError('Start offset must be finite and within +/-0.10 rad')
@@ -57,17 +72,33 @@ def configuration(args):
     check_position(end)
     if args.excursion <= 0: raise ValueError('Excursion must be positive')
     # A common position interval for every speed and direction.
-    margin = max(speeds)*args.ramp_time/2+.03
+    margin = max(speeds)*max(args.ramp_time,down_time)/2+.03
     measurement = [start[args.joint-1]+margin, end[args.joint-1]-margin]
     if measurement[1]-measurement[0] < .15: raise ValueError('Common measurement interval too short')
     kp, kd = KP.copy(), KD.copy()
     if args.kp is not None: kp[args.joint-1] = args.kp
     if args.kd is not None: kd[args.joint-1] = args.kd
     vector(kp,'kp',minimum=0); vector(kd,'kd',minimum=0)
-    if np.any(kp > KP*2) or np.any(kd > KD*2): raise ValueError('Gain override exceeds 2x experiment baseline')
-    for speed in speeds: Sweep(start[args.joint-1], end[args.joint-1], speed, args.ramp_time)
+    kp_limit, kd_limit = KP*2, KD*2
+    if args.gain_policy == 'driver-reference':
+        if args.mode != 'tracking' or args.joint not in (4, 5, 6):
+            raise ValueError('Driver-reference gain policy requires wrist tracking mode')
+        kp_limit[args.joint-1] = DRIVER_REFERENCE_KP[args.joint-1]
+        kd_limit[args.joint-1] = DRIVER_REFERENCE_KD[args.joint-1]
+    if np.any(kp > kp_limit) or np.any(kd > kd_limit):
+        raise ValueError(f'Gain override exceeds {args.gain_policy} comparison limits')
+    durations = []
+    for speed in speeds:
+        sweep = Sweep(start[args.joint-1], end[args.joint-1], speed, args.ramp_time, down_time)
+        durations.append(dict(speed=speed,pass_duration=sweep.duration,constant_duration=sweep.constant_time,
+                              peak_reference_acceleration=1.875*speed/min(args.ramp_time,down_time)))
     return dict(speeds=speeds, repeats=repeats, kp=kp.tolist(), kd=kd.tolist(), home=HOME.tolist(),
-                start=start.tolist(),start_offset=args.start_offset,end=end.tolist(), measurement_range=measurement)
+                gain_policy=args.gain_policy, gain_limits=dict(kp=kp_limit.tolist(),kd=kd_limit.tolist()),
+                position_probe=args.position_probe,hold_time=args.hold_time,
+                start=start.tolist(),start_offset=args.start_offset,end=end.tolist(), measurement_range=measurement,
+                dynamic_range=[start[args.joint-1]+.01,end[args.joint-1]-.01],
+                trajectory=dict(profile='quintic_velocity_sweep_v1',ramp_up_time=args.ramp_time,
+                                ramp_down_time=down_time,directions_use_same_chronological_ramps=True,passes=durations))
 
 
 def provenance():
@@ -104,14 +135,21 @@ def run(args, config):
     receiver = FeedbackReceiver(args.channel, journal)
     status, reason = 'aborted', 'initialization incomplete'
     period = 1/args.rate
+    probe = None
     try:
         with MotorSession(args.channel, receiver, journal, gravity, np.array(config['kp']), np.array(config['kd'])) as session:
+            if args.position_probe:
+                from friction_id.probe import PositionProbe
+                probe=PositionProbe(args.channel,args.joint,journal)
+                probe.start()
             def execute(duration, reference, **tags):
                 began = time.monotonic()
                 deadline = began
                 while True:
                     if stop: raise KeyboardInterrupt
                     if journal.error: raise RuntimeError(f'Checkpoint writer failed: {journal.error}')
+                    if probe is not None and probe.error:
+                        raise RuntimeError(f'Position probe failed: {probe.error}')
                     now = time.monotonic()
                     if now-deadline > .05: raise RuntimeError('Control deadline missed by more than 50 ms')
                     elapsed = min(now-began,duration)
@@ -128,7 +166,7 @@ def run(args, config):
             # Quintic duration bounds peak velocity (1.875*distance/duration).
             duration = max(3.,1.875*np.max(np.abs(home-q0))/.30)
             execute(duration,lambda t:(*ramp(t,duration,q0,home),'home'))
-            execute(.5,lambda t:(home,np.zeros(6),'hold'))
+            execute(config['hold_time'],lambda t:(home,np.zeros(6),'hold'))
             if np.max(np.abs(np.array([r['q'] for r in receiver.snapshot()])-home)) > .05:
                 raise RuntimeError('HOME verification failed')
             session.finish_startup()
@@ -138,7 +176,7 @@ def run(args, config):
                 # startup and mandatory HOME -> folded shutdown paths.
                 duration=max(1.,1.875*abs(args.start_offset)/.10)
                 execute(duration,lambda t:(*ramp(t,duration,home,sweep_start),'preposition'))
-                execute(.5,lambda t:(sweep_start,np.zeros(6),'hold'))
+                execute(config['hold_time'],lambda t:(sweep_start,np.zeros(6),'hold'))
                 if np.max(np.abs(np.array([r['q'] for r in receiver.snapshot()])-sweep_start))>.05:
                     raise RuntimeError('Shifted start verification failed')
             rng = np.random.default_rng(args.seed)
@@ -148,7 +186,8 @@ def run(args, config):
                     speed = config['speeds'][sid]
                     for direction in (1,-1):
                         start, finish = (sweep_start,end) if direction == 1 else (end,sweep_start)
-                        sweep = Sweep(start[args.joint-1],finish[args.joint-1],speed,args.ramp_time)
+                        sweep = Sweep(start[args.joint-1],finish[args.joint-1],speed,
+                                      config['trajectory']['ramp_up_time'],config['trajectory']['ramp_down_time'])
                         def reference(t):
                             q,qd = home.copy(),np.zeros(6)
                             q[args.joint-1],qd[args.joint-1],phase = sweep.evaluate(t)
@@ -156,7 +195,7 @@ def run(args, config):
                         print(f'J{args.joint} repeat={repeat+1} speed={speed:.3f} direction={direction:+d}')
                         execute(sweep.duration,reference,segment=segment,repeat=repeat,speed_id=int(sid),direction=direction)
                         segment += 1
-                        execute(.5,lambda t:(finish,np.zeros(6),'hold'))
+                        execute(config['hold_time'],lambda t:(finish,np.zeros(6),'hold'))
                         journal.request_checkpoint()
             status,reason = 'complete','planned trajectories finished; quality not yet assessed'
     except KeyboardInterrupt:
@@ -169,7 +208,13 @@ def run(args, config):
         raise
     finally:
         try:
-            journal.checkpoint(status,reason)
+            try:
+                if probe is not None:
+                    probe.stop()
+                    if probe.error:
+                        status,reason='aborted',f'Position probe failed: {probe.error}'
+            finally:
+                journal.checkpoint(status,reason)
         finally:
             try: journal.close()
             finally: signal.signal(signal.SIGINT,old_handler)

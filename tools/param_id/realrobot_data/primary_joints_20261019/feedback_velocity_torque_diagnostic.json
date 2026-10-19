@@ -1,0 +1,182 @@
+[
+  {
+    "group": "J1_pilot",
+    "segment": 0,
+    "direction": 1,
+    "kd": 5.0,
+    "raw_velocity_minus_local_v_std": 0.07043211652299618,
+    "torque_residual_std": 0.06809996891984937,
+    "residual_correlation": 0.05013575587876569,
+    "residual_slope": 0.04847731091993986
+  },
+  {
+    "group": "J1_pilot",
+    "segment": 1,
+    "direction": -1,
+    "kd": 5.0,
+    "raw_velocity_minus_local_v_std": 0.06947846916934615,
+    "torque_residual_std": 0.08017711378385502,
+    "residual_correlation": -0.04828312213202745,
+    "residual_slope": -0.05587252918325241
+  },
+  {
+    "group": "J1_damping",
+    "segment": 0,
+    "direction": 1,
+    "kd": 10.0,
+    "raw_velocity_minus_local_v_std": 0.0747008667308764,
+    "torque_residual_std": 0.12196688703955921,
+    "residual_correlation": -0.07560602665027216,
+    "residual_slope": -0.12350727923694617
+  },
+  {
+    "group": "J1_damping",
+    "segment": 1,
+    "direction": -1,
+    "kd": 10.0,
+    "raw_velocity_minus_local_v_std": 0.07376176598457346,
+    "torque_residual_std": 0.12617616417410984,
+    "residual_correlation": -0.10740320025740997,
+    "residual_slope": -0.18405493440209153
+  },
+  {
+    "group": "J2_pilot",
+    "segment": 0,
+    "direction": 1,
+    "kd": 10.0,
+    "raw_velocity_minus_local_v_std": 0.07001855386716162,
+    "torque_residual_std": 0.2147622067075728,
+    "residual_correlation": 0.16447410130541074,
+    "residual_slope": 0.506003015894648
+  },
+  {
+    "group": "J2_pilot",
+    "segment": 1,
+    "direction": -1,
+    "kd": 10.0,
+    "raw_velocity_minus_local_v_std": 0.06962249405573326,
+    "torque_residual_std": 0.22076996492999046,
+    "residual_correlation": 0.11014818553746522,
+    "residual_slope": 0.34953120248319475
+  },
+  {
+    "group": "J2_damping",
+    "segment": 0,
+    "direction": 1,
+    "kd": 20.0,
+    "raw_velocity_minus_local_v_std": 0.08375582147990589,
+    "torque_residual_std": 0.4741995156118884,
+    "residual_correlation": -0.12169994536298764,
+    "residual_slope": -0.6924583064358998
+  },
+  {
+    "group": "J2_damping",
+    "segment": 1,
+    "direction": -1,
+    "kd": 20.0,
+    "raw_velocity_minus_local_v_std": 0.08331067487560971,
+    "torque_residual_std": 0.45488885273464197,
+    "residual_correlation": -0.15068281082505972,
+    "residual_slope": -0.8230342316237571
+  },
+  {
+    "group": "J2_speed_screen",
+    "segment": 0,
+    "direction": 1,
+    "kd": 20.0,
+    "raw_velocity_minus_local_v_std": 0.08256183854989105,
+    "torque_residual_std": 0.48867855429405604,
+    "residual_correlation": -0.13940054489567055,
+    "residual_slope": -0.8277770177555401
+  },
+  {
+    "group": "J2_speed_screen",
+    "segment": 1,
+    "direction": -1,
+    "kd": 20.0,
+    "raw_velocity_minus_local_v_std": 0.08107619446521953,
+    "torque_residual_std": 0.4521936603160702,
+    "residual_correlation": -0.11747780864790949,
+    "residual_slope": -0.657107679866355
+  },
+  {
+    "group": "J2_speed_screen",
+    "segment": 2,
+    "direction": 1,
+    "kd": 20.0,
+    "raw_velocity_minus_local_v_std": 0.07996849028325007,
+    "torque_residual_std": 0.44131840631722447,
+    "residual_correlation": -0.0774863944576689,
+    "residual_slope": -0.4277862320624223
+  },
+  {
+    "group": "J2_speed_screen",
+    "segment": 3,
+    "direction": -1,
+    "kd": 20.0,
+    "raw_velocity_minus_local_v_std": 0.07965529888667147,
+    "torque_residual_std": 0.437917125771846,
+    "residual_correlation": -0.07911025826256858,
+    "residual_slope": -0.4360866430506205
+  },
+  {
+    "group": "J2_speed_screen",
+    "segment": 4,
+    "direction": 1,
+    "kd": 20.0,
+    "raw_velocity_minus_local_v_std": 0.08195719119196024,
+    "torque_residual_std": 0.445670159852837,
+    "residual_correlation": -0.12171405129109217,
+    "residual_slope": -0.6625573013415822
+  },
+  {
+    "group": "J2_speed_screen",
+    "segment": 5,
+    "direction": -1,
+    "kd": 20.0,
+    "raw_velocity_minus_local_v_std": 0.0787151037857015,
+    "torque_residual_std": 0.4488104612041633,
+    "residual_correlation": -0.13799072522147093,
+    "residual_slope": -0.7881166556536789
+  },
+  {
+    "group": "J4_pilot",
+    "segment": 0,
+    "direction": 1,
+    "kd": 5.0,
+    "raw_velocity_minus_local_v_std": 0.037327599161159575,
+    "torque_residual_std": 0.041541297434542476,
+    "residual_correlation": -0.10227378012788808,
+    "residual_slope": -0.1146649219337681
+  },
+  {
+    "group": "J4_pilot",
+    "segment": 1,
+    "direction": -1,
+    "kd": 5.0,
+    "raw_velocity_minus_local_v_std": 0.037980734346852014,
+    "torque_residual_std": 0.062487759771071474,
+    "residual_correlation": -0.035010449021579564,
+    "residual_slope": -0.057865025922004425
+  },
+  {
+    "group": "J4_speed15",
+    "segment": 0,
+    "direction": 1,
+    "kd": 5.0,
+    "raw_velocity_minus_local_v_std": 0.039121114263107805,
+    "torque_residual_std": 0.03564461109736704,
+    "residual_correlation": -0.10267777224682441,
+    "residual_slope": -0.0958218943549457
+  },
+  {
+    "group": "J4_speed15",
+    "segment": 1,
+    "direction": -1,
+    "kd": 5.0,
+    "raw_velocity_minus_local_v_std": 0.034696423913309495,
+    "torque_residual_std": 0.06341599793972434,
+    "residual_correlation": -0.06699472515398577,
+    "residual_slope": -0.12764486815486745
+  }
+]

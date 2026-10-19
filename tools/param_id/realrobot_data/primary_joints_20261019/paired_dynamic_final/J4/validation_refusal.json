@@ -1,0 +1,4 @@
+{
+  "reason": "Held-out commanded speed outside training range",
+  "compensation_allowed": false
+}

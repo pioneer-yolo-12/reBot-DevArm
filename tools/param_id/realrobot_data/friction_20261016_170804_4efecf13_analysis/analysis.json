@@ -1,0 +1,273 @@
+{
+  "schema_version": 1,
+  "run_id": "4efecf13-00bd-4651-83b9-2f66e571b508",
+  "input_sha256": "e804cb7c2a34307179abcdd13567ce74e097b424ed91b4f3e684e0190f28c101",
+  "metadata": {
+    "channel": "can0",
+    "conditions": {
+      "calibration": {
+        "calibration_id": "unverified",
+        "offset": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "units": "protocol_nm_unverified",
+        "verified": false
+      },
+      "home": [
+        0.0,
+        1.2,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "kd": [
+        5.0,
+        10.0,
+        10.0,
+        1.5,
+        0.8,
+        2.0
+      ],
+      "kp": [
+        80.0,
+        150.0,
+        150.0,
+        25.0,
+        12.0,
+        25.0
+      ],
+      "load_id": "live_tracking_load_unverified_20261016",
+      "measurement_range": [
+        0.08,
+        0.47000000000000003
+      ],
+      "model_hash": "3838ca8f9d586be22a89b33c7cbdd4abd43d4a92a2de377b294eef4c5bd7654d",
+      "temperature_limit_c": 65.0
+    },
+    "end": [
+      0.0,
+      1.2,
+      1.0,
+      0.0,
+      0.0,
+      0.55
+    ],
+    "exit_reason": "planned trajectories finished; quality not yet assessed",
+    "firmware_versions": "not_read; record in calibration evidence",
+    "home": [
+      0.0,
+      1.2,
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "joint": 6,
+    "kd": [
+      5.0,
+      10.0,
+      10.0,
+      1.5,
+      0.8,
+      2.0
+    ],
+    "kp": [
+      80.0,
+      150.0,
+      150.0,
+      25.0,
+      12.0,
+      25.0
+    ],
+    "measurement_range": [
+      0.08,
+      0.47000000000000003
+    ],
+    "mode": "tracking",
+    "motor_models": [
+      "rs-06",
+      "rs-06",
+      "rs-06",
+      "rs-00",
+      "rs-00",
+      "rs-00"
+    ],
+    "motorbridge_version": "0.5.6",
+    "provenance": {
+      "git_commit": "432a53a4b1a1b64ef4ba6ca5ea4c67a8f1815b42",
+      "source_hashes": {
+        "tools/param_id/11_gravity_friction_compensation.py": "5777c3fc19acfa5dacf31ba3a4e5034d8ce300678561b91ab57b90d967c81b6c",
+        "tools/param_id/analyze_friction.py": "0bfcc4687007646d9b8afe65c20728d759e2e939d50bd9be0531ae1f397ac355",
+        "tools/param_id/friction_id/__init__.py": "28c9cd8687040ce3f6ab852ceb92c89a4bef7bfb49d3befdee73ac7a0bb0b8df",
+        "tools/param_id/friction_id/analysis.py": "4f618d1912d1412977c399be4b4366735af135c870d6e5bf6c37f0673da48227",
+        "tools/param_id/friction_id/common.py": "97af8017a1fa1df7142551473ac9237c9fa37353e4e15c7bbc1d82a2a25f049f",
+        "tools/param_id/friction_id/hardware.py": "ea301c77d6a175e13214dda52edde5dd5b5017ff4c16885dd034cd726646dd3f",
+        "tools/param_id/friction_id/recording.py": "2f7d99295a7833db4f453ac055eaa5571f1038bbd01f35e5c0311f2fdf97deee",
+        "tools/param_id/gravity_friction_compensation.py": "0398f05c45121f89962e0a30bd9e9868af95bc40b2185894da085b835b57d758",
+        "tools/param_id/run_phase1_realrobot.py": "14b32577c7bad3f8b8e7134bcd9b89b4248c8634016f6a8cf978562a2b443658",
+        "tools/param_id/run_phase2_gravity_ff.py": "1d65c4acbf05f3d45b43a48a6b6a55b28b0a1348ce6246dd2962def455bf715e",
+        "tools/param_id/run_phase2_pointmatch.py": "8460e60dd0789fdcee207a65ae4848252a4b992080ed5d175fc41fbcfde86693",
+        "tools/param_id/test_phase2_sim.py": "189de6cfcbd7a8050c410ff7f6f4f8c4f29cb90e44921fdddea2da8c3cde0831"
+      }
+    },
+    "rate": 100.0,
+    "recording_policy": {
+      "jsonl": "bounded queue to IO thread",
+      "npz": "blocking export only after motion and cleanup",
+      "queue_capacity": 8192
+    },
+    "repeats": 1,
+    "run_id": "4efecf13-00bd-4651-83b9-2f66e571b508",
+    "run_status": "complete",
+    "schema_version": 3,
+    "seed": 42,
+    "sequence_source": "local per-axis receive counter; not a device packet counter",
+    "speeds": [
+      0.1
+    ],
+    "timestamp_source": "SO_TIMESTAMPNS kernel realtime mapped to monotonic; not device sample time",
+    "torque_calibration": {
+      "calibration_id": "unverified",
+      "offset": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "units": "protocol_nm_unverified",
+      "verified": false
+    },
+    "units": {
+      "q": "rad",
+      "qd": "rad/s",
+      "tau": "protocol_nm_unverified",
+      "time": "monotonic seconds"
+    }
+  },
+  "raw_sha256": "3fb14d650caa07b20b92b2cf846912d2969d62c4159cdbcce2a4e93ffe57c42b",
+  "gates": {
+    "max_gap": 0.04,
+    "window": 0.2,
+    "guard": 0.25,
+    "velocity_relative_error": 0.15,
+    "velocity_absolute_error": 0.003,
+    "max_acceleration": 0.15,
+    "max_position_residual": 0.001,
+    "max_tracking_error": 0.05,
+    "min_valid_fraction": 0.7,
+    "max_velocity_cv": 0.15,
+    "min_duration": 0.8,
+    "min_samples": 30,
+    "bin_width": 0.01,
+    "min_bins": 12,
+    "min_position_coverage": 0.6,
+    "max_pose_difference": 0.02,
+    "min_speed_levels": 3,
+    "min_speed_span": 0.06,
+    "min_repeats": 3,
+    "max_fit_rmse": 0.1,
+    "max_relative_rmse": 0.25,
+    "max_scaled_condition": 50.0
+  },
+  "segments": [
+    {
+      "segment": 0,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": 1,
+      "status": "invalid",
+      "reasons": [
+        "insufficient_steady_samples",
+        "low_steady_fraction",
+        "nonuniform_motion",
+        "no_continuous_steady_window"
+      ],
+      "samples": 0,
+      "steady_fraction": 0.0,
+      "velocity_cv": 0.37279887107221293,
+      "longest_steady_s": 0.0
+    },
+    {
+      "segment": 1,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": -1,
+      "status": "invalid",
+      "reasons": [
+        "insufficient_steady_samples",
+        "low_steady_fraction",
+        "nonuniform_motion",
+        "no_continuous_steady_window"
+      ],
+      "samples": 0,
+      "steady_fraction": 0.0,
+      "velocity_cv": 0.42256078138713776,
+      "longest_steady_s": 0.0
+    }
+  ],
+  "pairs": [],
+  "summaries": [],
+  "fits": {
+    "D": {
+      "status": "invalid",
+      "reasons": [
+        "insufficient_finite_observations"
+      ],
+      "fc": null,
+      "fv": null,
+      "bias": 0.0
+    },
+    "E": {
+      "status": "invalid",
+      "reasons": [
+        "insufficient_finite_observations"
+      ],
+      "fc": null,
+      "fv": null,
+      "bias": 0.0
+    },
+    "C": {
+      "status": "invalid",
+      "reasons": [
+        "matching_gravity_model_not_supplied"
+      ],
+      "fc": null,
+      "fv": null,
+      "bias": 0.0
+    },
+    "A": {
+      "status": "invalid",
+      "reasons": [
+        "insufficient_finite_observations"
+      ],
+      "fc": null,
+      "fv": null,
+      "bias": 0.0
+    }
+  },
+  "eligible_for_validation": false
+}

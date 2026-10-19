@@ -1,0 +1,245 @@
+{
+  "limits": "Proxy is not internal PD: feedback and commands have unknown device delay and internal filtering; cannot treat proxy mismatch as external friction",
+  "passes": [
+    {
+      "file": "friction_20261016_172447_b4729f07.npz",
+      "segment": 0,
+      "proxy": "last host-completed command; raw reported velocity; no fitted delay",
+      "correlation": 0.8603035062883548,
+      "torque_harmonic_amplitude": 0.1875350023450984,
+      "pd_proxy_harmonic_amplitude": 0.18883657223549394,
+      "residual_harmonic_amplitude": 0.006413920989247067,
+      "residual_rms": 0.07825216895146038
+    },
+    {
+      "file": "friction_20261016_172447_b4729f07.npz",
+      "segment": 1,
+      "proxy": "last host-completed command; raw reported velocity; no fitted delay",
+      "correlation": 0.8868180959701766,
+      "torque_harmonic_amplitude": 0.19891187669924523,
+      "pd_proxy_harmonic_amplitude": 0.2082664933485752,
+      "residual_harmonic_amplitude": 0.015214339213079861,
+      "residual_rms": 0.07304731129124555
+    },
+    {
+      "file": "friction_20261016_172447_b4729f07.npz",
+      "segment": 2,
+      "proxy": "last host-completed command; raw reported velocity; no fitted delay",
+      "correlation": 0.8712218531059227,
+      "torque_harmonic_amplitude": 0.2033956163928431,
+      "pd_proxy_harmonic_amplitude": 0.1995685003511745,
+      "residual_harmonic_amplitude": 0.007237344115103173,
+      "residual_rms": 0.07475290868214524
+    },
+    {
+      "file": "friction_20261016_172447_b4729f07.npz",
+      "segment": 3,
+      "proxy": "last host-completed command; raw reported velocity; no fitted delay",
+      "correlation": 0.8944122159043387,
+      "torque_harmonic_amplitude": 0.22063907760747448,
+      "pd_proxy_harmonic_amplitude": 0.2293848195322823,
+      "residual_harmonic_amplitude": 0.0119926277416699,
+      "residual_rms": 0.07428565514112866
+    },
+    {
+      "file": "friction_20261016_172447_b4729f07.npz",
+      "segment": 4,
+      "proxy": "last host-completed command; raw reported velocity; no fitted delay",
+      "correlation": 0.9114548354840669,
+      "torque_harmonic_amplitude": 0.2375539194086356,
+      "pd_proxy_harmonic_amplitude": 0.24727359810852728,
+      "residual_harmonic_amplitude": 0.018141385593534096,
+      "residual_rms": 0.08211883626490452
+    },
+    {
+      "file": "friction_20261016_172447_b4729f07.npz",
+      "segment": 5,
+      "proxy": "last host-completed command; raw reported velocity; no fitted delay",
+      "correlation": 0.9162110014740547,
+      "torque_harmonic_amplitude": 0.25688938838214115,
+      "pd_proxy_harmonic_amplitude": 0.27623417369406156,
+      "residual_harmonic_amplitude": 0.028584953170809505,
+      "residual_rms": 0.08119783493815712
+    },
+    {
+      "file": "friction_20261016_172447_b4729f07.npz",
+      "segment": 6,
+      "proxy": "last host-completed command; raw reported velocity; no fitted delay",
+      "correlation": 0.9058839633103646,
+      "torque_harmonic_amplitude": 0.24761155690949563,
+      "pd_proxy_harmonic_amplitude": 0.25557791220689224,
+      "residual_harmonic_amplitude": 0.014766433485371822,
+      "residual_rms": 0.07968306465067669
+    },
+    {
+      "file": "friction_20261016_172447_b4729f07.npz",
+      "segment": 7,
+      "proxy": "last host-completed command; raw reported velocity; no fitted delay",
+      "correlation": 0.9154491136133487,
+      "torque_harmonic_amplitude": 0.2623954427994172,
+      "pd_proxy_harmonic_amplitude": 0.26944351498550895,
+      "residual_harmonic_amplitude": 0.016022181896045547,
+      "residual_rms": 0.07460846785608391
+    },
+    {
+      "file": "friction_20261016_172447_b4729f07.npz",
+      "segment": 8,
+      "proxy": "last host-completed command; raw reported velocity; no fitted delay",
+      "correlation": 0.9173122687045079,
+      "torque_harmonic_amplitude": 0.25794400948419294,
+      "pd_proxy_harmonic_amplitude": 0.26670851012266167,
+      "residual_harmonic_amplitude": 0.030751430554751904,
+      "residual_rms": 0.0832439509484686
+    },
+    {
+      "file": "friction_20261016_172447_b4729f07.npz",
+      "segment": 9,
+      "proxy": "last host-completed command; raw reported velocity; no fitted delay",
+      "correlation": 0.9203279555680187,
+      "torque_harmonic_amplitude": 0.26170555859307004,
+      "pd_proxy_harmonic_amplitude": 0.2718631448577681,
+      "residual_harmonic_amplitude": 0.026852676863740117,
+      "residual_rms": 0.07695435916181927
+    },
+    {
+      "file": "friction_20261016_172447_b4729f07.npz",
+      "segment": 10,
+      "proxy": "last host-completed command; raw reported velocity; no fitted delay",
+      "correlation": 0.9038657392629791,
+      "torque_harmonic_amplitude": 0.2596497365648074,
+      "pd_proxy_harmonic_amplitude": 0.2589972615196529,
+      "residual_harmonic_amplitude": 0.005129972745618324,
+      "residual_rms": 0.07669877335415501
+    },
+    {
+      "file": "friction_20261016_172447_b4729f07.npz",
+      "segment": 11,
+      "proxy": "last host-completed command; raw reported velocity; no fitted delay",
+      "correlation": 0.908126338418351,
+      "torque_harmonic_amplitude": 0.26937775512835577,
+      "pd_proxy_harmonic_amplitude": 0.2728443182385893,
+      "residual_harmonic_amplitude": 0.008764667681330657,
+      "residual_rms": 0.0772855385176966
+    },
+    {
+      "file": "friction_20261016_172702_03e23883.npz",
+      "segment": 0,
+      "proxy": "last host-completed command; raw reported velocity; no fitted delay",
+      "correlation": 0.9049587442684103,
+      "torque_harmonic_amplitude": 0.24290747345946534,
+      "pd_proxy_harmonic_amplitude": 0.24563514553603696,
+      "residual_harmonic_amplitude": 0.013562569509909644,
+      "residual_rms": 0.07667231038625795
+    },
+    {
+      "file": "friction_20261016_172702_03e23883.npz",
+      "segment": 1,
+      "proxy": "last host-completed command; raw reported velocity; no fitted delay",
+      "correlation": 0.9052492934876794,
+      "torque_harmonic_amplitude": 0.244696480403579,
+      "pd_proxy_harmonic_amplitude": 0.24916977964716888,
+      "residual_harmonic_amplitude": 0.008028432076016508,
+      "residual_rms": 0.07560134089157784
+    },
+    {
+      "file": "friction_20261016_172702_03e23883.npz",
+      "segment": 2,
+      "proxy": "last host-completed command; raw reported velocity; no fitted delay",
+      "correlation": 0.9035072820857255,
+      "torque_harmonic_amplitude": 0.253509545274589,
+      "pd_proxy_harmonic_amplitude": 0.2522300294808849,
+      "residual_harmonic_amplitude": 0.010056631034892554,
+      "residual_rms": 0.07416447310973384
+    },
+    {
+      "file": "friction_20261016_172702_03e23883.npz",
+      "segment": 3,
+      "proxy": "last host-completed command; raw reported velocity; no fitted delay",
+      "correlation": 0.9153929723025511,
+      "torque_harmonic_amplitude": 0.26920830809772295,
+      "pd_proxy_harmonic_amplitude": 0.2749486133146014,
+      "residual_harmonic_amplitude": 0.011226220681103167,
+      "residual_rms": 0.07419013490119485
+    },
+    {
+      "file": "friction_20261016_172702_03e23883.npz",
+      "segment": 4,
+      "proxy": "last host-completed command; raw reported velocity; no fitted delay",
+      "correlation": 0.9164305591414652,
+      "torque_harmonic_amplitude": 0.2654011952159021,
+      "pd_proxy_harmonic_amplitude": 0.2687777600906809,
+      "residual_harmonic_amplitude": 0.021731993491688046,
+      "residual_rms": 0.08276752377813786
+    },
+    {
+      "file": "friction_20261016_172702_03e23883.npz",
+      "segment": 5,
+      "proxy": "last host-completed command; raw reported velocity; no fitted delay",
+      "correlation": 0.9285342193689554,
+      "torque_harmonic_amplitude": 0.2705652446856378,
+      "pd_proxy_harmonic_amplitude": 0.2879097374280902,
+      "residual_harmonic_amplitude": 0.02414915770400091,
+      "residual_rms": 0.07654372741084634
+    },
+    {
+      "file": "friction_20261016_172702_03e23883.npz",
+      "segment": 6,
+      "proxy": "last host-completed command; raw reported velocity; no fitted delay",
+      "correlation": 0.9127935515404431,
+      "torque_harmonic_amplitude": 0.2746325141207852,
+      "pd_proxy_harmonic_amplitude": 0.2745724053598002,
+      "residual_harmonic_amplitude": 0.01586447497779632,
+      "residual_rms": 0.08027046528884038
+    },
+    {
+      "file": "friction_20261016_172702_03e23883.npz",
+      "segment": 7,
+      "proxy": "last host-completed command; raw reported velocity; no fitted delay",
+      "correlation": 0.9263199514324706,
+      "torque_harmonic_amplitude": 0.27477322829777956,
+      "pd_proxy_harmonic_amplitude": 0.28937264567892607,
+      "residual_harmonic_amplitude": 0.020443551105288973,
+      "residual_rms": 0.07405893915919703
+    },
+    {
+      "file": "friction_20261016_172702_03e23883.npz",
+      "segment": 8,
+      "proxy": "last host-completed command; raw reported velocity; no fitted delay",
+      "correlation": 0.9128038264505737,
+      "torque_harmonic_amplitude": 0.2800521810990654,
+      "pd_proxy_harmonic_amplitude": 0.28042421081184365,
+      "residual_harmonic_amplitude": 0.016403047062976114,
+      "residual_rms": 0.07704409543171392
+    },
+    {
+      "file": "friction_20261016_172702_03e23883.npz",
+      "segment": 9,
+      "proxy": "last host-completed command; raw reported velocity; no fitted delay",
+      "correlation": 0.9224633638849671,
+      "torque_harmonic_amplitude": 0.28900873088739776,
+      "pd_proxy_harmonic_amplitude": 0.30098797090965396,
+      "residual_harmonic_amplitude": 0.014684560600165474,
+      "residual_rms": 0.07622325071445173
+    },
+    {
+      "file": "friction_20261016_172702_03e23883.npz",
+      "segment": 10,
+      "proxy": "last host-completed command; raw reported velocity; no fitted delay",
+      "correlation": 0.9200447471708897,
+      "torque_harmonic_amplitude": 0.2802005935173662,
+      "pd_proxy_harmonic_amplitude": 0.2852475952945337,
+      "residual_harmonic_amplitude": 0.024578094293926447,
+      "residual_rms": 0.08653256615617609
+    },
+    {
+      "file": "friction_20261016_172702_03e23883.npz",
+      "segment": 11,
+      "proxy": "last host-completed command; raw reported velocity; no fitted delay",
+      "correlation": 0.9234764798614415,
+      "torque_harmonic_amplitude": 0.27910159350204633,
+      "pd_proxy_harmonic_amplitude": 0.2961297936696476,
+      "residual_harmonic_amplitude": 0.02692253795859327,
+      "residual_rms": 0.08138118170483301
+    }
+  ]
+}

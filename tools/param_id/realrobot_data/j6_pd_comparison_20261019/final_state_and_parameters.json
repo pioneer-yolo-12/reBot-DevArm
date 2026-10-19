@@ -1,0 +1,168 @@
+{
+  "register_reads": [
+    {
+      "joint": 1,
+      "parameters": {
+        "0x7010": 0.17000000178813934,
+        "0x7011": 0.012000000104308128,
+        "0x7014": 0.10000000149011612
+      }
+    },
+    {
+      "joint": 2,
+      "parameters": {
+        "0x7010": 0.07999999821186066,
+        "0x7011": 0.012000000104308128,
+        "0x7014": 0.10000000149011612
+      }
+    },
+    {
+      "joint": 3,
+      "parameters": {
+        "0x7010": 0.07999999821186066,
+        "0x7011": 0.012000000104308128,
+        "0x7014": 0.10000000149011612
+      }
+    },
+    {
+      "joint": 4,
+      "parameters": {
+        "0x7010": 0.125,
+        "0x7011": 0.015799999237060547,
+        "0x7014": 0.10000000149011612
+      }
+    },
+    {
+      "joint": 5,
+      "parameters": {
+        "0x7010": 0.125,
+        "0x7011": 0.015799999237060547,
+        "0x7014": 0.10000000149011612
+      }
+    },
+    {
+      "joint": 6,
+      "parameters": {
+        "0x7010": 0.125,
+        "0x7011": 0.015799999237060547,
+        "0x7014": 0.10000000149011612,
+        "0x701e": 10.0,
+        "0x701f": 5.0,
+        "0x7020": 0.019999999552965164,
+        "0x7021": 0.05000000074505806,
+        "0x702b": 0.0,
+        "0x701c": 48.49327087402344,
+        "0x702c": 0,
+        "0x702d": 0
+      }
+    }
+  ],
+  "final_feedback": [
+    {
+      "joint": 1,
+      "q": 0.0011505207020196064,
+      "qd": 0.17395550401317905,
+      "tau": 0.0,
+      "temperature": 27.0,
+      "status": 0,
+      "can_id": 402653693,
+      "payload": "800280717fff010e",
+      "t": 268146.019957546,
+      "read_t": 268146.019976914,
+      "kernel_ns": 1792389523259022177,
+      "clock_error": 7.6e-07,
+      "timestamp_valid": true,
+      "seq": 37,
+      "drive_state": 0
+    },
+    {
+      "joint": 2,
+      "q": -0.0011505207020196064,
+      "qd": 0.06408886989959228,
+      "tau": 0.0,
+      "temperature": 28.0,
+      "status": 0,
+      "can_id": 402653949,
+      "payload": "7ffc80297fff0118",
+      "t": 268146.020832332,
+      "read_t": 268146.020853767,
+      "kernel_ns": 1792389523259896962,
+      "clock_error": 7.769999999999999e-07,
+      "timestamp_valid": true,
+      "seq": 37,
+      "drive_state": 0
+    },
+    {
+      "joint": 3,
+      "q": -0.0011505207020196064,
+      "qd": -0.059511093478192834,
+      "tau": 0.0,
+      "temperature": 34.0,
+      "status": 0,
+      "can_id": 402654205,
+      "payload": "7ffc7fd87fff0154",
+      "t": 268146.018007791,
+      "read_t": 268146.01803054,
+      "kernel_ns": 1792389523257072436,
+      "clock_error": 7.925e-07,
+      "timestamp_valid": true,
+      "seq": 37,
+      "drive_state": 0
+    },
+    {
+      "joint": 4,
+      "q": 0.0019175345033660108,
+      "qd": 0.04028443250831515,
+      "tau": 0.0,
+      "temperature": 31.0,
+      "status": 0,
+      "can_id": 402654461,
+      "payload": "800480277fff0136",
+      "t": 268146.024815653,
+      "read_t": 268146.024876405,
+      "kernel_ns": 1792389523263880354,
+      "clock_error": 7.77e-07,
+      "timestamp_valid": true,
+      "seq": 38,
+      "drive_state": 0
+    },
+    {
+      "joint": 5,
+      "q": 0.0,
+      "qd": -0.01510666219061818,
+      "tau": 0.0,
+      "temperature": 28.0,
+      "status": 0,
+      "can_id": 402654717,
+      "payload": "7fff7ff07fff0118",
+      "t": 268146.018659853,
+      "read_t": 268146.018678945,
+      "kernel_ns": 1792389523257724479,
+      "clock_error": 7.795e-07,
+      "timestamp_valid": true,
+      "seq": 37,
+      "drive_state": 0
+    },
+    {
+      "joint": 6,
+      "q": 0.0042185759074052235,
+      "qd": 0.06344798120059636,
+      "tau": 0.0,
+      "temperature": 27.0,
+      "status": 0,
+      "can_id": 402654973,
+      "payload": "800a803e7fff010e",
+      "t": 268146.025033546,
+      "read_t": 268146.025074194,
+      "kernel_ns": 1792389523264098169,
+      "clock_error": 7.784999999999999e-07,
+      "timestamp_valid": true,
+      "seq": 38,
+      "drive_state": 0
+    }
+  ],
+  "library": "/home/a12/.local/lib/python3.10/site-packages/motorbridge/lib/libmotor_abi.so",
+  "library_sha256": "e0e2e826c9904880e5b299b15b75cab0792bd7fdec470c92082c4767d4065b7a",
+  "policy": "Read-only parameters and active-report subscription; no motor control or parameter writes",
+  "runtime": "venv Python; ROS PYTHONPATH and LD_LIBRARY_PATH removed; explicit previously audited SDK .so"
+}

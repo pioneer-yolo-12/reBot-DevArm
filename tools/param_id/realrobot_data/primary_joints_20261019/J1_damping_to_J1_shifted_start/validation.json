@@ -1,0 +1,150 @@
+{
+  "status": "diagnostic_only",
+  "compensation_allowed": false,
+  "joint": 1,
+  "training_file": "J1_damping/friction_20261019_145052_fd2b7122.npz",
+  "heldout_file": "J1_shifted_start/friction_20261019_151325_bf47aec5.npz",
+  "training_sha256": "f478267f177ec653e3368d6e611811252b91a9922f481ffc63f1742296ef5f54",
+  "heldout_sha256": "0c60f65b558651c776639601d6544cce197ecb1eccdd44014f77edeb4abd9046",
+  "script_sha256": "64fe1dfc06be30ecb6360ae72de292e9635a58f6a087cf49107c6dfafd13ec81",
+  "common_q_bounds": [
+    0.13,
+    0.47000000000000003
+  ],
+  "models": [
+    {
+      "kind": "baseline",
+      "frequency": null,
+      "coefficients": {
+        "1": [
+          0.1915292712022453,
+          0.025254926492598587
+        ],
+        "-1": [
+          -0.26552127681028964,
+          0.24863605972001157
+        ]
+      },
+      "train_rmse": 0.20717403075015367,
+      "heldout_by_direction": {
+        "1": {
+          "samples": 338,
+          "rmse": 0.20740883084640727
+        },
+        "-1": {
+          "samples": 341,
+          "rmse": 0.21491041035277672
+        }
+      },
+      "heldout_by_speed_direction": [
+        {
+          "speed": 0.1,
+          "direction": 1,
+          "samples": 338,
+          "rmse": 0.20740883084640727
+        },
+        {
+          "speed": 0.1,
+          "direction": -1,
+          "samples": 341,
+          "rmse": 0.21491041035277672
+        }
+      ],
+      "heldout_rmse": 0.21119293026883318
+    },
+    {
+      "kind": "spatial",
+      "frequency": 0.049899833055091825,
+      "coefficients": {
+        "1": [
+          0.17598952488537883,
+          0.029939765586932246,
+          -0.02568871457456507,
+          -0.2449036638404805
+        ],
+        "-1": [
+          -0.22572541061463278,
+          0.19210225492307612,
+          0.0931745363428094,
+          -0.2148477220574784
+        ]
+      },
+      "train_rmse": 0.1219461783513065,
+      "heldout_by_direction": {
+        "1": {
+          "samples": 338,
+          "rmse": 0.11894926484982767
+        },
+        "-1": {
+          "samples": 341,
+          "rmse": 0.13848636899807815
+        }
+      },
+      "heldout_by_speed_direction": [
+        {
+          "speed": 0.1,
+          "direction": 1,
+          "samples": 338,
+          "rmse": 0.11894926484982767
+        },
+        {
+          "speed": 0.1,
+          "direction": -1,
+          "samples": 341,
+          "rmse": 0.13848636899807815
+        }
+      ],
+      "heldout_rmse": 0.12908795839772644
+    },
+    {
+      "kind": "temporal",
+      "frequency": 2.0025041736227047,
+      "coefficients": {
+        "1": [
+          0.19511954694909656,
+          0.03607189782535583,
+          -0.12040271190569884,
+          -0.21471337796749654
+        ],
+        "-1": [
+          -0.24023150027023243,
+          0.17947089867286725,
+          -0.16299844621314627,
+          -0.16054197402360856
+        ]
+      },
+      "train_rmse": 0.12338265189587483,
+      "heldout_by_direction": {
+        "1": {
+          "samples": 338,
+          "rmse": 0.1207824896133239
+        },
+        "-1": {
+          "samples": 341,
+          "rmse": 0.14179816539401546
+        }
+      },
+      "heldout_by_speed_direction": [
+        {
+          "speed": 0.1,
+          "direction": 1,
+          "samples": 338,
+          "rmse": 0.1207824896133239
+        },
+        {
+          "speed": 0.1,
+          "direction": -1,
+          "samples": 341,
+          "rmse": 0.14179816539401546
+        }
+      ],
+      "heldout_rmse": 0.13171015432817104
+    }
+  ],
+  "notes": [
+    "No held-out coefficient, phase, intercept or frequency refit.",
+    "Nonsteady samples included for ripple diagnostics; no Fc/Fv or inertia identification.",
+    "No gravity subtraction from unverified protocol torque; linear q is a descriptive trend only.",
+    "Same configuration does not establish unchanged physical setup; load ID is user reported."
+  ]
+}

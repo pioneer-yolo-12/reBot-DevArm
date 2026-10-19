@@ -1,0 +1,304 @@
+{
+  "kind": "J2_torque_receive_chain_diagnostic",
+  "compensation_allowed": false,
+  "input": "tools/param_id/realrobot_data/primary_joints_20261019/asymmetric_pilot/J2_up08_down20/friction_20261019_153501_7e0e6240.npz",
+  "input_sha256": "9d60f5013e3eeeb51323e891ee27d8a3578501ab9d835913b2ed21bda02e6e5a",
+  "implementation_sha256": "dc9ba5d24659d833a45755f25cc395851a7d20a039da0c56a12f0f66ec820392",
+  "units": {
+    "q": "rad",
+    "qd": "rad/s",
+    "tau": "protocol_nm_unverified",
+    "time": "monotonic seconds"
+  },
+  "run_id": "7e0e6240-373c-45f2-abab-8d52c9e04d81",
+  "payload_decode_max_error": 0.0,
+  "read_delay_ms_p50_p99_max": [
+    0.1310270163230598,
+    1.7050184495747087,
+    2.9588729958049953
+  ],
+  "invalid_transport_samples": 15,
+  "sections": [
+    {
+      "key": "b3_type2",
+      "block": 3,
+      "label": "motion:0:1",
+      "frame_type": 2,
+      "duration": 3.5800918039749376,
+      "samples": 359,
+      "target_q": 1.4445125210966216,
+      "q_span": 0.3581954452287792,
+      "local_velocity_rms": 0.1002013666415627,
+      "torque_mean": -5.843469629790078,
+      "torque_std": 0.8362333473044582,
+      "residual_std": 0.45173442603269315,
+      "torque_spectrum": {
+        "resampled_rate_hz": 100.0,
+        "frequency_resolution_hz": 0.78125,
+        "power_fraction_ge_10hz": 0.8542605630234673,
+        "largest_bin_hz": 35.9375
+      },
+      "feedback_velocity_residual_std": 0.08225627947754009,
+      "receive_interval_ms_p50_p99_max": [
+        9.994574473239481,
+        11.026916415430607,
+        11.950733023695648
+      ],
+      "lag_scan": [
+        {
+          "lag_s": -0.04,
+          "correlation": -0.02900002737283992
+        },
+        {
+          "lag_s": -0.03,
+          "correlation": -0.02306332831869597
+        },
+        {
+          "lag_s": -0.02,
+          "correlation": 0.0703394432590064
+        },
+        {
+          "lag_s": -0.01,
+          "correlation": -0.21525466836238152
+        },
+        {
+          "lag_s": 0.0,
+          "correlation": 0.21132618590294122
+        },
+        {
+          "lag_s": 0.01,
+          "correlation": -0.000929853099741345
+        },
+        {
+          "lag_s": 0.02,
+          "correlation": -0.045875295533779614
+        },
+        {
+          "lag_s": 0.03,
+          "correlation": 0.07907346543171925
+        },
+        {
+          "lag_s": 0.04,
+          "correlation": -0.03985644445614964
+        }
+      ]
+    },
+    {
+      "key": "b3_type24",
+      "block": 3,
+      "label": "motion:0:1",
+      "frame_type": 24,
+      "duration": 3.5844569740002044,
+      "samples": 359,
+      "target_q": 1.4445125210966216,
+      "q_span": 0.358195445228779,
+      "local_velocity_rms": 0.10016869161359576,
+      "torque_mean": -5.797643920062587,
+      "torque_std": 0.902205690460002,
+      "residual_std": 0.4781085064414705,
+      "torque_spectrum": {
+        "resampled_rate_hz": 99.93825295364869,
+        "frequency_resolution_hz": 0.7807676012003804,
+        "power_fraction_ge_10hz": 0.865522536634344,
+        "largest_bin_hz": 22.642260434811032
+      },
+      "feedback_velocity_residual_std": 0.08175447083071014,
+      "receive_interval_ms_p50_p99_max": [
+        10.006178519688547,
+        10.104105587815866,
+        10.130783019121736
+      ],
+      "lag_scan": [
+        {
+          "lag_s": -0.04,
+          "correlation": -0.0019510496313963782
+        },
+        {
+          "lag_s": -0.03,
+          "correlation": -0.02052796438169843
+        },
+        {
+          "lag_s": -0.02,
+          "correlation": 0.014974024167875695
+        },
+        {
+          "lag_s": -0.01,
+          "correlation": -0.12380083595412471
+        },
+        {
+          "lag_s": 0.0,
+          "correlation": 0.025637218521217114
+        },
+        {
+          "lag_s": 0.01,
+          "correlation": 0.12243489893531063
+        },
+        {
+          "lag_s": 0.02,
+          "correlation": -0.0927392994887386
+        },
+        {
+          "lag_s": 0.03,
+          "correlation": 0.012762643848897434
+        },
+        {
+          "lag_s": 0.04,
+          "correlation": 0.07759781275594548
+        }
+      ]
+    },
+    {
+      "key": "b7_type2",
+      "block": 7,
+      "label": "motion:1:-1",
+      "frame_type": 2,
+      "duration": 3.580509422987234,
+      "samples": 360,
+      "target_q": 1.5054893554979936,
+      "q_span": 0.3589624590301257,
+      "local_velocity_rms": 0.10079151478782165,
+      "torque_mean": -7.018784142582476,
+      "torque_std": 0.9079120793809864,
+      "residual_std": 0.4414576267960098,
+      "torque_spectrum": {
+        "resampled_rate_hz": 100.0,
+        "frequency_resolution_hz": 0.78125,
+        "power_fraction_ge_10hz": 0.7517736940324575,
+        "largest_bin_hz": 1.5625
+      },
+      "feedback_velocity_residual_std": 0.0796529737273377,
+      "receive_interval_ms_p50_p99_max": [
+        9.992905019316822,
+        10.943013518117368,
+        11.501084023620933
+      ],
+      "lag_scan": [
+        {
+          "lag_s": -0.04,
+          "correlation": 0.10686731514323482
+        },
+        {
+          "lag_s": -0.03,
+          "correlation": -0.016642143966262023
+        },
+        {
+          "lag_s": -0.02,
+          "correlation": 0.14589309832848799
+        },
+        {
+          "lag_s": -0.01,
+          "correlation": -0.1589219183981164
+        },
+        {
+          "lag_s": 0.0,
+          "correlation": 0.0985416448450554
+        },
+        {
+          "lag_s": 0.01,
+          "correlation": 0.17359502982535663
+        },
+        {
+          "lag_s": 0.02,
+          "correlation": -0.02962899012904056
+        },
+        {
+          "lag_s": 0.03,
+          "correlation": 0.05528611361832306
+        },
+        {
+          "lag_s": 0.04,
+          "correlation": 0.023661318535327176
+        }
+      ]
+    },
+    {
+      "key": "b7_type24",
+      "block": 7,
+      "label": "motion:1:-1",
+      "frame_type": 24,
+      "duration": 3.5751062679919414,
+      "samples": 356,
+      "target_q": 1.5054893554979936,
+      "q_span": 0.3581954452287792,
+      "local_velocity_rms": 0.10089800709552715,
+      "torque_mean": -7.016916512673925,
+      "torque_std": 0.8989891590692294,
+      "residual_std": 0.47207882450426725,
+      "torque_spectrum": {
+        "resampled_rate_hz": 99.93094814298149,
+        "frequency_resolution_hz": 0.7807105323670429,
+        "power_fraction_ge_10hz": 0.7050595227328713,
+        "largest_bin_hz": 1.5614210647340858
+      },
+      "feedback_velocity_residual_std": 0.07762025671669655,
+      "receive_interval_ms_p50_p99_max": [
+        10.006909957155585,
+        11.32667880388908,
+        20.550991990603507
+      ],
+      "lag_scan": [
+        {
+          "lag_s": -0.04,
+          "correlation": -0.019298650749333086
+        },
+        {
+          "lag_s": -0.03,
+          "correlation": -0.08291300309978289
+        },
+        {
+          "lag_s": -0.02,
+          "correlation": 0.0421903273888227
+        },
+        {
+          "lag_s": -0.01,
+          "correlation": -0.19428948131948984
+        },
+        {
+          "lag_s": 0.0,
+          "correlation": 0.10399221616515708
+        },
+        {
+          "lag_s": 0.01,
+          "correlation": 0.05610709687236133
+        },
+        {
+          "lag_s": 0.02,
+          "correlation": -0.16055842484760474
+        },
+        {
+          "lag_s": 0.03,
+          "correlation": 0.05459256186166195
+        },
+        {
+          "lag_s": 0.04,
+          "correlation": -0.04328759920623398
+        }
+      ]
+    }
+  ],
+  "skipped": [
+    {
+      "block": 1,
+      "label": "hold",
+      "reason": "less_than_1.5s_after_0.25s_edge_trims"
+    },
+    {
+      "block": 5,
+      "label": "hold",
+      "reason": "less_than_1.5s_after_0.25s_edge_trims"
+    },
+    {
+      "block": 9,
+      "label": "hold",
+      "reason": "less_than_1.5s_after_0.25s_edge_trims"
+    }
+  ],
+  "frozen_hold_lag_checks": [],
+  "limits": [
+    "No device sample time; reception lag is not a calibrated motor/control delay.",
+    "Spectra use separate frame types, host-time interpolation and at most 100 Hz resampling; aliases remain possible.",
+    "Lag selected only on first long hold; later same-target holds use the frozen lag.",
+    "Signals are locally detrended for correlation; this is not prediction of the DC torque or calibration.",
+    "Motion trend uses fixed .05 rad descriptive basis, not a newly identified physical period."
+  ]
+}

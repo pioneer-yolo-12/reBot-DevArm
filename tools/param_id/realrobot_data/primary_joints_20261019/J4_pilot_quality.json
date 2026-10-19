@@ -1,0 +1,102 @@
+{
+  "joint": 4,
+  "file": "J4_pilot/friction_20261019_144836_8815a91a.npz",
+  "kp": [
+    80.0,
+    150.0,
+    150.0,
+    50.0,
+    12.0,
+    25.0
+  ],
+  "kd": [
+    5.0,
+    10.0,
+    10.0,
+    5.0,
+    0.8,
+    1.5
+  ],
+  "segments": [
+    {
+      "segment": 0,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": 1,
+      "status": "invalid",
+      "reasons": [
+        "low_steady_fraction",
+        "nonuniform_motion",
+        "no_continuous_steady_window"
+      ],
+      "samples": 118,
+      "steady_fraction": 0.15265200517464425,
+      "velocity_cv": 0.15250364066708225,
+      "longest_steady_s": 0.14916544000152498
+    },
+    {
+      "segment": 1,
+      "repeat": 0,
+      "speed_id": 0,
+      "direction": -1,
+      "status": "invalid",
+      "reasons": [
+        "low_steady_fraction",
+        "nonuniform_motion",
+        "no_continuous_steady_window"
+      ],
+      "samples": 145,
+      "steady_fraction": 0.18447837150127228,
+      "velocity_cv": 0.17481862721757213,
+      "longest_steady_s": 0.20622022403404117
+    }
+  ],
+  "fold": {
+    "kind": "fold_verified",
+    "position_velocity": [
+      -6.876943573376998e-05,
+      2.2916627194562384e-05,
+      -0.0005877416731812853,
+      0.00035854464928933766,
+      7.694624557035374e-05,
+      5.729671564561111e-05
+    ],
+    "q": [
+      0.0015340276026928087,
+      0.002301041404039213,
+      0.009971179417503256,
+      0.005752603510098033,
+      0.002684548304712415,
+      0.0019175345033660108
+    ],
+    "qd": [
+      -0.03967406231879522,
+      -0.01678518021179798,
+      -0.0839259010589899,
+      -0.009063997314370908,
+      -0.02316354869228121,
+      -0.007049775688955151
+    ],
+    "settle": 0.5,
+    "t": 271172.239897952
+  },
+  "disabled": {
+    "kind": "disabled_after_fold",
+    "t": 271172.265331057
+  },
+  "peak_temperature": [
+    31.0,
+    34.0,
+    50.0,
+    36.0,
+    31.0,
+    31.0
+  ],
+  "peak_axis_torque": 2.622516556291391,
+  "units": {
+    "q": "rad",
+    "qd": "rad/s",
+    "tau": "protocol_nm_unverified",
+    "time": "monotonic seconds"
+  }
+}
